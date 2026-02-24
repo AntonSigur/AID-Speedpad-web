@@ -142,7 +142,7 @@ export default function DocsPage() {
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 3, lineHeight: 1.8 }}>
             SpeedPad is a portable application — no installer needed. Download the EXE, place it in any folder,
-            and run it. That&apos;s it. SpeedPad is a single 703KB executable with zero external dependencies.
+            and run it. That&apos;s it. SpeedPad is a single 706KB executable with zero external dependencies.
           </Typography>
 
           <Typography variant="h5" sx={{ mb: 2, mt: 4 }}>Opening Files</Typography>

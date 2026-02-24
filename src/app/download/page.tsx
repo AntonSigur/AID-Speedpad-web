@@ -21,13 +21,30 @@ import Footer from "@/components/Footer";
 
 const releases = [
   {
-    version: "v2.21.0",
+    version: "v2.23.0",
     date: "2026-02-24",
     latest: true,
     highlights: [
+      "Bug Blitz: B168/B169 multi-cursor accuracy, B173 CLI validation, B174/B175 hardening",
+      "140/140 tests passing, 706KB EXE",
+    ],
+  },
+  {
+    version: "v2.22.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "Encoding detection improvements: UTF-32 BOM, 8KB heuristic scan, graceful invalid bytes",
+      "Documentation overhaul: CLI reference, feature list, README updated",
+    ],
+  },
+  {
+    version: "v2.21.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
       "Multi-Cursor Phase 2: column/box select, per-cursor paste, multi-cursor Find+Replace",
-      "CLI extensions: --readonly, --pipe, --column N, --line N, --goto N, --new, --encoding",
-      "703KB EXE, 135/135 tests passing",
+      "CLI extensions: --readonly, --pipe, --column N",
     ],
   },
   {
@@ -53,7 +70,7 @@ const releases = [
     date: "2026-02-24",
     latest: false,
     highlights: [
-      "EXE size: 703KB (was 807KB, 13% reduction via /O1 /GL /GR- /LTCG)",
+      "EXE size: 706KB (was 807KB, 13% reduction via /O1 /GL /GR- /LTCG)",
       "Typing Challenge hardening: 12 sample texts, persistent high scores, share to clipboard",
     ],
   },
@@ -150,14 +167,14 @@ export default function DownloadPage() {
           Download SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 500, mx: "auto", mb: 4 }}>
-          A single 703KB executable. No installer. No dependencies. Just extract and run.
+          A single 706KB executable. No installer. No dependencies. Just extract and run.
         </Typography>
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
           <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntSigur/speedpad/releases/latest" target="_blank" rel="noopener">
-            Download v2.21.0 (.exe)
+            Download v2.23.0 (.exe)
           </Button>
           <Button variant="outlined" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntSigur/speedpad/releases/latest" target="_blank" rel="noopener">
-            Download v2.21.0 (.zip)
+            Download v2.23.0 (.zip)
           </Button>
         </Box>
       </Container>
@@ -174,7 +191,7 @@ export default function DownloadPage() {
                 {[
                   { label: "Operating System", value: "Windows 10 (1809+) or Windows 11" },
                   { label: "Architecture", value: "x64" },
-                  { label: "EXE Size", value: "703 KB (core editor)" },
+                  { label: "EXE Size", value: "706 KB (core editor)" },
                   { label: "Lens Plugins", value: "120–171 KB each (optional, 6 total)" },
                   { label: "Memory", value: "< 100 MB for 4GB files" },
                   { label: "Dependencies", value: "None — pure Win32, zero external dependencies" },

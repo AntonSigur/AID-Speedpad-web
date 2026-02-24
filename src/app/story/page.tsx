@@ -72,21 +72,30 @@ const timeline = [
     color: "#00BCD4",
     title: "The EXE keeps shrinking",
     description:
-      "Background indexing gives instant Ctrl+G on 4GB+ files with .spidx sidecar caching. TinyRegex — a custom Thompson NFA engine — replaced std::wregex entirely, dropping safe_regex.obj from 1137KB to 212KB. Build optimization with /O1 /GL /LTCG pushed the EXE from 877KB down to 703KB. The Typing Challenge shipped as a fun way to test your WPM. SpeedPad got better AND smaller.",
-    highlights: ["Background indexing with .spidx sidecar persistence", "TinyRegex NFA engine (Thompson NFA, Pike VM captures)", "EXE: 877KB → 703KB (20% reduction)", "Typing Challenge with persistent high scores", "134 test suites passing"],
+      "Background indexing gives instant Ctrl+G on 4GB+ files with .spidx sidecar caching. TinyRegex — a custom Thompson NFA engine — replaced std::wregex entirely, dropping safe_regex.obj from 1137KB to 212KB. Build optimization with /O1 /GL /LTCG pushed the EXE from 877KB down to 706KB. The Typing Challenge shipped as a fun way to test your WPM. SpeedPad got better AND smaller.",
+    highlights: ["Background indexing with .spidx sidecar persistence", "TinyRegex NFA engine (Thompson NFA, Pike VM captures)", "EXE: 877KB → 706KB (20% reduction)", "Typing Challenge with persistent high scores", "134 test suites passing"],
   },
   {
     phase: "Multi-Cursor",
-    period: "v2.19.0–v2.21.0 — Sprint 37+",
+    period: "v2.19.0–v2.23.0 — Sprint 37+",
     color: "#FF5722",
-    title: "Full multi-cursor editing in 703KB",
+    title: "Full multi-cursor editing in 706KB",
     description:
-      "Multi-cursor editing landed in two phases. Phase 1: Ctrl+D to select next occurrence, Ctrl+Alt+Up/Down to add cursors, simultaneous typing. Phase 2: column/box selection via Alt+Shift+drag, per-cursor paste, multi-cursor Find+Replace. CLI got proper --line, --goto, --encoding, --readonly flags. The EXE crossed below 700KB before settling at 703KB with the new features.",
-    highlights: ["Multi-cursor: Ctrl+D, Ctrl+Alt+Up/Down, column select", "Per-cursor paste and multi-cursor Find+Replace", "CLI: --readonly, --pipe, --column, --line, --goto, --encoding", "EXE dipped to 700KB, now 703KB", "136/135 test suites passing"],
+      "Multi-cursor editing landed in two phases. Phase 1: Ctrl+D to select next occurrence, Ctrl+Alt+Up/Down to add cursors, simultaneous typing. Phase 2: column/box selection via Alt+Shift+drag, per-cursor paste, multi-cursor Find+Replace. CLI got proper --line, --goto, --encoding, --readonly flags. The EXE crossed below 700KB before settling at 706KB with the new features.",
+    highlights: ["Multi-cursor: Ctrl+D, Ctrl+Alt+Up/Down, column select", "Per-cursor paste and multi-cursor Find+Replace", "CLI: --readonly, --pipe, --column, --line, --goto, --encoding", "EXE dipped to 700KB, now 706KB", "140 test suites passing"],
+  },
+  {
+    phase: "Hardening",
+    period: "v2.22.0–v2.23.0 — Sprint 40–41",
+    color: "#795548",
+    title: "Bug blitz and encoding hardening",
+    description:
+      "Sprint 40 brought encoding detection improvements: UTF-32 BOM detection, 8KB heuristic scanning, and graceful handling of invalid UTF-8 bytes. Sprint 41 was a pure bug-fix sprint — multi-cursor position accuracy (B168), Ctrl+D duplicate detection (B169), CLI argument validation (B173/B174/B175). The EXE stabilized at 706KB with 140 test suites passing.",
+    highlights: ["Encoding: UTF-32 BOM, 8KB heuristic, invalid byte handling", "B168: Multi-cursor position accuracy", "B169: Ctrl+D full-range duplicate check", "B173-B175: CLI validation hardening", "140/140 tests passing"],
   },
   {
     phase: "What's Next",
-    period: "Sprint 38+",
+    period: "Sprint 42+",
     color: "#607D8B",
     title: "GPU rendering, session extraction, and beyond",
     description:
@@ -99,8 +108,8 @@ const stats = [
   { label: "Releases", value: "40+", color: "#2196F3" },
   { label: "Features", value: "150+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "160+", color: "#F44336" },
-  { label: "Test Suites", value: "136", color: "#FF9800" },
-  { label: "EXE Size", value: "703 KB", color: "#9C27B0" },
+  { label: "Test Suites", value: "140", color: "#FF9800" },
+  { label: "EXE Size", value: "706 KB", color: "#9C27B0" },
   { label: "Team Size", value: "7 agents", color: "#00BCD4" },
 ];
 
@@ -124,7 +133,7 @@ export default function StoryPage() {
           Our Story
         </Typography>
         <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 650, mx: "auto", fontWeight: 400 }}>
-          How a frustration with slow text editors became a 703KB powerhouse
+          How a frustration with slow text editors became a 706KB powerhouse
           that opens 100GB files in under 50ms.
         </Typography>
       </Container>

@@ -104,7 +104,7 @@ const featureGroups = [
 ];
 
 const comparison = [
-  { feature: "EXE Size", sp: "703 KB", npp: "14 MB", vsc: "400 MB", hxd: "3.5 MB" },
+  { feature: "EXE Size", sp: "706 KB", npp: "14 MB", vsc: "400 MB", hxd: "3.5 MB" },
   { feature: "Startup Time", sp: "< 50ms", npp: "~1.5s", vsc: "~3s", hxd: "~500ms" },
   { feature: "Multi-Cursor", sp: "✅ Full", npp: "✅ Plugin", vsc: "✅ Built-in", hxd: "❌" },
   { feature: "Multi-Log Merge", sp: "✅ + .gz/.bz2/.zst", npp: "❌", vsc: "❌", hxd: "❌" },
@@ -164,7 +164,7 @@ export default function FeaturesPage() {
           Every Feature in SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
-          A comprehensive text editor in 703KB — with zero external dependencies, 6 lens plugins, and 87+ commands.
+          A comprehensive text editor in 706KB — with zero external dependencies, 6 lens plugins, and 87+ commands.
         </Typography>
       </Container>
 
