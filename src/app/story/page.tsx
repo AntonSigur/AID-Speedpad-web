@@ -82,7 +82,7 @@ const timeline = [
     title: "Full multi-cursor editing in 706KB",
     description:
       "Multi-cursor editing landed in two phases. Phase 1: Ctrl+D to select next occurrence, Ctrl+Alt+Up/Down to add cursors, simultaneous typing. Phase 2: column/box selection via Alt+Shift+drag, per-cursor paste, multi-cursor Find+Replace. CLI got proper --line, --goto, --encoding, --readonly flags. The EXE crossed below 700KB before settling at 706KB with the new features.",
-    highlights: ["Multi-cursor: Ctrl+D, Ctrl+Alt+Up/Down, column select", "Per-cursor paste and multi-cursor Find+Replace", "CLI: --readonly, --pipe, --column, --line, --goto, --encoding", "EXE dipped to 700KB, now 706KB", "140 test suites passing"],
+    highlights: ["Multi-cursor: Ctrl+D, Ctrl+Alt+Up/Down, column select", "Per-cursor paste and multi-cursor Find+Replace", "CLI: --readonly, --pipe, --column, --line, --goto, --encoding", "EXE dipped to 700KB, now 706KB", "142 test suites passing"],
   },
   {
     phase: "Hardening",
@@ -90,8 +90,8 @@ const timeline = [
     color: "#795548",
     title: "Bug blitz and encoding hardening",
     description:
-      "Sprint 40 brought encoding detection improvements: UTF-32 BOM detection, 8KB heuristic scanning, and graceful handling of invalid UTF-8 bytes. Sprint 41 was a pure bug-fix sprint — multi-cursor position accuracy (B168), Ctrl+D duplicate detection (B169), CLI argument validation (B173/B174/B175). The EXE stabilized at 706KB with 140 test suites passing.",
-    highlights: ["Encoding: UTF-32 BOM, 8KB heuristic, invalid byte handling", "B168: Multi-cursor position accuracy", "B169: Ctrl+D full-range duplicate check", "B173-B175: CLI validation hardening", "140/140 tests passing"],
+      "Sprint 40 brought encoding detection improvements: UTF-32 BOM detection, 8KB heuristic scanning, and graceful handling of invalid UTF-8 bytes. Sprint 41 was a pure bug-fix sprint — multi-cursor position accuracy (B168), Ctrl+D duplicate detection (B169), CLI argument validation (B173/B174/B175). The EXE stabilized at 706KB with 142 test suites passing.",
+    highlights: ["Encoding: UTF-32 BOM, 8KB heuristic, invalid byte handling", "S003: Command injection fix in DecompressToTemp (critical)", "B168: Multi-cursor position accuracy", "B173-B175: CLI validation hardening", "142/142 tests passing"],
   },
   {
     phase: "What's Next",
@@ -108,7 +108,7 @@ const stats = [
   { label: "Releases", value: "40+", color: "#2196F3" },
   { label: "Features", value: "150+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "160+", color: "#F44336" },
-  { label: "Test Suites", value: "140", color: "#FF9800" },
+  { label: "Test Suites", value: "142", color: "#FF9800" },
   { label: "EXE Size", value: "706 KB", color: "#9C27B0" },
   { label: "Team Size", value: "7 agents", color: "#00BCD4" },
 ];

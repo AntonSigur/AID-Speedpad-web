@@ -26,7 +26,7 @@ const releases = [
     latest: true,
     highlights: [
       "Bug Blitz: B168/B169 multi-cursor accuracy, B173 CLI validation, B174/B175 hardening",
-      "140/140 tests passing, 706KB EXE",
+      "140/142 tests passing, 706KB EXE",
     ],
   },
   {

@@ -57,7 +57,7 @@ const features = [
   },
   {
     icon: <BugReportIcon sx={{ fontSize: 40 }} />,
-    title: "140 tests Passing",
+    title: "142 tests Passing",
     desc: "TinyRegex NFA engine. ReDoS-proof. Zero external dependencies.",
   },
 ];
@@ -86,7 +86,7 @@ export default function Home() {
         <Box sx={{ mb: 3 }}>
           <Image src="/itant-logo.svg" alt="IT Ant ehf" width={100} height={100} style={{ filter: "brightness(0) invert(1)" }} />
         </Box>
-        <Chip label="v2.23.0 — 140 test suites passing" color="primary" variant="outlined" sx={{ mb: 3 }} />
+        <Chip label="v2.23.0 — 142 test suites passing" color="primary" variant="outlined" sx={{ mb: 3 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.5rem", md: "4.5rem" }, mb: 2, background: "linear-gradient(135deg, #64B5F6, #00BCD4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
           SpeedPad. 706KB.
           <br />
