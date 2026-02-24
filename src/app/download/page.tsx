@@ -154,6 +154,11 @@ const releases = [
   },
 ];
 
+/* ───── centralized download config ───── */
+const CURRENT_VERSION = "v2.46.0";
+const SELF_HOSTED_BASE = `https://itant.is/releases/${CURRENT_VERSION}`;
+const GITHUB_RELEASES = "https://github.com/AntonSigur/AID-SpeedPad/releases/latest";
+
 export default function DownloadPage() {
   return (
     <Box sx={{ minHeight: "100vh" }}>
@@ -168,12 +173,21 @@ export default function DownloadPage() {
           A single 828KB executable. No installer. No dependencies. Just extract and run.
         </Typography>
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap", mb: 2 }}>
-          <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntonSigur/AID-SpeedPad/releases/latest" target="_blank" rel="noopener">
-            Download Latest Release
+          <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href={`${SELF_HOSTED_BASE}/SpeedPad.exe`} target="_blank" rel="noopener">
+            Download EXE ({CURRENT_VERSION})
+          </Button>
+          <Button variant="outlined" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href={`${SELF_HOSTED_BASE}/SpeedPad-${CURRENT_VERSION}.zip`} target="_blank" rel="noopener">
+            Download ZIP ({CURRENT_VERSION})
           </Button>
         </Box>
+        <Typography variant="body2" color="text.secondary" textAlign="center" sx={{ mb: 1 }}>
+          Primary downloads are hosted on IT Ant infrastructure.
+        </Typography>
         <Typography variant="body2" color="text.secondary" textAlign="center">
-          Downloads are hosted on GitHub Releases. Visit the release page for .exe and .zip options.
+          <a href={GITHUB_RELEASES} target="_blank" rel="noopener" style={{ color: "#64B5F6" }}>
+            GitHub releases
+          </a>{" "}
+          (may require repository access)
         </Typography>
       </Container>
 
