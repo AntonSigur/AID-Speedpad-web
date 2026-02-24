@@ -67,7 +67,7 @@ const featureGroups = [
       { name: "Anomaly Gutter Marks", shortcut: "—", desc: "Amber dots in gutter for anomaly lines, visible in normal and reverse view" },
       { name: "Log Rotation Detect", shortcut: "—", desc: "Auto-discovers 10 rotation patterns (.1/.2, .gz, .bz2, .zst, .xz, date-based, IIS, log4j)" },
       { name: "Timestamp Intelligence", shortcut: "Ctrl+Shift+A", desc: "Relative time (\"2m ago\"), line deltas (Δ+3.2s), auto timezone detection" },
-      { name: "Time Range Summary", shortcut: "View menu", desc: "Total duration, busiest minute, largest gap analysis" },
+      { name: "Time Range Summary", shortcut: "Ctrl+Shift+R (Time)", desc: "Total duration, busiest minute, largest gap analysis" },
       { name: "Log Correlation", shortcut: "Ctrl+Shift+C (View)", desc: "Link related entries across up to 8 files with timestamp sync and ⛓ indicator" },
       { name: "Performance Dashboard", shortcut: "Status bar", desc: "Real-time metrics: file open time, search speed, memory usage (zero overhead when inactive)" },
       { name: "Ultra-Minimal Notifications", shortcut: "—", desc: "Status bar color dots for encoding, EOL, and reload events — no popups ever" },

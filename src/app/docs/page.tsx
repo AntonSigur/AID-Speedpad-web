@@ -56,7 +56,7 @@ const essentialShortcuts = [
   { shortcut: "Ctrl+Shift+C", action: "Log Correlation (View) / CSV Mode (Lens)" },
   { shortcut: "Ctrl+Alt+M", action: "Minimap Sidebar toggle" },
   { shortcut: "Ctrl+Alt+V", action: "Reverse Tail (combined reverse + tail)" },
-  { shortcut: "Ctrl+Shift+R", action: "Regex Builder Panel" },
+  { shortcut: "Ctrl+Shift+R", action: "Regex Builder Panel / Time Range Summary (in Time mode)" },
   { shortcut: "Ctrl+Shift+D", action: "Dark Mode" },
   { shortcut: "Ctrl+R", action: "Read-Only Toggle" },
   { shortcut: "Ctrl+L", action: "Filter Lines" },
