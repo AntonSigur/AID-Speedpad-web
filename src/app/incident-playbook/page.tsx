@@ -2,6 +2,8 @@
 
 import { Box, Container, Typography, Paper, Chip, Button } from "@mui/material";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 interface Step {
   key: string;
@@ -69,7 +71,9 @@ const scenarios: Scenario[] = [
 
 export default function IncidentPlaybookPage() {
   return (
-    <Box sx={{ py: 10 }}>
+    <>
+      <Navbar />
+      <Box sx={{ py: 10 }}>
       <Container maxWidth="lg">
         {/* Hero */}
         <Box sx={{ textAlign: "center", mb: 8 }}>
@@ -226,5 +230,7 @@ export default function IncidentPlaybookPage() {
         </Box>
       </Container>
     </Box>
+    <Footer />
+    </>
   );
 }

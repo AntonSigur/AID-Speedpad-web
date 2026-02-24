@@ -17,6 +17,8 @@ import {
   InputAdornment,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { useState, useMemo } from "react";
 
 /* ───── role definitions ───── */
@@ -170,7 +172,9 @@ export default function CommandExplorerPage() {
   }, [activeRole, activeCategory, search]);
 
   return (
-    <Box sx={{ py: 10 }}>
+    <>
+      <Navbar />
+      <Box sx={{ py: 10 }}>
       <Container maxWidth="lg">
         {/* Hero */}
         <Box sx={{ textAlign: "center", mb: 6 }}>
@@ -365,5 +369,7 @@ export default function CommandExplorerPage() {
         </Box>
       </Container>
     </Box>
+    <Footer />
+    </>
   );
 }
