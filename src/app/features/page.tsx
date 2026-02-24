@@ -380,6 +380,23 @@ export default function FeaturesPage() {
         </Box>
       </Container>
 
+      {/* Cross-Links */}
+      <Box sx={{ py: 4, textAlign: "center" }}>
+        <Container maxWidth="md">
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+            Want to go deeper?
+          </Typography>
+          <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
+            <Button variant="text" component={Link} href="/how-it-works" sx={{ color: "#00BCD4" }}>
+              How It Works →
+            </Button>
+            <Button variant="text" component={Link} href="/getting-started" sx={{ color: "#00BCD4" }}>
+              Quick Start Guide →
+            </Button>
+          </Box>
+        </Container>
+      </Box>
+
       <StickyDownloadCTA />
       <Footer />
     </Box>

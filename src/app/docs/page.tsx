@@ -462,6 +462,26 @@ export default function DocsPage() {
         </Grid>
       </Container>
 
+      {/* Related Pages */}
+      <Box sx={{ py: 4, textAlign: "center" }}>
+        <Container maxWidth="md">
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+            More resources
+          </Typography>
+          <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
+            <Button variant="text" href="/getting-started" sx={{ color: "#00BCD4" }}>
+              Quick Start Guide →
+            </Button>
+            <Button variant="text" href="/how-it-works" sx={{ color: "#00BCD4" }}>
+              Architecture Deep Dive →
+            </Button>
+            <Button variant="text" href="/command-explorer" sx={{ color: "#00BCD4" }}>
+              Command Explorer →
+            </Button>
+          </Box>
+        </Container>
+      </Box>
+
       <Footer />
     </Box>
   );

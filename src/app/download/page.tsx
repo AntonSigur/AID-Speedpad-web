@@ -320,6 +320,18 @@ export default function DownloadPage() {
         </Container>
       </Box>
 
+      {/* After Download */}
+      <Box sx={{ py: 4, textAlign: "center" }}>
+        <Container maxWidth="md">
+          <Typography variant="h6" fontWeight={700} sx={{ mb: 1 }}>
+            Downloaded? Get started in under a minute.
+          </Typography>
+          <Button variant="outlined" href="/getting-started" sx={{ borderColor: "#00BCD4", color: "#00BCD4" }}>
+            Quick Start Guide →
+          </Button>
+        </Container>
+      </Box>
+
       <Footer />
     </Box>
   );
