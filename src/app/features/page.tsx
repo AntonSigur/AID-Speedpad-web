@@ -67,14 +67,14 @@ const featureGroups = [
       { name: "Log Rotation Detect", shortcut: "—", desc: "Auto-discovers 10 rotation patterns (.1/.2, .gz, .bz2, .zst, .xz, date-based, IIS, log4j)" },
       { name: "Timestamp Intelligence", shortcut: "—", desc: "Relative time (\"2m ago\"), line deltas (Δ+3.2s), auto timezone detection" },
       { name: "Time Range Summary", shortcut: "Ctrl+Shift+R", desc: "Total duration, busiest minute, largest gap analysis" },
-      { name: "Log Correlation", shortcut: "Ctrl+Shift+C", desc: "Link related entries across up to 8 files with timestamp sync and ⛓ indicator" },
+      { name: "Log Correlation", shortcut: "Ctrl+Shift+C (View)", desc: "Link related entries across up to 8 files with timestamp sync and ⛓ indicator" },
       { name: "Performance Dashboard", shortcut: "Ctrl+Shift+P", desc: "Real-time metrics: file open time, search speed, memory usage (zero overhead when inactive)" },
       { name: "Ultra-Minimal Notifications", shortcut: "—", desc: "Status bar color dots for encoding, EOL, and reload events — no popups ever" },
       { name: "File Statistics", shortcut: "Ctrl+Shift+I", desc: "Show file size, line count, encoding info" },
       { name: "Time Browse", shortcut: "—", desc: "Scrub through log timestamps on a timeline" },
       { name: "Go to Time", shortcut: "Ctrl+T", desc: "Jump to specific timestamp in log" },
       { name: "Filter", shortcut: "Ctrl+L", desc: "Show only lines matching pattern" },
-      { name: "CSV Mode", shortcut: "Ctrl+Shift+C", desc: "Columnar table view with aligned columns" },
+      { name: "CSV Mode", shortcut: "Ctrl+Shift+C (Lens)", desc: "Columnar table view with aligned columns" },
       { name: "Regex Highlight", shortcut: "Ctrl+Shift+H", desc: "Colorize text matching regex patterns" },
       { name: "Regex Builder", shortcut: "Ctrl+Shift+R", desc: "4-color regex panel with live preview" },
       { name: "Code Folding", shortcut: "Ctrl+Shift+[/]", desc: "Collapse and expand indented blocks" },
@@ -184,8 +184,62 @@ export default function FeaturesPage() {
         </Typography>
       </Container>
 
-      {/* 17 Unique Features */}
+      {/* Ops Critical — F60/F61/F63 Trio */}
       <Box sx={{ bgcolor: "background.paper", py: { xs: 4, md: 8 } }}>
+        <Container maxWidth="md">
+          <Chip label="Ops Critical" color="error" variant="outlined" sx={{ mb: 2 }} />
+          <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
+            Log Analysis Powerhouse
+          </Typography>
+          <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
+            No other editor under 1MB has these three capabilities. They replace heavyweight observability stacks for incident triage.
+          </Typography>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+            {[
+              {
+                label: "F61 — Timestamp Intelligence",
+                pain: "Logs use different timestamp formats. Finding time gaps means mental math.",
+                capability: "Auto-detects 15+ timestamp formats. Shows relative time (\"2m ago\"), line deltas (Δ+3.2s), auto timezone detection, and time range summaries.",
+                outcome: "Spot production anomalies in seconds, not minutes.",
+                shortcut: "Ctrl+Shift+R",
+              },
+              {
+                label: "F60 — Log Correlation Engine",
+                pain: "Related events are scattered across multiple log files. Copy-pasting timestamps between tabs is slow.",
+                capability: "Links entries across up to 8 files by timestamp. Clickable ⛓ indicators jump between correlated events.",
+                outcome: "Find root causes across services without Splunk or Datadog.",
+                shortcut: "Ctrl+Shift+C (View)",
+              },
+              {
+                label: "F63 — Performance Dashboard",
+                pain: "No visibility into editor performance when working with large files.",
+                capability: "Real-time status bar metrics: file open time, search speed, memory usage, FPS. Zero overhead when inactive.",
+                outcome: "Confidence that your 10GB log file isn't eating all your RAM.",
+                shortcut: "Built-in panel",
+              },
+            ].map((f) => (
+              <Paper key={f.label} elevation={0} sx={{ p: 3, bgcolor: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 1.5, flexWrap: "wrap", gap: 1 }}>
+                  <Typography variant="h6" sx={{ color: "primary.light" }}>{f.label}</Typography>
+                  <Chip label={f.shortcut} size="small" variant="outlined" />
+                </Box>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                  <strong>Pain:</strong> {f.pain}
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                  <strong>Capability:</strong> {f.capability}
+                </Typography>
+                <Typography variant="body2" sx={{ color: "#4CAF50" }}>
+                  <strong>Outcome:</strong> {f.outcome}
+                </Typography>
+              </Paper>
+            ))}
+          </Box>
+        </Container>
+      </Box>
+
+      {/* 30 Unique Features */}
+      <Box sx={{ py: { xs: 4, md: 8 } }}>
         <Container maxWidth="md">
           <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
             30 Things Only SpeedPad Can Do

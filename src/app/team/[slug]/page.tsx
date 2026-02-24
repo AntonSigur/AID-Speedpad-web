@@ -221,7 +221,7 @@ const teamData: TeamMember[] = [
     achievements: [
       "Built 9-route marketing site from scratch",
       "Created responsive dark theme with IT Ant branding",
-      "150+ feature showcase with multi-log marketing page",
+      "153+ feature showcase with log analysis and AV FAQ pages",
       "Zero-dependency static deployment",
     ],
     philosophy: "A website should be as fast and clean as the product it represents. Just clear information, beautifully presented.",

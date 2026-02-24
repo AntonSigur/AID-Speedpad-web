@@ -52,7 +52,7 @@ const essentialShortcuts = [
   { shortcut: "Ctrl+Alt+H", action: "File Histogram" },
   { shortcut: "Ctrl+Shift+A", action: "Anomaly Highlighting" },
   { shortcut: "Ctrl+Shift+M", action: "Multi-Log Unified View" },
-  { shortcut: "Ctrl+Shift+C", action: "Log Correlation Engine (cross-file)" },
+  { shortcut: "Ctrl+Shift+C", action: "Log Correlation (View) / CSV Mode (Lens)" },
   { shortcut: "Ctrl+Alt+M", action: "Minimap Sidebar toggle" },
   { shortcut: "Ctrl+Alt+V", action: "Reverse Tail (combined reverse + tail)" },
   { shortcut: "Ctrl+Shift+R", action: "Time Range Summary" },

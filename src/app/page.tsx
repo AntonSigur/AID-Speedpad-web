@@ -92,20 +92,36 @@ export default function Home() {
         </Box>
         <Chip label="v2.46.0 — 210 test suites passing" color="primary" variant="outlined" sx={{ mb: 3 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.5rem", md: "4.5rem" }, mb: 2, background: "linear-gradient(135deg, #64B5F6, #00BCD4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-          SpeedPad. 828KB.
+          Find incidents faster.
           <br />
-          Opens 100GB Files.
+          In an 828KB editor.
         </Typography>
-        <Typography variant="h5" color="text.secondary" sx={{ mb: 5, maxWidth: 600, mx: "auto", fontWeight: 400 }}>
-          A blazing-fast Windows text editor for DevOps engineers, data analysts, and developers who work with large files and live logs.
+        <Typography variant="h5" color="text.secondary" sx={{ mb: 5, maxWidth: 640, mx: "auto", fontWeight: 400 }}>
+          SpeedPad helps DevOps and engineers triage live logs, correlate events across files, and resolve production issues fast — without heavy tooling.
         </Typography>
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
           <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5, fontSize: "1.1rem" }} href="/download">
             Download SpeedPad
           </Button>
-          <Button variant="outlined" size="large" href="/features" sx={{ px: 4, py: 1.5, fontSize: "1.1rem" }}>
-            Explore Features
+          <Button variant="outlined" size="large" href="#incident-workflow" sx={{ px: 4, py: 1.5, fontSize: "1.1rem", borderColor: "rgba(255,255,255,0.2)", color: "text.secondary" }}>
+            See Incident Workflow
           </Button>
+        </Box>
+
+        {/* Proof Bar */}
+        <Box sx={{ mt: 5, display: "flex", flexWrap: "wrap", justifyContent: "center", gap: { xs: 2, md: 4 } }}>
+          {[
+            { value: "828KB", label: "EXE size" },
+            { value: "210", label: "automated tests" },
+            { value: "100GB+", label: "file support" },
+            { value: "40+", label: "releases shipped" },
+            { value: "0", label: "external deps" },
+          ].map((m) => (
+            <Box key={m.label} sx={{ textAlign: "center", minWidth: 80 }}>
+              <Typography variant="h5" sx={{ fontWeight: 700, color: "primary.light" }}>{m.value}</Typography>
+              <Typography variant="caption" color="text.secondary">{m.label}</Typography>
+            </Box>
+          ))}
         </Box>
 
         {/* Size comparison visual */}
@@ -133,8 +149,62 @@ export default function Home() {
         </Box>
       </Container>
 
+      {/* Incident Workflow */}
+      <Box id="incident-workflow" sx={{ bgcolor: "background.paper", py: { xs: 6, md: 10 } }}>
+        <Container maxWidth="md">
+          <Typography variant="h2" textAlign="center" sx={{ mb: 1, fontSize: { xs: "2rem", md: "3rem" } }}>
+            From Alert to Resolution
+          </Typography>
+          <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 6, maxWidth: 560, mx: "auto" }}>
+            Three built-in capabilities that replace heavyweight observability tools
+          </Typography>
+          <Grid container spacing={3}>
+            {[
+              {
+                step: "1",
+                title: "Detect Anomalies",
+                feature: "Timestamp Intelligence (F61)",
+                shortcut: "Ctrl+Shift+R",
+                outcome: "Auto-detect 15+ timestamp formats and surface gaps, spikes, and time-range anomalies instantly.",
+                color: "#2196F3",
+              },
+              {
+                step: "2",
+                title: "Correlate Across Files",
+                feature: "Log Correlation Engine (F60)",
+                shortcut: "Ctrl+Shift+C (View)",
+                outcome: "Link events across multiple log files by timestamp — find the root cause without Splunk.",
+                color: "#00BCD4",
+              },
+              {
+                step: "3",
+                title: "Measure & Optimize",
+                feature: "Performance Dashboard (F63)",
+                shortcut: "Built-in panel",
+                outcome: "Real-time memory, CPU, and FPS metrics inside the editor — no external profiler needed.",
+                color: "#4CAF50",
+              },
+            ].map((s) => (
+              <Grid size={{ xs: 12, md: 4 }} key={s.step}>
+                <Card elevation={0} sx={{ height: "100%", bgcolor: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", position: "relative", overflow: "visible" }}>
+                  <Box sx={{ position: "absolute", top: -16, left: 24, width: 32, height: 32, borderRadius: "50%", bgcolor: s.color, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Typography variant="body2" sx={{ fontWeight: 700, color: "#fff" }}>{s.step}</Typography>
+                  </Box>
+                  <CardContent sx={{ p: 3, pt: 4 }}>
+                    <Typography variant="h6" sx={{ mb: 0.5 }}>{s.title}</Typography>
+                    <Chip label={s.shortcut} size="small" variant="outlined" sx={{ mb: 1.5, fontSize: "0.75rem" }} />
+                    <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>{s.outcome}</Typography>
+                    <Typography variant="caption" color="primary.light">{s.feature}</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
       {/* Feature Grid */}
-      <Box sx={{ bgcolor: "background.paper", py: { xs: 6, md: 10 } }}>
+      <Box sx={{ py: { xs: 6, md: 10 } }}>
         <Container maxWidth="lg">
           <Typography variant="h2" textAlign="center" sx={{ mb: 1, fontSize: { xs: "2rem", md: "3rem" } }}>
             Built for Speed
