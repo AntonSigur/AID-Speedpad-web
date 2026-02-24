@@ -22,6 +22,7 @@ const navItems = [
   { label: "Multi-Log", href: "/multilog" },
   { label: "Commands", href: "/command-explorer" },
   { label: "Playbook", href: "/incident-playbook" },
+  { label: "Releases", href: "/release-center" },
   { label: "Download", href: "/download" },
   { label: "Docs", href: "/docs" },
   { label: "AV FAQ", href: "/av-faq" },
