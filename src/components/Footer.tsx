@@ -22,6 +22,8 @@ export default function Footer() {
             {[
               { label: "Features", href: "/features" },
               { label: "Multi-Log", href: "/multilog" },
+              { label: "Commands", href: "/command-explorer" },
+              { label: "Playbook", href: "/incident-playbook" },
               { label: "Download", href: "/download" },
               { label: "Documentation", href: "/docs" },
               { label: "AV FAQ", href: "/av-faq" },

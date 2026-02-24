@@ -27,6 +27,7 @@ import {
 } from "@mui/icons-material";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StickyDownloadCTA from "@/components/StickyDownloadCTA";
 
 const capabilities = [
   {
@@ -275,6 +276,7 @@ export default function MultiLogPage() {
         </Container>
       </Box>
 
+      <StickyDownloadCTA />
       <Footer />
     </Box>
   );

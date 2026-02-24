@@ -18,6 +18,7 @@ import {
 import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StickyDownloadCTA from "@/components/StickyDownloadCTA";
 
 const featureGroups = [
   {
@@ -369,6 +370,7 @@ export default function FeaturesPage() {
         </Box>
       </Container>
 
+      <StickyDownloadCTA />
       <Footer />
     </Box>
   );

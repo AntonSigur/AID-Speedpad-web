@@ -28,6 +28,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import Link from "next/link";
 
 const features = [
   {
@@ -200,6 +201,11 @@ export default function Home() {
               </Grid>
             ))}
           </Grid>
+          <Box sx={{ textAlign: "center", mt: 4 }}>
+            <Button variant="outlined" component={Link} href="/incident-playbook" sx={{ textTransform: "none", fontWeight: 700, borderColor: "#2196F3", color: "#2196F3" }}>
+              See Full Incident Playbook →
+            </Button>
+          </Box>
         </Container>
       </Box>
 
@@ -323,6 +329,30 @@ export default function Home() {
           SpeedPad is not a replacement for cloud observability platforms. It&apos;s a fast, offline companion for incident triage when you need answers now.
         </Typography>
       </Container>
+
+      {/* How We Measure Claims */}
+      <Box sx={{ py: { xs: 4, md: 6 } }}>
+        <Container maxWidth="md">
+          <Typography variant="h5" textAlign="center" fontWeight={700} sx={{ mb: 3 }}>
+            How We Measure Our Claims
+          </Typography>
+          <Grid container spacing={3}>
+            {[
+              { label: "Startup & File Open", detail: "Measured by automated release verification runs on reference hardware. Every release is timed before shipping." },
+              { label: "Test Count (210)", detail: "Current release validation suite. Verified on every build. Zero skipped, zero flaky." },
+              { label: "EXE Size (828KB)", detail: "Actual file size of SpeedPad.exe in the release build. No installer, no runtime, no dependencies." },
+              { label: "Memory Usage", detail: "Profiled with Windows Performance Toolkit on 4GB+ files. Under 100MB using a 64MB memory-mapped view window." },
+            ].map((item) => (
+              <Grid size={{ xs: 12, sm: 6 }} key={item.label}>
+                <Paper sx={{ p: 2.5, bgcolor: "#162D50", height: "100%" }}>
+                  <Typography variant="subtitle2" fontWeight={700} color="primary.light">{item.label}</Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>{item.detail}</Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
 
       {/* CTA */}
       <Box sx={{ py: { xs: 6, md: 10 }, textAlign: "center" }}>

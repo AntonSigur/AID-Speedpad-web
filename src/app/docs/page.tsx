@@ -15,6 +15,7 @@ import {
   Paper,
   Chip,
   Divider,
+  Button,
 } from "@mui/material";
 import {
   MenuBook as MenuBookIcon,
@@ -176,6 +177,9 @@ export default function DocsPage() {
             <code style={{ color: "#64B5F6" }}>@dev</code> for developer tools,{" "}
             <code style={{ color: "#64B5F6" }}>@data</code> for data analyst features.
           </Typography>
+          <Button variant="outlined" component={Link} href="/command-explorer" sx={{ mt: 2, textTransform: "none", fontWeight: 700, borderColor: "#00BCD4", color: "#00BCD4" }}>
+            Explore All {86} Commands →
+          </Button>
         </Container>
       </Box>
 
