@@ -1,0 +1,280 @@
+"use client";
+import {
+  Box,
+  Container,
+  Typography,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  Chip,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from "@mui/material";
+import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+const featureGroups = [
+  {
+    title: "File Menu",
+    features: [
+      { name: "New / Open / Save", shortcut: "Ctrl+N/O/S", desc: "Standard file operations with fast memory-mapped I/O" },
+      { name: "Quick File Compare", shortcut: "—", desc: "Compare current file (GREEN/YELLOW/RED verdict)" },
+      { name: "Compare Two Files", shortcut: "—", desc: "Pick two files, compare with optional Diff View" },
+      { name: "Save Workspace", shortcut: "Ctrl+Alt+S", desc: "Save session as .speedws JSON" },
+      { name: "Open Workspace", shortcut: "Ctrl+Alt+O", desc: "Restore saved workspace session" },
+      { name: "Save Filtered", shortcut: "—", desc: "Save currently filtered view to file" },
+      { name: "Recent Files / Workspaces", shortcut: "—", desc: "Last 10 files and 8 workspaces (MRU)" },
+    ],
+  },
+  {
+    title: "Edit Menu",
+    features: [
+      { name: "Undo / Redo", shortcut: "Ctrl+Z/Y", desc: "500-level undo via piece table snapshots" },
+      { name: "Find & Replace", shortcut: "Ctrl+F / Ctrl+H", desc: "Full regex support with live highlighting" },
+      { name: "Cross-File Search", shortcut: "Ctrl+Shift+F", desc: "Parallel multi-threaded search across directories using all CPU cores" },
+      { name: "Diff View", shortcut: "Alt+D", desc: "Side-by-side comparison using Myers O(ND) algorithm" },
+      { name: "Sort Lines", shortcut: "—", desc: "Ascending, descending, or case-insensitive sorting" },
+      { name: "Deduplicate Lines", shortcut: "—", desc: "Remove duplicate lines instantly" },
+      { name: "Clipboard Ring", shortcut: "Ctrl+Shift+B", desc: "Access clipboard history with multiple entries" },
+      { name: "Diff with Clipboard", shortcut: "—", desc: "Compare selection against clipboard content" },
+    ],
+  },
+  {
+    title: "View Menu",
+    features: [
+      { name: "Tail Mode", shortcut: "Ctrl+Shift+T", desc: "Live-follow growing files like tail -f" },
+      { name: "Reverse View", shortcut: "Ctrl+Shift+V", desc: "Display file bottom-to-top (reverse-tail: new lines at top)" },
+      { name: "Anomaly Highlighting", shortcut: "Ctrl+Shift+A", desc: "Detect timestamp gaps in logs (amber/red scrollbar marks)" },
+      { name: "Tail Dashboard", shortcut: "Ctrl+Alt+T", desc: "Multi-file split-pane log monitor (up to 8 panes)" },
+      { name: "File Histogram", shortcut: "Ctrl+Alt+H", desc: "Visual navigator for 100GB+ files (heatmap, click-to-jump)" },
+      { name: "Time Browse", shortcut: "—", desc: "Scrub through log timestamps on a timeline" },
+      { name: "Go to Time", shortcut: "Ctrl+T", desc: "Jump to specific timestamp in log" },
+      { name: "Filter", shortcut: "Ctrl+L", desc: "Show only lines matching pattern" },
+      { name: "CSV Mode", shortcut: "Ctrl+Shift+C", desc: "Columnar table view with aligned columns" },
+      { name: "Regex Highlight", shortcut: "Ctrl+Shift+H", desc: "Colorize text matching regex patterns" },
+      { name: "Regex Builder", shortcut: "Ctrl+Shift+R", desc: "4-color regex panel with live preview" },
+      { name: "Code Folding", shortcut: "Ctrl+Shift+[/]", desc: "Collapse and expand indented blocks" },
+      { name: "Dark Mode", shortcut: "Ctrl+Shift+D", desc: "Toggle dark/light theme" },
+    ],
+  },
+  {
+    title: "Tools",
+    features: [
+      { name: "JSON Format / Minify", shortcut: "—", desc: "Pretty-print or compress JSON" },
+      { name: "Base64 Encode/Decode", shortcut: "—", desc: "Convert to/from Base64" },
+      { name: "URL Encode/Decode", shortcut: "—", desc: "Percent-encode/decode URL-unsafe characters" },
+      { name: "Hash Calculator", shortcut: "—", desc: "MD5, SHA-1, SHA-256 for selection or entire file (zero-copy)" },
+      { name: "Encoding Converter", shortcut: "—", desc: "UTF-8, UTF-16 LE/BE, ASCII — convert or reinterpret" },
+      { name: "Eval Expression", shortcut: "Ctrl+=", desc: "Calculate math expression in selection" },
+      { name: "Text Transforms", shortcut: "—", desc: "Uppercase, lowercase, title case, ROT13, Morse, Pig Latin, and more" },
+      { name: "Command Palette", shortcut: "Ctrl+Shift+P", desc: "Fuzzy-search all 87+ commands with role-based filtering" },
+    ],
+  },
+  {
+    title: "Lens Plugins",
+    features: [
+      { name: "CSV/TSV Lens", shortcut: "120KB", desc: "Auto-triggers on .csv/.tsv files, columnar view with separator detection" },
+      { name: "JSON Navigator", shortcut: "126KB", desc: "Auto-triggers on .json/.jsonl, tree navigation" },
+      { name: "Log Navigator", shortcut: "135KB", desc: "Auto-detects Apache/nginx/syslog/IIS/JSONL/log4j patterns" },
+      { name: "XML/YAML Lens", shortcut: "129KB", desc: "Auto-triggers on .xml/.yaml/.yml/.config/.csproj/.svg" },
+      { name: "Frequency Analyzer", shortcut: "171KB", desc: "Detect IP, Email, URL, UUID, Timestamp, Error patterns" },
+      { name: "Compressed Files", shortcut: "125KB", desc: "Open .gz/.bz2/.zst files directly (magic byte detection)" },
+      { name: "Solitaire 🐜", shortcut: "154KB", desc: "Ctrl+Shift+F12 — Classic card game easter egg" },
+    ],
+  },
+];
+
+const comparison = [
+  { feature: "EXE Size", sp: "775 KB", npp: "14 MB", vsc: "400 MB", hxd: "5 MB" },
+  { feature: "Startup Time", sp: "< 50ms", npp: "~1.5s", vsc: "~3s", hxd: "~500ms" },
+  { feature: "4GB+ File Support", sp: "✅ Memory-mapped", npp: "❌ Crashes", vsc: "❌ Refuses", hxd: "✅ Hex only" },
+  { feature: "Tail Mode", sp: "✅", npp: "❌", vsc: "❌", hxd: "❌" },
+  { feature: "Pipe / Stdin", sp: "✅", npp: "❌", vsc: "❌", hxd: "❌" },
+  { feature: "Cross-File Search", sp: "✅ Parallel", npp: "✅ Single-thread", vsc: "✅ Indexed", hxd: "❌" },
+  { feature: "Diff View", sp: "✅ Built-in", npp: "Plugin", vsc: "✅ Built-in", hxd: "✅ Hex diff" },
+  { feature: "Reverse View", sp: "✅", npp: "❌", vsc: "❌", hxd: "❌" },
+  { feature: "Anomaly Detection", sp: "✅", npp: "❌", vsc: "❌", hxd: "❌" },
+  { feature: "Log Navigation", sp: "✅ 6 formats", npp: "❌", vsc: "❌", hxd: "❌" },
+  { feature: "CSV Mode", sp: "✅", npp: "❌", vsc: "Plugin", hxd: "❌" },
+  { feature: "Compressed Files", sp: "✅ .gz/.bz2/.zst", npp: "❌", vsc: "❌", hxd: "❌" },
+  { feature: "Command Palette", sp: "✅ Role-based", npp: "❌", vsc: "✅", hxd: "❌" },
+  { feature: "Dependencies", sp: "Zero", npp: "Scintilla", vsc: "Electron/Node.js", hxd: "Delphi RT" },
+];
+
+const uniqueFeatures = [
+  "Reverse View & Reverse Tail — read files bottom-to-top, new lines appear at top",
+  "Tail Dashboard — monitor up to 8 log files simultaneously in split panes",
+  "Anomaly Highlighting — auto-detect timestamp gaps in logs with scrollbar markers",
+  "File Histogram — visual heatmap navigator for 100GB+ files with click-to-jump",
+  "Time Browse — scrub through log files on a visual timestamp timeline",
+  "Pipe/Stdin support — pipe any command directly into the editor (dir | speedpad)",
+  "6 DLL-based Lens Plugins — file-type-specific features loaded on demand",
+  "Frequency Analyzer — detect IP, email, URL, UUID, timestamp, error patterns",
+  "Role-based Command Palette — filter commands by @dev, @ops, @data, @writer, @admin",
+  "Compressed file editing — open .gz, .bz2, .zst files directly",
+  "Quick File Compare — instant GREEN/YELLOW/RED file comparison verdict",
+  "Save Filtered View — export only the lines matching your current filter",
+  "Diff with Clipboard — compare selected text against clipboard content",
+  "File Archaeology — inspect file metadata, timestamps, and hashes",
+  "Clipboard Ring — access multiple clipboard entries, not just the last one",
+  "Speed Challenge — built-in typing speed game with leaderboard",
+  "Solitaire 🐜 — classic card game easter egg (Ctrl+Shift+F12)",
+];
+
+export default function FeaturesPage() {
+  return (
+    <Box sx={{ minHeight: "100vh" }}>
+      <Navbar />
+
+      {/* Hero */}
+      <Container maxWidth="lg" sx={{ pt: { xs: 6, md: 10 }, pb: 4, textAlign: "center" }}>
+        <Chip label="140+ Features" color="primary" variant="outlined" sx={{ mb: 2 }} />
+        <Typography variant="h1" sx={{ fontSize: { xs: "2.2rem", md: "3.5rem" }, mb: 2 }}>
+          Every Feature in SpeedPad
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
+          A comprehensive text editor in 775KB — with zero external dependencies, 6 lens plugins, and 87+ commands.
+        </Typography>
+      </Container>
+
+      {/* 17 Unique Features */}
+      <Box sx={{ bgcolor: "background.paper", py: { xs: 4, md: 8 } }}>
+        <Container maxWidth="md">
+          <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
+            17 Things Only SpeedPad Can Do
+          </Typography>
+          <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
+            Features you won&apos;t find in any other text editor
+          </Typography>
+          <Box component="ol" sx={{ pl: 3 }}>
+            {uniqueFeatures.map((f, i) => (
+              <Typography component="li" key={i} variant="body1" sx={{ mb: 1.5, color: "text.secondary", "&::marker": { color: "primary.main", fontWeight: 700 } }}>
+                <Box component="span" sx={{ color: "text.primary", fontWeight: 600 }}>
+                  {f.split("—")[0]}
+                </Box>
+                {f.includes("—") ? `—${f.split("—").slice(1).join("—")}` : ""}
+              </Typography>
+            ))}
+          </Box>
+        </Container>
+      </Box>
+
+      {/* Feature Categories */}
+      <Container maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
+        <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 4, textAlign: "center" }}>
+          Complete Feature List
+        </Typography>
+        {featureGroups.map((group) => (
+          <Accordion
+            key={group.title}
+            defaultExpanded={group.title === "View Menu"}
+            sx={{ bgcolor: "background.paper", border: "1px solid rgba(255,255,255,0.06)", mb: 1, "&:before": { display: "none" } }}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h6">
+                {group.title}
+                <Chip label={group.features.length} size="small" sx={{ ml: 1.5, height: 22 }} />
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <TableContainer>
+                <Table size="small">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 700, width: "25%" }}>Feature</TableCell>
+                      <TableCell sx={{ fontWeight: 700, width: "15%" }}>
+                        {group.title === "Lens Plugins" ? "Size" : "Shortcut"}
+                      </TableCell>
+                      <TableCell sx={{ fontWeight: 700 }}>Description</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {group.features.map((f) => (
+                      <TableRow key={f.name} sx={{ "&:last-child td": { borderBottom: 0 } }}>
+                        <TableCell sx={{ color: "primary.light", fontWeight: 500 }}>{f.name}</TableCell>
+                        <TableCell>
+                          <Chip label={f.shortcut} size="small" variant="outlined" sx={{ fontFamily: "monospace", fontSize: "0.75rem" }} />
+                        </TableCell>
+                        <TableCell sx={{ color: "text.secondary" }}>{f.desc}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </AccordionDetails>
+          </Accordion>
+        ))}
+      </Container>
+
+      {/* Comparison Table */}
+      <Box sx={{ bgcolor: "background.paper", py: { xs: 4, md: 8 } }}>
+        <Container maxWidth="lg">
+          <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
+            SpeedPad vs The Competition
+          </Typography>
+          <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
+            Feature-by-feature comparison with popular editors
+          </Typography>
+          <TableContainer component={Paper} elevation={0} sx={{ bgcolor: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.08)" }}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell sx={{ fontWeight: 700 }}>Feature</TableCell>
+                  <TableCell align="center" sx={{ fontWeight: 700, color: "primary.light" }}>SpeedPad</TableCell>
+                  <TableCell align="center" sx={{ fontWeight: 700 }}>Notepad++</TableCell>
+                  <TableCell align="center" sx={{ fontWeight: 700 }}>VS Code</TableCell>
+                  <TableCell align="center" sx={{ fontWeight: 700 }}>HxD</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {comparison.map((row) => (
+                  <TableRow key={row.feature} sx={{ "&:last-child td": { borderBottom: 0 } }}>
+                    <TableCell>{row.feature}</TableCell>
+                    <TableCell align="center" sx={{ color: "primary.light", fontWeight: 600 }}>{row.sp}</TableCell>
+                    <TableCell align="center">{row.npp}</TableCell>
+                    <TableCell align="center">{row.vsc}</TableCell>
+                    <TableCell align="center">{row.hxd}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Container>
+      </Box>
+
+      {/* Performance */}
+      <Container maxWidth="md" sx={{ py: { xs: 4, md: 8 }, textAlign: "center" }}>
+        <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 4 }}>
+          Performance Guarantees
+        </Typography>
+        <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", md: "1fr 1fr 1fr" }, gap: 3 }}>
+          {[
+            { metric: "< 50ms", label: "Startup time" },
+            { metric: "< 2s", label: "Open 4GB file" },
+            { metric: "< 100MB", label: "RAM for 4GB file" },
+            { metric: "60 fps", label: "Scroll rendering" },
+            { metric: "64 MB", label: "Mapped view window" },
+            { metric: "< 1s", label: "Tail mode latency" },
+          ].map((p) => (
+            <Box key={p.label} sx={{ p: 3, borderRadius: 2, bgcolor: "background.paper", border: "1px solid rgba(255,255,255,0.06)" }}>
+              <Typography variant="h4" color="primary.light" fontWeight={800}>
+                {p.metric}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {p.label}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+      </Container>
+
+      <Footer />
+    </Box>
+  );
+}

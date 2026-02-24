@@ -7,8 +7,6 @@ import {
   Grid,
   Card,
   CardContent,
-  AppBar,
-  Toolbar,
   Table,
   TableBody,
   TableCell,
@@ -27,7 +25,8 @@ import {
   BugReport as BugReportIcon,
   Download as DownloadIcon,
 } from "@mui/icons-material";
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const features = [
   {
@@ -78,23 +77,7 @@ export default function Home() {
   return (
     <Box sx={{ minHeight: "100vh" }}>
       {/* Navigation */}
-      <AppBar position="sticky" color="transparent" elevation={0} sx={{ backdropFilter: "blur(20px)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
-            <Image src="/itant-logo.svg" alt="IT Ant ehf" width={36} height={36} />
-            <Typography variant="h6" fontWeight={700} color="primary.light">
-              SpeedPad
-            </Typography>
-          </Box>
-          <Box sx={{ display: "flex", gap: 2 }}>
-            {["Features", "Download", "Docs", "Team"].map((item) => (
-              <Button key={item} color="inherit" size="small">
-                {item}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
+      <Navbar />
 
       {/* Hero Section */}
       <Container maxWidth="lg" sx={{ pt: { xs: 8, md: 14 }, pb: { xs: 6, md: 10 }, textAlign: "center" }}>
@@ -111,8 +94,8 @@ export default function Home() {
           <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5, fontSize: "1.1rem" }}>
             Download SpeedPad
           </Button>
-          <Button variant="outlined" size="large" sx={{ px: 4, py: 1.5, fontSize: "1.1rem" }}>
-            View on GitHub
+          <Button variant="outlined" size="large" href="/features" sx={{ px: 4, py: 1.5, fontSize: "1.1rem" }}>
+            Explore Features
           </Button>
         </Box>
 
@@ -203,21 +186,7 @@ export default function Home() {
       </Container>
 
       {/* Footer */}
-      <Box sx={{ borderTop: "1px solid rgba(255,255,255,0.08)", py: 4 }}>
-        <Container maxWidth="lg">
-          <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 2 }}>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
-              <Image src="/itant-logo.svg" alt="IT Ant ehf" width={28} height={28} />
-              <Typography variant="body2" color="text.secondary">
-                © {new Date().getFullYear()} IT Ant ehf — We are ants 🐜
-              </Typography>
-            </Box>
-            <Typography variant="body2" color="text.secondary">
-              itant.is
-            </Typography>
-          </Box>
-        </Container>
-      </Box>
+      <Footer />
     </Box>
   );
 }
