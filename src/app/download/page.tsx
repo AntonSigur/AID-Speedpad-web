@@ -167,14 +167,14 @@ export default function DownloadPage() {
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 500, mx: "auto", mb: 4 }}>
           A single 828KB executable. No installer. No dependencies. Just extract and run.
         </Typography>
-        <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
-          <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntSigur/speedpad/releases/latest" target="_blank" rel="noopener">
-            Download v2.46.0 (.exe)
-          </Button>
-          <Button variant="outlined" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntSigur/speedpad/releases/latest" target="_blank" rel="noopener">
-            Download v2.46.0 (.zip)
+        <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap", mb: 2 }}>
+          <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntonSigur/AID-SpeedPad/releases/latest" target="_blank" rel="noopener">
+            Download Latest Release
           </Button>
         </Box>
+        <Typography variant="body2" color="text.secondary" textAlign="center">
+          Downloads are hosted on GitHub Releases. Visit the release page for .exe and .zip options.
+        </Typography>
       </Container>
 
       {/* Latest 3 Releases */}

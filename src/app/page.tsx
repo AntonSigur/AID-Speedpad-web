@@ -164,7 +164,7 @@ export default function Home() {
                 step: "1",
                 title: "Detect Anomalies",
                 feature: "Timestamp Intelligence (F61)",
-                shortcut: "Ctrl+Shift+R",
+                shortcut: "Ctrl+Shift+A",
                 outcome: "Auto-detect 15+ timestamp formats and surface gaps, spikes, and time-range anomalies instantly.",
                 color: "#2196F3",
               },

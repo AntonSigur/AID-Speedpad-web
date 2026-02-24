@@ -72,8 +72,8 @@ const timeline = [
     color: "#00BCD4",
     title: "The EXE keeps shrinking",
     description:
-      "Background indexing gives instant Ctrl+G on 4GB+ files with .spidx sidecar caching. TinyRegex — a custom Thompson NFA engine — replaced std::wregex entirely, dropping safe_regex.obj from 1137KB to 212KB. Build optimization with /O1 /GL /LTCG pushed the EXE from 877KB down to 828KB. The Typing Challenge shipped as a fun way to test your WPM. SpeedPad got better AND smaller.",
-    highlights: ["Background indexing with .spidx sidecar persistence", "TinyRegex NFA engine (Thompson NFA, Pike VM captures)", "EXE: 877KB → 828KB (20% reduction)", "Typing Challenge with persistent high scores", "134 test suites passing"],
+      "Background indexing gives instant Ctrl+G on 4GB+ files with .spidx sidecar caching. TinyRegex — a custom Thompson NFA engine — replaced std::wregex entirely, dropping safe_regex.obj from 1137KB to 212KB. Build optimization with /O1 /GL /LTCG pushed the EXE down toward 700KB. The Typing Challenge shipped as a fun way to test your WPM. SpeedPad got better AND smaller.",
+    highlights: ["Background indexing with .spidx sidecar persistence", "TinyRegex NFA engine (Thompson NFA, Pike VM captures)", "safe_regex.obj: 1137KB → 212KB (81% reduction)", "Typing Challenge with persistent high scores", "134 test suites passing"],
   },
   {
     phase: "Multi-Cursor",
@@ -82,7 +82,7 @@ const timeline = [
     title: "Full multi-cursor editing arrives",
     description:
       "Multi-cursor editing landed in two phases. Phase 1: Ctrl+D to select next occurrence, Ctrl+Alt+Up/Down to add cursors, simultaneous typing. Phase 2: column/box selection via Alt+Shift+drag, per-cursor paste, multi-cursor Find+Replace. CLI got proper --line, --goto, --encoding, --readonly flags.",
-    highlights: ["Multi-cursor: Ctrl+D, Ctrl+Alt+Up/Down, column select", "Per-cursor paste and multi-cursor Find+Replace", "CLI: --readonly, --pipe, --column", "EXE dipped to 700KB", "136 test suites"],
+    highlights: ["Multi-cursor: Ctrl+D, Ctrl+Alt+Up/Down, column select", "Per-cursor paste and multi-cursor Find+Replace", "CLI: --readonly, --pipe, --column", "703KB EXE", "136 test suites"],
   },
   {
     phase: "Hardening & Polish",
@@ -152,7 +152,7 @@ export default function StoryPage() {
         </Typography>
         <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 650, mx: "auto", fontWeight: 400 }}>
           How a frustration with slow text editors became a 828KB powerhouse
-          that opens 100GB files in under 50ms.
+          that opens 100GB files — while staying under 1MB.
         </Typography>
       </Container>
 
@@ -233,6 +233,34 @@ export default function StoryPage() {
             </Card>
           </Box>
         ))}
+      </Container>
+
+      {/* How This Website Was Built */}
+      <Container maxWidth="md" sx={{ py: { xs: 4, md: 8 } }}>
+        <Chip label="Meta" color="secondary" variant="outlined" sx={{ mb: 2, display: "block", width: "fit-content", mx: "auto" }} />
+        <Typography variant="h3" textAlign="center" sx={{ fontSize: { xs: "1.6rem", md: "2.2rem" }, mb: 2 }}>
+          How This Website Was Built
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
+          This website is itself a product of the IT Ant multi-agent collaboration workflow. The same
+          team that builds SpeedPad — with a Product Owner defining content, a Project Manager coordinating
+          sprints, and a dedicated WebDev agent handling implementation — applies the same discipline to
+          the marketing site.
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
+          The stack: <strong>Next.js 16</strong> with the App Router, <strong>TypeScript</strong> for type
+          safety, and <strong>MUI (Material UI)</strong> for a consistent dark-themed design system. The
+          site is self-hosted — no Vercel, no cloud platform. Just static pages served fast.
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
+          Every page on this site goes through a content cycle: the PO drafts messaging and feature
+          descriptions grounded in the actual source documentation. WebDev implements the design and code.
+          The CEO reviews for brand alignment. Nothing ships without a verified build and a clean lint pass.
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>
+          The philosophy mirrors SpeedPad itself: stay lean, ship often, no bloat. The entire website
+          builds in under 10 seconds. Every commit is pushed to two remotes. The ants never stop.
+        </Typography>
       </Container>
 
       {/* Closing */}
