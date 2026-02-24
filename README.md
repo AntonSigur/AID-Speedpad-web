@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SpeedPad Website — IT Ant ehf
 
-## Getting Started
+Marketing website for [SpeedPad](https://itant.is), the 787KB Windows text editor that opens 100GB+ files.
 
-First, run the development server:
+## Quick Start
 
 ```bash
+# Clone the repository
+git clone git@github.com:AntonSigur/AID-Speedpad-web.git
+cd AID-Speedpad-web
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build     # Creates optimized static build in .next/
+npm run start     # Serves the production build locally
+```
 
-## Learn More
+For static export (self-hosted deployment):
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npx next build    # Generates static pages
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The build output in `.next/` can be served by any static file server or Node.js server.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+- **Next.js 16** (App Router)
+- **React 18** with **TypeScript**
+- **MUI (Material UI)** component library
+- **Self-hosted** — no Vercel dependency
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Site Pages
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Route | Page |
+|-------|------|
+| `/` | Landing page — hero, feature grid, comparison table |
+| `/features` | 140+ features, 20 unique features, 4-editor comparison |
+| `/download` | Release downloads, system requirements, changelog |
+| `/docs` | Getting started, shortcuts, CLI reference, lens plugins |
+| `/team` | IT Ant ehf story, team members, principles |
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout with MUI ThemeRegistry
+│   ├── page.tsx            # Landing page
+│   ├── features/page.tsx   # Features page
+│   ├── download/page.tsx   # Download page
+│   ├── docs/page.tsx       # Documentation page
+│   └── team/page.tsx       # Team page
+├── components/
+│   ├── Navbar.tsx          # Shared navigation bar
+│   └── Footer.tsx          # Shared footer
+└── theme/
+    ├── theme.ts            # MUI dark theme (blue ant colors)
+    └── ThemeRegistry.tsx   # Client-side theme provider
+```
+
+## Branding
+
+- **Company:** IT Ant ehf
+- **Theme:** Dark mode, blue ant colors (#2196F3 primary, #00BCD4 secondary)
+- **Logo:** `public/itant-logo.svg`
+- **Tagline:** "We are ants 🐜"
+

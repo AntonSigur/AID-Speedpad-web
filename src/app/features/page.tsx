@@ -91,16 +91,19 @@ const featureGroups = [
 ];
 
 const comparison = [
-  { feature: "EXE Size", sp: "775 KB", npp: "14 MB", vsc: "400 MB", hxd: "5 MB" },
+  { feature: "EXE Size", sp: "787 KB", npp: "14 MB", vsc: "400 MB", hxd: "3.5 MB" },
   { feature: "Startup Time", sp: "< 50ms", npp: "~1.5s", vsc: "~3s", hxd: "~500ms" },
   { feature: "4GB+ File Support", sp: "✅ Memory-mapped", npp: "❌ Crashes", vsc: "❌ Refuses", hxd: "✅ Hex only" },
   { feature: "Tail Mode", sp: "✅", npp: "❌", vsc: "❌", hxd: "❌" },
   { feature: "Pipe / Stdin", sp: "✅", npp: "❌", vsc: "❌", hxd: "❌" },
   { feature: "Cross-File Search", sp: "✅ Parallel", npp: "✅ Single-thread", vsc: "✅ Indexed", hxd: "❌" },
   { feature: "Diff View", sp: "✅ Built-in", npp: "Plugin", vsc: "✅ Built-in", hxd: "✅ Hex diff" },
-  { feature: "Reverse View", sp: "✅", npp: "❌", vsc: "❌", hxd: "❌" },
+  { feature: "Reverse View", sp: "✅ + Tail", npp: "❌", vsc: "❌", hxd: "❌" },
   { feature: "Anomaly Detection", sp: "✅", npp: "❌", vsc: "❌", hxd: "❌" },
   { feature: "Log Navigation", sp: "✅ 6 formats", npp: "❌", vsc: "❌", hxd: "❌" },
+  { feature: "Max File Size", sp: "100GB+", npp: "~2GB", vsc: "~2GB", hxd: "~8GB" },
+  { feature: "Log Rotation Detect", sp: "10 patterns", npp: "❌", vsc: "❌", hxd: "❌" },
+  { feature: "Search Threads", sp: "All cores", npp: "1", vsc: "1", hxd: "1" },
   { feature: "CSV Mode", sp: "✅", npp: "❌", vsc: "Plugin", hxd: "❌" },
   { feature: "Compressed Files", sp: "✅ .gz/.bz2/.zst", npp: "❌", vsc: "❌", hxd: "❌" },
   { feature: "Command Palette", sp: "✅ Role-based", npp: "❌", vsc: "✅", hxd: "❌" },
@@ -125,6 +128,9 @@ const uniqueFeatures = [
   "Clipboard Ring — access multiple clipboard entries, not just the last one",
   "Speed Challenge — built-in typing speed game with leaderboard",
   "Solitaire 🐜 — classic card game easter egg (Ctrl+Shift+F12)",
+  "100GB+ File Support — sparse sampling reads only 2-4% of the file, other editors crash or refuse",
+  "Cake Slice Navigation — Ctrl+PgUp/PgDn jumps between probes in giant files, drag-to-scrub the File Histogram",
+  "Log Rotation Detection — auto-discovers 10 rotation patterns (numeric, .gz, .bz2, .zst, .xz, date-based, IIS, log4j/NLog)",
 ];
 
 export default function FeaturesPage() {
@@ -139,7 +145,7 @@ export default function FeaturesPage() {
           Every Feature in SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
-          A comprehensive text editor in 775KB — with zero external dependencies, 6 lens plugins, and 87+ commands.
+          A comprehensive text editor in 787KB — with zero external dependencies, 6 lens plugins, and 87+ commands.
         </Typography>
       </Container>
 
@@ -147,10 +153,10 @@ export default function FeaturesPage() {
       <Box sx={{ bgcolor: "background.paper", py: { xs: 4, md: 8 } }}>
         <Container maxWidth="md">
           <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
-            17 Things Only SpeedPad Can Do
+            20 Things Only SpeedPad Can Do
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
-            Features you won&apos;t find in any other text editor
+            Features you won&apos;t find in any other text editor — now 20 and counting
           </Typography>
           <Box component="ol" sx={{ pl: 3 }}>
             {uniqueFeatures.map((f, i) => (

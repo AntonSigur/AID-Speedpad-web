@@ -36,7 +36,7 @@ const features = [
   },
   {
     icon: <MemoryIcon sx={{ fontSize: 40 }} />,
-    title: "775 KB Total",
+    title: "787 KB Total",
     desc: "18× smaller than Notepad++. 513× smaller than VS Code.",
   },
   {
@@ -62,7 +62,7 @@ const features = [
 ];
 
 const comparison = [
-  { feature: "EXE Size", sp: "775 KB", npp: "14 MB", vsc: "400 MB" },
+  { feature: "EXE Size", sp: "787 KB", npp: "14 MB", vsc: "400 MB" },
   { feature: "Startup Time", sp: "< 50ms", npp: "~1.5s", vsc: "~3s" },
   { feature: "Tail Mode", sp: "✅", npp: "❌", vsc: "❌" },
   { feature: "Pipe / Stdin", sp: "✅", npp: "❌", vsc: "❌" },
@@ -81,9 +81,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <Container maxWidth="lg" sx={{ pt: { xs: 8, md: 14 }, pb: { xs: 6, md: 10 }, textAlign: "center" }}>
-        <Chip label="v2.10.1 — 46/46 tests passing" color="primary" variant="outlined" sx={{ mb: 3 }} />
+        <Chip label="v2.10.1 — 53 test suites passing" color="primary" variant="outlined" sx={{ mb: 3 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.5rem", md: "4.5rem" }, mb: 2, background: "linear-gradient(135deg, #64B5F6, #00BCD4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-          SpeedPad. 775KB.
+          SpeedPad. 787KB.
           <br />
           Opens 100GB Files.
         </Typography>
@@ -106,7 +106,7 @@ export default function Home() {
           </Typography>
           <Box sx={{ display: "flex", alignItems: "end", justifyContent: "center", gap: { xs: 2, md: 4 }, height: 180 }}>
             {[
-              { name: "SpeedPad", size: "775 KB", height: 12, color: "#2196F3" },
+              { name: "SpeedPad", size: "787 KB", height: 12, color: "#2196F3" },
               { name: "Notepad++", size: "14 MB", height: 60, color: "#455A64" },
               { name: "VS Code", size: "400 MB", height: 170, color: "#37474F" },
             ].map((ed) => (
