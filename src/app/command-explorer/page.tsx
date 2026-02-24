@@ -15,8 +15,10 @@ import {
   Button,
   TextField,
   InputAdornment,
+  Snackbar,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useState, useMemo } from "react";
@@ -168,6 +170,21 @@ export default function CommandExplorerPage() {
   const [activeRole, setActiveRole] = useState<RoleId>("all");
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [search, setSearch] = useState("");
+  const [copySnack, setCopySnack] = useState(false);
+
+  const copyPreset = (presetLabel: string) => {
+    const preset = presets.find((p) => p.label === presetLabel);
+    if (!preset) return;
+    const cmds = commands.filter((cmd) => {
+      if (preset.filterRole !== "all" && !cmd.roles.includes("all" as RoleId) && !cmd.roles.includes(preset.filterRole))
+        return false;
+      if (preset.filterCat !== "all" && cmd.category !== preset.filterCat)
+        return false;
+      return true;
+    });
+    const text = cmds.map((c) => `${c.shortcut.padEnd(24)} ${c.name} — ${c.outcome}`).join("\n");
+    navigator.clipboard.writeText(text).then(() => setCopySnack(true));
+  };
 
   const filtered = useMemo(() => {
     return commands.filter((cmd) => {
@@ -254,15 +271,25 @@ export default function CommandExplorerPage() {
             Quick presets:
           </Typography>
           {presets.map((p) => (
-            <Button
-              key={p.label}
-              size="small"
-              variant="outlined"
-              onClick={() => { setActiveRole(p.filterRole); setActiveCategory(p.filterCat); setSearch(""); }}
-              sx={{ textTransform: "none", borderColor: "#2196F3", color: "#2196F3" }}
-            >
-              {p.label}
-            </Button>
+            <Box key={p.label} sx={{ display: "inline-flex", gap: 0.5 }}>
+              <Button
+                size="small"
+                variant="outlined"
+                onClick={() => { setActiveRole(p.filterRole); setActiveCategory(p.filterCat); setSearch(""); }}
+                sx={{ textTransform: "none", borderColor: "#2196F3", color: "#2196F3" }}
+              >
+                {p.label}
+              </Button>
+              <Button
+                size="small"
+                variant="text"
+                onClick={() => copyPreset(p.label)}
+                sx={{ minWidth: 32, color: "#607D8B" }}
+                title={`Copy ${p.label} commands`}
+              >
+                <ContentCopyIcon fontSize="small" />
+              </Button>
+            </Box>
           ))}
         </Box>
 
@@ -383,9 +410,25 @@ export default function CommandExplorerPage() {
             commands by role.
           </Typography>
         </Box>
+
+        {/* Cross-links */}
+        <Box sx={{ mt: 4, display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
+          <Button variant="outlined" href="/incident-playbook" sx={{ textTransform: "none" }}>
+            See Commands in Action → Incident Playbook
+          </Button>
+          <Button variant="outlined" href="/docs" sx={{ textTransform: "none" }}>
+            Full Documentation →
+          </Button>
+        </Box>
       </Container>
     </Box>
     <Footer />
+    <Snackbar
+      open={copySnack}
+      autoHideDuration={2000}
+      onClose={() => setCopySnack(false)}
+      message="Command set copied to clipboard"
+    />
     </>
   );
 }
