@@ -142,6 +142,10 @@ export default function MultiLogPage() {
             With SpeedPad? Press <strong>Ctrl+Shift+M</strong>. That&apos;s it. One keystroke. All files discovered,
             decompressed, merged, and ready to search.
           </Typography>
+          <Typography variant="body1" sx={{ lineHeight: 1.8, mt: 2, color: "primary.light" }}>
+            <strong>New in v2.46.0:</strong> Combine with the Log Correlation Engine (Ctrl+Shift+C) to link related
+            events across up to 8 files — timestamps sync automatically with clickable ⛓ indicators.
+          </Typography>
         </Container>
       </Box>
 
