@@ -135,6 +135,22 @@ const commands: Cmd[] = [
   { name: "File Archaeology", shortcut: "—", category: "Tools", roles: ["devops", "sysadmin"], outcome: "File metadata, timestamps, and hashes" },
   { name: "ROT13 / Morse / Binary", shortcut: "—", category: "Tools", roles: ["casual"], outcome: "Fun text transforms and encoding games" },
 
+  // ── Navigation (additional) ──
+  { name: "Previous Histogram Slice", shortcut: "Ctrl+Alt+Left", category: "Navigation", roles: ["devops", "data"], outcome: "Jump to previous histogram slice in sparse mode" },
+  { name: "Next Histogram Slice", shortcut: "Ctrl+Alt+Right", category: "Navigation", roles: ["devops", "data"], outcome: "Jump to next histogram slice in sparse mode" },
+  { name: "First Slice", shortcut: "Ctrl+Home", category: "Navigation", roles: ["devops", "data"], outcome: "Jump to first slice in sparse/histogram view" },
+  { name: "Last Slice", shortcut: "Ctrl+End", category: "Navigation", roles: ["devops", "data"], outcome: "Jump to last slice in sparse/histogram view" },
+
+  // ── View (additional) ──
+  { name: "Unfold All", shortcut: "Ctrl+K, Ctrl+0", category: "View", roles: ["developer", "writer"], outcome: "Unfold all collapsed code regions" },
+  { name: "Close Panel", shortcut: "Escape", category: "View", roles: ["all"], outcome: "Close diff view, dashboard, search panel, or dialog" },
+
+  // ── CLI Flags ──
+  { name: "CLI: Open at Column", shortcut: "--column N", category: "Navigation", roles: ["developer", "devops"], outcome: "Position cursor at column N (1-based index)" },
+  { name: "CLI: Go to Line", shortcut: "--goto N", category: "Navigation", roles: ["developer", "devops"], outcome: "Alias for --line N; jump to specific line on open" },
+  { name: "CLI: Force Encoding", shortcut: "--encoding ENC", category: "File", roles: ["developer", "data"], outcome: "Force encoding: utf8, utf16le, utf16be, ascii" },
+  { name: "CLI: Pipe Input", shortcut: "--pipe", category: "File", roles: ["devops", "sysadmin"], outcome: "Read content from stdin (e.g., dir | speedpad --pipe)" },
+
   // ── Help ──
   { name: "Keyboard Shortcuts", shortcut: "F1", category: "Help", roles: ["all"], outcome: "Display complete shortcut reference" },
   { name: "Command Palette", shortcut: "Ctrl+Shift+P", category: "Help", roles: ["all"], outcome: "Fuzzy-search all 87+ commands with role filtering" },
