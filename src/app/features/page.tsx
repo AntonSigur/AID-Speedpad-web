@@ -14,11 +14,13 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Button,
 } from "@mui/material";
 import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyDownloadCTA from "@/components/StickyDownloadCTA";
+import Link from "next/link";
 
 const featureGroups = [
   {
@@ -235,6 +237,14 @@ export default function FeaturesPage() {
                 </Typography>
               </Paper>
             ))}
+          </Box>
+          <Box sx={{ textAlign: "center", mt: 3 }}>
+            <Button variant="outlined" component={Link} href="/incident-playbook" sx={{ textTransform: "none", fontWeight: 700, borderColor: "#F44336", color: "#F44336", mr: 2 }}>
+              See Incident Playbook →
+            </Button>
+            <Button variant="outlined" component={Link} href="/command-explorer" sx={{ textTransform: "none", fontWeight: 700, borderColor: "#00BCD4", color: "#00BCD4" }}>
+              Explore All Commands →
+            </Button>
           </Box>
         </Container>
       </Box>
