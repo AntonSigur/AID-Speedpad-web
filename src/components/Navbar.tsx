@@ -21,7 +21,7 @@ export default function Navbar() {
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12 }}>
-          <Image src="/favicon.svg" alt="IT Ant ehf" width={44} height={44} />
+          <Image src="/itant-logo.svg" alt="IT Ant ehf" width={44} height={44} style={{ filter: "brightness(0) invert(1)" }} />
           <Typography variant="h6" fontWeight={700} color="primary.light">
             SpeedPad
           </Typography>

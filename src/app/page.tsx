@@ -83,7 +83,7 @@ export default function Home() {
       {/* Hero Section */}
       <Container maxWidth="lg" sx={{ pt: { xs: 8, md: 14 }, pb: { xs: 6, md: 10 }, textAlign: "center" }}>
         <Box sx={{ mb: 3 }}>
-          <Image src="/favicon.svg" alt="IT Ant" width={80} height={80} />
+          <Image src="/itant-logo.svg" alt="IT Ant ehf" width={100} height={100} style={{ filter: "brightness(0) invert(1)" }} />
         </Box>
         <Chip label="v2.11.0 — 55 test suites passing" color="primary" variant="outlined" sx={{ mb: 3 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.5rem", md: "4.5rem" }, mb: 2, background: "linear-gradient(135deg, #64B5F6, #00BCD4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
@@ -95,7 +95,7 @@ export default function Home() {
           A blazing-fast Windows text editor for DevOps engineers, data analysts, and developers who work with large files and live logs.
         </Typography>
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
-          <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5, fontSize: "1.1rem" }}>
+          <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5, fontSize: "1.1rem" }} href="/download">
             Download SpeedPad
           </Button>
           <Button variant="outlined" size="large" href="/features" sx={{ px: 4, py: 1.5, fontSize: "1.1rem" }}>

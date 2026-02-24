@@ -8,7 +8,7 @@ export default function Footer() {
       <Container maxWidth="lg">
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 2 }}>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
-            <Image src="/favicon.svg" alt="IT Ant ehf" width={36} height={36} />
+            <Image src="/itant-logo.svg" alt="IT Ant ehf" width={36} height={36} style={{ filter: "brightness(0) invert(1)" }} />
             <Typography variant="body2" color="text.secondary">
               © {new Date().getFullYear()} IT Ant ehf — We are ants 🐜
             </Typography>

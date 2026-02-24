@@ -103,10 +103,10 @@ export default function DownloadPage() {
           A single 816KB executable. No installer. No dependencies. Just extract and run.
         </Typography>
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
-          <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }}>
+          <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntonSigur/AID-Speedpad-web/releases/latest" target="_blank" rel="noopener">
             Download v2.11.0 (.exe)
           </Button>
-          <Button variant="outlined" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }}>
+          <Button variant="outlined" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntonSigur/AID-Speedpad-web/releases/latest" target="_blank" rel="noopener">
             Download v2.11.0 (.zip)
           </Button>
         </Box>
