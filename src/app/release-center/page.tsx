@@ -36,7 +36,7 @@ const releases = [
     version: "v2.47.0",
     release: 68,
     date: "2026-02-24",
-    size: "758KB",
+    size: "758 KiB (776,192 bytes)",
     tests: 215,
     highlights: [
       "F60 Tier 2: Per-document timestamp storage",
