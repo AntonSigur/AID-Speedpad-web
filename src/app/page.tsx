@@ -114,7 +114,7 @@ export default function Home() {
             { value: "828KB", label: "EXE size" },
             { value: "210", label: "automated tests" },
             { value: "100GB+", label: "file support" },
-            { value: "40+", label: "releases shipped" },
+            { value: "60+", label: "releases shipped" },
             { value: "0", label: "external deps" },
           ].map((m) => (
             <Box key={m.label} sx={{ textAlign: "center", minWidth: 80 }}>

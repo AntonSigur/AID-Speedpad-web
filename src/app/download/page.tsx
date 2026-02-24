@@ -11,7 +11,6 @@ import {
   TableBody,
   TableCell,
   TableContainer,
-  TableHead,
   TableRow,
   Paper,
 } from "@mui/material";
@@ -175,6 +174,27 @@ export default function DownloadPage() {
           <Button variant="outlined" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntSigur/speedpad/releases/latest" target="_blank" rel="noopener">
             Download v2.46.0 (.zip)
           </Button>
+        </Box>
+      </Container>
+
+      {/* Latest 3 Releases */}
+      <Container maxWidth="md" sx={{ pb: 4 }}>
+        <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr" }, gap: 2 }}>
+          {[
+            { v: "v2.46.0", label: "Latest", summary: "Log Correlation Engine — cross-file incident triage", color: "primary" as const },
+            { v: "v2.44.0", label: "Stable", summary: "Timestamp Intelligence — auto-detect 15+ formats, time range summaries", color: "default" as const },
+            { v: "v2.41.0", label: "Stable", summary: "Performance Dashboard — real-time memory, CPU, FPS metrics", color: "default" as const },
+          ].map((r) => (
+            <Card key={r.v} elevation={0} sx={{ bgcolor: "rgba(255,255,255,0.03)", border: r.color === "primary" ? "1px solid rgba(33,150,243,0.3)" : "1px solid rgba(255,255,255,0.06)" }}>
+              <CardContent sx={{ p: 2.5 }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
+                  <Typography variant="h6" fontWeight={700}>{r.v}</Typography>
+                  <Chip label={r.label} size="small" color={r.color} variant={r.color === "primary" ? "filled" : "outlined"} />
+                </Box>
+                <Typography variant="body2" color="text.secondary">{r.summary}</Typography>
+              </CardContent>
+            </Card>
+          ))}
         </Box>
       </Container>
 
