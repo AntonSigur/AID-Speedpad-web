@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "SpeedPad — 703KB Text Editor | IT Ant ehf",
   description:
     "SpeedPad is a blazing-fast Windows text editor. 703KB EXE, opens 100GB+ files, multi-cursor editing, multi-log merge, parallel search, tail mode, and 24+ unique features no other editor has.",
+  keywords: ["text editor", "Windows", "log viewer", "multi-cursor", "multi-log", "SpeedPad", "C++", "lightweight", "IT Ant"],
+  authors: [{ name: "IT Ant ehf", url: "https://itant.is" }],
+  openGraph: {
+    title: "SpeedPad — 703KB Text Editor",
+    description: "The fastest Windows text editor. 703KB, opens 100GB+ files, 24 unique features, zero dependencies.",
+    type: "website",
+    siteName: "SpeedPad",
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
