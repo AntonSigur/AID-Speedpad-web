@@ -25,8 +25,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "SpeedPad",
+    applicationCategory: "DeveloperApplication",
+    operatingSystem: "Windows 10, Windows 11",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    description: "Blazing-fast 828KB Windows text editor. Opens 100GB+ files, multi-cursor editing, log correlation, timestamp intelligence, and 30 unique features.",
+    author: { "@type": "Organization", name: "IT Ant ehf", url: "https://itant.is" },
+    softwareVersion: "2.46.0",
+    fileSize: "828KB",
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <ThemeRegistry>{children}</ThemeRegistry>
       </body>
