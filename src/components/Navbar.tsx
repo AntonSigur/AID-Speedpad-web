@@ -24,6 +24,7 @@ const navItems = [
   { label: "Playbook", href: "/incident-playbook" },
   { label: "Releases", href: "/release-center" },
   { label: "Download", href: "/download" },
+  { label: "Quick Start", href: "/getting-started" },
   { label: "Docs", href: "/docs" },
   { label: "AV FAQ", href: "/av-faq" },
   { label: "Team", href: "/team" },

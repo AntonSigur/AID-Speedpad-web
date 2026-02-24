@@ -104,8 +104,8 @@ export default function Home() {
           <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5, fontSize: "1.1rem" }} href="/download">
             Download SpeedPad
           </Button>
-          <Button variant="outlined" size="large" href="#incident-workflow" sx={{ px: 4, py: 1.5, fontSize: "1.1rem", borderColor: "rgba(255,255,255,0.2)", color: "text.secondary" }}>
-            See Incident Workflow
+          <Button variant="outlined" size="large" href="/getting-started" sx={{ px: 4, py: 1.5, fontSize: "1.1rem", borderColor: "#00BCD4", color: "#00BCD4" }}>
+            Quick Start Guide
           </Button>
         </Box>
 
