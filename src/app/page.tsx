@@ -190,6 +190,53 @@ export default function Home() {
         </TableContainer>
       </Container>
 
+      {/* Who It's For */}
+      <Box sx={{ bgcolor: "background.paper", py: { xs: 6, md: 10 } }}>
+        <Container maxWidth="lg">
+          <Typography variant="h2" textAlign="center" sx={{ mb: 1, fontSize: { xs: "2rem", md: "3rem" } }}>
+            Built For Your Workflow
+          </Typography>
+          <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 6, maxWidth: 500, mx: "auto" }}>
+            SpeedPad adapts to how you actually work
+          </Typography>
+          <Grid container spacing={3}>
+            {[
+              { role: "DevOps Engineers", items: ["Tail mode for live log monitoring", "Multi-log merge across rotated files", "Anomaly detection with timestamp gaps", "8-file tail dashboard"] },
+              { role: "Data Analysts", items: ["CSV lens with column-aligned display", "Frequency analysis (IPs, URLs, UUIDs)", "Handle 4GB+ files without lag", "JSON breadcrumb navigation"] },
+              { role: "Developers", items: ["Multi-cursor editing (Ctrl+D)", "Code folding & bracket matching", "Parallel cross-file search", "Workspace persistence"] },
+            ].map((persona) => (
+              <Grid size={{ xs: 12, md: 4 }} key={persona.role}>
+                <Card elevation={0} sx={{ height: "100%", bgcolor: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                  <CardContent sx={{ p: 3 }}>
+                    <Typography variant="h6" sx={{ mb: 2, color: "primary.light" }}>{persona.role}</Typography>
+                    <Box component="ul" sx={{ pl: 2, m: 0 }}>
+                      {persona.items.map((item) => (
+                        <Typography component="li" variant="body2" color="text.secondary" key={item} sx={{ mb: 0.5 }}>{item}</Typography>
+                      ))}
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
+      {/* CTA */}
+      <Box sx={{ py: { xs: 6, md: 10 }, textAlign: "center" }}>
+        <Container maxWidth="sm">
+          <Typography variant="h3" sx={{ mb: 2, fontSize: { xs: "1.8rem", md: "2.5rem" } }}>
+            703KB. Zero Dependencies. Free.
+          </Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
+            Download SpeedPad and open your first 100GB file in under 2 seconds.
+          </Typography>
+          <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 5, py: 1.5, fontSize: "1.1rem" }} href="/download">
+            Download Now
+          </Button>
+        </Container>
+      </Box>
+
       {/* Footer */}
       <Footer />
     </Box>
