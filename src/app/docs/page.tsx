@@ -328,8 +328,8 @@ export default function DocsPage() {
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 3, lineHeight: 1.8 }}>
             <strong>Security:</strong> Lens DLLs are loaded with <code style={{ color: "#64B5F6" }}>LOAD_LIBRARY_SEARCH_DLL_LOAD_DIR</code> to
-            prevent DLL hijacking. Buggy plugins are auto-deactivated via SEH crash isolation — they can never
-            take down the editor.
+            prevent DLL hijacking. Buggy plugins are auto-deactivated via SEH crash isolation — a faulty lens
+            can never take down the editor. Up to 16 lenses can be loaded simultaneously.
           </Typography>
           <TableContainer component={Paper} elevation={0} sx={{ bgcolor: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.08)" }}>
             <Table>

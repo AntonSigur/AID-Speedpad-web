@@ -210,7 +210,7 @@ export default function Home() {
             Built for Speed
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 6, maxWidth: 500, mx: "auto" }}>
-            30 unique features no other editor has. Zero external dependencies.
+            30 unique features no other editor has. Opens 10GB files with the same startup time as 10KB.
           </Typography>
           <Grid container spacing={3}>
             {features.map((f) => (
@@ -295,6 +295,34 @@ export default function Home() {
           </Grid>
         </Container>
       </Box>
+
+      {/* Cost Comparison */}
+      <Container maxWidth="md" sx={{ py: { xs: 6, md: 10 } }}>
+        <Typography variant="h2" textAlign="center" sx={{ mb: 1, fontSize: { xs: "2rem", md: "3rem" } }}>
+          Enterprise-Grade. Zero Cost.
+        </Typography>
+        <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 5, maxWidth: 520, mx: "auto" }}>
+          Log correlation, timestamp intelligence, and performance monitoring — without the enterprise price tag
+        </Typography>
+        <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr" }, gap: 3 }}>
+          {[
+            { tool: "Splunk", price: "$1,000+/yr", desc: "Log ingestion, correlation, dashboards", color: "#455A64" },
+            { tool: "Datadog", price: "$15/host/mo", desc: "Log management, APM, monitoring", color: "#455A64" },
+            { tool: "SpeedPad", price: "Free", desc: "Log correlation, timestamp intel, perf dashboard — offline, 828KB", color: "#2196F3" },
+          ].map((t) => (
+            <Card key={t.tool} elevation={0} sx={{ textAlign: "center", bgcolor: t.tool === "SpeedPad" ? "rgba(33,150,243,0.08)" : "rgba(255,255,255,0.03)", border: t.tool === "SpeedPad" ? "1px solid rgba(33,150,243,0.3)" : "1px solid rgba(255,255,255,0.06)" }}>
+              <CardContent sx={{ p: 3 }}>
+                <Typography variant="h6" sx={{ mb: 1 }}>{t.tool}</Typography>
+                <Typography variant="h4" sx={{ fontWeight: 700, color: t.tool === "SpeedPad" ? "primary.light" : "text.secondary", mb: 1 }}>{t.price}</Typography>
+                <Typography variant="body2" color="text.secondary">{t.desc}</Typography>
+              </CardContent>
+            </Card>
+          ))}
+        </Box>
+        <Typography variant="body2" color="text.secondary" textAlign="center" sx={{ mt: 3, fontStyle: "italic" }}>
+          SpeedPad is not a replacement for cloud observability platforms. It&apos;s a fast, offline companion for incident triage when you need answers now.
+        </Typography>
+      </Container>
 
       {/* CTA */}
       <Box sx={{ py: { xs: 6, md: 10 }, textAlign: "center" }}>
