@@ -21,21 +21,84 @@ import Footer from "@/components/Footer";
 
 const releases = [
   {
-    version: "v2.23.0",
+    version: "v2.46.0",
     date: "2026-02-24",
     latest: true,
     highlights: [
-      "Bug Blitz: B168/B169 multi-cursor accuracy, B173 CLI validation, B174/B175 hardening",
-      "140/142 tests passing, 706KB EXE",
+      "F60 Log Correlation Engine: cross-file timestamp sync, timeline window, ⛓ indicator",
+      "828KB EXE, 210/210 tests passing",
     ],
   },
   {
-    version: "v2.22.0",
+    version: "v2.44.0",
     date: "2026-02-24",
     latest: false,
     highlights: [
-      "Encoding detection improvements: UTF-32 BOM, 8KB heuristic scan, graceful invalid bytes",
-      "Documentation overhaul: CLI reference, feature list, README updated",
+      "F61 Timestamp Intelligence Phase 2: time range summary, busiest minute, largest gap",
+      "200 test suite milestone — Ctrl+Shift+R for range summary",
+    ],
+  },
+  {
+    version: "v2.41.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "F63 Performance Dashboard: real-time file open time, search speed, memory usage in status bar",
+    ],
+  },
+  {
+    version: "v2.39.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "PE VERSIONINFO resource for Windows Defender compatibility",
+      "736KB EXE, 180 test suites",
+    ],
+  },
+  {
+    version: "v2.35.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "F22 Minimap + F23 Multi-Cursors officially CEO-approved",
+      "F65 Reverse Tail Polish: Ctrl+Alt+V combined toggle, --reverse-tail CLI flag",
+      "736KB EXE, 160 test suites",
+    ],
+  },
+  {
+    version: "v2.30.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "Release #50 milestone — 50 releases, still under 750KB",
+      "~711KB EXE, 148 test suites",
+    ],
+  },
+  {
+    version: "v2.28.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "F37 File Archaeology: one-click metadata inspector (path, size, dates, hashes)",
+      "Clipboard extraction for sharing file info",
+    ],
+  },
+  {
+    version: "v2.27.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "F34 Ultra-Minimal Notifications: status bar color dots (no popups ever)",
+      "First-Byte-Set bitmap optimization for regex",
+    ],
+  },
+  {
+    version: "v2.23.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "Bug Blitz: B168/B169 multi-cursor accuracy, B173-B175 CLI validation hardening",
+      "S003 command injection security fix, 706KB EXE",
     ],
   },
   {
@@ -57,39 +120,12 @@ const releases = [
     ],
   },
   {
-    version: "v2.19.0",
-    date: "2026-02-24",
-    latest: false,
-    highlights: [
-      "EXE size: 700KB — sub-700KB milestone",
-      "Architecture: section merging, TinyRegex CopyFrag, dialog helper extraction",
-    ],
-  },
-  {
-    version: "v2.18.0",
-    date: "2026-02-24",
-    latest: false,
-    highlights: [
-      "EXE size: 706KB (was 807KB, 13% reduction via /O1 /GL /GR- /LTCG)",
-      "Typing Challenge hardening: 12 sample texts, persistent high scores, share to clipboard",
-    ],
-  },
-  {
     version: "v2.17.0",
     date: "2026-02-24",
     latest: false,
     highlights: [
       "F36 Typing Challenge: interactive WPM/accuracy test",
-      "TinyRegex NFA engine replaces std::wregex (807→877KB saving)",
-    ],
-  },
-  {
-    version: "v2.16.0",
-    date: "2026-02-24",
-    latest: false,
-    highlights: [
-      "F20 Phase 2: progress indicator, .spidx sidecar persistence",
-      "EXE size audit: /Gy /O2 /OPT:REF /OPT:ICF, 877KB",
+      "TinyRegex NFA engine replaces std::wregex",
     ],
   },
   {
@@ -98,17 +134,6 @@ const releases = [
     latest: false,
     highlights: [
       "F39 Multi-Log Complete (12/12 ACs): compressed .gz/.bz2/.zst + cross-file search",
-      "858KB EXE, 114+ test suites",
-    ],
-  },
-  {
-    version: "v2.12.0",
-    date: "2026-02-24",
-    latest: false,
-    highlights: [
-      "F39: Multi-Log Unified View (Ctrl+Shift+M), Multi-Log Tail",
-      "Anomaly Gutter Marks, architecture docs",
-      "868KB EXE, 69 test suites",
     ],
   },
   {
@@ -116,34 +141,8 @@ const releases = [
     date: "2026-02-24",
     latest: false,
     highlights: [
-      "F17: Cake Slice Navigator (all 15 ACs)",
-      "F39: Phase 1 Rotation Detection",
+      "F17: Cake Slice Navigator, F39: Phase 1 Rotation Detection",
       "55 tests passing, 816KB EXE",
-    ],
-  },
-  {
-    version: "v2.10.1",
-    date: "2026-02-24",
-    latest: false,
-    highlights: [
-      "F18: Parallel Multi-Threaded Search (thread pool, up to 8 workers)",
-      "--reverse / -r CLI flag, 6 critical bug fixes",
-    ],
-  },
-  {
-    version: "v2.10.0",
-    date: "2026-02-23",
-    latest: false,
-    highlights: [
-      "F04: Session/Workspace, F25: Regex Panel, F24: Code Folding",
-    ],
-  },
-  {
-    version: "v2.9.1",
-    date: "2026-02-22",
-    latest: false,
-    highlights: [
-      "F07: Stdin Pipe Support, F35: Quick File Compare",
     ],
   },
   {
@@ -167,14 +166,14 @@ export default function DownloadPage() {
           Download SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 500, mx: "auto", mb: 4 }}>
-          A single 706KB executable. No installer. No dependencies. Just extract and run.
+          A single 828KB executable. No installer. No dependencies. Just extract and run.
         </Typography>
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
           <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntSigur/speedpad/releases/latest" target="_blank" rel="noopener">
-            Download v2.23.0 (.exe)
+            Download v2.46.0 (.exe)
           </Button>
           <Button variant="outlined" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntSigur/speedpad/releases/latest" target="_blank" rel="noopener">
-            Download v2.23.0 (.zip)
+            Download v2.46.0 (.zip)
           </Button>
         </Box>
       </Container>
@@ -191,7 +190,7 @@ export default function DownloadPage() {
                 {[
                   { label: "Operating System", value: "Windows 10 (1809+) or Windows 11" },
                   { label: "Architecture", value: "x64" },
-                  { label: "EXE Size", value: "706 KB (core editor)" },
+                  { label: "EXE Size", value: "828 KB (core editor)" },
                   { label: "Lens Plugins", value: "120–171 KB each (optional, 6 total)" },
                   { label: "Memory", value: "< 100 MB for 4GB files" },
                   { label: "Dependencies", value: "None — pure Win32, zero external dependencies" },

@@ -14,7 +14,7 @@ export default function Footer() {
               <Typography variant="h6" fontWeight={700} color="primary.light">SpeedPad</Typography>
             </Box>
             <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 280 }}>
-              A blazing-fast 706KB Windows text editor. Opens 100GB+ files instantly. Built by IT Ant ehf.
+              A blazing-fast 828KB Windows text editor. Opens 100GB+ files instantly. Built by IT Ant ehf.
             </Typography>
           </Grid>
           <Grid size={{ xs: 6, md: 2 }}>
@@ -24,6 +24,7 @@ export default function Footer() {
               { label: "Multi-Log", href: "/multilog" },
               { label: "Download", href: "/download" },
               { label: "Documentation", href: "/docs" },
+              { label: "AV FAQ", href: "/av-faq" },
             ].map((l) => (
               <MuiLink key={l.label} component={Link} href={l.href} color="text.secondary" variant="body2" underline="hover" display="block" sx={{ mb: 0.5 }}>
                 {l.label}
@@ -43,8 +44,8 @@ export default function Footer() {
           </Grid>
           <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="subtitle2" sx={{ mb: 1.5 }}>Quick Stats</Typography>
-            <Typography variant="body2" color="text.secondary">v2.23.0 · 706KB · 150+ features · 142 tests</Typography>
-            <Typography variant="body2" color="text.secondary">24 unique features no other editor has</Typography>
+            <Typography variant="body2" color="text.secondary">v2.46.0 · 828KB · 153+ features · 210 tests</Typography>
+            <Typography variant="body2" color="text.secondary">30 unique features no other editor has</Typography>
           </Grid>
         </Grid>
         <Box sx={{ mt: 4, pt: 3, borderTop: "1px solid rgba(255,255,255,0.06)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 1 }}>

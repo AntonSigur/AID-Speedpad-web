@@ -72,44 +72,62 @@ const timeline = [
     color: "#00BCD4",
     title: "The EXE keeps shrinking",
     description:
-      "Background indexing gives instant Ctrl+G on 4GB+ files with .spidx sidecar caching. TinyRegex — a custom Thompson NFA engine — replaced std::wregex entirely, dropping safe_regex.obj from 1137KB to 212KB. Build optimization with /O1 /GL /LTCG pushed the EXE from 877KB down to 706KB. The Typing Challenge shipped as a fun way to test your WPM. SpeedPad got better AND smaller.",
-    highlights: ["Background indexing with .spidx sidecar persistence", "TinyRegex NFA engine (Thompson NFA, Pike VM captures)", "EXE: 877KB → 706KB (20% reduction)", "Typing Challenge with persistent high scores", "134 test suites passing"],
+      "Background indexing gives instant Ctrl+G on 4GB+ files with .spidx sidecar caching. TinyRegex — a custom Thompson NFA engine — replaced std::wregex entirely, dropping safe_regex.obj from 1137KB to 212KB. Build optimization with /O1 /GL /LTCG pushed the EXE from 877KB down to 828KB. The Typing Challenge shipped as a fun way to test your WPM. SpeedPad got better AND smaller.",
+    highlights: ["Background indexing with .spidx sidecar persistence", "TinyRegex NFA engine (Thompson NFA, Pike VM captures)", "EXE: 877KB → 828KB (20% reduction)", "Typing Challenge with persistent high scores", "134 test suites passing"],
   },
   {
     phase: "Multi-Cursor",
-    period: "v2.19.0–v2.23.0 — Sprint 37+",
+    period: "v2.19.0–v2.21.0 — Sprint 37–39",
     color: "#FF5722",
-    title: "Full multi-cursor editing in 706KB",
+    title: "Full multi-cursor editing arrives",
     description:
-      "Multi-cursor editing landed in two phases. Phase 1: Ctrl+D to select next occurrence, Ctrl+Alt+Up/Down to add cursors, simultaneous typing. Phase 2: column/box selection via Alt+Shift+drag, per-cursor paste, multi-cursor Find+Replace. CLI got proper --line, --goto, --encoding, --readonly flags. The EXE crossed below 700KB before settling at 706KB with the new features.",
-    highlights: ["Multi-cursor: Ctrl+D, Ctrl+Alt+Up/Down, column select", "Per-cursor paste and multi-cursor Find+Replace", "CLI: --readonly, --pipe, --column, --line, --goto, --encoding", "EXE dipped to 700KB, now 706KB", "142 test suites passing"],
+      "Multi-cursor editing landed in two phases. Phase 1: Ctrl+D to select next occurrence, Ctrl+Alt+Up/Down to add cursors, simultaneous typing. Phase 2: column/box selection via Alt+Shift+drag, per-cursor paste, multi-cursor Find+Replace. CLI got proper --line, --goto, --encoding, --readonly flags.",
+    highlights: ["Multi-cursor: Ctrl+D, Ctrl+Alt+Up/Down, column select", "Per-cursor paste and multi-cursor Find+Replace", "CLI: --readonly, --pipe, --column", "EXE dipped to 700KB", "136 test suites"],
   },
   {
-    phase: "Hardening",
-    period: "v2.22.0–v2.23.0 — Sprint 40–41",
+    phase: "Hardening & Polish",
+    period: "v2.22.0–v2.30.0 — Sprint 40–48",
     color: "#795548",
-    title: "Bug blitz and encoding hardening",
+    title: "50 releases, under 750KB",
     description:
-      "Sprint 40 brought encoding detection improvements: UTF-32 BOM detection, 8KB heuristic scanning, and graceful handling of invalid UTF-8 bytes. Sprint 41 was a pure bug-fix sprint — multi-cursor position accuracy (B168), Ctrl+D duplicate detection (B169), CLI argument validation (B173/B174/B175). The EXE stabilized at 706KB with 142 test suites passing.",
-    highlights: ["Encoding: UTF-32 BOM, 8KB heuristic, invalid byte handling", "S003: Command injection fix in DecompressToTemp (critical)", "B168: Multi-cursor position accuracy", "B173-B175: CLI validation hardening", "142/142 tests passing"],
+      "The team focused on quality: encoding detection improvements (UTF-32 BOM, 8KB heuristic), security fixes (S003 command injection in DecompressToTemp), and the S005 TinyRegex hardening. F34 Ultra-Minimal Notifications replaced all popups with status bar color dots. F37 File Archaeology added one-click metadata inspection. Release #50 milestone hit at v2.30.0 with 148 tests and ~711KB.",
+    highlights: ["S003 command injection security fix", "F34 Ultra-Minimal Notifications (no popups)", "F37 File Archaeology (metadata, hashes)", "Release #50 milestone at v2.30.0", "148 test suites, ~711KB EXE"],
+  },
+  {
+    phase: "Minimap & Reverse Tail",
+    period: "v2.33.0–v2.39.0 — Sprint 51–57",
+    color: "#E91E63",
+    title: "CEO approves minimap, reverse tail polished",
+    description:
+      "F22 Minimap and F23 Multi-Cursors received CEO approval after governance review. Minimap adds an 80px condensed sidebar with click-to-navigate, viewport indicator, and bookmark markers. F65 Reverse Tail Polish added Ctrl+Alt+V combined toggle and --reverse-tail CLI flag. PE VERSIONINFO resource added for Windows Defender compatibility. 180 test suites at v2.39.0.",
+    highlights: ["F22 Minimap: Ctrl+Alt+M, 80px sidebar", "F65 Reverse Tail: Ctrl+Alt+V combined toggle", "PE VERSIONINFO for Defender compatibility", "736KB EXE, 180 test suites"],
+  },
+  {
+    phase: "Log Analysis Powerhouse",
+    period: "v2.40.0–v2.46.0 — Sprint 58–64",
+    color: "#00BCD4",
+    title: "Three CEO-approved features in 7 sprints",
+    description:
+      "F63 Performance Dashboard shows real-time metrics (file open time, search speed, memory) in the status bar. F61 Timestamp Intelligence auto-detects time formats, displays relative times and line deltas, with Ctrl+Shift+R range summaries. F60 Log Correlation Engine links related entries across up to 8 files with timestamp sync and timeline window. 210 test suites at v2.46.0.",
+    highlights: ["F63 Performance Dashboard: real-time metrics", "F61 Timestamp Intelligence: relative time, deltas, range summary", "F60 Log Correlation: cross-file linking with ⛓ indicator", "200 test suite milestone", "828KB EXE, 210 test suites"],
   },
   {
     phase: "What's Next",
-    period: "Sprint 42+",
+    period: "Sprint 65+",
     color: "#607D8B",
     title: "GPU rendering, session extraction, and beyond",
     description:
-      "The roadmap includes GPU rendering via Direct2D/DirectWrite for buttery smooth 4K scrolling, session/request extraction for tracing IDs across log files, and ultra-minimal status bar notifications. The philosophy stays the same: speed first, zero bloat, one window per file. The ant colony never stops building.",
-    highlights: ["GPU rendering for 4K/HiDPI displays", "Session/Request ID tracing across log files", "Ultra-minimal notification system", "Community open-source contributions"],
+      "The roadmap includes GPU rendering via Direct2D/DirectWrite for buttery smooth 4K scrolling, session/request extraction for tracing IDs across log files, and code signing for zero false positives. The philosophy stays the same: speed first, zero bloat, one window per file. The ant colony never stops building.",
+    highlights: ["GPU rendering for 4K/HiDPI displays", "Session/Request ID tracing across log files", "Authenticode code signing", "Community open-source contributions"],
   },
 ];
 
 const stats = [
-  { label: "Releases", value: "40+", color: "#2196F3" },
-  { label: "Features", value: "150+", color: "#4CAF50" },
-  { label: "Bugs Fixed", value: "160+", color: "#F44336" },
-  { label: "Test Suites", value: "142", color: "#FF9800" },
-  { label: "EXE Size", value: "706 KB", color: "#9C27B0" },
+  { label: "Releases", value: "60+", color: "#2196F3" },
+  { label: "Features", value: "153+", color: "#4CAF50" },
+  { label: "Bugs Fixed", value: "175+", color: "#F44336" },
+  { label: "Test Suites", value: "210", color: "#FF9800" },
+  { label: "EXE Size", value: "828 KB", color: "#9C27B0" },
   { label: "Team Size", value: "7 agents", color: "#00BCD4" },
 ];
 
@@ -133,7 +151,7 @@ export default function StoryPage() {
           Our Story
         </Typography>
         <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 650, mx: "auto", fontWeight: 400 }}>
-          How a frustration with slow text editors became a 706KB powerhouse
+          How a frustration with slow text editors became a 828KB powerhouse
           that opens 100GB files in under 50ms.
         </Typography>
       </Container>

@@ -37,7 +37,7 @@ const features = [
   },
   {
     icon: <MemoryIcon sx={{ fontSize: 40 }} />,
-    title: "706 KB Total",
+    title: "828 KB Total",
     desc: "19× smaller than Notepad++. 556× smaller than VS Code.",
   },
   {
@@ -57,17 +57,21 @@ const features = [
   },
   {
     icon: <BugReportIcon sx={{ fontSize: 40 }} />,
-    title: "142 tests Passing",
+    title: "210 tests Passing",
     desc: "TinyRegex NFA engine. ReDoS-proof. Zero external dependencies.",
   },
 ];
 
 const comparison = [
-  { feature: "EXE Size", sp: "706 KB", npp: "14 MB", vsc: "400 MB" },
+  { feature: "EXE Size", sp: "828 KB", npp: "14 MB", vsc: "400 MB" },
   { feature: "Startup Time", sp: "< 50ms", npp: "~1.5s", vsc: "~3s" },
   { feature: "Tail Mode", sp: "✅", npp: "❌", vsc: "❌" },
   { feature: "Multi-Cursor", sp: "✅", npp: "✅", vsc: "✅" },
   { feature: "Multi-Log Merge", sp: "✅", npp: "❌", vsc: "❌" },
+  { feature: "Log Correlation Engine", sp: "✅", npp: "❌", vsc: "❌" },
+  { feature: "Timestamp Intelligence", sp: "✅", npp: "❌", vsc: "❌" },
+  { feature: "Performance Dashboard", sp: "✅", npp: "❌", vsc: "❌" },
+  { feature: "Minimap Sidebar", sp: "✅", npp: "✅", vsc: "✅" },
   { feature: "Parallel Search", sp: "✅", npp: "❌", vsc: "❌" },
   { feature: "Reverse View", sp: "✅", npp: "❌", vsc: "❌" },
   { feature: "Anomaly Detection", sp: "✅", npp: "❌", vsc: "❌" },
@@ -86,9 +90,9 @@ export default function Home() {
         <Box sx={{ mb: 3 }}>
           <Image src="/itant-logo.svg" alt="IT Ant ehf" width={100} height={100} style={{ filter: "brightness(0) invert(1)" }} />
         </Box>
-        <Chip label="v2.23.0 — 142 test suites passing" color="primary" variant="outlined" sx={{ mb: 3 }} />
+        <Chip label="v2.46.0 — 210 test suites passing" color="primary" variant="outlined" sx={{ mb: 3 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.5rem", md: "4.5rem" }, mb: 2, background: "linear-gradient(135deg, #64B5F6, #00BCD4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-          SpeedPad. 706KB.
+          SpeedPad. 828KB.
           <br />
           Opens 100GB Files.
         </Typography>
@@ -111,7 +115,7 @@ export default function Home() {
           </Typography>
           <Box sx={{ display: "flex", alignItems: "end", justifyContent: "center", gap: { xs: 2, md: 4 }, height: 180 }}>
             {[
-              { name: "SpeedPad", size: "706 KB", height: 10, color: "#2196F3" },
+              { name: "SpeedPad", size: "828 KB", height: 10, color: "#2196F3" },
               { name: "Notepad++", size: "14 MB", height: 60, color: "#455A64" },
               { name: "VS Code", size: "400 MB", height: 170, color: "#37474F" },
             ].map((ed) => (
@@ -136,7 +140,7 @@ export default function Home() {
             Built for Speed
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 6, maxWidth: 500, mx: "auto" }}>
-            24 unique features no other editor has. Zero external dependencies.
+            30 unique features no other editor has. Zero external dependencies.
           </Typography>
           <Grid container spacing={3}>
             {features.map((f) => (
@@ -226,7 +230,7 @@ export default function Home() {
       <Box sx={{ py: { xs: 6, md: 10 }, textAlign: "center" }}>
         <Container maxWidth="sm">
           <Typography variant="h3" sx={{ mb: 2, fontSize: { xs: "1.8rem", md: "2.5rem" } }}>
-            706KB. Zero Dependencies. Free.
+            828KB. Zero Dependencies. Free.
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
             Download SpeedPad and open your first 100GB file in under 2 seconds.

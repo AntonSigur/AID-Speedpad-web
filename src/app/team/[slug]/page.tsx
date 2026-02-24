@@ -108,7 +108,7 @@ const teamData: TeamMember[] = [
     ],
     achievements: [
       "Created the \u002722 Things Only SpeedPad Can Do\u0027 list",
-      "Defined 150+ features for the SpeedPad v2 roadmap",
+      "Defined 153+ features for the SpeedPad v2 roadmap",
       "Coined \u0027We are ants\u0027 team motto and brand identity",
     ],
     philosophy: "Every feature should make someone\u0027s day better. If we can\u0027t explain why in one sentence, we haven\u0027t thought hard enough.",
@@ -194,7 +194,7 @@ const teamData: TeamMember[] = [
       "Found 96+ bugs with detailed root cause analysis",
       "Caught critical DLGTEMPLATE alignment bugs",
       "Identified thread safety issues in parallel search",
-      "Maintained 135/142 test suites passing",
+      "Maintained 135/210 test suites passing",
     ],
     philosophy: "If I can\u0027t break it, it\u0027s probably ready. But I always find a way to break it.",
   },

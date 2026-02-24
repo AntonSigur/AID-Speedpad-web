@@ -54,6 +54,8 @@ const featureGroups = [
     features: [
       { name: "Tail Mode", shortcut: "Ctrl+Shift+T", desc: "Live-follow growing files like tail -f" },
       { name: "Reverse View", shortcut: "Ctrl+Shift+V", desc: "Display file bottom-to-top (reverse-tail: new lines at top)" },
+      { name: "Reverse Tail", shortcut: "Ctrl+Alt+V", desc: "Combined reverse + tail mode in one shortcut, --reverse-tail CLI flag" },
+      { name: "Minimap Sidebar", shortcut: "Ctrl+Alt+M", desc: "80px condensed overview with click-to-navigate, viewport indicator, bookmark markers" },
       { name: "Anomaly Highlighting", shortcut: "Ctrl+Shift+A", desc: "Detect timestamp gaps in logs (amber/red scrollbar marks)" },
       { name: "Tail Dashboard", shortcut: "Ctrl+Alt+T", desc: "Multi-file split-pane log monitor (up to 8 panes)" },
       { name: "File Histogram", shortcut: "Ctrl+Alt+H", desc: "Visual navigator for 100GB+ files (heatmap, click-to-jump)" },
@@ -63,6 +65,11 @@ const featureGroups = [
       { name: "Multi-Log Cross-File Search", shortcut: "Ctrl+Shift+F", desc: "Search across all files in unified multi-log view with file origin" },
       { name: "Anomaly Gutter Marks", shortcut: "—", desc: "Amber dots in gutter for anomaly lines, visible in normal and reverse view" },
       { name: "Log Rotation Detect", shortcut: "—", desc: "Auto-discovers 10 rotation patterns (.1/.2, .gz, .bz2, .zst, .xz, date-based, IIS, log4j)" },
+      { name: "Timestamp Intelligence", shortcut: "—", desc: "Relative time (\"2m ago\"), line deltas (Δ+3.2s), auto timezone detection" },
+      { name: "Time Range Summary", shortcut: "Ctrl+Shift+R", desc: "Total duration, busiest minute, largest gap analysis" },
+      { name: "Log Correlation", shortcut: "Ctrl+Shift+C", desc: "Link related entries across up to 8 files with timestamp sync and ⛓ indicator" },
+      { name: "Performance Dashboard", shortcut: "Ctrl+Shift+P", desc: "Real-time metrics: file open time, search speed, memory usage (zero overhead when inactive)" },
+      { name: "Ultra-Minimal Notifications", shortcut: "—", desc: "Status bar color dots for encoding, EOL, and reload events — no popups ever" },
       { name: "File Statistics", shortcut: "Ctrl+Shift+I", desc: "Show file size, line count, encoding info" },
       { name: "Time Browse", shortcut: "—", desc: "Scrub through log timestamps on a timeline" },
       { name: "Go to Time", shortcut: "Ctrl+T", desc: "Jump to specific timestamp in log" },
@@ -104,7 +111,7 @@ const featureGroups = [
 ];
 
 const comparison = [
-  { feature: "EXE Size", sp: "706 KB", npp: "14 MB", vsc: "400 MB", hxd: "3.5 MB" },
+  { feature: "EXE Size", sp: "828 KB", npp: "14 MB", vsc: "400 MB", hxd: "3.5 MB" },
   { feature: "Startup Time", sp: "< 50ms", npp: "~1.5s", vsc: "~3s", hxd: "~500ms" },
   { feature: "Multi-Cursor", sp: "✅ Full", npp: "✅ Plugin", vsc: "✅ Built-in", hxd: "❌" },
   { feature: "Multi-Log Merge", sp: "✅ + .gz/.bz2/.zst", npp: "❌", vsc: "❌", hxd: "❌" },
@@ -119,6 +126,10 @@ const comparison = [
   { feature: "Max File Size", sp: "100GB+", npp: "~2GB", vsc: "~2GB", hxd: "~8GB" },
   { feature: "Log Rotation Detect", sp: "10 patterns", npp: "❌", vsc: "❌", hxd: "❌" },
   { feature: "Search Threads", sp: "All cores", npp: "1", vsc: "1", hxd: "1" },
+  { feature: "Minimap", sp: "✅ Built-in", npp: "❌", vsc: "✅ Built-in", hxd: "❌" },
+  { feature: "Log Correlation", sp: "✅ Cross-file", npp: "❌", vsc: "❌", hxd: "❌" },
+  { feature: "Timestamp Intel", sp: "✅ Auto-detect", npp: "❌", vsc: "❌", hxd: "❌" },
+  { feature: "Perf Dashboard", sp: "✅ Real-time", npp: "❌", vsc: "❌", hxd: "❌" },
   { feature: "CSV Mode", sp: "✅", npp: "❌", vsc: "Plugin", hxd: "❌" },
   { feature: "Compressed Files", sp: "✅ .gz/.bz2/.zst", npp: "❌", vsc: "❌", hxd: "❌" },
   { feature: "Command Palette", sp: "✅ Role-based", npp: "❌", vsc: "✅", hxd: "❌" },
@@ -150,6 +161,11 @@ const uniqueFeatures = [
   "Log Rotation Detection — auto-discovers 10 rotation patterns (numeric, .gz, .bz2, .zst, .xz, date-based, IIS, log4j/NLog)",
   "TinyRegex NFA Engine — custom regex engine replaces std::regex, guarantees O(nm) complexity, immune to ReDoS attacks",
   "Background Line Index — .spidx sidecar files for instant GoToLine on 4GB+ files (no waiting for full scan)",
+  "Ultra-Minimal Notifications — status bar color dots for encoding, EOL, and reload events (no popups ever)",
+  "Minimap Sidebar — Ctrl+Alt+M condensed document overview with click-to-navigate, viewport indicator, bookmark markers",
+  "Performance Dashboard — real-time status bar metrics: file open time, search speed, memory usage (zero overhead when inactive)",
+  "Timestamp Intelligence — relative time display (\"2m ago\"), line deltas (Δ+3.2s), auto timezone detection, time range summaries",
+  "Log Correlation Engine — Ctrl+Shift+C links related entries across up to 8 files with timestamp sync and timeline window",
 ];
 
 export default function FeaturesPage() {
@@ -159,12 +175,12 @@ export default function FeaturesPage() {
 
       {/* Hero */}
       <Container maxWidth="lg" sx={{ pt: { xs: 6, md: 10 }, pb: 4, textAlign: "center" }}>
-        <Chip label="150+ Features" color="primary" variant="outlined" sx={{ mb: 2 }} />
+        <Chip label="153+ features" color="primary" variant="outlined" sx={{ mb: 2 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.2rem", md: "3.5rem" }, mb: 2 }}>
           Every Feature in SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
-          A comprehensive text editor in 706KB — with zero external dependencies, 6 lens plugins, and 87+ commands.
+          A comprehensive text editor in 828KB — with zero external dependencies, 6 lens plugins, and 87+ commands.
         </Typography>
       </Container>
 
@@ -172,10 +188,10 @@ export default function FeaturesPage() {
       <Box sx={{ bgcolor: "background.paper", py: { xs: 4, md: 8 } }}>
         <Container maxWidth="md">
           <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
-            24 Things Only SpeedPad Can Do
+            30 Things Only SpeedPad Can Do
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
-            Features you won&apos;t find in any other text editor — now 24 and counting
+            Features you won&apos;t find in any other text editor — now 30 and counting
           </Typography>
           <Box component="ol" sx={{ pl: 3 }}>
             {uniqueFeatures.map((f, i) => (

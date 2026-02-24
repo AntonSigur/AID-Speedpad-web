@@ -34,7 +34,7 @@ const docSections = [
   { icon: <TerminalIcon />, title: "CLI Reference", href: "#cli", desc: "Command-line flags and examples" },
   { icon: <SpeedIcon />, title: "Large Files", href: "#large-files", desc: "Memory-mapped I/O, 100GB+ support" },
   { icon: <ExtensionIcon />, title: "Lens Plugins", href: "#lenses", desc: "CSV, JSON, Log, XML/YAML, GZ, Frequency" },
-  { icon: <BugReportIcon />, title: "Full Features", href: "/features", desc: "All 150+ features listed" },
+  { icon: <BugReportIcon />, title: "Antivirus FAQ", href: "/av-faq", desc: "False positives explained + how to fix" },
 ];
 
 const essentialShortcuts = [
@@ -52,7 +52,10 @@ const essentialShortcuts = [
   { shortcut: "Ctrl+Alt+H", action: "File Histogram" },
   { shortcut: "Ctrl+Shift+A", action: "Anomaly Highlighting" },
   { shortcut: "Ctrl+Shift+M", action: "Multi-Log Unified View" },
-  { shortcut: "Ctrl+Shift+C", action: "CSV Mode" },
+  { shortcut: "Ctrl+Shift+C", action: "Log Correlation Engine (cross-file)" },
+  { shortcut: "Ctrl+Alt+M", action: "Minimap Sidebar toggle" },
+  { shortcut: "Ctrl+Alt+V", action: "Reverse Tail (combined reverse + tail)" },
+  { shortcut: "Ctrl+Shift+R", action: "Time Range Summary" },
   { shortcut: "Ctrl+Shift+D", action: "Dark Mode" },
   { shortcut: "Ctrl+R", action: "Read-Only Toggle" },
   { shortcut: "Ctrl+L", action: "Filter Lines" },
@@ -82,6 +85,7 @@ const cliExamples = [
   { cmd: "speedpad --diff old.txt new.txt", desc: "Side-by-side diff" },
   { cmd: "speedpad --readonly config.ini", desc: "Open in read-only mode" },
   { cmd: "speedpad --encoding utf16le data.bin", desc: "Open with specific encoding" },
+  { cmd: "speedpad --reverse-tail app.log", desc: "Reverse tail mode (newest at top, live-follow)" },
   { cmd: "speedpad --pipe", desc: "Read from stdin explicitly" },
   { cmd: "speedpad --column 5 data.csv", desc: "Open at specific column" },
   { cmd: "speedpad --workspace ops.speedws", desc: "Open a saved workspace" },
@@ -142,7 +146,7 @@ export default function DocsPage() {
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 3, lineHeight: 1.8 }}>
             SpeedPad is a portable application — no installer needed. Download the EXE, place it in any folder,
-            and run it. That&apos;s it. SpeedPad is a single 706KB executable with zero external dependencies.
+            and run it. That&apos;s it. SpeedPad is a single 828KB executable with zero external dependencies.
           </Typography>
 
           <Typography variant="h5" sx={{ mb: 2, mt: 4 }}>Opening Files</Typography>

@@ -22,6 +22,7 @@ const navItems = [
   { label: "Multi-Log", href: "/multilog" },
   { label: "Download", href: "/download" },
   { label: "Docs", href: "/docs" },
+  { label: "AV FAQ", href: "/av-faq" },
   { label: "Team", href: "/team" },
   { label: "Story", href: "/story" },
 ];
