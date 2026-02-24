@@ -20,6 +20,7 @@ import Link from "next/link";
 const navItems = [
   { label: "Features", href: "/features" },
   { label: "Multi-Log", href: "/multilog" },
+  { label: "How It Works", href: "/how-it-works" },
   { label: "Commands", href: "/command-explorer" },
   { label: "Playbook", href: "/incident-playbook" },
   { label: "Releases", href: "/release-center" },

@@ -358,6 +358,11 @@ export default function Home() {
               </Grid>
             ))}
           </Grid>
+          <Box sx={{ textAlign: "center", mt: 3 }}>
+            <Button variant="text" href="/how-it-works" sx={{ color: "#00BCD4" }}>
+              Deep Dive: How SpeedPad Handles 100GB+ Files →
+            </Button>
+          </Box>
         </Container>
       </Box>
 
