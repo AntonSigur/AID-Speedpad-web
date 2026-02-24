@@ -20,12 +20,21 @@ import Footer from "@/components/Footer";
 
 const releases = [
   {
-    version: "v2.46.0",
+    version: "v2.47.0",
     date: "2026-02-24",
     latest: true,
     highlights: [
+      "F60 Tier 2: Per-document timestamp storage, pointer safety (S006)",
+      `${EXE_SIZE} EXE, ${TEST_COUNT}/${TEST_COUNT} tests passing`,
+    ],
+  },
+  {
+    version: "v2.46.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
       "F60 Log Correlation Engine: cross-file timestamp sync, timeline window, ⛓ indicator",
-      "828KB EXE, 210/210 tests passing",
+      "F63 Performance Dashboard, B178 tail mode fix",
     ],
   },
   {
@@ -155,9 +164,7 @@ const releases = [
 ];
 
 /* ───── centralized download config ───── */
-const CURRENT_VERSION = "v2.46.0";
-const SELF_HOSTED_BASE = `https://itant.is/releases/${CURRENT_VERSION}`;
-const GITHUB_RELEASES = "https://github.com/AntonSigur/AID-SpeedPad/releases/latest";
+import { CURRENT_VERSION, GITHUB_RELEASES, EXE_SIZE, EXE_SIZE_SPACED, TEST_COUNT, DOWNLOAD_EXE, DOWNLOAD_ZIP } from "@/lib/product-config";
 
 export default function DownloadPage() {
   return (
@@ -170,13 +177,13 @@ export default function DownloadPage() {
           Download SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 500, mx: "auto", mb: 4 }}>
-          A single 828KB executable. No installer. No dependencies. Just extract and run.
+          A single {EXE_SIZE} executable. No installer. No dependencies. Just extract and run.
         </Typography>
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap", mb: 2 }}>
-          <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href={`${SELF_HOSTED_BASE}/SpeedPad.exe`} target="_blank" rel="noopener">
+          <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href={DOWNLOAD_EXE} target="_blank" rel="noopener">
             Download EXE ({CURRENT_VERSION})
           </Button>
-          <Button variant="outlined" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href={`${SELF_HOSTED_BASE}/SpeedPad-${CURRENT_VERSION}.zip`} target="_blank" rel="noopener">
+          <Button variant="outlined" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href={DOWNLOAD_ZIP} target="_blank" rel="noopener">
             Download ZIP ({CURRENT_VERSION})
           </Button>
         </Box>
@@ -195,7 +202,8 @@ export default function DownloadPage() {
       <Container maxWidth="md" sx={{ pb: 4 }}>
         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr" }, gap: 2 }}>
           {[
-            { v: "v2.46.0", label: "Latest", summary: "Log Correlation Engine — cross-file incident triage", color: "primary" as const },
+            { v: CURRENT_VERSION, label: "Latest", summary: "Per-document timestamps — F60 Tier 2, S006 pointer safety", color: "primary" as const },
+            { v: "v2.46.0", label: "Stable", summary: "Log Correlation Engine — cross-file incident triage", color: "secondary" as const },
             { v: "v2.44.0", label: "Stable", summary: "Timestamp Intelligence — auto-detect 15+ formats, time range summaries", color: "default" as const },
             { v: "v2.41.0", label: "Stable", summary: "Performance Dashboard — real-time memory, CPU, FPS metrics", color: "default" as const },
           ].map((r) => (
@@ -224,7 +232,7 @@ export default function DownloadPage() {
                 {[
                   { label: "Operating System", value: "Windows 10 (1809+) or Windows 11" },
                   { label: "Architecture", value: "x64" },
-                  { label: "EXE Size", value: "828 KB (core editor)" },
+                  { label: "EXE Size", value: `${EXE_SIZE_SPACED} (core editor)` },
                   { label: "Lens Plugins", value: "120–171 KB each (optional, 6 total)" },
                   { label: "Memory", value: "< 100 MB for 4GB files" },
                   { label: "Dependencies", value: "None — pure Win32, zero external dependencies" },

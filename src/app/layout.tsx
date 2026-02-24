@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import ThemeRegistry from "@/theme/ThemeRegistry";
 
 export const metadata: Metadata = {
-  title: "SpeedPad — 828KB Text Editor | IT Ant ehf",
+  title: "SpeedPad — 758KB Text Editor | IT Ant ehf",
   description:
-    "SpeedPad is a blazing-fast Windows text editor. 828KB EXE, opens 100GB+ files, multi-cursor editing, multi-log merge, parallel search, tail mode, and 30+ unique features no other editor has.",
+    "SpeedPad is a blazing-fast Windows text editor. 758KB EXE, opens 100GB+ files, multi-cursor editing, multi-log merge, parallel search, tail mode, and 30+ unique features no other editor has.",
   keywords: ["text editor", "Windows", "log viewer", "multi-cursor", "multi-log", "SpeedPad", "C++", "lightweight", "IT Ant"],
   authors: [{ name: "IT Ant ehf", url: "https://itant.is" }],
   openGraph: {
-    title: "SpeedPad — 828KB Text Editor",
-    description: "The fastest Windows text editor. 828KB, opens 100GB+ files, 30 unique features, zero dependencies.",
+    title: "SpeedPad — 758KB Text Editor",
+    description: "The fastest Windows text editor. 758KB, opens 100GB+ files, 30 unique features, zero dependencies.",
     type: "website",
     siteName: "SpeedPad",
   },
@@ -32,10 +32,10 @@ export default function RootLayout({
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Windows 10, Windows 11",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    description: "Blazing-fast 828KB Windows text editor. Opens 100GB+ files, multi-cursor editing, log correlation, timestamp intelligence, and 30 unique features.",
+    description: "Blazing-fast 758KB Windows text editor. Opens 100GB+ files, multi-cursor editing, log correlation, timestamp intelligence, and 30 unique features.",
     author: { "@type": "Organization", name: "IT Ant ehf", url: "https://itant.is" },
     softwareVersion: "2.46.0",
-    fileSize: "828KB",
+    fileSize: "758KB",
   };
 
   return (

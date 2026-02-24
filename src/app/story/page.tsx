@@ -111,7 +111,16 @@ const timeline = [
     title: "Three CEO-approved features in 7 sprints",
     description:
       "F63 Performance Dashboard shows real-time metrics (file open time, search speed, memory) in the status bar. F61 Timestamp Intelligence auto-detects time formats, displays relative times and line deltas, with Ctrl+Shift+R range summaries. F60 Log Correlation Engine links related entries across up to 8 files with timestamp sync and timeline window. 210 test suites at v2.46.0.",
-    highlights: ["F63 Performance Dashboard: real-time metrics", "F61 Timestamp Intelligence: relative time, deltas, range summary", "F60 Log Correlation: cross-file linking with ⛓ indicator", "200 test suite milestone", "828KB EXE, 210 test suites"],
+    highlights: ["F63 Performance Dashboard: real-time metrics", "F61 Timestamp Intelligence: relative time, deltas, range summary", "F60 Log Correlation: cross-file linking with ⛓ indicator", "200 test suite milestone", "828KB EXE at v2.46.0"],
+  },
+  {
+    phase: "Hardening & Optimization",
+    period: "v2.47.0 — Sprint 65",
+    color: "#8BC34A",
+    title: "Smaller, faster, safer",
+    description:
+      "F60 Tier 2 adds per-document timestamp storage for faster re-correlation. B178 fixes tail mode live-append tracking. S006 hardens correlation engine pointer safety. Binary optimized to 758KB — 70KB smaller than v2.46.0. 215 test suites and counting.",
+    highlights: ["F60 Tier 2: per-document timestamp storage", "B178: tail mode follows appends correctly", "S006: correlation pointer safety", "758KB EXE, 215 tests"],
   },
   {
     phase: "What's Next",
@@ -128,8 +137,8 @@ const stats = [
   { label: "Releases", value: "60+", color: "#2196F3" },
   { label: "Features", value: "153+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "175+", color: "#F44336" },
-  { label: "Test Suites", value: "210", color: "#FF9800" },
-  { label: "EXE Size", value: "828 KB", color: "#9C27B0" },
+  { label: "Test Suites", value: "215", color: "#FF9800" },
+  { label: "EXE Size", value: "758 KB", color: "#9C27B0" },
   { label: "Team Size", value: "7 agents", color: "#00BCD4" },
 ];
 
@@ -153,7 +162,7 @@ export default function StoryPage() {
           Our Story
         </Typography>
         <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 650, mx: "auto", fontWeight: 400 }}>
-          How a frustration with slow text editors became a 828KB powerhouse
+          How a frustration with slow text editors became a 758KB powerhouse
           that opens 100GB files — while staying under 1MB.
         </Typography>
       </Container>
