@@ -11,6 +11,25 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Incident Response with SpeedPad",
+  description: "Step-by-step incident response playbooks using SpeedPad text editor for log analysis",
+  step: [
+    { "@type": "HowToStep", position: 1, name: "Open log files", text: "Open multiple log files with SpeedPad — handles 100GB+ files with memory-mapped I/O" },
+    { "@type": "HowToStep", position: 2, name: "Activate Timestamp Intelligence", text: "Press Ctrl+Shift+A to auto-detect timestamps, see relative times and anomaly gaps" },
+    { "@type": "HowToStep", position: 3, name: "Correlate across files", text: "Press Ctrl+Shift+C to link related entries across up to 8 log files" },
+    { "@type": "HowToStep", position: 4, name: "Monitor in real-time", text: "Use Ctrl+Shift+T for tail mode to watch live log output during incidents" },
+  ],
+  tool: { "@type": "SoftwareApplication", name: "SpeedPad", applicationCategory: "Text Editor", fileSize: "828KB" },
+};
+
 export default function IncidentPlaybookLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {children}
+    </>
+  );
 }

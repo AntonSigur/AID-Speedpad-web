@@ -11,6 +11,26 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "SpeedPad Commands",
+  description: "86 keyboard shortcuts, CLI flags, and commands for SpeedPad text editor",
+  numberOfItems: 86,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Multi-Cursor Select", description: "Ctrl+Click — Add cursor at click position for simultaneous multi-point editing" },
+    { "@type": "ListItem", position: 2, name: "Parallel Search", description: "Ctrl+Shift+F — Regex search across all open files with instant results" },
+    { "@type": "ListItem", position: 3, name: "Log Correlation Mode", description: "Ctrl+Shift+C — Link related entries across up to 8 log files by timestamp" },
+    { "@type": "ListItem", position: 4, name: "Timestamp Intelligence", description: "Ctrl+Shift+A — Auto-detect time formats, show relative times and anomaly highlighting" },
+    { "@type": "ListItem", position: 5, name: "Command Palette", description: "Ctrl+Shift+P — Fuzzy-search all 87+ commands with role filtering" },
+  ],
+};
+
 export default function CommandExplorerLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {children}
+    </>
+  );
 }

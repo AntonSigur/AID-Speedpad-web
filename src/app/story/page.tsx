@@ -7,9 +7,11 @@ import {
   CardContent,
   Chip,
   Grid,
+  Button,
 } from "@mui/material";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 const timeline = [
   {
@@ -242,10 +244,10 @@ export default function StoryPage() {
           How This Website Was Built
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
-          This website is itself a product of the IT Ant multi-agent collaboration workflow. The same
-          team that builds SpeedPad — with a Product Owner defining content, a Project Manager coordinating
-          sprints, and a dedicated WebDev agent handling implementation — applies the same discipline to
-          the marketing site.
+          This website is itself a product of the IT Ant multi-agent collaboration workflow. Seven AI
+          agents — Product Owner, Project Manager, Software Architect, two Developers, a Tester, and
+          a WebDev agent — communicate through file-based inboxes, run security checks before every work
+          cycle, and ship through the same sprint discipline used for SpeedPad itself.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
           The stack: <strong>Next.js 16</strong> with the App Router, <strong>TypeScript</strong> for type
@@ -253,14 +255,33 @@ export default function StoryPage() {
           site is self-hosted — no Vercel, no cloud platform. Just static pages served fast.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
-          Every page on this site goes through a content cycle: the PO drafts messaging and feature
-          descriptions grounded in the actual source documentation. WebDev implements the design and code.
+          Every page goes through a content cycle: the PO drafts messaging grounded in actual source
+          documentation (FEATURES.md, SHORTCUTS.md, CHANGELOG.md). WebDev implements the design and code.
           The CEO reviews for brand alignment. Nothing ships without a verified build and a clean lint pass.
+          Every claim on this site traces back to source documentation or measured benchmarks.
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
+          The website has grown alongside SpeedPad — from 5 initial pages to {" "}
+          <strong>12 routes</strong> covering features, documentation, download, a command explorer with
+          86 searchable commands, an incident response playbook, team profiles, and this story. Each
+          version bump ripples through every page: stats bars, comparison tables, download links,
+          SEO metadata, and JSON-LD structured data all update together.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>
           The philosophy mirrors SpeedPad itself: stay lean, ship often, no bloat. The entire website
           builds in under 10 seconds. Every commit is pushed to two remotes. The ants never stop.
         </Typography>
+      </Container>
+
+      {/* Explore More */}
+      <Container maxWidth="md" sx={{ py: { xs: 3, md: 5 }, textAlign: "center" }}>
+        <Typography variant="h5" sx={{ mb: 3 }}>Explore What the Ants Built</Typography>
+        <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
+          <Button variant="contained" component={Link} href="/command-explorer">86 Commands →</Button>
+          <Button variant="outlined" component={Link} href="/incident-playbook">Incident Playbook →</Button>
+          <Button variant="outlined" component={Link} href="/features">153+ Features →</Button>
+          <Button variant="outlined" component={Link} href="/download">Download →</Button>
+        </Box>
       </Container>
 
       {/* Closing */}
