@@ -28,6 +28,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyDownloadCTA from "@/components/StickyDownloadCTA";
+import Link from "next/link";
 
 const capabilities = [
   {
@@ -272,6 +273,9 @@ export default function MultiLogPage() {
             <Typography variant="body1" color="text.secondary" sx={{ mt: 2, fontStyle: "italic" }}>
               All of this in 828KB. No plugins. No extensions. Just speed.
             </Typography>
+            <Button variant="outlined" component={Link} href="/incident-playbook#log-rotation-failure-investigation" sx={{ mt: 2, textTransform: "none", fontWeight: 700, borderColor: "#FF9800", color: "#FF9800" }}>
+              See Log Rotation Playbook →
+            </Button>
           </Box>
         </Container>
       </Box>
