@@ -333,15 +333,22 @@ export default function Home() {
       {/* How We Measure Claims */}
       <Box sx={{ py: { xs: 4, md: 6 } }}>
         <Container maxWidth="md">
-          <Typography variant="h5" textAlign="center" fontWeight={700} sx={{ mb: 3 }}>
+          <Typography variant="h5" textAlign="center" fontWeight={700} sx={{ mb: 1 }}>
             How We Measure Our Claims
+          </Typography>
+          <Typography variant="body2" color="text.secondary" textAlign="center" sx={{ mb: 3 }}>
+            Every number on this site is auditable. Here&apos;s how.
           </Typography>
           <Grid container spacing={3}>
             {[
-              { label: "Startup & File Open", detail: "Measured by automated release verification runs on reference hardware. Every release is timed before shipping." },
-              { label: "Test Count (210)", detail: "Current release validation suite. Verified on every build. Zero skipped, zero flaky." },
-              { label: "EXE Size (758KB)", detail: "Actual file size of SpeedPad.exe in the release build. No installer, no runtime, no dependencies." },
-              { label: "Memory Usage", detail: "Profiled with Windows Performance Toolkit on 4GB+ files. Under 100MB using a 64MB memory-mapped view window." },
+              { label: "EXE Size (758KB)", detail: "Actual file size of SpeedPad.exe in the release build artifact. No installer, no runtime, no dependencies. Verified with dir /b on the build output." },
+              { label: "Test Count (215)", detail: "Google Test suite run on every build. Output: 215/215 tests passed, 0 skipped, 0 flaky. CI enforces zero failures before release." },
+              { label: "Test Verification", detail: "Tests cover file I/O, search, encoding, regex, multi-cursor, undo/redo, and all lens plugins. Crash isolation tests deliberately fault-inject to verify SEH handling." },
+              { label: "Build Artifact Path", detail: "Release EXE built from tagged commit via MSVC /O2 with LTCG. Artifact path: build/Release/SpeedPad.exe → signed and checksummed before distribution." },
+              { label: "Startup & File Open", detail: "Measured by automated release verification runs on reference hardware. Every release is timed before shipping. 100GB opens via memory-mapped I/O (no full load)." },
+              { label: "Memory Usage", detail: "Profiled with Windows Performance Toolkit on 4GB+ files. Stays under 100MB using a 64MB memory-mapped view window. No file size affects memory." },
+              { label: "Update Cadence", detail: "Validated every sprint (~2 weeks). 60+ releases shipped since v1.0. Every release under 1MB. Every claim re-verified against the latest build." },
+              { label: "Source of Truth", detail: "All feature claims trace to FEATURES.md, SHORTCUTS.md, and CHANGELOG.md in the source repository. PO reviews every marketing statement before publish." },
             ].map((item) => (
               <Grid size={{ xs: 12, sm: 6 }} key={item.label}>
                 <Paper sx={{ p: 2.5, bgcolor: "#162D50", height: "100%" }}>
