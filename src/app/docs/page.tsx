@@ -239,20 +239,74 @@ export default function DocsPage() {
           <Typography variant="body1" color="text.secondary" sx={{ mb: 2, lineHeight: 1.8 }}>
             SpeedPad uses <strong>memory-mapped I/O</strong> to handle files of any size without loading them
             into RAM. A 4GB file uses less than 100MB of memory — the editor maps a sliding 64MB view window
-            over the file data.
+            over the file data using the Windows <code style={{ color: "#64B5F6" }}>CreateFileMapping</code> / <code style={{ color: "#64B5F6" }}>MapViewOfFile</code> API.
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 2, lineHeight: 1.8 }}>
             Files open in under 2 seconds regardless of size. The <strong>line index builds lazily</strong> —
-            scrolling through a large file triggers background indexing only as needed.
+            scrolling through a large file triggers background indexing only as needed. Line offsets are indexed
+            in 64KB chunks, capped at 100,000 lines per invocation to prevent UI freezes.
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 2, lineHeight: 1.8 }}>
             For files over 1GB, the <strong>File Histogram</strong> (Ctrl+Alt+H) provides a visual heatmap
             with density information, timestamp labels, and click-to-jump navigation. The sparse indexing
             engine takes 40 sample points across the file for instant overview.
           </Typography>
+
+          <Typography variant="h5" sx={{ mb: 2, mt: 4 }}>Piece Table (Copy-on-Write Editing)</Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 2, lineHeight: 1.8 }}>
+            Edits are never applied to the original file data. SpeedPad maintains a <strong>piece table</strong> —
+            a sequence of pieces referencing either the original memory-mapped buffer (read-only) or an append-only
+            add buffer for inserted text. This gives O(log n) lookup and 500 levels of undo/redo.
+          </Typography>
+
+          <Typography variant="h5" sx={{ mb: 2, mt: 4 }}>Encoding Detection</Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 2, lineHeight: 1.8 }}>
+            SpeedPad auto-detects encoding on open: <strong>BOM detection</strong> (UTF-8/16 LE/BE),
+            <strong> null-byte heuristic</strong> (UTF-16 if &gt;12.5% nulls),
+            <strong> UTF-8 validation</strong> (multi-byte sequence check), and <strong>ASCII fallback</strong>.
+            Decoding is done per-line at render time — the entire file is never converted at once.
+          </Typography>
+
+          <Typography variant="h5" sx={{ mb: 2, mt: 4 }}>Feature-Specific Limits</Typography>
+          <TableContainer component={Paper} elevation={0} sx={{ bgcolor: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.08)" }}>
+            <Table size="small">
+              <TableHead>
+                <TableRow>
+                  <TableCell sx={{ fontWeight: 700 }}>Feature</TableCell>
+                  <TableCell sx={{ fontWeight: 700 }}>Max File Size</TableCell>
+                  <TableCell sx={{ fontWeight: 700 }}>Reason</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {[
+                  { feature: "Cross-File Search", max: "500 MB", reason: "Scans entire file content for matches" },
+                  { feature: "File Compare / Diff", max: "64 MB", reason: "Loads both files for LCS algorithm" },
+                  { feature: "Regex Highlighting", max: "500 MB", reason: "Applies regex across all lines" },
+                  { feature: "Frequency Lens", max: "500 MB", reason: "Counts all line occurrences" },
+                ].map((l) => (
+                  <TableRow key={l.feature} sx={{ "&:last-child td": { borderBottom: 0 } }}>
+                    <TableCell sx={{ color: "primary.light", fontWeight: 500 }}>{l.feature}</TableCell>
+                    <TableCell>{l.max}</TableCell>
+                    <TableCell sx={{ color: "text.secondary" }}>{l.reason}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+            Files exceeding these limits remain fully viewable and editable — only the specific feature is unavailable.
+          </Typography>
+
+          <Typography variant="h5" sx={{ mb: 2, mt: 4 }}>Tail Mode &amp; File Monitoring</Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 2, lineHeight: 1.8 }}>
+            A background thread uses <code style={{ color: "#64B5F6" }}>ReadDirectoryChangesW</code> to watch for changes.
+            When the file grows, SpeedPad refreshes the memory mapping and extends the line index incrementally.
+            If the file shrinks (log rotation), the index is fully rebuilt. Rate calculation uses a circular buffer
+            of line-count samples to display lines/second in the status bar.
+          </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>
-            Files over 256MB open in <strong>read-only mode</strong> automatically. Smaller files switch to
-            edit mode on first keystroke, backed by a piece table with 500 levels of undo/redo.
+            Operations on files larger than 1MB automatically run on a background thread. Cross-file search uses
+            a parallel thread pool (up to 8 workers). Smaller files (&lt;1MB) are processed inline for lower latency.
           </Typography>
         </Container>
       </Box>
@@ -264,8 +318,14 @@ export default function DocsPage() {
             Lens Plugins
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 3, lineHeight: 1.8 }}>
-            SpeedPad uses a DLL-based lens architecture. Lenses are opt-in and loaded on demand —
-            they add file-type-specific features without bloating the core editor.
+            SpeedPad uses a DLL-based lens architecture. Lenses are <strong>opt-in</strong> and loaded on demand —
+            they add file-type-specific features without bloating the core editor. When a matching file is opened,
+            a hint appears in the status bar. Activate via the menu command to get specialized rendering.
+          </Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 3, lineHeight: 1.8 }}>
+            <strong>Security:</strong> Lens DLLs are loaded with <code style={{ color: "#64B5F6" }}>LOAD_LIBRARY_SEARCH_DLL_LOAD_DIR</code> to
+            prevent DLL hijacking. Buggy plugins are auto-deactivated via SEH crash isolation — they can never
+            take down the editor.
           </Typography>
           <TableContainer component={Paper} elevation={0} sx={{ bgcolor: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.08)" }}>
             <Table>
@@ -278,12 +338,12 @@ export default function DocsPage() {
               </TableHead>
               <TableBody>
                 {[
-                  { name: "CSV/TSV", size: "120 KB", triggers: ".csv, .tsv, or detected separator" },
-                  { name: "JSON Navigator", size: "126 KB", triggers: '.json, .jsonl, or leading {/[' },
-                  { name: "Log Navigator", size: "135 KB", triggers: ".log, Apache/nginx/syslog/IIS/JSONL/log4j patterns" },
-                  { name: "XML/YAML", size: "129 KB", triggers: ".xml, .yaml, .yml, .config, .csproj, .svg" },
-                  { name: "Frequency Analyzer", size: "171 KB", triggers: "Opt-in only (IP, Email, URL, UUID, Timestamp, Error)" },
-                  { name: "Compressed Files", size: "125 KB", triggers: ".gz, .bz2, .zst (magic byte detection)" },
+                  { name: "CSV/TSV", size: "120 KB", triggers: ".csv, .tsv — column-aligned display with alternating row colors and pinned header" },
+                  { name: "JSON Navigator", size: "126 KB", triggers: ".json, .jsonl — breadcrumb path overlay showing object/array context" },
+                  { name: "Log Navigator", size: "135 KB", triggers: ".log, Apache/nginx/syslog/IIS — severity coloring (ERROR=red, WARN=yellow)" },
+                  { name: "XML/YAML", size: "129 KB", triggers: ".xml, .yaml, .yml, .config, .csproj — tag/key breadcrumb and indent tracking" },
+                  { name: "Frequency Analyzer", size: "171 KB", triggers: "Opt-in — counts IPs, emails, URLs, UUIDs, timestamps (up to 500MB)" },
+                  { name: "Compressed Files", size: "125 KB", triggers: ".gz, .bz2, .zst — transparent decompression via magic byte detection" },
                 ].map((l) => (
                   <TableRow key={l.name} sx={{ "&:last-child td": { borderBottom: 0 } }}>
                     <TableCell sx={{ color: "primary.light", fontWeight: 500 }}>{l.name}</TableCell>
