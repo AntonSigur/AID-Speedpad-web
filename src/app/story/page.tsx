@@ -135,7 +135,7 @@ const timeline = [
 
 const stats = [
   { label: "Releases", value: "60+", color: "#2196F3" },
-  { label: "Features", value: "153+", color: "#4CAF50" },
+  { label: "Features", value: "154+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "175+", color: "#F44336" },
   { label: "Test Suites", value: "215", color: "#FF9800" },
   { label: "EXE Size", value: "758 KB", color: "#9C27B0" },
@@ -288,7 +288,7 @@ export default function StoryPage() {
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
           <Button variant="contained" component={Link} href="/command-explorer">86 Commands →</Button>
           <Button variant="outlined" component={Link} href="/incident-playbook">Incident Playbook →</Button>
-          <Button variant="outlined" component={Link} href="/features">153+ Features →</Button>
+          <Button variant="outlined" component={Link} href="/features">154+ Features →</Button>
           <Button variant="outlined" component={Link} href="/download">Download →</Button>
         </Box>
       </Container>

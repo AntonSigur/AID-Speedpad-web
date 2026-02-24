@@ -71,14 +71,25 @@ const releases = [
     milestone: null,
   },
   {
-    version: "v2.42.0",
-    release: 63,
+    version: "v2.43.0",
+    release: 64,
+    date: "2026-02-24",
+    size: "818KB",
+    tests: 195,
+    highlights: [
+      "F61 Timestamp Intelligence Phase 1: auto-detect 15+ time formats",
+      "Line deltas, relative time display",
+    ],
+    milestone: null,
+  },
+  {
+    version: "v2.41.0",
+    release: 62,
     date: "2026-02-24",
     size: "815KB",
     tests: 190,
     highlights: [
-      "F63 Performance Dashboard Phase 1: file open time, search speed, memory",
-      "Status bar integration",
+      "F63 Performance Dashboard: file open time, search speed, memory in status bar",
     ],
     milestone: null,
   },
@@ -90,19 +101,6 @@ const releases = [
     tests: 175,
     highlights: [
       "F30 Reverse Tail: newest-first log viewing",
-      "F29 Performance Dashboard (initial)",
-    ],
-    milestone: null,
-  },
-  {
-    version: "v2.35.0",
-    release: 55,
-    date: "2026-02-24",
-    size: "780KB",
-    tests: 160,
-    highlights: [
-      "F61 Timestamp Intelligence Phase 1: auto-detect 15+ time formats",
-      "Line deltas, relative time display",
     ],
     milestone: null,
   },
@@ -223,9 +221,9 @@ export default function ReleaseCenterPage() {
           <Typography variant="h4" textAlign="center" sx={{ mb: 4 }}>Key Milestones</Typography>
           <Grid container spacing={2} justifyContent="center">
             {[
-              { label: "F60 Log Correlation", version: "v2.46.0", desc: "Cross-file incident triage" },
-              { label: "F61 Timestamp Intel", version: "v2.35.0", desc: "Auto-detect 15+ time formats" },
-              { label: "F63 Perf Dashboard", version: "v2.42.0", desc: "Real-time metrics in status bar" },
+              { label: "F60 Tier 1 + Tier 2", version: "v2.46–v2.47", desc: "Cross-file correlation + per-doc timestamp storage" },
+              { label: "F61 Timestamp Intel", version: "v2.43–v2.44", desc: "Auto-detect 15+ time formats, range summaries" },
+              { label: "F63 Perf Dashboard", version: "v2.41.0", desc: "Real-time metrics in status bar" },
               { label: "Release #50", version: "v2.30.0", desc: "148 tests, 711KB EXE" },
               { label: "TinyRegex Engine", version: "v2.23.0", desc: "NFA regex with ReDoS protection" },
               { label: "Multi-Log Merge", version: "v2.8.0", desc: "8-file merge by timestamp" },
