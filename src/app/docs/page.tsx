@@ -390,6 +390,78 @@ export default function DocsPage() {
         </Container>
       </Box>
 
+      {/* Built-in Tools */}
+      <Container maxWidth="md" sx={{ py: { xs: 4, md: 6 } }}>
+        <Typography variant="h4" textAlign="center" sx={{ mb: 1 }}>Built-in Tools</Typography>
+        <Typography variant="body2" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
+          Text transforms, encoding, and analysis — no plugins needed
+        </Typography>
+        <Grid container spacing={2}>
+          {[
+            { title: "Encoding & Hashing", items: "Base64, URL encode/decode, ROT13, MD5, SHA-256 (streaming — works on any file size)" },
+            { title: "Line Operations", items: "Sort, deduplicate, reverse, trim whitespace, remove empty lines, number lines" },
+            { title: "JSON Tools", items: "Pretty-print / minify, validate, path extraction" },
+            { title: "CSV Tools", items: "Column alignment with auto-detection, delimiter conversion, column extraction" },
+            { title: "Regex Highlights", items: "Multi-pattern highlighting with color groups, ReDoS protection built in" },
+            { title: "Log Analysis", items: "Anomaly detection (5s/30s gap thresholds), severity parsing (syslog, Apache, nginx, IIS)" },
+          ].map((tool) => (
+            <Grid key={tool.title} size={{ xs: 12, sm: 6 }}>
+              <Card sx={{ bgcolor: "background.paper", height: "100%" }}>
+                <CardContent sx={{ py: 2 }}>
+                  <Typography variant="subtitle1" sx={{ color: "secondary.light", fontWeight: 600, mb: 0.5 }}>{tool.title}</Typography>
+                  <Typography variant="body2" color="text.secondary">{tool.items}</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+
+      {/* Architecture — Under the Hood */}
+      <Container maxWidth="md" sx={{ py: { xs: 4, md: 6 } }}>
+        <Typography variant="h4" textAlign="center" sx={{ mb: 1 }}>Under the Hood</Typography>
+        <Typography variant="body2" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
+          How SpeedPad handles files that crash other editors
+        </Typography>
+        <Grid container spacing={3}>
+          {[
+            {
+              title: "Memory-Mapped I/O",
+              desc: "Files are mapped into virtual address space — never loaded into RAM. Opening a 100GB file is the same operation as opening a 10KB file. The OS pages in only what you view.",
+            },
+            {
+              title: "Piece Table Editor",
+              desc: "Edits use a piece table with O(log n) insert/delete. Original file data stays untouched on disk; only your changes are stored in memory. Unlimited undo with minimal overhead.",
+            },
+            {
+              title: "Multi-Threaded Search",
+              desc: "Boyer-Moore search runs in a dedicated thread pool. Results stream to the UI via PostMessage — the editor stays responsive even during regex searches across 10GB files.",
+            },
+            {
+              title: "Sparse Line Index",
+              desc: "Files over 1GB use a 40-probe sparse index instead of counting every newline. This keeps memory constant regardless of file size while maintaining accurate navigation.",
+            },
+            {
+              title: "Crash-Isolated Lenses",
+              desc: "Each lens plugin runs behind SEH (Structured Exception Handling). If a lens crashes, SpeedPad auto-deactivates it and continues — no data loss, no restart needed.",
+            },
+            {
+              title: "Zero Dependencies",
+              desc: "Pure Win32 API + C++17 standard library. No frameworks, no runtimes, no package managers. The entire editor compiles to a single 828KB EXE that runs on Windows 7 through 11.",
+            },
+          ].map((item) => (
+            <Grid key={item.title} size={{ xs: 12, sm: 6 }}>
+              <Card sx={{ bgcolor: "background.paper", height: "100%" }}>
+                <CardContent>
+                  <Typography variant="h6" sx={{ mb: 1, color: "primary.light" }}>{item.title}</Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.7 }}>{item.desc}</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+
       <Footer />
     </Box>
   );
