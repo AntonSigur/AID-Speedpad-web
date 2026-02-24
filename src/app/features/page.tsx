@@ -43,6 +43,10 @@ const featureGroups = [
       { name: "Deduplicate Lines", shortcut: "—", desc: "Remove duplicate lines instantly" },
       { name: "Clipboard Ring", shortcut: "Ctrl+Shift+B", desc: "Access clipboard history with multiple entries" },
       { name: "Diff with Clipboard", shortcut: "—", desc: "Compare selection against clipboard content" },
+      { name: "Select Next Occurrence", shortcut: "Ctrl+D", desc: "Add next match to multi-cursor selections" },
+      { name: "Add Cursor Above/Below", shortcut: "Ctrl+Alt+Up/Down", desc: "Insert extra cursors on adjacent lines" },
+      { name: "Column Select", shortcut: "Alt+Shift+Drag", desc: "Rectangular box selection with cursors per line" },
+      { name: "Multi-Cursor Find+Replace", shortcut: "Ctrl+H", desc: "Replace operates across all cursor selections simultaneously" },
     ],
   },
   {
@@ -53,6 +57,13 @@ const featureGroups = [
       { name: "Anomaly Highlighting", shortcut: "Ctrl+Shift+A", desc: "Detect timestamp gaps in logs (amber/red scrollbar marks)" },
       { name: "Tail Dashboard", shortcut: "Ctrl+Alt+T", desc: "Multi-file split-pane log monitor (up to 8 panes)" },
       { name: "File Histogram", shortcut: "Ctrl+Alt+H", desc: "Visual navigator for 100GB+ files (heatmap, click-to-jump)" },
+      { name: "Multi-Log Unified View", shortcut: "Ctrl+Shift+M", desc: "Merge rotated log files into one chronological stream with file origin tracking" },
+      { name: "Multi-Log Tail", shortcut: "—", desc: "Tail mode watches newest file in rotation, auto-refreshes unified view" },
+      { name: "Multi-Log Compressed Files", shortcut: "—", desc: ".gz/.bz2/.zst decompression in unified view with auto-cleanup temp files" },
+      { name: "Multi-Log Cross-File Search", shortcut: "Ctrl+Shift+F", desc: "Search across all files in unified multi-log view with file origin" },
+      { name: "Anomaly Gutter Marks", shortcut: "—", desc: "Amber dots in gutter for anomaly lines, visible in normal and reverse view" },
+      { name: "Log Rotation Detect", shortcut: "—", desc: "Auto-discovers 10 rotation patterns (.1/.2, .gz, .bz2, .zst, .xz, date-based, IIS, log4j)" },
+      { name: "File Statistics", shortcut: "Ctrl+Shift+I", desc: "Show file size, line count, encoding info" },
       { name: "Time Browse", shortcut: "—", desc: "Scrub through log timestamps on a timeline" },
       { name: "Go to Time", shortcut: "Ctrl+T", desc: "Jump to specific timestamp in log" },
       { name: "Filter", shortcut: "Ctrl+L", desc: "Show only lines matching pattern" },
@@ -74,6 +85,8 @@ const featureGroups = [
       { name: "Eval Expression", shortcut: "Ctrl+=", desc: "Calculate math expression in selection" },
       { name: "Text Transforms", shortcut: "—", desc: "Uppercase, lowercase, title case, ROT13, Morse, Pig Latin, and more" },
       { name: "Command Palette", shortcut: "Ctrl+Shift+P", desc: "Fuzzy-search all 87+ commands with role-based filtering" },
+      { name: "Typing Challenge", shortcut: "—", desc: "Interactive typing speed test with WPM, accuracy, persistent high scores, share to clipboard" },
+      { name: "File Archaeology", shortcut: "—", desc: "Show file metadata, timestamps, and hashes" },
     ],
   },
   {
@@ -91,8 +104,10 @@ const featureGroups = [
 ];
 
 const comparison = [
-  { feature: "EXE Size", sp: "816 KB", npp: "14 MB", vsc: "400 MB", hxd: "3.5 MB" },
+  { feature: "EXE Size", sp: "~720 KB", npp: "14 MB", vsc: "400 MB", hxd: "3.5 MB" },
   { feature: "Startup Time", sp: "< 50ms", npp: "~1.5s", vsc: "~3s", hxd: "~500ms" },
+  { feature: "Multi-Cursor", sp: "✅ Full", npp: "✅ Plugin", vsc: "✅ Built-in", hxd: "❌" },
+  { feature: "Multi-Log Merge", sp: "✅ + .gz/.bz2/.zst", npp: "❌", vsc: "❌", hxd: "❌" },
   { feature: "4GB+ File Support", sp: "✅ Memory-mapped", npp: "❌ Crashes", vsc: "❌ Refuses", hxd: "✅ Hex only" },
   { feature: "Tail Mode", sp: "✅", npp: "❌", vsc: "❌", hxd: "❌" },
   { feature: "Pipe / Stdin", sp: "✅", npp: "❌", vsc: "❌", hxd: "❌" },
@@ -116,6 +131,8 @@ const uniqueFeatures = [
   "Anomaly Highlighting — auto-detect timestamp gaps in logs with scrollbar markers",
   "File Histogram — visual heatmap navigator for 100GB+ files with click-to-jump",
   "Time Browse — scrub through log files on a visual timestamp timeline",
+  "Multi-Log Unified View — merge rotated log files into one chronological timeline with file origin tracking",
+  "Multi-Log Compressed Search — search across .gz/.bz2/.zst compressed log files without manual decompression",
   "Pipe/Stdin support — pipe any command directly into the editor (dir | speedpad)",
   "6 DLL-based Lens Plugins — file-type-specific features loaded on demand",
   "Frequency Analyzer — detect IP, email, URL, UUID, timestamp, error patterns",
@@ -126,7 +143,7 @@ const uniqueFeatures = [
   "Diff with Clipboard — compare selected text against clipboard content",
   "File Archaeology — inspect file metadata, timestamps, and hashes",
   "Clipboard Ring — access multiple clipboard entries, not just the last one",
-  "Speed Challenge — built-in typing speed game with leaderboard",
+  "Typing Challenge — built-in typing speed game with persistent high scores and share-to-clipboard",
   "Solitaire 🐜 — classic card game easter egg (Ctrl+Shift+F12)",
   "100GB+ File Support — sparse sampling reads only 2-4% of the file, other editors crash or refuse",
   "Cake Slice Navigation — Ctrl+PgUp/PgDn jumps between probes in giant files, drag-to-scrub the File Histogram",
@@ -140,12 +157,12 @@ export default function FeaturesPage() {
 
       {/* Hero */}
       <Container maxWidth="lg" sx={{ pt: { xs: 6, md: 10 }, pb: 4, textAlign: "center" }}>
-        <Chip label="140+ Features" color="primary" variant="outlined" sx={{ mb: 2 }} />
+        <Chip label="145+ Features" color="primary" variant="outlined" sx={{ mb: 2 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.2rem", md: "3.5rem" }, mb: 2 }}>
           Every Feature in SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
-          A comprehensive text editor in 816KB — with zero external dependencies, 6 lens plugins, and 87+ commands.
+          A comprehensive text editor in ~720KB — with zero external dependencies, 6 lens plugins, and 87+ commands.
         </Typography>
       </Container>
 
@@ -153,10 +170,10 @@ export default function FeaturesPage() {
       <Box sx={{ bgcolor: "background.paper", py: { xs: 4, md: 8 } }}>
         <Container maxWidth="md">
           <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
-            20 Things Only SpeedPad Can Do
+            22 Things Only SpeedPad Can Do
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
-            Features you won&apos;t find in any other text editor — now 20 and counting
+            Features you won&apos;t find in any other text editor — now 22 and counting
           </Typography>
           <Box component="ol" sx={{ pl: 3 }}>
             {uniqueFeatures.map((f, i) => (

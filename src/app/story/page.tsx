@@ -50,39 +50,57 @@ const timeline = [
   },
   {
     phase: "Power Features",
-    period: "v2.10.0–v2.10.1 — Sprint 25–26",
+    period: "v2.10.0–v2.11.0 — Sprint 25–27",
     color: "#9C27B0",
     title: "Competing with IDEs, staying under 1MB",
     description:
-      "Session save/load lets users preserve their workspace state. Multi-pattern regex with AND/OR/NOT logic rivals VS Code's search. Code folding works instantly on files any size. And the parallel multi-threaded search — with configurable thread pools up to 8 workers — makes searching through gigabyte files feel interactive. All this in an EXE that weighs less than a JPEG photo.",
-    highlights: ["Session/workspace persistence (.speedws JSON)", "Multi-pattern regex panel (AND/OR/NOT)", "Code folding (Ctrl+Shift+[/])", "Parallel search with 8-worker thread pool", "43 test suites, 359+ assertions"],
+      "Session save/load lets users preserve their workspace state. Multi-pattern regex with AND/OR/NOT logic rivals VS Code's search. Code folding works instantly on files any size. The Cake Slice Navigator enables navigating 100GB+ files with sparse probing — only reading 2-4% of the data. All this in an EXE that weighs less than a JPEG photo.",
+    highlights: ["Session/workspace persistence (.speedws JSON)", "Cake Slice Navigator for 100GB+ files", "Parallel search with 8-worker thread pool", "55 test suites, 816KB EXE", "Phase 1 rotation detection for log files"],
   },
   {
-    phase: "Latest",
-    period: "v2.11.0 — Sprint 27",
-    color: "#00BCD4",
-    title: "Cake Slice Navigator & 816KB",
+    phase: "Multi-Log Era",
+    period: "v2.12.0–v2.14.0 — Sprint 28–32",
+    color: "#E91E63",
+    title: "One editor to rule all your logs",
     description:
-      "Sprint 27 delivered the Cake Slice Navigator — a visual tool for navigating 100GB+ files by dividing them into probed 'slices' with sparse virtual paging. Phase 1 of rotation detection landed for log file analysis. 55 test suites passing, 816KB EXE. The ant colony keeps building.",
-    highlights: ["F17: Cake Slice Navigator for 100GB+ files", "F39: Phase 1 Rotation Detection", "Company rebrand → IT Ant ehf", "54/55 test suites, 816KB EXE"],
+      "The Multi-Log Unified View (Ctrl+Shift+M) merged rotated log files into one chronological stream with file boundary separators. Then compressed file support landed — .gz, .bz2, .zst logs are decompressed on-the-fly. Cross-file search works across the entire unified view. 12 out of 12 acceptance criteria completed. No other editor on the planet can do this.",
+    highlights: ["F39 Multi-Log complete: 12/12 acceptance criteria", "Compressed log support (.gz/.bz2/.zst)", "Cross-file search in unified multi-log view", "Anomaly gutter marks in normal and reverse view", "100 test suites milestone (v2.13.1)", "app.cpp refactored from 1763 → 969 lines"],
+  },
+  {
+    phase: "TinyRegex & Speed",
+    period: "v2.15.0–v2.18.0 — Sprint 33–36",
+    color: "#00BCD4",
+    title: "The EXE keeps shrinking",
+    description:
+      "Background indexing gives instant Ctrl+G on 4GB+ files with .spidx sidecar caching. TinyRegex — a custom Thompson NFA engine — replaced std::wregex entirely, dropping safe_regex.obj from 1137KB to 212KB. Build optimization with /O1 /GL /LTCG pushed the EXE from 877KB down to 703KB. The Typing Challenge shipped as a fun way to test your WPM. SpeedPad got better AND smaller.",
+    highlights: ["Background indexing with .spidx sidecar persistence", "TinyRegex NFA engine (Thompson NFA, Pike VM captures)", "EXE: 877KB → 703KB (20% reduction)", "Typing Challenge with persistent high scores", "134 test suites passing"],
+  },
+  {
+    phase: "Multi-Cursor",
+    period: "v2.19.0–v2.21.0 — Sprint 37+",
+    color: "#FF5722",
+    title: "Full multi-cursor editing in ~720KB",
+    description:
+      "Multi-cursor editing landed in two phases. Phase 1: Ctrl+D to select next occurrence, Ctrl+Alt+Up/Down to add cursors, simultaneous typing. Phase 2: column/box selection via Alt+Shift+drag, per-cursor paste, multi-cursor Find+Replace. CLI got proper --line, --goto, --encoding, --readonly flags. The EXE crossed below 700KB before settling at ~720KB with the new features.",
+    highlights: ["Multi-cursor: Ctrl+D, Ctrl+Alt+Up/Down, column select", "Per-cursor paste and multi-cursor Find+Replace", "CLI: --readonly, --pipe, --column, --line, --goto, --encoding", "EXE dipped to 700KB, now ~720KB", "136/136 test suites passing"],
   },
   {
     phase: "What's Next",
-    period: "Sprint 28+",
-    color: "#E91E63",
-    title: "Multi-log, time travel, GPU rendering",
+    period: "Sprint 38+",
+    color: "#607D8B",
+    title: "GPU rendering, session extraction, and beyond",
     description:
-      "Sprint 28 focuses on multi-log unified view — correlating events across multiple log files in a single timeline. The roadmap includes background indexing for instant Ctrl+G on huge files, session/request extraction for tracing IDs across logs, and GPU rendering via Direct2D/DirectWrite for 4K displays. The philosophy stays the same: speed first, zero bloat, one window per file.",
-    highlights: ["Multi-log unified view (Sprint 28)", "Background indexing for instant navigation", "GPU rendering for 4K/HiDPI displays", "Request ID tracing across log files"],
+      "The roadmap includes GPU rendering via Direct2D/DirectWrite for buttery smooth 4K scrolling, session/request extraction for tracing IDs across log files, and ultra-minimal status bar notifications. The philosophy stays the same: speed first, zero bloat, one window per file. The ant colony never stops building.",
+    highlights: ["GPU rendering for 4K/HiDPI displays", "Session/Request ID tracing across log files", "Ultra-minimal notification system", "Community open-source contributions"],
   },
 ];
 
 const stats = [
-  { label: "Releases", value: "29+", color: "#2196F3" },
-  { label: "Features", value: "140+", color: "#4CAF50" },
+  { label: "Releases", value: "35+", color: "#2196F3" },
+  { label: "Features", value: "145+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "160+", color: "#F44336" },
-  { label: "Test Suites", value: "54", color: "#FF9800" },
-  { label: "EXE Size", value: "816 KB", color: "#9C27B0" },
+  { label: "Test Suites", value: "136", color: "#FF9800" },
+  { label: "EXE Size", value: "~720 KB", color: "#9C27B0" },
   { label: "Team Size", value: "7 agents", color: "#00BCD4" },
 ];
 
@@ -106,7 +124,7 @@ export default function StoryPage() {
           Our Story
         </Typography>
         <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 650, mx: "auto", fontWeight: 400 }}>
-          How a frustration with slow text editors became an 816KB powerhouse
+          How a frustration with slow text editors became a ~720KB powerhouse
           that opens 100GB files in under 50ms.
         </Typography>
       </Container>

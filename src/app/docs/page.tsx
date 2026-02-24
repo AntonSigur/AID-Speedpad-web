@@ -34,7 +34,7 @@ const docSections = [
   { icon: <TerminalIcon />, title: "CLI Reference", href: "#cli", desc: "Command-line flags and examples" },
   { icon: <SpeedIcon />, title: "Large Files", href: "#large-files", desc: "Memory-mapped I/O, 100GB+ support" },
   { icon: <ExtensionIcon />, title: "Lens Plugins", href: "#lenses", desc: "CSV, JSON, Log, XML/YAML, GZ, Frequency" },
-  { icon: <BugReportIcon />, title: "Full Features", href: "/features", desc: "All 140+ features listed" },
+  { icon: <BugReportIcon />, title: "Full Features", href: "/features", desc: "All 145+ features listed" },
 ];
 
 const essentialShortcuts = [
@@ -51,13 +51,17 @@ const essentialShortcuts = [
   { shortcut: "Ctrl+Alt+T", action: "Tail Dashboard" },
   { shortcut: "Ctrl+Alt+H", action: "File Histogram" },
   { shortcut: "Ctrl+Shift+A", action: "Anomaly Highlighting" },
+  { shortcut: "Ctrl+Shift+M", action: "Multi-Log Unified View" },
   { shortcut: "Ctrl+Shift+C", action: "CSV Mode" },
   { shortcut: "Ctrl+Shift+D", action: "Dark Mode" },
   { shortcut: "Ctrl+R", action: "Read-Only Toggle" },
   { shortcut: "Ctrl+L", action: "Filter Lines" },
-  { shortcut: "Ctrl+D", action: "Duplicate Line" },
+  { shortcut: "Ctrl+D", action: "Select Next Occurrence (multi-cursor)" },
+  { shortcut: "Ctrl+Alt+Up/Down", action: "Add Cursor Above/Below" },
+  { shortcut: "Alt+Shift+Drag", action: "Column / Box Select" },
   { shortcut: "Ctrl+Shift+K", action: "Delete Line" },
-  { shortcut: "Ctrl+Shift+F12", action: "Solitaire 🐜" },
+  { shortcut: "Ctrl+Shift+[", action: "Fold code block" },
+  { shortcut: "Ctrl+Shift+]", action: "Unfold code block" },
   { shortcut: "Ctrl+PgUp", action: "Previous probe/slice (sparse mode)" },
   { shortcut: "Ctrl+PgDn", action: "Next probe/slice (sparse mode)" },
   { shortcut: "Ctrl+Home", action: "First slice (sparse mode)" },
@@ -65,17 +69,21 @@ const essentialShortcuts = [
   { shortcut: "Ctrl+Alt+Left", action: "Previous histogram slice" },
   { shortcut: "Ctrl+Alt+Right", action: "Next histogram slice" },
   { shortcut: "Ctrl+T", action: "Go to Time (sparse mode navigation)" },
-  { shortcut: "Ctrl+Shift+[", action: "Fold code block" },
-  { shortcut: "Ctrl+Shift+]", action: "Unfold code block" },
+  { shortcut: "Ctrl+Shift+F12", action: "Solitaire 🐜" },
 ];
 
 const cliExamples = [
   { cmd: "speedpad myfile.txt", desc: "Open a file" },
   { cmd: "speedpad myfile.txt:42", desc: "Open at line 42" },
+  { cmd: "speedpad --line 100 app.log", desc: "Open at specific line" },
   { cmd: "speedpad --tail app.log", desc: "Live-follow a log file" },
   { cmd: "speedpad --reverse access.log", desc: "Open in reverse view" },
   { cmd: "speedpad -t -r app.log", desc: "Reverse tail (newest lines at top)" },
   { cmd: "speedpad --diff old.txt new.txt", desc: "Side-by-side diff" },
+  { cmd: "speedpad --readonly config.ini", desc: "Open in read-only mode" },
+  { cmd: "speedpad --encoding utf16le data.bin", desc: "Open with specific encoding" },
+  { cmd: "speedpad --pipe", desc: "Read from stdin explicitly" },
+  { cmd: "speedpad --column 5 data.csv", desc: "Open at specific column" },
   { cmd: "speedpad --workspace ops.speedws", desc: "Open a saved workspace" },
   { cmd: "dir | speedpad", desc: "Pipe command output into editor" },
 ];
@@ -134,7 +142,7 @@ export default function DocsPage() {
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 3, lineHeight: 1.8 }}>
             SpeedPad is a portable application — no installer needed. Download the EXE, place it in any folder,
-            and run it. That&apos;s it. SpeedPad is a single ~775KB executable with zero external dependencies.
+            and run it. That&apos;s it. SpeedPad is a single ~720KB executable with zero external dependencies.
           </Typography>
 
           <Typography variant="h5" sx={{ mb: 2, mt: 4 }}>Opening Files</Typography>

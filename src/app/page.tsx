@@ -37,8 +37,8 @@ const features = [
   },
   {
     icon: <MemoryIcon sx={{ fontSize: 40 }} />,
-    title: "816 KB Total",
-    desc: "18× smaller than Notepad++. 513× smaller than VS Code.",
+    title: "~720 KB Total",
+    desc: "19× smaller than Notepad++. 556× smaller than VS Code.",
   },
   {
     icon: <SearchIcon sx={{ fontSize: 40 }} />,
@@ -47,26 +47,27 @@ const features = [
   },
   {
     icon: <TerminalIcon sx={{ fontSize: 40 }} />,
-    title: "Tail Mode & Pipes",
-    desc: "Live-follow logs like tail -f. Pipe any command in.",
+    title: "Multi-Cursor Editing",
+    desc: "Ctrl+D, column select, per-cursor paste. Full multi-cursor.",
   },
   {
     icon: <VisibilityIcon sx={{ fontSize: 40 }} />,
-    title: "6 Lens Plugins",
-    desc: "CSV, JSON, Log, XML/YAML, GZ, Frequency analysis.",
+    title: "Multi-Log Merge",
+    desc: "Merge rotated logs into one timeline. Decompress .gz/.bz2/.zst.",
   },
   {
     icon: <BugReportIcon sx={{ fontSize: 40 }} />,
-    title: "Anomaly Detection",
-    desc: "Auto-detect log anomalies and highlight them instantly.",
+    title: "136 Tests Passing",
+    desc: "TinyRegex NFA engine. ReDoS-proof. Zero external dependencies.",
   },
 ];
 
 const comparison = [
-  { feature: "EXE Size", sp: "816 KB", npp: "14 MB", vsc: "400 MB" },
+  { feature: "EXE Size", sp: "~720 KB", npp: "14 MB", vsc: "400 MB" },
   { feature: "Startup Time", sp: "< 50ms", npp: "~1.5s", vsc: "~3s" },
   { feature: "Tail Mode", sp: "✅", npp: "❌", vsc: "❌" },
-  { feature: "Pipe / Stdin", sp: "✅", npp: "❌", vsc: "❌" },
+  { feature: "Multi-Cursor", sp: "✅", npp: "✅", vsc: "✅" },
+  { feature: "Multi-Log Merge", sp: "✅", npp: "❌", vsc: "❌" },
   { feature: "Parallel Search", sp: "✅", npp: "❌", vsc: "❌" },
   { feature: "Reverse View", sp: "✅", npp: "❌", vsc: "❌" },
   { feature: "Anomaly Detection", sp: "✅", npp: "❌", vsc: "❌" },
@@ -85,9 +86,9 @@ export default function Home() {
         <Box sx={{ mb: 3 }}>
           <Image src="/itant-logo.svg" alt="IT Ant ehf" width={100} height={100} style={{ filter: "brightness(0) invert(1)" }} />
         </Box>
-        <Chip label="v2.11.0 — 55 test suites passing" color="primary" variant="outlined" sx={{ mb: 3 }} />
+        <Chip label="v2.21.0 — 136 test suites passing" color="primary" variant="outlined" sx={{ mb: 3 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.5rem", md: "4.5rem" }, mb: 2, background: "linear-gradient(135deg, #64B5F6, #00BCD4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-          SpeedPad. 816KB.
+          SpeedPad. ~720KB.
           <br />
           Opens 100GB Files.
         </Typography>
@@ -110,7 +111,7 @@ export default function Home() {
           </Typography>
           <Box sx={{ display: "flex", alignItems: "end", justifyContent: "center", gap: { xs: 2, md: 4 }, height: 180 }}>
             {[
-              { name: "SpeedPad", size: "816 KB", height: 12, color: "#2196F3" },
+              { name: "SpeedPad", size: "~720 KB", height: 10, color: "#2196F3" },
               { name: "Notepad++", size: "14 MB", height: 60, color: "#455A64" },
               { name: "VS Code", size: "400 MB", height: 170, color: "#37474F" },
             ].map((ed) => (
@@ -135,7 +136,7 @@ export default function Home() {
             Built for Speed
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 6, maxWidth: 500, mx: "auto" }}>
-            17 unique features no other editor has. Zero external dependencies.
+            22 unique features no other editor has. Zero external dependencies.
           </Typography>
           <Grid container spacing={3}>
             {features.map((f) => (

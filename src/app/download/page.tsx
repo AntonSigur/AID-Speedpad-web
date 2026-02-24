@@ -21,13 +21,87 @@ import Footer from "@/components/Footer";
 
 const releases = [
   {
-    version: "v2.11.0",
+    version: "v2.21.0",
     date: "2026-02-24",
     latest: true,
     highlights: [
+      "Multi-Cursor Phase 2: column/box select, per-cursor paste, multi-cursor Find+Replace",
+      "CLI extensions: --readonly, --pipe, --column N, --line N, --goto N, --new, --encoding",
+      "~720KB EXE, 136/136 tests passing",
+    ],
+  },
+  {
+    version: "v2.20.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "Multi-Cursor Phase 1: Ctrl+D select next, Ctrl+Alt+Up/Down add cursors",
+      "CLI arguments: --line N, --goto N, --new, --encoding",
+    ],
+  },
+  {
+    version: "v2.19.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "EXE size: 700KB — sub-700KB milestone",
+      "Architecture: section merging, TinyRegex CopyFrag, dialog helper extraction",
+    ],
+  },
+  {
+    version: "v2.18.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "EXE size: 703KB (was 807KB, 13% reduction via /O1 /GL /GR- /LTCG)",
+      "Typing Challenge hardening: 12 sample texts, persistent high scores, share to clipboard",
+    ],
+  },
+  {
+    version: "v2.17.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "F36 Typing Challenge: interactive WPM/accuracy test",
+      "TinyRegex NFA engine replaces std::wregex (807→877KB saving)",
+    ],
+  },
+  {
+    version: "v2.16.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "F20 Phase 2: progress indicator, .spidx sidecar persistence",
+      "EXE size audit: /Gy /O2 /OPT:REF /OPT:ICF, 877KB",
+    ],
+  },
+  {
+    version: "v2.14.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "F39 Multi-Log Complete (12/12 ACs): compressed .gz/.bz2/.zst + cross-file search",
+      "858KB EXE, 114+ test suites",
+    ],
+  },
+  {
+    version: "v2.12.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "F39: Multi-Log Unified View (Ctrl+Shift+M), Multi-Log Tail",
+      "Anomaly Gutter Marks, architecture docs",
+      "868KB EXE, 69 test suites",
+    ],
+  },
+  {
+    version: "v2.11.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
       "F17: Cake Slice Navigator (all 15 ACs)",
       "F39: Phase 1 Rotation Detection",
-      "54/55 tests passing, 816KB EXE",
+      "55 tests passing, 816KB EXE",
     ],
   },
   {
@@ -36,10 +110,7 @@ const releases = [
     latest: false,
     highlights: [
       "F18: Parallel Multi-Threaded Search (thread pool, up to 8 workers)",
-      "--reverse / -r CLI flag for reverse view from command line",
-      "Order-independent CLI flags",
-      "6 critical bug fixes (B156-B161)",
-      "43/43 tests passing (359+ assertions)",
+      "--reverse / -r CLI flag, 6 critical bug fixes",
     ],
   },
   {
@@ -47,10 +118,7 @@ const releases = [
     date: "2026-02-23",
     latest: false,
     highlights: [
-      "F04: Session/Workspace save/load (.speedws JSON)",
-      "F25: Multi-Pattern Regex Panel with AND/OR/NOT",
-      "F24: Code Folding (Ctrl+Shift+[/])",
-      "Thread safety improvements across CFS, Diff View, Workspace",
+      "F04: Session/Workspace, F25: Regex Panel, F24: Code Folding",
     ],
   },
   {
@@ -58,33 +126,15 @@ const releases = [
     date: "2026-02-22",
     latest: false,
     highlights: [
-      "F07: Stdin Pipe Support (dir | speedpad)",
-      "F35: Quick File Compare (Ctrl+Alt+C)",
-      "Multiple stability fixes (B125-B128)",
+      "F07: Stdin Pipe Support, F35: Quick File Compare",
     ],
-  },
-  {
-    version: "v2.9.0",
-    date: "2026-02-22",
-    latest: false,
-    highlights: [
-      "F54: Tail Rate Display (lines/sec in status bar)",
-      "F48: Indent/Outdent (Ctrl+]/[)",
-    ],
-  },
-  {
-    version: "v2.8.1",
-    date: "2026-02-21",
-    latest: false,
-    highlights: ["F03: Diff View with Myers O(ND) algorithm"],
   },
   {
     version: "v2.8.0",
     date: "2026-02-21",
     latest: false,
     highlights: [
-      "F02: Cross-File Search (Ctrl+Shift+F)",
-      "F14: Anomaly Detection with timestamp gap highlighting",
+      "First release: Cross-File Search, Anomaly Detection, Diff View",
     ],
   },
 ];
@@ -100,14 +150,14 @@ export default function DownloadPage() {
           Download SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 500, mx: "auto", mb: 4 }}>
-          A single 816KB executable. No installer. No dependencies. Just extract and run.
+          A single ~720KB executable. No installer. No dependencies. Just extract and run.
         </Typography>
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
-          <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntonSigur/AID-Speedpad-web/releases/latest" target="_blank" rel="noopener">
-            Download v2.11.0 (.exe)
+          <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntSigur/speedpad/releases/latest" target="_blank" rel="noopener">
+            Download v2.21.0 (.exe)
           </Button>
-          <Button variant="outlined" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntonSigur/AID-Speedpad-web/releases/latest" target="_blank" rel="noopener">
-            Download v2.11.0 (.zip)
+          <Button variant="outlined" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntSigur/speedpad/releases/latest" target="_blank" rel="noopener">
+            Download v2.21.0 (.zip)
           </Button>
         </Box>
       </Container>
@@ -124,7 +174,7 @@ export default function DownloadPage() {
                 {[
                   { label: "Operating System", value: "Windows 10 (1809+) or Windows 11" },
                   { label: "Architecture", value: "x64" },
-                  { label: "EXE Size", value: "~816 KB (core editor)" },
+                  { label: "EXE Size", value: "~720 KB (core editor)" },
                   { label: "Lens Plugins", value: "120–171 KB each (optional, 6 total)" },
                   { label: "Memory", value: "< 100 MB for 4GB files" },
                   { label: "Dependencies", value: "None — pure Win32, zero external dependencies" },
