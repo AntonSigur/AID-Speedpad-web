@@ -104,7 +104,7 @@ const featureGroups = [
 ];
 
 const comparison = [
-  { feature: "EXE Size", sp: "~720 KB", npp: "14 MB", vsc: "400 MB", hxd: "3.5 MB" },
+  { feature: "EXE Size", sp: "703 KB", npp: "14 MB", vsc: "400 MB", hxd: "3.5 MB" },
   { feature: "Startup Time", sp: "< 50ms", npp: "~1.5s", vsc: "~3s", hxd: "~500ms" },
   { feature: "Multi-Cursor", sp: "✅ Full", npp: "✅ Plugin", vsc: "✅ Built-in", hxd: "❌" },
   { feature: "Multi-Log Merge", sp: "✅ + .gz/.bz2/.zst", npp: "❌", vsc: "❌", hxd: "❌" },
@@ -148,6 +148,8 @@ const uniqueFeatures = [
   "100GB+ File Support — sparse sampling reads only 2-4% of the file, other editors crash or refuse",
   "Cake Slice Navigation — Ctrl+PgUp/PgDn jumps between probes in giant files, drag-to-scrub the File Histogram",
   "Log Rotation Detection — auto-discovers 10 rotation patterns (numeric, .gz, .bz2, .zst, .xz, date-based, IIS, log4j/NLog)",
+  "TinyRegex NFA Engine — custom regex engine replaces std::regex, guarantees O(nm) complexity, immune to ReDoS attacks",
+  "Background Line Index — .spidx sidecar files for instant GoToLine on 4GB+ files (no waiting for full scan)",
 ];
 
 export default function FeaturesPage() {
@@ -157,12 +159,12 @@ export default function FeaturesPage() {
 
       {/* Hero */}
       <Container maxWidth="lg" sx={{ pt: { xs: 6, md: 10 }, pb: 4, textAlign: "center" }}>
-        <Chip label="145+ Features" color="primary" variant="outlined" sx={{ mb: 2 }} />
+        <Chip label="150+ Features" color="primary" variant="outlined" sx={{ mb: 2 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.2rem", md: "3.5rem" }, mb: 2 }}>
           Every Feature in SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
-          A comprehensive text editor in ~720KB — with zero external dependencies, 6 lens plugins, and 87+ commands.
+          A comprehensive text editor in 703KB — with zero external dependencies, 6 lens plugins, and 87+ commands.
         </Typography>
       </Container>
 
@@ -170,10 +172,10 @@ export default function FeaturesPage() {
       <Box sx={{ bgcolor: "background.paper", py: { xs: 4, md: 8 } }}>
         <Container maxWidth="md">
           <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
-            22 Things Only SpeedPad Can Do
+            24 Things Only SpeedPad Can Do
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
-            Features you won&apos;t find in any other text editor — now 22 and counting
+            Features you won&apos;t find in any other text editor — now 24 and counting
           </Typography>
           <Box component="ol" sx={{ pl: 3 }}>
             {uniqueFeatures.map((f, i) => (

@@ -27,7 +27,7 @@ const releases = [
     highlights: [
       "Multi-Cursor Phase 2: column/box select, per-cursor paste, multi-cursor Find+Replace",
       "CLI extensions: --readonly, --pipe, --column N, --line N, --goto N, --new, --encoding",
-      "~720KB EXE, 136/136 tests passing",
+      "703KB EXE, 135/135 tests passing",
     ],
   },
   {
@@ -150,7 +150,7 @@ export default function DownloadPage() {
           Download SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 500, mx: "auto", mb: 4 }}>
-          A single ~720KB executable. No installer. No dependencies. Just extract and run.
+          A single 703KB executable. No installer. No dependencies. Just extract and run.
         </Typography>
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
           <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href="https://github.com/AntSigur/speedpad/releases/latest" target="_blank" rel="noopener">
@@ -174,7 +174,7 @@ export default function DownloadPage() {
                 {[
                   { label: "Operating System", value: "Windows 10 (1809+) or Windows 11" },
                   { label: "Architecture", value: "x64" },
-                  { label: "EXE Size", value: "~720 KB (core editor)" },
+                  { label: "EXE Size", value: "703 KB (core editor)" },
                   { label: "Lens Plugins", value: "120–171 KB each (optional, 6 total)" },
                   { label: "Memory", value: "< 100 MB for 4GB files" },
                   { label: "Dependencies", value: "None — pure Win32, zero external dependencies" },

@@ -34,7 +34,7 @@ const docSections = [
   { icon: <TerminalIcon />, title: "CLI Reference", href: "#cli", desc: "Command-line flags and examples" },
   { icon: <SpeedIcon />, title: "Large Files", href: "#large-files", desc: "Memory-mapped I/O, 100GB+ support" },
   { icon: <ExtensionIcon />, title: "Lens Plugins", href: "#lenses", desc: "CSV, JSON, Log, XML/YAML, GZ, Frequency" },
-  { icon: <BugReportIcon />, title: "Full Features", href: "/features", desc: "All 145+ features listed" },
+  { icon: <BugReportIcon />, title: "Full Features", href: "/features", desc: "All 150+ features listed" },
 ];
 
 const essentialShortcuts = [
@@ -142,7 +142,7 @@ export default function DocsPage() {
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 3, lineHeight: 1.8 }}>
             SpeedPad is a portable application — no installer needed. Download the EXE, place it in any folder,
-            and run it. That&apos;s it. SpeedPad is a single ~720KB executable with zero external dependencies.
+            and run it. That&apos;s it. SpeedPad is a single 703KB executable with zero external dependencies.
           </Typography>
 
           <Typography variant="h5" sx={{ mb: 2, mt: 4 }}>Opening Files</Typography>

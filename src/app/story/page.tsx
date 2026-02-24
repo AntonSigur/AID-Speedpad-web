@@ -79,10 +79,10 @@ const timeline = [
     phase: "Multi-Cursor",
     period: "v2.19.0–v2.21.0 — Sprint 37+",
     color: "#FF5722",
-    title: "Full multi-cursor editing in ~720KB",
+    title: "Full multi-cursor editing in 703KB",
     description:
-      "Multi-cursor editing landed in two phases. Phase 1: Ctrl+D to select next occurrence, Ctrl+Alt+Up/Down to add cursors, simultaneous typing. Phase 2: column/box selection via Alt+Shift+drag, per-cursor paste, multi-cursor Find+Replace. CLI got proper --line, --goto, --encoding, --readonly flags. The EXE crossed below 700KB before settling at ~720KB with the new features.",
-    highlights: ["Multi-cursor: Ctrl+D, Ctrl+Alt+Up/Down, column select", "Per-cursor paste and multi-cursor Find+Replace", "CLI: --readonly, --pipe, --column, --line, --goto, --encoding", "EXE dipped to 700KB, now ~720KB", "136/136 test suites passing"],
+      "Multi-cursor editing landed in two phases. Phase 1: Ctrl+D to select next occurrence, Ctrl+Alt+Up/Down to add cursors, simultaneous typing. Phase 2: column/box selection via Alt+Shift+drag, per-cursor paste, multi-cursor Find+Replace. CLI got proper --line, --goto, --encoding, --readonly flags. The EXE crossed below 700KB before settling at 703KB with the new features.",
+    highlights: ["Multi-cursor: Ctrl+D, Ctrl+Alt+Up/Down, column select", "Per-cursor paste and multi-cursor Find+Replace", "CLI: --readonly, --pipe, --column, --line, --goto, --encoding", "EXE dipped to 700KB, now 703KB", "136/135 test suites passing"],
   },
   {
     phase: "What's Next",
@@ -96,11 +96,11 @@ const timeline = [
 ];
 
 const stats = [
-  { label: "Releases", value: "35+", color: "#2196F3" },
-  { label: "Features", value: "145+", color: "#4CAF50" },
+  { label: "Releases", value: "40+", color: "#2196F3" },
+  { label: "Features", value: "150+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "160+", color: "#F44336" },
   { label: "Test Suites", value: "136", color: "#FF9800" },
-  { label: "EXE Size", value: "~720 KB", color: "#9C27B0" },
+  { label: "EXE Size", value: "703 KB", color: "#9C27B0" },
   { label: "Team Size", value: "7 agents", color: "#00BCD4" },
 ];
 
@@ -124,7 +124,7 @@ export default function StoryPage() {
           Our Story
         </Typography>
         <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 650, mx: "auto", fontWeight: 400 }}>
-          How a frustration with slow text editors became a ~720KB powerhouse
+          How a frustration with slow text editors became a 703KB powerhouse
           that opens 100GB files in under 50ms.
         </Typography>
       </Container>

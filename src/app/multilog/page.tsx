@@ -70,7 +70,7 @@ const competitorComparison = [
   { feature: "Tail across rotation", sp: "✅", npp: "❌", vsc: "❌", splunk: "✅" },
   { feature: "Workspace persistence", sp: "✅ .speedws", npp: "❌", vsc: "❌", splunk: "✅" },
   { feature: "Cost", sp: "Free", npp: "Free", vsc: "Free", splunk: "$$$" },
-  { feature: "Install size", sp: "~720 KB", npp: "14 MB", vsc: "400 MB", splunk: "2+ GB" },
+  { feature: "Install size", sp: "703 KB", npp: "14 MB", vsc: "400 MB", splunk: "2+ GB" },
 ];
 
 const rotationPatterns = [
@@ -107,8 +107,9 @@ export default function MultiLogPage() {
           Multi-Log Time Travel
         </Typography>
         <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 700, mx: "auto", fontWeight: 400, mb: 4 }}>
-          The only text editor that auto-discovers rotated log files, decompresses compressed ones,
-          merges them into one timeline, and searches across them all — in under 720KB.
+          Open any log file. SpeedPad auto-discovers every rotated,
+          compressed, and archived sibling — then merges them into one seamless
+          timeline. No manual decompression. No tab switching. Just answers.
         </Typography>
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
           <Button variant="contained" size="large" startIcon={<DownloadIcon />} href="/download" sx={{ px: 4, py: 1.5 }}>
@@ -263,6 +264,9 @@ export default function MultiLogPage() {
             <Button variant="contained" size="large" startIcon={<DownloadIcon />} href="/download" sx={{ px: 5, py: 1.5, fontSize: "1.1rem" }}>
               Download SpeedPad — Free
             </Button>
+            <Typography variant="body1" color="text.secondary" sx={{ mt: 2, fontStyle: "italic" }}>
+              All of this in 703KB. No plugins. No extensions. Just speed.
+            </Typography>
           </Box>
         </Container>
       </Box>
