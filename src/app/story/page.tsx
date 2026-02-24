@@ -55,7 +55,7 @@ const timeline = [
     title: "Competing with IDEs, staying under 1MB",
     description:
       "Session save/load lets users preserve their workspace state. Multi-pattern regex with AND/OR/NOT logic rivals VS Code's search. Code folding works instantly on files any size. The Cake Slice Navigator enables navigating 100GB+ files with sparse probing — only reading 2-4% of the data. All this in an EXE that weighs less than a JPEG photo.",
-    highlights: ["Session/workspace persistence (.speedws JSON)", "Cake Slice Navigator for 100GB+ files", "Parallel search with 8-worker thread pool", "55 test suites, 816KB EXE", "Phase 1 rotation detection for log files"],
+    highlights: ["Session/workspace persistence (.speedws JSON)", "Cake Slice Navigator for 100GB+ files", "Parallel search with 8-worker thread pool", "55 test suites, EXE still under 1MB", "Phase 1 rotation detection for log files"],
   },
   {
     phase: "Multi-Log Era",
