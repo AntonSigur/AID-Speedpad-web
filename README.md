@@ -1,6 +1,6 @@
 # SpeedPad Website — IT Ant ehf
 
-Marketing website for [SpeedPad](https://itant.is), the 787KB Windows text editor that opens 100GB+ files.
+Marketing website for [SpeedPad](https://itant.is), the 816KB Windows text editor that opens 100GB+ files.
 
 ## Quick Start
 

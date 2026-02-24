@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- WebDev Agent - Web/digital theme, cyan, globe motif -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00BCD4;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#006064;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="98" fill="url(#bg)" stroke="#00BCD4" stroke-width="3"/>
+  <!-- Head -->
+  <circle cx="100" cy="108" r="47" fill="#D7A86E"/>
+  <!-- Hair - modern undercut -->
+  <path d="M56 100 Q54 50 100 44 Q146 50 144 100 L140 88 Q132 55 100 48 Q68 55 60 88 Z" fill="#37474F"/>
+  <path d="M60 88 Q68 72 100 68 Q132 72 140 88" fill="#263238"/>
+  <!-- Eyes - creative -->
+  <ellipse cx="82" cy="106" rx="8" ry="9" fill="white"/>
+  <ellipse cx="118" cy="106" rx="8" ry="9" fill="white"/>
+  <circle cx="84" cy="106" r="5" fill="#006064"/>
+  <circle cx="120" cy="106" r="5" fill="#006064"/>
+  <circle cx="85" cy="104" r="2" fill="white"/>
+  <circle cx="121" cy="104" r="2" fill="white"/>
+  <!-- Friendly eyebrows -->
+  <path d="M72 94 Q82 88 92 93" stroke="#263238" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M108 93 Q118 88 128 94" stroke="#263238" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Friendly smile -->
+  <path d="M80 128 Q100 142 120 128" stroke="#5D4037" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Hoodie -->
+  <path d="M55 168 Q55 146 80 138 L100 155 L120 138 Q145 146 145 168 L145 200 L55 200 Z" fill="#00838F"/>
+  <!-- Globe icon on chest -->
+  <circle cx="100" cy="178" r="12" fill="none" stroke="white" stroke-width="1.5" stroke-opacity="0.4"/>
+  <ellipse cx="100" cy="178" rx="6" ry="12" fill="none" stroke="white" stroke-width="1.5" stroke-opacity="0.4"/>
+  <line x1="88" y1="178" x2="112" y2="178" stroke="white" stroke-width="1.5" stroke-opacity="0.4"/>
+  <!-- Headphones -->
+  <path d="M54 102 Q52 72 100 66 Q148 72 146 102" stroke="#263238" stroke-width="5" fill="none"/>
+  <rect x="46" y="96" width="14" height="20" rx="5" fill="#263238"/>
+  <rect x="140" y="96" width="14" height="20" rx="5" fill="#263238"/>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- SA Agent - Architect, blue theme, technical look -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2196F3;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#0D47A1;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="98" fill="url(#bg)" stroke="#2196F3" stroke-width="3"/>
+  <!-- Head -->
+  <circle cx="100" cy="108" r="48" fill="#DBBFA0"/>
+  <!-- Hair - professional -->
+  <path d="M56 98 Q54 52 100 46 Q146 52 144 98 L140 88 Q132 58 100 52 Q68 58 60 88 Z" fill="#263238"/>
+  <!-- Glasses - technical -->
+  <rect x="64" y="98" width="30" height="22" rx="4" fill="none" stroke="#1565C0" stroke-width="2.5"/>
+  <rect x="106" y="98" width="30" height="22" rx="4" fill="none" stroke="#1565C0" stroke-width="2.5"/>
+  <line x1="94" y1="109" x2="106" y2="109" stroke="#1565C0" stroke-width="2"/>
+  <!-- Eyes - focused -->
+  <circle cx="79" cy="109" r="5" fill="#0D47A1"/>
+  <circle cx="121" cy="109" r="5" fill="#0D47A1"/>
+  <circle cx="80" cy="107" r="2" fill="white"/>
+  <circle cx="122" cy="107" r="2" fill="white"/>
+  <!-- Focused expression -->
+  <path d="M68 94 L90 96" stroke="#37474F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M110 96 L132 94" stroke="#37474F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Thoughtful smile -->
+  <path d="M82 130 Q100 140 118 130" stroke="#5D4037" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Hoodie -->
+  <path d="M52 168 Q52 145 80 138 L100 155 L120 138 Q148 145 148 168 L148 200 L52 200 Z" fill="#1565C0"/>
+  <!-- Hood -->
+  <path d="M52 168 Q52 158 65 155" stroke="#0D47A1" stroke-width="2" fill="none"/>
+  <path d="M148 168 Q148 158 135 155" stroke="#0D47A1" stroke-width="2" fill="none"/>
+  <!-- Code symbol on chest -->
+  <text x="88" y="185" fill="white" fill-opacity="0.5" font-family="monospace" font-size="20" font-weight="bold">&lt;/&gt;</text>
+</svg>

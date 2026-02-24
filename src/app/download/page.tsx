@@ -21,9 +21,19 @@ import Footer from "@/components/Footer";
 
 const releases = [
   {
-    version: "v2.10.1",
+    version: "v2.11.0",
     date: "2026-02-24",
     latest: true,
+    highlights: [
+      "F17: Cake Slice Navigator (all 15 ACs)",
+      "F39: Phase 1 Rotation Detection",
+      "54/54 tests passing, 816KB EXE",
+    ],
+  },
+  {
+    version: "v2.10.1",
+    date: "2026-02-24",
+    latest: false,
     highlights: [
       "F18: Parallel Multi-Threaded Search (thread pool, up to 8 workers)",
       "--reverse / -r CLI flag for reverse view from command line",
@@ -90,14 +100,14 @@ export default function DownloadPage() {
           Download SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 500, mx: "auto", mb: 4 }}>
-          A single 787KB executable. No installer. No dependencies. Just extract and run.
+          A single 816KB executable. No installer. No dependencies. Just extract and run.
         </Typography>
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
           <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }}>
-            Download v2.10.1 (.exe)
+            Download v2.11.0 (.exe)
           </Button>
           <Button variant="outlined" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }}>
-            Download v2.10.1 (.zip)
+            Download v2.11.0 (.zip)
           </Button>
         </Box>
       </Container>
@@ -114,7 +124,7 @@ export default function DownloadPage() {
                 {[
                   { label: "Operating System", value: "Windows 10 (1809+) or Windows 11" },
                   { label: "Architecture", value: "x64" },
-                  { label: "EXE Size", value: "~787 KB (core editor)" },
+                  { label: "EXE Size", value: "~816 KB (core editor)" },
                   { label: "Lens Plugins", value: "120–171 KB each (optional, 6 total)" },
                   { label: "Memory", value: "< 100 MB for 4GB files" },
                   { label: "Dependencies", value: "None — pure Win32, zero external dependencies" },

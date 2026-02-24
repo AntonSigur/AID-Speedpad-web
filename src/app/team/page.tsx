@@ -5,15 +5,17 @@ import {
   Typography,
   Card,
   CardContent,
-  Avatar,
   Chip,
   Grid,
 } from "@mui/material";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
+import Image from "next/image";
 
 const teamMembers = [
   {
+    slug: "anton",
     name: "Anton",
     role: "CEO",
     emoji: "👑",
@@ -22,6 +24,7 @@ const teamMembers = [
     skills: ["Strategy", "Branding", "Leadership"],
   },
   {
+    slug: "pm",
     name: "PM Agent",
     role: "Project Manager",
     emoji: "📋",
@@ -30,6 +33,7 @@ const teamMembers = [
     skills: ["Sprint Planning", "Risk Management", "Documentation"],
   },
   {
+    slug: "po",
     name: "PO Agent",
     role: "Product Owner",
     emoji: "🎯",
@@ -38,6 +42,7 @@ const teamMembers = [
     skills: ["Feature Design", "Competitive Analysis", "UX Strategy"],
   },
   {
+    slug: "sa",
     name: "SA Agent",
     role: "Solution Architect & Lead Dev",
     emoji: "🏗️",
@@ -46,6 +51,7 @@ const teamMembers = [
     skills: ["C++17", "Win32 API", "Architecture", "Threading"],
   },
   {
+    slug: "dev2",
     name: "Dev2 Agent",
     role: "Developer",
     emoji: "⚡",
@@ -54,6 +60,7 @@ const teamMembers = [
     skills: ["C++17", "Feature Implementation", "Testing"],
   },
   {
+    slug: "tester",
     name: "Tester Agent",
     role: "Quality Assurance",
     emoji: "🔍",
@@ -62,6 +69,7 @@ const teamMembers = [
     skills: ["Regression Testing", "Edge Cases", "Performance Analysis"],
   },
   {
+    slug: "webdev",
     name: "WebDev Agent",
     role: "Web Developer & Designer",
     emoji: "🌐",
@@ -94,7 +102,7 @@ export default function TeamPage() {
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 2, lineHeight: 1.8 }}>
             IT Ant ehf was founded on a simple belief: software should be fast, small, and uncompromising.
-            Like ants — we carry loads many times our own weight. SpeedPad is a 787KB executable that opens
+            Like ants — we carry loads many times our own weight. SpeedPad is a 816KB executable that opens
             files 5 million times its own size. No splash screens. No loading bars. No external dependencies.
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 2, lineHeight: 1.8 }}>
@@ -104,7 +112,7 @@ export default function TeamPage() {
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>
             We don&apos;t do bloat. We don&apos;t do compromise. We ship fast, we ship correct, and we
-            keep SpeedPad at 787KB. That&apos;s the ant way.
+            keep SpeedPad at 816KB. That&apos;s the ant way.
           </Typography>
         </Container>
       </Box>
@@ -117,29 +125,31 @@ export default function TeamPage() {
         <Grid container spacing={3}>
           {teamMembers.map((member) => (
             <Grid size={{ xs: 12, sm: 6, md: 4 }} key={member.name}>
+              <Link href={`/team/${member.slug}`} style={{ textDecoration: "none" }}>
               <Card
                 elevation={0}
                 sx={{
                   height: "100%",
                   bgcolor: "rgba(255,255,255,0.03)",
                   border: "1px solid rgba(255,255,255,0.06)",
-                  "&:hover": { borderColor: member.color, bgcolor: "rgba(255,255,255,0.05)" },
+                  "&:hover": { borderColor: member.color, bgcolor: "rgba(255,255,255,0.05)", cursor: "pointer" },
                   transition: "all 0.2s",
                 }}
               >
                 <CardContent sx={{ p: 3, display: "flex", flexDirection: "column", height: "100%" }}>
                   <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}>
-                    <Avatar
+                    <Box
                       sx={{
-                        width: 56,
-                        height: 56,
-                        bgcolor: `${member.color}22`,
+                        width: 64,
+                        height: 64,
+                        borderRadius: "50%",
+                        overflow: "hidden",
                         border: `2px solid ${member.color}`,
-                        fontSize: "1.8rem",
+                        flexShrink: 0,
                       }}
                     >
-                      {member.emoji}
-                    </Avatar>
+                      <Image src={`/avatars/${member.slug}.png`} alt={member.name} width={64} height={64} />
+                    </Box>
                     <Box>
                       <Typography variant="h6" sx={{ lineHeight: 1.2 }}>
                         {member.name}
@@ -165,6 +175,7 @@ export default function TeamPage() {
                   </Box>
                 </CardContent>
               </Card>
+              </Link>
             </Grid>
           ))}
         </Grid>
@@ -179,7 +190,7 @@ export default function TeamPage() {
           <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" }, gap: 3 }}>
             {[
               { title: "Speed First", desc: "If file open takes > 5ms or scrolling drops a frame — we fix it before shipping." },
-              { title: "Zero Bloat", desc: "787KB total. No frameworks, no runtimes, no external dependencies." },
+              { title: "Zero Bloat", desc: "816KB total. No frameworks, no runtimes, no external dependencies." },
               { title: "One File, One Window", desc: "No tabs. No split views. New instance for multi-file. Keep it focused." },
               { title: "Opt-in, Never Forced", desc: "Lenses and features activated by the user. No popups, no dialogs, no interruptions." },
             ].map((p) => (

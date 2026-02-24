@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- CEO Anton - Gold crown, confident face -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#FFA000;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="98" fill="url(#bg)" stroke="#FFD700" stroke-width="3"/>
+  <!-- Head -->
+  <circle cx="100" cy="110" r="50" fill="#F5D6B8"/>
+  <!-- Hair -->
+  <path d="M55 95 Q55 60 100 55 Q145 60 145 95 L140 90 Q130 70 100 65 Q70 70 60 90 Z" fill="#5D4037"/>
+  <!-- Eyes -->
+  <ellipse cx="82" cy="108" rx="8" ry="9" fill="white"/>
+  <ellipse cx="118" cy="108" rx="8" ry="9" fill="white"/>
+  <circle cx="84" cy="108" r="5" fill="#1565C0"/>
+  <circle cx="120" cy="108" r="5" fill="#1565C0"/>
+  <circle cx="85" cy="106" r="2" fill="white"/>
+  <circle cx="121" cy="106" r="2" fill="white"/>
+  <!-- Eyebrows -->
+  <path d="M72 96 Q82 90 92 95" stroke="#3E2723" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M108 95 Q118 90 128 96" stroke="#3E2723" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Smile -->
+  <path d="M80 128 Q100 145 120 128" stroke="#C62828" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Crown -->
+  <polygon points="70,65 78,40 88,55 100,30 112,55 122,40 130,65" fill="#FFD700" stroke="#FFA000" stroke-width="2"/>
+  <circle cx="88" cy="52" r="3" fill="#F44336"/>
+  <circle cx="100" cy="38" r="3" fill="#2196F3"/>
+  <circle cx="112" cy="52" r="3" fill="#4CAF50"/>
+  <!-- Suit -->
+  <path d="M55 165 Q55 150 80 145 L100 160 L120 145 Q145 150 145 165 L145 200 L55 200 Z" fill="#1565C0"/>
+  <line x1="100" y1="155" x2="100" y2="200" stroke="#0D47A1" stroke-width="2"/>
+  <!-- Tie -->
+  <polygon points="96,148 104,148 102,170 98,170" fill="#FFD700"/>
+</svg>

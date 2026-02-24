@@ -8,6 +8,7 @@ const navItems = [
   { label: "Download", href: "/download" },
   { label: "Docs", href: "/docs" },
   { label: "Team", href: "/team" },
+  { label: "Story", href: "/story" },
 ];
 
 export default function Navbar() {
@@ -20,7 +21,7 @@ export default function Navbar() {
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12 }}>
-          <Image src="/itant-logo.svg" alt="IT Ant ehf" width={36} height={36} style={{ filter: "invert(1) brightness(2)" }} />
+          <Image src="/favicon.svg" alt="IT Ant ehf" width={44} height={44} />
           <Typography variant="h6" fontWeight={700} color="primary.light">
             SpeedPad
           </Typography>
