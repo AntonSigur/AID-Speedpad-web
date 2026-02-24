@@ -14,6 +14,7 @@ import {
   Paper,
   Chip,
   Alert,
+  Button,
 } from "@mui/material";
 import {
   Security as SecurityIcon,
@@ -22,6 +23,7 @@ import {
 } from "@mui/icons-material";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 const factors = [
   { factor: "Code signing", status: "Not currently signed", note: "Primary trigger — planned EV certificate" },
@@ -140,6 +142,21 @@ export default function AVFaqPage() {
           <Typography variant="body1" color="text.secondary" sx={{ mt: 3, fontStyle: "italic" }}>
             Future improvement: Authenticode code signing with an EV certificate will eliminate ML-based false positives entirely.
           </Typography>
+        </Container>
+      </Box>
+
+      {/* Convinced? Download */}
+      <Box sx={{ py: 6, textAlign: "center" }}>
+        <Container maxWidth="sm">
+          <Typography variant="h5" fontWeight={700} gutterBottom>
+            Convinced it&apos;s safe?
+          </Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+            SpeedPad is 828KB with zero dependencies. No telemetry, no network calls, no hidden behavior.
+          </Typography>
+          <Button variant="contained" size="large" component={Link} href="/download" sx={{ px: 4, py: 1.5, fontWeight: 700, textTransform: "none" }}>
+            Download SpeedPad
+          </Button>
         </Container>
       </Box>
 
