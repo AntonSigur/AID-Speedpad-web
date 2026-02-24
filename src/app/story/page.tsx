@@ -63,8 +63,8 @@ const timeline = [
     color: "#00BCD4",
     title: "Cake Slice Navigator & 816KB",
     description:
-      "Sprint 27 delivered the Cake Slice Navigator — a visual tool for navigating 100GB+ files by dividing them into probed 'slices' with sparse virtual paging. Phase 1 of rotation detection landed for log file analysis. The company rebranded from Speed Inc to IT Ant ehf. 54 test suites passing, 816KB EXE. The ant colony keeps building.",
-    highlights: ["F17: Cake Slice Navigator for 100GB+ files", "F39: Phase 1 Rotation Detection", "Company rebrand → IT Ant ehf", "54/54 test suites, 816KB EXE"],
+      "Sprint 27 delivered the Cake Slice Navigator — a visual tool for navigating 100GB+ files by dividing them into probed 'slices' with sparse virtual paging. Phase 1 of rotation detection landed for log file analysis. The company rebranded from Speed Inc to IT Ant ehf. 55 test suites passing, 816KB EXE. The ant colony keeps building.",
+    highlights: ["F17: Cake Slice Navigator for 100GB+ files", "F39: Phase 1 Rotation Detection", "Company rebrand → IT Ant ehf", "54/55 test suites, 816KB EXE"],
   },
   {
     phase: "What's Next",

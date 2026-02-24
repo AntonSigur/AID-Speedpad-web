@@ -58,6 +58,15 @@ const essentialShortcuts = [
   { shortcut: "Ctrl+D", action: "Duplicate Line" },
   { shortcut: "Ctrl+Shift+K", action: "Delete Line" },
   { shortcut: "Ctrl+Shift+F12", action: "Solitaire 🐜" },
+  { shortcut: "Ctrl+PgUp", action: "Previous probe/slice (sparse mode)" },
+  { shortcut: "Ctrl+PgDn", action: "Next probe/slice (sparse mode)" },
+  { shortcut: "Ctrl+Home", action: "First slice (sparse mode)" },
+  { shortcut: "Ctrl+End", action: "Last slice (sparse mode)" },
+  { shortcut: "Ctrl+Alt+Left", action: "Previous histogram slice" },
+  { shortcut: "Ctrl+Alt+Right", action: "Next histogram slice" },
+  { shortcut: "Ctrl+T", action: "Go to Time (sparse mode navigation)" },
+  { shortcut: "Ctrl+Shift+[", action: "Fold code block" },
+  { shortcut: "Ctrl+Shift+]", action: "Unfold code block" },
 ];
 
 const cliExamples = [

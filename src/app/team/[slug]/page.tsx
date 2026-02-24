@@ -194,7 +194,7 @@ const teamData: TeamMember[] = [
       "Found 96+ bugs with detailed root cause analysis",
       "Caught critical DLGTEMPLATE alignment bugs",
       "Identified thread safety issues in parallel search",
-      "Maintained 54/54 test suite with 400+ assertions",
+      "Maintained 54/55 test suite with 400+ assertions",
     ],
     philosophy: "If I can\u0027t break it, it\u0027s probably ready. But I always find a way to break it.",
   },

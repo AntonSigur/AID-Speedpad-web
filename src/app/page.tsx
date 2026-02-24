@@ -85,7 +85,7 @@ export default function Home() {
         <Box sx={{ mb: 3 }}>
           <Image src="/favicon.svg" alt="IT Ant" width={80} height={80} />
         </Box>
-        <Chip label="v2.11.0 — 54 test suites passing" color="primary" variant="outlined" sx={{ mb: 3 }} />
+        <Chip label="v2.11.0 — 55 test suites passing" color="primary" variant="outlined" sx={{ mb: 3 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.5rem", md: "4.5rem" }, mb: 2, background: "linear-gradient(135deg, #64B5F6, #00BCD4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
           SpeedPad. 816KB.
           <br />

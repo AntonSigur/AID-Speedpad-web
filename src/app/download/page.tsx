@@ -27,7 +27,7 @@ const releases = [
     highlights: [
       "F17: Cake Slice Navigator (all 15 ACs)",
       "F39: Phase 1 Rotation Detection",
-      "54/54 tests passing, 816KB EXE",
+      "54/55 tests passing, 816KB EXE",
     ],
   },
   {
