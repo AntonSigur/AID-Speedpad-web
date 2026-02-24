@@ -150,6 +150,24 @@ export default function DocsPage() {
             and run it. That&apos;s it. SpeedPad is a single 828KB executable with zero external dependencies.
           </Typography>
 
+          <Typography variant="h5" sx={{ mb: 2 }}>Installation</Typography>
+          <Box component="ol" sx={{ pl: 3, color: "text.secondary", mb: 3 }}>
+            <Typography component="li" sx={{ mb: 1 }}>
+              <strong>Download</strong> the latest release from the{" "}
+              <a href="/download" style={{ color: "#64B5F6" }}>download page</a>
+            </Typography>
+            <Typography component="li" sx={{ mb: 1 }}>
+              <strong>Extract</strong> the ZIP to any folder (e.g., <code style={{ color: "#64B5F6" }}>C:\Tools\SpeedPad\</code>)
+            </Typography>
+            <Typography component="li" sx={{ mb: 1 }}><strong>Run</strong> <code style={{ color: "#64B5F6" }}>SpeedPad.exe</code></Typography>
+          </Box>
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+            <strong>Optional — add to PATH</strong> to launch from any terminal:
+          </Typography>
+          <Paper sx={{ p: 2, bgcolor: "#0F2035", fontFamily: "monospace", fontSize: "0.85rem", color: "#64B5F6", mb: 3, overflow: "auto" }}>
+            [Environment]::SetEnvironmentVariable(&quot;Path&quot;, $env:Path + &quot;;C:\Tools\SpeedPad&quot;, &quot;User&quot;)
+          </Paper>
+
           <Typography variant="h5" sx={{ mb: 2, mt: 4 }}>Opening Files</Typography>
           <Box component="ul" sx={{ pl: 3, color: "text.secondary" }}>
             <Typography component="li" sx={{ mb: 1 }}><strong>Menu:</strong> File → Open (Ctrl+O)</Typography>
@@ -168,6 +186,13 @@ export default function DocsPage() {
             The <strong>Tail Dashboard</strong> (Ctrl+Alt+T) lets you monitor up to 8 files simultaneously.
             <strong> Anomaly Highlighting</strong> (Ctrl+Shift+A) auto-detects timestamp gaps and marks them
             on the scrollbar.
+          </Typography>
+
+          <Typography variant="h5" sx={{ mb: 2, mt: 4 }}>Workspaces</Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>
+            Save your current session (open files, viewport positions, dashboard layout) with{" "}
+            <strong>Ctrl+Alt+S</strong>. Restore it later with <strong>Ctrl+Alt+O</strong>.
+            From the command line: <code style={{ color: "#64B5F6" }}>speedpad --workspace ops-logs.speedws</code>
           </Typography>
 
           <Typography variant="h5" sx={{ mb: 2, mt: 4 }}>The Command Palette</Typography>
