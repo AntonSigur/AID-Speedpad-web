@@ -5,6 +5,7 @@ import Link from "next/link";
 
 const navItems = [
   { label: "Features", href: "/features" },
+  { label: "Multi-Log", href: "/multilog" },
   { label: "Download", href: "/download" },
   { label: "Docs", href: "/docs" },
   { label: "Team", href: "/team" },
