@@ -7,6 +7,7 @@ import {
   CardContent,
   Chip,
   Grid,
+  Paper,
   Button,
 } from "@mui/material";
 import Navbar from "@/components/Navbar";
@@ -307,6 +308,68 @@ export default function StoryPage() {
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>
           The philosophy mirrors SpeedPad itself: stay lean, ship often, no bloat. The entire website
           builds in under 10 seconds. Every commit is pushed to two remotes. The ants never stop.
+        </Typography>
+      </Container>
+
+      {/* Team in Numbers */}
+      <Box sx={{ bgcolor: "background.paper", py: { xs: 4, md: 8 } }}>
+        <Container maxWidth="md">
+          <Chip label="Data" color="primary" variant="outlined" sx={{ mb: 2, display: "block", width: "fit-content", mx: "auto" }} />
+          <Typography variant="h3" textAlign="center" sx={{ fontSize: { xs: "1.6rem", md: "2.2rem" }, mb: 4 }}>
+            The Team in Numbers
+          </Typography>
+          <Grid container spacing={2}>
+            {[
+              { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
+              { value: "72", label: "Releases Shipped", sub: "40 consecutive sprint deliveries", color: "#4CAF50" },
+              { value: "235", label: "Test Suites", sub: "From 153 → 235 (+54% growth)", color: "#FF9800" },
+              { value: "181+", label: "Bugs Fixed", sub: "B001 through B181, all verified", color: "#F44336" },
+              { value: "70+", label: "Website Commits", sub: "23 routes, 6,800+ lines of TypeScript", color: "#9C27B0" },
+              { value: "73", label: "Inbox Messages", sub: "File-based async communication", color: "#00BCD4" },
+              { value: "860", label: "KB Total", sub: "Entire editor in less than 1MB", color: "#E91E63" },
+              { value: "10s", label: "Build Time", sub: "Next.js 16 — full rebuild in seconds", color: "#607D8B" },
+            ].map((stat) => (
+              <Grid key={stat.label} size={{ xs: 6, sm: 3 }}>
+                <Paper sx={{ p: 2.5, bgcolor: "#162D50", textAlign: "center", height: "100%" }}>
+                  <Typography variant="h4" sx={{ color: stat.color, fontWeight: 800, mb: 0.5 }}>{stat.value}</Typography>
+                  <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 0.5 }}>{stat.label}</Typography>
+                  <Typography variant="caption" color="text.secondary" sx={{ display: "block", lineHeight: 1.3 }}>{stat.sub}</Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
+      {/* How the Ants Collaborate */}
+      <Container maxWidth="md" sx={{ py: { xs: 4, md: 8 } }}>
+        <Chip label="Process" color="secondary" variant="outlined" sx={{ mb: 2, display: "block", width: "fit-content", mx: "auto" }} />
+        <Typography variant="h3" textAlign="center" sx={{ fontSize: { xs: "1.6rem", md: "2.2rem" }, mb: 3 }}>
+          How the Ants Collaborate
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
+          The IT Ant team runs on a file-based inbox system — no Slack, no email, no real-time chat. Each
+          agent has an inbox folder. When the PM releases a new version, every relevant agent receives a
+          message. The PO drafts content directions. The CEO reviews and provides feedback. Everything is
+          asynchronous, traceable, and stored as plain text files.
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
+          Before every work cycle, each agent runs a <strong>Skerity security check</strong> — a mandatory
+          verification that scans the workspace for integrity issues. No work starts without a clean pass.
+          This mirrors the disciplined approach SpeedPad takes to code quality: every release passes all
+          test suites, every commit is verified, every deployment is tracked.
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
+          The development cadence is remarkable: the team has delivered <strong>40 consecutive sprints</strong> without
+          a single missed delivery. Each sprint produces a new release with bug fixes, features, and test
+          suites — all in a single-file 860KB executable. The website mirrors this velocity, growing from
+          5 pages to 23 routes while maintaining zero lint warnings and clean builds.
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>
+          Every number on this website is traceable. Feature counts come from FEATURES.md. Shortcut
+          lists come from SHORTCUTS.md. Release data comes from CHANGELOG.md and RELEASE_NOTES.md. The PO
+          is the content authority — when sources disagree, the PO&apos;s numbers win. This traceability
+          discipline means users can trust what they read.
         </Typography>
       </Container>
 
