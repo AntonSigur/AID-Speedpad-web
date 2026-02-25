@@ -100,7 +100,7 @@ const commands: Cmd[] = [
   { name: "File Statistics", shortcut: "Ctrl+Shift+I", category: "View", roles: ["all"], outcome: "File size, line count, encoding info" },
   { name: "Read-Only Mode", shortcut: "Ctrl+R", category: "View", roles: ["devops", "sysadmin"], outcome: "Prevent accidental edits to production logs" },
   { name: "Code Folding", shortcut: "Ctrl+Shift+[ / ]", category: "View", roles: ["developer"], outcome: "Collapse/expand indented blocks" },
-  { name: "Log Correlation Mode", shortcut: "Ctrl+Shift+C (View)", category: "View", roles: ["devops", "sysadmin"], outcome: "Link entries across 8 files by timestamp" },
+  { name: "Log Correlation Mode", shortcut: "Ctrl+Shift+E", category: "View", roles: ["devops", "sysadmin"], outcome: "Link entries across 8 files by timestamp" },
   { name: "Performance Dashboard", shortcut: "Status bar", category: "View", roles: ["devops", "developer"], outcome: "Real-time metrics: open time, search speed, memory, FPS" },
   { name: "Time Browse", shortcut: "—", category: "View", roles: ["devops", "sysadmin"], outcome: "Scrub through log timestamps on a timeline" },
   { name: "Line Numbers", shortcut: "—", category: "View", roles: ["all"], outcome: "Toggle line number gutter" },

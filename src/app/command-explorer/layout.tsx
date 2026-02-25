@@ -20,7 +20,7 @@ const jsonLd = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Multi-Cursor Select", description: "Ctrl+Click — Add cursor at click position for simultaneous multi-point editing" },
     { "@type": "ListItem", position: 2, name: "Parallel Search", description: "Ctrl+Shift+F — Regex search across all open files with instant results" },
-    { "@type": "ListItem", position: 3, name: "Log Correlation Mode", description: "Ctrl+Shift+C — Link related entries across up to 8 log files by timestamp" },
+    { "@type": "ListItem", position: 3, name: "Log Correlation Mode", description: "Ctrl+Shift+E — Link related entries across up to 8 log files by timestamp" },
     { "@type": "ListItem", position: 4, name: "Timestamp Intelligence", description: "Ctrl+Shift+A — Auto-detect time formats, show relative times and anomaly highlighting" },
     { "@type": "ListItem", position: 5, name: "Command Palette", description: "Ctrl+Shift+P — Fuzzy-search all 87+ commands with role filtering" },
   ],

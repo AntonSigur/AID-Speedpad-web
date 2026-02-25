@@ -145,7 +145,7 @@ export default function MultiLogPage() {
             decompressed, merged, and ready to search.
           </Typography>
           <Typography variant="body1" sx={{ lineHeight: 1.8, mt: 2, color: "primary.light" }}>
-            <strong>New in v2.50.0:</strong> Pattern export and save for correlation results. Combine with the Log Correlation Engine (Ctrl+Shift+C) to link related
+            <strong>New in v2.50.0:</strong> Pattern export and save for correlation results. Combine with the Log Correlation Engine (Ctrl+Shift+E) to link related
             events across up to 8 files — timestamps sync automatically with clickable ⛓ indicators.
           </Typography>
         </Container>
