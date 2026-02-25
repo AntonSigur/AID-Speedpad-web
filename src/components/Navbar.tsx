@@ -38,6 +38,7 @@ const moreNav = [
   { label: "AV FAQ", href: "/av-faq" },
   { label: "Team", href: "/team" },
   { label: "Story", href: "/story" },
+  { label: "Contributing", href: "/contributing" },
 ];
 
 export default function Navbar() {
