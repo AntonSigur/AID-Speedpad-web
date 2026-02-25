@@ -12,6 +12,20 @@ export const metadata: Metadata = {
     description: "The fastest Windows text editor. 758KB, opens 100GB+ files, 30 unique features, zero dependencies.",
     type: "website",
     siteName: "SpeedPad",
+    images: [
+      {
+        url: "/screenshots/speedpad-dark-log-20260225.png",
+        width: 1024,
+        height: 768,
+        alt: "SpeedPad dark mode with color-coded log file",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SpeedPad — 758KB Text Editor",
+    description: "The fastest Windows text editor. Opens 100GB+ files, 220 tests, zero dependencies.",
+    images: ["/screenshots/speedpad-dark-log-20260225.png"],
   },
   icons: {
     icon: "/favicon.svg",
@@ -34,7 +48,7 @@ export default function RootLayout({
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     description: "Blazing-fast 758KB Windows text editor. Opens 100GB+ files, multi-cursor editing, log correlation, timestamp intelligence, and 30 unique features.",
     author: { "@type": "Organization", name: "IT Ant ehf", url: "https://itant.is" },
-    softwareVersion: "2.46.0",
+    softwareVersion: "2.48.0",
     fileSize: "758KB",
   };
 
