@@ -243,8 +243,11 @@ export default function FeaturesPage() {
             <Button variant="outlined" component={Link} href="/incident-playbook" sx={{ textTransform: "none", fontWeight: 700, borderColor: "#F44336", color: "#F44336", mr: 2 }}>
               See Incident Playbook →
             </Button>
-            <Button variant="outlined" component={Link} href="/command-explorer" sx={{ textTransform: "none", fontWeight: 700, borderColor: "#00BCD4", color: "#00BCD4" }}>
+            <Button variant="outlined" component={Link} href="/command-explorer" sx={{ textTransform: "none", fontWeight: 700, borderColor: "#00BCD4", color: "#00BCD4", mr: 2 }}>
               Explore All Commands →
+            </Button>
+            <Button variant="outlined" component={Link} href="/lenses" sx={{ textTransform: "none", fontWeight: 700, borderColor: "#9C27B0", color: "#9C27B0" }}>
+              Lens Plugins →
             </Button>
           </Box>
         </Container>

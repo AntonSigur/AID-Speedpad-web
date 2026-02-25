@@ -22,6 +22,7 @@ export default function Footer() {
             {[
               { label: "Features", href: "/features" },
               { label: "Multi-Log", href: "/multilog" },
+              { label: "Lens Plugins", href: "/lenses" },
               { label: "How It Works", href: "/how-it-works" },
               { label: "Commands", href: "/command-explorer" },
               { label: "Playbook", href: "/incident-playbook" },
