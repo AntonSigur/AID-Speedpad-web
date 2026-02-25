@@ -215,15 +215,15 @@ export default function GettingStartedPage() {
       <Container maxWidth="md" sx={{ py: 4, textAlign: "center" }}>
         <Paper elevation={6} sx={{ display: "inline-block", borderRadius: 2, overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)" }}>
           <Image
-            src="/screenshots/speedpad-dark-log-20260225.png"
-            alt="SpeedPad dark mode with color-coded log entries"
-            width={1024}
-            height={768}
+            src="/screenshots/speedpad-app-screenshot.png"
+            alt="SpeedPad viewing a production log file"
+            width={1010}
+            height={761}
             style={{ display: "block", maxWidth: "100%", height: "auto" }}
           />
         </Paper>
         <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: "block" }}>
-          SpeedPad viewing a production log — color-coded by severity level
+          SpeedPad viewing a production log — timestamps, severity levels, and status bar info
         </Typography>
       </Container>
 

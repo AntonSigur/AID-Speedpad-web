@@ -138,16 +138,16 @@ export default function Home() {
             }}
           >
             <Image
-              src="/screenshots/speedpad-dark-log-20260225.png"
-              alt="SpeedPad dark mode showing a production log file with color-coded ERROR (red), WARN (yellow), DEBUG (blue), and INFO entries"
-              width={1024}
-              height={768}
+              src="/screenshots/speedpad-app-screenshot.png"
+              alt="SpeedPad viewing a production log file with timestamps, severity levels, and status bar"
+              width={1010}
+              height={761}
               style={{ display: "block", maxWidth: "100%", height: "auto" }}
               priority
             />
           </Paper>
           <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: "block" }}>
-            SpeedPad v2.48.0 — viewing a production log file with 49 lines, 3.8 KB, auto-detected UTF-8
+            SpeedPad v2.48.0 — viewing a production log with 49 lines, 3.8 KB · auto-detected UTF-8 encoding
           </Typography>
         </Box>
 
@@ -172,7 +172,7 @@ export default function Home() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/screenshots/speedpad-tail-mode.gif"
-              alt="SpeedPad tail mode — new log entries appearing in real-time with color-coded severity levels"
+              alt="SpeedPad tail mode — new log entries appearing in real-time as the file grows"
               width={800}
               height={600}
               style={{ display: "block", maxWidth: "100%", height: "auto" }}

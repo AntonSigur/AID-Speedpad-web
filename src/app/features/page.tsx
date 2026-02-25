@@ -193,10 +193,10 @@ export default function FeaturesPage() {
       <Container maxWidth="md" sx={{ pb: 4, textAlign: "center" }}>
         <Paper elevation={6} sx={{ display: "inline-block", borderRadius: 2, overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)" }}>
           <Image
-            src="/screenshots/speedpad-dark-log-20260225.png"
-            alt="SpeedPad features — dark mode with color-coded log levels"
-            width={1024}
-            height={768}
+            src="/screenshots/speedpad-app-screenshot.png"
+            alt="SpeedPad features — viewing a production log file"
+            width={1010}
+            height={761}
             style={{ display: "block", maxWidth: "100%", height: "auto" }}
           />
         </Paper>

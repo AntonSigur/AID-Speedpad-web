@@ -14,10 +14,10 @@ export const metadata: Metadata = {
     siteName: "SpeedPad",
     images: [
       {
-        url: "/screenshots/speedpad-dark-log-20260225.png",
-        width: 1024,
-        height: 768,
-        alt: "SpeedPad dark mode with color-coded log file",
+        url: "/screenshots/speedpad-app-screenshot.png",
+        width: 1010,
+        height: 761,
+        alt: "SpeedPad text editor viewing a production log file",
       },
     ],
   },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SpeedPad — 758KB Text Editor",
     description: "The fastest Windows text editor. Opens 100GB+ files, 220 tests, zero dependencies.",
-    images: ["/screenshots/speedpad-dark-log-20260225.png"],
+    images: ["/screenshots/speedpad-app-screenshot.png"],
   },
   icons: {
     icon: "/favicon.svg",

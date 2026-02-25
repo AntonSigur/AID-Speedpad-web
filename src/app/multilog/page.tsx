@@ -128,10 +128,10 @@ export default function MultiLogPage() {
       <Container maxWidth="md" sx={{ pb: 2, textAlign: "center" }}>
         <Paper elevation={6} sx={{ display: "inline-block", borderRadius: 2, overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)" }}>
           <Image
-            src="/screenshots/speedpad-multi-file-20260225.png"
-            alt="SpeedPad with multiple log files open in tabs — payment log and application log"
-            width={1024}
-            height={768}
+            src="/screenshots/speedpad-multi-file.png"
+            alt="SpeedPad with multiple log files open in tabs"
+            width={1010}
+            height={761}
             style={{ display: "block", maxWidth: "100%", height: "auto" }}
           />
         </Paper>
