@@ -233,6 +233,13 @@ export default function IncidentPlaybookPage() {
             >
               Large Log Recipe →
             </Button>
+            <Button
+              variant="outlined"
+              href="/shortcuts"
+              sx={{ borderColor: "#94A3B8", color: "#94A3B8", fontWeight: 700, textTransform: "none", px: 4 }}
+            >
+              Keyboard Shortcuts →
+            </Button>
           </Box>
         </Box>
       </Container>
