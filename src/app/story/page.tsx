@@ -133,7 +133,7 @@ const timeline = [
   },
   {
     phase: "Pattern Export & Stability",
-    period: "v2.50.0 — Sprint 66b",
+    period: "v2.50.0 — Sprint 67",
     color: "#E91E63",
     title: "Save what you found",
     description:
@@ -141,8 +141,17 @@ const timeline = [
     highlights: ["B180: auto-reload hang fix", "F60 Tier 3b: pattern export/save", "230 tests, 157+ features", "860KB EXE"],
   },
   {
+    phase: "Lens Stability",
+    period: "v2.51.0 — Sprint 68",
+    color: "#795548",
+    title: "Trust what you decompress",
+    description:
+      "B181 fixes a critical lens redirect stale state bug: after opening a compressed file, the editor now properly re-detects encoding, re-initializes the edit buffer and piece table, and updates syntax highlighting. 5 new test suites ensure lens redirects work correctly. 235 test suites, release #72.",
+    highlights: ["B181: lens redirect encoding + piece table fix", "5 new lens redirect test suites", "235 tests, 157+ features", "860KB EXE, Sprint 40 streak"],
+  },
+  {
     phase: "What's Next",
-    period: "Sprint 65+",
+    period: "Sprint 69+",
     color: "#607D8B",
     title: "GPU rendering, session extraction, and beyond",
     description:
@@ -152,10 +161,10 @@ const timeline = [
 ];
 
 const stats = [
-  { label: "Releases", value: "71", color: "#2196F3" },
+  { label: "Releases", value: "72", color: "#2196F3" },
   { label: "Features", value: "157+", color: "#4CAF50" },
-  { label: "Bugs Fixed", value: "180+", color: "#F44336" },
-  { label: "Test Suites", value: "230", color: "#FF9800" },
+  { label: "Bugs Fixed", value: "181+", color: "#F44336" },
+  { label: "Test Suites", value: "235", color: "#FF9800" },
   { label: "EXE Size", value: "860 KB", color: "#9C27B0" },
   { label: "Team Size", value: "7 agents", color: "#00BCD4" },
 ];

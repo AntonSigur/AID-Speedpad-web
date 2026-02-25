@@ -33,6 +33,20 @@ import {
 /* ───── Release data ───── */
 const releases = [
   {
+    version: "v2.51.0",
+    release: 72,
+    date: "2026-02-25",
+    size: "840 KiB (860,672 bytes)",
+    tests: 235,
+    highlights: [
+      "B181: Lens redirect stale state fix",
+      "Encoding, piece table, edit buffer re-init after lens redirect",
+      "5 new lens redirect test suites",
+      "235 test suites passing",
+    ],
+    milestone: "Lens Stability",
+  },
+  {
     version: "v2.50.0",
     release: 71,
     date: "2026-02-25",
