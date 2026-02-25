@@ -49,7 +49,7 @@ export default function Footer() {
           </Grid>
           <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="subtitle2" sx={{ mb: 1.5 }}>Quick Stats</Typography>
-            <Typography variant="body2" color="text.secondary">v2.47.0 · 758KB · 154+ features · 215 tests</Typography>
+            <Typography variant="body2" color="text.secondary">v2.48.0 · 758KB · 155+ features · 220 tests</Typography>
             <Typography variant="body2" color="text.secondary">30 unique features no other editor has</Typography>
           </Grid>
         </Grid>

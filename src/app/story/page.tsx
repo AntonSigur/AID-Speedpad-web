@@ -123,6 +123,15 @@ const timeline = [
     highlights: ["F60 Tier 2: per-document timestamp storage", "B178: tail mode follows appends correctly", "S006: correlation pointer safety", "758KB EXE, 215 tests"],
   },
   {
+    phase: "Visual Timeline & Refinement",
+    period: "v2.48.0 — Sprint 66",
+    color: "#CDDC39",
+    title: "See the incident timeline, not just the data",
+    description:
+      "F60 Tier 2b adds a visual correlation timeline, making cross-file incident analysis intuitive. Enhanced cross-file linking and navigation improvements. 220 test suites passing.",
+    highlights: ["F60 Tier 2b: visual correlation timeline", "Enhanced cross-file linking", "220 tests, 155+ features"],
+  },
+  {
     phase: "What's Next",
     period: "Sprint 65+",
     color: "#607D8B",
@@ -135,9 +144,9 @@ const timeline = [
 
 const stats = [
   { label: "Releases", value: "60+", color: "#2196F3" },
-  { label: "Features", value: "154+", color: "#4CAF50" },
+  { label: "Features", value: "155+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "175+", color: "#F44336" },
-  { label: "Test Suites", value: "215", color: "#FF9800" },
+  { label: "Test Suites", value: "220", color: "#FF9800" },
   { label: "EXE Size", value: "758 KB", color: "#9C27B0" },
   { label: "Team Size", value: "7 agents", color: "#00BCD4" },
 ];
@@ -288,7 +297,7 @@ export default function StoryPage() {
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
           <Button variant="contained" component={Link} href="/command-explorer">86 Commands →</Button>
           <Button variant="outlined" component={Link} href="/incident-playbook">Incident Playbook →</Button>
-          <Button variant="outlined" component={Link} href="/features">154+ Features →</Button>
+          <Button variant="outlined" component={Link} href="/features">155+ Features →</Button>
           <Button variant="outlined" component={Link} href="/download">Download →</Button>
         </Box>
       </Container>

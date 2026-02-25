@@ -419,6 +419,9 @@ export default function CommandExplorerPage() {
           <Button variant="outlined" href="/docs" sx={{ textTransform: "none" }}>
             Full Documentation →
           </Button>
+          <Button variant="outlined" href="/getting-started#large-logs" sx={{ textTransform: "none" }}>
+            Large Log Recipe →
+          </Button>
         </Box>
       </Container>
     </Box>

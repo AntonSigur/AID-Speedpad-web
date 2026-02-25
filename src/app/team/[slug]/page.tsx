@@ -108,7 +108,7 @@ const teamData: TeamMember[] = [
     ],
     achievements: [
       "Created the \u002722 Things Only SpeedPad Can Do\u0027 list",
-      "Defined 154+ features for the SpeedPad v2 roadmap",
+      "Defined 155+ features for the SpeedPad v2 roadmap",
       "Coined \u0027We are ants\u0027 team motto and brand identity",
     ],
     philosophy: "Every feature should make someone\u0027s day better. If we can\u0027t explain why in one sentence, we haven\u0027t thought hard enough.",
@@ -194,7 +194,7 @@ const teamData: TeamMember[] = [
       "Found 96+ bugs with detailed root cause analysis",
       "Caught critical DLGTEMPLATE alignment bugs",
       "Identified thread safety issues in parallel search",
-      "Maintained 135/215 test suites passing",
+      "Maintained 135/220 test suites passing",
     ],
     philosophy: "If I can\u0027t break it, it\u0027s probably ready. But I always find a way to break it.",
   },
@@ -221,7 +221,7 @@ const teamData: TeamMember[] = [
     achievements: [
       "Built 9-route marketing site from scratch",
       "Created responsive dark theme with IT Ant branding",
-      "154+ feature showcase with log analysis and AV FAQ pages",
+      "155+ feature showcase with log analysis and AV FAQ pages",
       "Zero-dependency static deployment",
     ],
     philosophy: "A website should be as fast and clean as the product it represents. Just clear information, beautifully presented.",

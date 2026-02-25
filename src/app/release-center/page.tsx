@@ -33,10 +33,23 @@ import {
 /* ───── Release data ───── */
 const releases = [
   {
+    version: "v2.48.0",
+    release: 69,
+    date: "2026-02-24",
+    size: "758 KiB (776,192 bytes)",
+    tests: 220,
+    highlights: [
+      "F60 Tier 2b: Visual correlation timeline across files",
+      "Enhanced cross-file linking and navigation",
+      "220 test suites passing",
+    ],
+    milestone: "Visual Timeline & Refinement",
+  },
+  {
     version: "v2.47.0",
     release: 68,
     date: "2026-02-24",
-    size: "758 KiB (776,192 bytes)",
+    size: "758KB",
     tests: 215,
     highlights: [
       "F60 Tier 2: Per-document timestamp storage",

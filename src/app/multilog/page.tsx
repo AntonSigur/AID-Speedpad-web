@@ -145,7 +145,7 @@ export default function MultiLogPage() {
             decompressed, merged, and ready to search.
           </Typography>
           <Typography variant="body1" sx={{ lineHeight: 1.8, mt: 2, color: "primary.light" }}>
-            <strong>New in v2.47.0:</strong> Per-document timestamp storage makes re-correlation instant. Combine with the Log Correlation Engine (Ctrl+Shift+C) to link related
+            <strong>New in v2.48.0:</strong> Visual correlation timeline makes cross-file incident analysis intuitive. Combine with the Log Correlation Engine (Ctrl+Shift+C) to link related
             events across up to 8 files — timestamps sync automatically with clickable ⛓ indicators.
           </Typography>
         </Container>

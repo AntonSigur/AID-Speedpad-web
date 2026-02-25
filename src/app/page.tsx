@@ -58,7 +58,7 @@ const features = [
   },
   {
     icon: <BugReportIcon sx={{ fontSize: 40 }} />,
-    title: "215 tests Passing",
+    title: "220 tests Passing",
     desc: "TinyRegex NFA engine. ReDoS-proof. Zero external dependencies.",
   },
 ];
@@ -91,7 +91,7 @@ export default function Home() {
         <Box sx={{ mb: 3 }}>
           <Image src="/itant-logo.svg" alt="IT Ant ehf" width={100} height={100} style={{ filter: "brightness(0) invert(1)" }} />
         </Box>
-        <Chip label="v2.47.0 — 215 test suites passing" color="primary" variant="outlined" sx={{ mb: 3 }} />
+        <Chip label="v2.48.0 — 220 test suites passing" color="primary" variant="outlined" sx={{ mb: 3 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.5rem", md: "4.5rem" }, mb: 2, background: "linear-gradient(135deg, #64B5F6, #00BCD4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
           Find incidents faster.
           <br />
@@ -342,7 +342,7 @@ export default function Home() {
           <Grid container spacing={3}>
             {[
               { label: "EXE Size (758KB)", detail: "Actual file size of SpeedPad.exe in the release build artifact. No installer, no runtime, no dependencies. Verified with dir /b on the build output." },
-              { label: "Test Count (215)", detail: "Google Test suite run on every build. Output: 215/215 tests passed, 0 skipped, 0 flaky. CI enforces zero failures before release." },
+              { label: "Test Count (220)", detail: "Google Test suite run on every build. Output: 220/220 tests passed, 0 skipped, 0 flaky. CI enforces zero failures before release." },
               { label: "Test Verification", detail: "Tests cover file I/O, search, encoding, regex, multi-cursor, undo/redo, and all lens plugins. Crash isolation tests deliberately fault-inject to verify SEH handling." },
               { label: "Build Artifact Path", detail: "Release EXE built from tagged commit via MSVC /O2 with LTCG. Artifact path: build/Release/SpeedPad.exe → signed and checksummed before distribution." },
               { label: "Startup & File Open", detail: "Measured by automated release verification runs on reference hardware. Every release is timed before shipping. 100GB opens via memory-mapped I/O (no full load)." },

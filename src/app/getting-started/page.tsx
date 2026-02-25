@@ -462,6 +462,67 @@ export default function GettingStartedPage() {
 
       <Divider sx={{ borderColor: "#1a3a5c" }} />
 
+      {/* Large Log Recipe */}
+      <Container maxWidth="lg" sx={sectionSx} id="large-logs">
+        <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
+          Large Log Recipe: Newest-First Analysis
+        </Typography>
+        <Typography sx={{ color: "#94A3B8", mb: 4 }}>
+          When you have a multi-gigabyte log and need the most recent entries first,
+          combine Reverse View with Reverse Tail for live newest-first monitoring.
+        </Typography>
+        <Grid container spacing={3}>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Paper sx={cardSx}>
+              <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+                Step 1: Open in Reverse View
+              </Typography>
+              <Box component="code" sx={codeSx}>
+                speedpad --reverse production.log
+              </Box>
+              <Typography sx={{ color: "#94A3B8", mt: 1.5, fontSize: "0.9rem" }}>
+                Shows the file bottom-to-top. Most recent entries appear first.
+                Or press{" "}
+                <Chip label="Ctrl+Shift+V" size="small" sx={{ bgcolor: "#0a1628", color: "#00BCD4" }} />{" "}
+                after opening.
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Paper sx={cardSx}>
+              <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+                Step 2: Add Reverse Tail for Live Monitoring
+              </Typography>
+              <Box component="code" sx={codeSx}>
+                speedpad -t -r production.log
+              </Box>
+              <Typography sx={{ color: "#94A3B8", mt: 1.5, fontSize: "0.9rem" }}>
+                New lines appear at the top, pushing older content down. Or toggle with{" "}
+                <Chip label="Ctrl+Shift+T" size="small" sx={{ bgcolor: "#0a1628", color: "#00BCD4" }} />{" "}
+                then{" "}
+                <Chip label="Ctrl+Shift+V" size="small" sx={{ bgcolor: "#0a1628", color: "#00BCD4" }} />.
+                Status bar shows live line rate (lines/sec).
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid size={{ xs: 12 }}>
+            <Paper sx={{ ...cardSx, borderLeft: "3px solid #00BCD4" }}>
+              <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 1 }}>
+                Why this works for large files
+              </Typography>
+              <Typography sx={{ color: "#94A3B8" }}>
+                SpeedPad uses memory-mapped I/O with a 64 MB sliding window — it never loads the
+                entire file into RAM. A 10 GB log uses the same ~64 MB of memory as a 10 KB config.
+                Combined with lazy line indexing, scrolling to the end (or viewing in reverse) is
+                instant regardless of file size.
+              </Typography>
+            </Paper>
+          </Grid>
+        </Grid>
+      </Container>
+
+      <Divider sx={{ borderColor: "#1a3a5c" }} />
+
       {/* Multi-File */}
       <Container maxWidth="lg" sx={sectionSx}>
         <Typography variant="h4" sx={{ fontWeight: 700, mb: 4 }}>

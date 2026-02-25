@@ -226,6 +226,13 @@ export default function IncidentPlaybookPage() {
             >
               Explore All Commands
             </Button>
+            <Button
+              variant="outlined"
+              href="/getting-started#large-logs"
+              sx={{ borderColor: "#94A3B8", color: "#94A3B8", fontWeight: 700, textTransform: "none", px: 4 }}
+            >
+              Large Log Recipe →
+            </Button>
           </Box>
         </Box>
       </Container>

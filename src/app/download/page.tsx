@@ -20,12 +20,21 @@ import Footer from "@/components/Footer";
 
 const releases = [
   {
-    version: "v2.47.0",
+    version: "v2.48.0",
     date: "2026-02-24",
     latest: true,
     highlights: [
-      "F60 Tier 2: Per-document timestamp storage, pointer safety (S006)",
+      "F60 Tier 2b: Visual correlation timeline, enhanced cross-file linking",
       `${EXE_SIZE} EXE, ${TEST_COUNT}/${TEST_COUNT} tests passing`,
+    ],
+  },
+  {
+    version: "v2.47.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "F60 Tier 2: Per-document timestamp storage, pointer safety (S006)",
+      "758KB EXE, 215/215 tests passing",
     ],
   },
   {
