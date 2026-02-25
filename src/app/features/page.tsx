@@ -21,6 +21,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyDownloadCTA from "@/components/StickyDownloadCTA";
 import Link from "next/link";
+import Image from "next/image";
 
 const featureGroups = [
   {
@@ -185,6 +186,19 @@ export default function FeaturesPage() {
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
           A comprehensive text editor in 758KB — with zero external dependencies, 6 lens plugins, and 87+ commands.
         </Typography>
+      </Container>
+
+      {/* App Preview */}
+      <Container maxWidth="md" sx={{ pb: 4, textAlign: "center" }}>
+        <Paper elevation={6} sx={{ display: "inline-block", borderRadius: 2, overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)" }}>
+          <Image
+            src="/screenshots/speedpad-dark-log-20260225.png"
+            alt="SpeedPad features — dark mode with color-coded log levels"
+            width={1024}
+            height={768}
+            style={{ display: "block", maxWidth: "100%", height: "auto" }}
+          />
+        </Paper>
       </Container>
 
       {/* Ops Critical — F60/F61/F63 Trio */}

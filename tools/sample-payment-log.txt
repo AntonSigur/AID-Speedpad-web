@@ -1,0 +1,12 @@
+2026-02-24 08:15:10.123 [INFO]  Payment service starting on port 8081
+2026-02-24 08:15:10.456 [INFO]  Connected to payment gateway: stripe-us-east
+2026-02-24 08:15:15.789 [INFO]  Processing order #ORD-2024-1247: amount=,230.00
+2026-02-24 08:15:16.012 [WARN]  Payment retry attempt 1/3 for order #ORD-2024-1247
+2026-02-24 08:15:18.345 [ERROR] Payment gateway timeout after 2000ms — order #ORD-2024-1247
+2026-02-24 08:15:18.567 [INFO]  Switching to fallback gateway: stripe-eu-west
+2026-02-24 08:15:19.890 [INFO]  Payment confirmed: order #ORD-2024-1247 via fallback gateway
+2026-02-24 08:15:22.123 [WARN]  Primary gateway latency: 2340ms (threshold: 500ms)
+2026-02-24 08:15:25.456 [INFO]  Daily settlement batch started: 847 transactions
+2026-02-24 08:15:30.789 [ERROR] Refund failed: order #ORD-2024-0891 — insufficient merchant balance
+2026-02-24 08:15:32.012 [DEBUG] Cache refresh: payment_methods TTL=3600s
+2026-02-24 08:15:35.345 [INFO]  Webhook delivered: payment.confirmed → https://api.example.com/hooks
