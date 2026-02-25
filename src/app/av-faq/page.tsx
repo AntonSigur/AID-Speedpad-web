@@ -29,7 +29,7 @@ const factors = [
   { factor: "Code signing", status: "Not currently signed", note: "Primary trigger — planned EV certificate" },
   { factor: "File prevalence", status: "Low", note: "Niche tool = fewer users in ML training data" },
   { factor: "PE metadata", status: "✅ Present since v2.38.0", note: "CompanyName, ProductName, FileVersion" },
-  { factor: "Binary size", status: "~758 KB", note: "Small EXEs score lower in ML models" },
+  { factor: "Binary size", status: "~860 KB", note: "Small EXEs score lower in ML models" },
   { factor: "LTCG optimizations", status: "Unusual patterns", note: "Link-time code generation creates atypical byte sequences" },
 ];
 
@@ -152,7 +152,7 @@ export default function AVFaqPage() {
             Convinced it&apos;s safe?
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-            SpeedPad is 758KB with zero dependencies. No telemetry, no network calls, no hidden behavior.
+            SpeedPad is 860KB with zero dependencies. No telemetry, no network calls, no hidden behavior.
           </Typography>
           <Button variant="contained" size="large" component={Link} href="/download" sx={{ px: 4, py: 1.5, fontWeight: 700, textTransform: "none" }}>
             Download SpeedPad

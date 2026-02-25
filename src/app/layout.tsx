@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import ThemeRegistry from "@/theme/ThemeRegistry";
 
 export const metadata: Metadata = {
-  title: "SpeedPad — 758KB Text Editor | IT Ant ehf",
+  metadataBase: new URL("https://speedpad.itant.is"),
+  title: "SpeedPad — 860KB Text Editor | IT Ant ehf",
   description:
-    "SpeedPad is a blazing-fast Windows text editor. 758KB EXE, opens 100GB+ files, multi-cursor editing, multi-log merge, parallel search, tail mode, and 30+ unique features no other editor has.",
+    "SpeedPad is a blazing-fast Windows text editor. 860KB EXE, opens 100GB+ files, multi-cursor editing, multi-log merge, parallel search, tail mode, and 30+ unique features no other editor has.",
   keywords: ["text editor", "Windows", "log viewer", "multi-cursor", "multi-log", "SpeedPad", "C++", "lightweight", "IT Ant"],
   authors: [{ name: "IT Ant ehf", url: "https://itant.is" }],
   openGraph: {
-    title: "SpeedPad — 758KB Text Editor",
-    description: "The fastest Windows text editor. 758KB, opens 100GB+ files, 30 unique features, zero dependencies.",
+    title: "SpeedPad — 860KB Text Editor",
+    description: "The fastest Windows text editor. 860KB, opens 100GB+ files, 30 unique features, zero dependencies.",
     type: "website",
     siteName: "SpeedPad",
     images: [
@@ -23,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SpeedPad — 758KB Text Editor",
-    description: "The fastest Windows text editor. Opens 100GB+ files, 220 tests, zero dependencies.",
+    title: "SpeedPad — 860KB Text Editor",
+    description: "The fastest Windows text editor. Opens 100GB+ files, 230 tests, zero dependencies.",
     images: ["/screenshots/speedpad-app-screenshot.png"],
   },
   icons: {
@@ -46,10 +47,10 @@ export default function RootLayout({
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Windows 10, Windows 11",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    description: "Blazing-fast 758KB Windows text editor. Opens 100GB+ files, multi-cursor editing, log correlation, timestamp intelligence, and 30 unique features.",
+    description: "Blazing-fast 860KB Windows text editor. Opens 100GB+ files, multi-cursor editing, log correlation, timestamp intelligence, and 30 unique features.",
     author: { "@type": "Organization", name: "IT Ant ehf", url: "https://itant.is" },
-    softwareVersion: "2.48.0",
-    fileSize: "758KB",
+    softwareVersion: "2.50.0",
+    fileSize: "860KB",
   };
 
   return (

@@ -114,7 +114,7 @@ const featureGroups = [
 ];
 
 const comparison = [
-  { feature: "EXE Size", sp: "758 KB", npp: "14 MB", vsc: "400 MB", hxd: "3.5 MB" },
+  { feature: "EXE Size", sp: "860 KB", npp: "14 MB", vsc: "400 MB", hxd: "3.5 MB" },
   { feature: "4GB File Open Time", sp: "< 2s", npp: "❌ Crashes", vsc: "❌ Refuses", hxd: "~8s" },
   { feature: "RAM on 4GB File", sp: "< 100 MB", npp: "❌", vsc: "❌", hxd: "~200 MB" },
   { feature: "Startup Time", sp: "< 50ms", npp: "~1.5s", vsc: "~3s", hxd: "~500ms" },
@@ -179,12 +179,12 @@ export default function FeaturesPage() {
 
       {/* Hero */}
       <Container maxWidth="lg" sx={{ pt: { xs: 6, md: 10 }, pb: 4, textAlign: "center" }}>
-        <Chip label="155+ features" color="primary" variant="outlined" sx={{ mb: 2 }} />
+        <Chip label="157+ features" color="primary" variant="outlined" sx={{ mb: 2 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.2rem", md: "3.5rem" }, mb: 2 }}>
           Every Feature in SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
-          A comprehensive text editor in 758KB — with zero external dependencies, 6 lens plugins, and 87+ commands.
+          A comprehensive text editor in 860KB — with zero external dependencies, 6 lens plugins, and 87+ commands.
         </Typography>
       </Container>
 

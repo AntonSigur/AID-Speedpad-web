@@ -20,12 +20,22 @@ import Footer from "@/components/Footer";
 
 const releases = [
   {
-    version: "v2.48.0",
-    date: "2026-02-24",
+    version: "v2.50.0",
+    date: "2026-02-25",
     latest: true,
     highlights: [
-      "F60 Tier 2b: Visual correlation timeline, enhanced cross-file linking",
+      "B180: Auto-reload fix (UI tail-switch hang)",
+      "F60 Tier 3b: Pattern export and save",
       `${EXE_SIZE} EXE, ${TEST_COUNT}/${TEST_COUNT} tests passing`,
+    ],
+  },
+  {
+    version: "v2.48.0",
+    date: "2026-02-24",
+    latest: false,
+    highlights: [
+      "F60 Tier 2b: Visual correlation timeline, enhanced cross-file linking",
+      "220 tests passing",
     ],
   },
   {
@@ -211,10 +221,9 @@ export default function DownloadPage() {
       <Container maxWidth="md" sx={{ pb: 4 }}>
         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr" }, gap: 2 }}>
           {[
-            { v: CURRENT_VERSION, label: "Latest", summary: "Per-document timestamps — F60 Tier 2, S006 pointer safety", color: "primary" as const },
-            { v: "v2.46.0", label: "Stable", summary: "Log Correlation Engine — cross-file incident triage", color: "secondary" as const },
-            { v: "v2.44.0", label: "Stable", summary: "Timestamp Intelligence — auto-detect 15+ formats, time range summaries", color: "default" as const },
-            { v: "v2.41.0", label: "Stable", summary: "Performance Dashboard — real-time memory, CPU, FPS metrics", color: "default" as const },
+            { v: CURRENT_VERSION, label: "Latest", summary: "B180 auto-reload fix, F60 Tier 3b pattern export/save", color: "primary" as const },
+            { v: "v2.48.0", label: "Stable", summary: "F60 Tier 2b: visual correlation timeline, cross-file linking", color: "secondary" as const },
+            { v: "v2.46.0", label: "Stable", summary: "Log Correlation Engine — cross-file incident triage", color: "default" as const },
           ].map((r) => (
             <Card key={r.v} elevation={0} sx={{ bgcolor: "rgba(255,255,255,0.03)", border: r.color === "primary" ? "1px solid rgba(33,150,243,0.3)" : "1px solid rgba(255,255,255,0.06)" }}>
               <CardContent sx={{ p: 2.5 }}>

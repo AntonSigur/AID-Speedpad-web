@@ -33,6 +33,19 @@ import {
 /* ───── Release data ───── */
 const releases = [
   {
+    version: "v2.50.0",
+    release: 71,
+    date: "2026-02-25",
+    size: "840 KiB (859,648 bytes)",
+    tests: 230,
+    highlights: [
+      "B180: Auto-reload fix (UI tail-switch hang)",
+      "F60 Tier 3b: Pattern export and save",
+      "230 test suites passing",
+    ],
+    milestone: "Pattern Export & Stability",
+  },
+  {
     version: "v2.48.0",
     release: 69,
     date: "2026-02-24",

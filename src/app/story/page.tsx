@@ -132,6 +132,15 @@ const timeline = [
     highlights: ["F60 Tier 2b: visual correlation timeline", "Enhanced cross-file linking", "220 tests, 155+ features"],
   },
   {
+    phase: "Pattern Export & Stability",
+    period: "v2.50.0 — Sprint 66b",
+    color: "#E91E63",
+    title: "Save what you found",
+    description:
+      "B180 fixes the UI tail-switch hang (auto-reload regression). F60 Tier 3b adds pattern export and save — analysts can now persist correlation results for incident reports. 230 test suites, release #71.",
+    highlights: ["B180: auto-reload hang fix", "F60 Tier 3b: pattern export/save", "230 tests, 157+ features", "860KB EXE"],
+  },
+  {
     phase: "What's Next",
     period: "Sprint 65+",
     color: "#607D8B",
@@ -143,11 +152,11 @@ const timeline = [
 ];
 
 const stats = [
-  { label: "Releases", value: "60+", color: "#2196F3" },
-  { label: "Features", value: "155+", color: "#4CAF50" },
-  { label: "Bugs Fixed", value: "175+", color: "#F44336" },
-  { label: "Test Suites", value: "220", color: "#FF9800" },
-  { label: "EXE Size", value: "758 KB", color: "#9C27B0" },
+  { label: "Releases", value: "71", color: "#2196F3" },
+  { label: "Features", value: "157+", color: "#4CAF50" },
+  { label: "Bugs Fixed", value: "180+", color: "#F44336" },
+  { label: "Test Suites", value: "230", color: "#FF9800" },
+  { label: "EXE Size", value: "860 KB", color: "#9C27B0" },
   { label: "Team Size", value: "7 agents", color: "#00BCD4" },
 ];
 
@@ -171,7 +180,7 @@ export default function StoryPage() {
           Our Story
         </Typography>
         <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 650, mx: "auto", fontWeight: 400 }}>
-          How a frustration with slow text editors became a 758KB powerhouse
+          How a frustration with slow text editors became a 860KB powerhouse
           that opens 100GB files — while staying under 1MB.
         </Typography>
       </Container>
@@ -297,7 +306,7 @@ export default function StoryPage() {
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
           <Button variant="contained" component={Link} href="/command-explorer">86 Commands →</Button>
           <Button variant="outlined" component={Link} href="/incident-playbook">Incident Playbook →</Button>
-          <Button variant="outlined" component={Link} href="/features">155+ Features →</Button>
+          <Button variant="outlined" component={Link} href="/features">157+ Features →</Button>
           <Button variant="outlined" component={Link} href="/download">Download →</Button>
         </Box>
       </Container>

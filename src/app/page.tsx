@@ -28,6 +28,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import { CURRENT_VERSION, EXE_SIZE, EXE_SIZE_SPACED, TEST_COUNT, RELEASE_COUNT } from "@/lib/product-config";
 import Link from "next/link";
 
 const features = [
@@ -38,7 +39,7 @@ const features = [
   },
   {
     icon: <MemoryIcon sx={{ fontSize: 40 }} />,
-    title: "758 KB Total",
+    title: `${EXE_SIZE_SPACED} Total`,
     desc: "19× smaller than Notepad++. 556× smaller than VS Code.",
   },
   {
@@ -58,13 +59,13 @@ const features = [
   },
   {
     icon: <BugReportIcon sx={{ fontSize: 40 }} />,
-    title: "220 tests Passing",
+    title: `${TEST_COUNT} tests Passing`,
     desc: "TinyRegex NFA engine. ReDoS-proof. Zero external dependencies.",
   },
 ];
 
 const comparison = [
-  { feature: "EXE Size", sp: "758 KB", npp: "14 MB", vsc: "400 MB" },
+  { feature: "EXE Size", sp: EXE_SIZE_SPACED, npp: "14 MB", vsc: "400 MB" },
   { feature: "Startup Time", sp: "< 50ms", npp: "~1.5s", vsc: "~3s" },
   { feature: "Tail Mode", sp: "✅", npp: "❌", vsc: "❌" },
   { feature: "Multi-Cursor", sp: "✅", npp: "✅", vsc: "✅" },
@@ -91,11 +92,11 @@ export default function Home() {
         <Box sx={{ mb: 3 }}>
           <Image src="/itant-logo.svg" alt="IT Ant ehf" width={100} height={100} style={{ filter: "brightness(0) invert(1)" }} />
         </Box>
-        <Chip label="v2.48.0 — 220 test suites passing" color="primary" variant="outlined" sx={{ mb: 3 }} />
+        <Chip label={`${CURRENT_VERSION} — ${TEST_COUNT} test suites passing`} color="primary" variant="outlined" sx={{ mb: 3 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.5rem", md: "4.5rem" }, mb: 2, background: "linear-gradient(135deg, #64B5F6, #00BCD4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
           Find incidents faster.
           <br />
-          In an 758KB editor.
+          In an {EXE_SIZE} editor.
         </Typography>
         <Typography variant="h5" color="text.secondary" sx={{ mb: 5, maxWidth: 640, mx: "auto", fontWeight: 400 }}>
           SpeedPad helps DevOps and engineers triage live logs, correlate events across files, and resolve production issues fast — without heavy tooling.
@@ -112,10 +113,10 @@ export default function Home() {
         {/* Proof Bar */}
         <Box sx={{ mt: 5, display: "flex", flexWrap: "wrap", justifyContent: "center", gap: { xs: 2, md: 4 } }}>
           {[
-            { value: "758KB", label: "EXE size" },
-            { value: "220", label: "automated tests" },
+            { value: EXE_SIZE, label: "EXE size" },
+            { value: String(TEST_COUNT), label: "automated tests" },
             { value: "100GB+", label: "file support" },
-            { value: "60+", label: "releases shipped" },
+            { value: RELEASE_COUNT, label: "releases shipped" },
             { value: "0", label: "external deps" },
           ].map((m) => (
             <Box key={m.label} sx={{ textAlign: "center", minWidth: 80 }}>
@@ -147,7 +148,7 @@ export default function Home() {
             />
           </Paper>
           <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: "block" }}>
-            SpeedPad v2.48.0 — viewing a production log with 49 lines, 3.8 KB · auto-detected UTF-8 encoding
+            SpeedPad {CURRENT_VERSION} — viewing a production log with 49 lines, 3.8 KB · auto-detected UTF-8 encoding
           </Typography>
           <Button variant="text" href="/screenshots" sx={{ mt: 1, color: "#00BCD4", textTransform: "none" }}>
             See more screenshots & animations →
@@ -161,7 +162,7 @@ export default function Home() {
           </Typography>
           <Box sx={{ display: "flex", alignItems: "end", justifyContent: "center", gap: { xs: 2, md: 4 }, height: 180 }}>
             {[
-              { name: "SpeedPad", size: "758 KB", height: 10, color: "#2196F3" },
+              { name: "SpeedPad", size: EXE_SIZE_SPACED, height: 10, color: "#2196F3" },
               { name: "Notepad++", size: "14 MB", height: 60, color: "#455A64" },
               { name: "VS Code", size: "400 MB", height: 170, color: "#37474F" },
             ].map((ed) => (
@@ -343,7 +344,7 @@ export default function Home() {
           {[
             { tool: "Splunk", price: "$1,000+/yr", desc: "Log ingestion, correlation, dashboards", color: "#455A64" },
             { tool: "Datadog", price: "$15/host/mo", desc: "Log management, APM, monitoring", color: "#455A64" },
-            { tool: "SpeedPad", price: "Free", desc: "Log correlation, timestamp intel, perf dashboard — offline, 758KB", color: "#2196F3" },
+            { tool: "SpeedPad", price: "Free", desc: `Log correlation, timestamp intel, perf dashboard — offline, ${EXE_SIZE}`, color: "#2196F3" },
           ].map((t) => (
             <Card key={t.tool} elevation={0} sx={{ textAlign: "center", bgcolor: t.tool === "SpeedPad" ? "rgba(33,150,243,0.08)" : "rgba(255,255,255,0.03)", border: t.tool === "SpeedPad" ? "1px solid rgba(33,150,243,0.3)" : "1px solid rgba(255,255,255,0.06)" }}>
               <CardContent sx={{ p: 3 }}>
@@ -370,8 +371,8 @@ export default function Home() {
           </Typography>
           <Grid container spacing={3}>
             {[
-              { label: "EXE Size (758KB)", detail: "Actual file size of SpeedPad.exe in the release build artifact. No installer, no runtime, no dependencies. Verified with dir /b on the build output." },
-              { label: "Test Count (220)", detail: "Google Test suite run on every build. Output: 220/220 tests passed, 0 skipped, 0 flaky. CI enforces zero failures before release." },
+              { label: `EXE Size (${EXE_SIZE})`, detail: "Actual file size of SpeedPad.exe in the release build artifact. No installer, no runtime, no dependencies. Verified with dir /b on the build output." },
+              { label: `Test Count (${TEST_COUNT})`, detail: `Google Test suite run on every build. Output: ${TEST_COUNT}/${TEST_COUNT} tests passed, 0 skipped, 0 flaky. CI enforces zero failures before release.` },
               { label: "Test Verification", detail: "Tests cover file I/O, search, encoding, regex, multi-cursor, undo/redo, and all lens plugins. Crash isolation tests deliberately fault-inject to verify SEH handling." },
               { label: "Build Artifact Path", detail: "Release EXE built from tagged commit via MSVC /O2 with LTCG. Artifact path: build/Release/SpeedPad.exe → signed and checksummed before distribution." },
               { label: "Startup & File Open", detail: "Measured by automated release verification runs on reference hardware. Every release is timed before shipping. 100GB opens via memory-mapped I/O (no full load)." },
@@ -399,7 +400,7 @@ export default function Home() {
       <Box sx={{ py: { xs: 6, md: 10 }, textAlign: "center" }}>
         <Container maxWidth="sm">
           <Typography variant="h3" sx={{ mb: 2, fontSize: { xs: "1.8rem", md: "2.5rem" } }}>
-            758KB. Zero Dependencies. Free.
+            {EXE_SIZE}. Zero Dependencies. Free.
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
             Download SpeedPad and open your first 100GB file in under 2 seconds.

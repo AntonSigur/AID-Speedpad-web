@@ -72,7 +72,7 @@ const competitorComparison = [
   { feature: "Tail across rotation", sp: "✅", npp: "❌", vsc: "❌", splunk: "✅" },
   { feature: "Workspace persistence", sp: "✅ .speedws", npp: "❌", vsc: "❌", splunk: "✅" },
   { feature: "Cost", sp: "Free", npp: "Free", vsc: "Free", splunk: "$$$" },
-  { feature: "Install size", sp: "758 KB", npp: "14 MB", vsc: "400 MB", splunk: "2+ GB" },
+  { feature: "Install size", sp: "860 KB", npp: "14 MB", vsc: "400 MB", splunk: "2+ GB" },
 ];
 
 const rotationPatterns = [
@@ -145,7 +145,7 @@ export default function MultiLogPage() {
             decompressed, merged, and ready to search.
           </Typography>
           <Typography variant="body1" sx={{ lineHeight: 1.8, mt: 2, color: "primary.light" }}>
-            <strong>New in v2.48.0:</strong> Visual correlation timeline makes cross-file incident analysis intuitive. Combine with the Log Correlation Engine (Ctrl+Shift+C) to link related
+            <strong>New in v2.50.0:</strong> Pattern export and save for correlation results. Combine with the Log Correlation Engine (Ctrl+Shift+C) to link related
             events across up to 8 files — timestamps sync automatically with clickable ⛓ indicators.
           </Typography>
         </Container>
@@ -271,7 +271,7 @@ export default function MultiLogPage() {
               Download SpeedPad — Free
             </Button>
             <Typography variant="body1" color="text.secondary" sx={{ mt: 2, fontStyle: "italic" }}>
-              All of this in 758KB. No plugins. No extensions. Just speed.
+              All of this in 860KB. No plugins. No extensions. Just speed.
             </Typography>
             <Button variant="outlined" component={Link} href="/incident-playbook#log-rotation-failure-investigation" sx={{ mt: 2, textTransform: "none", fontWeight: 700, borderColor: "#FF9800", color: "#FF9800" }}>
               See Log Rotation Playbook →

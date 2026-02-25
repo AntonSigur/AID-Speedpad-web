@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The SpeedPad Story — From 600KB to 758KB | SpeedPad",
+  title: "The SpeedPad Story — From 600KB to 860KB | SpeedPad",
   description:
-    "Follow SpeedPad's journey from a weekend project to a 758KB text editor with 155+ features, 220 tests, and 60+ releases. Built by IT Ant ehf.",
+    "Follow SpeedPad's journey from a weekend project to a 860KB text editor with 157+ features, 230 tests, and 71 releases. Built by IT Ant ehf.",
 };
 
 export default function StoryLayout({ children }: { children: React.ReactNode }) {

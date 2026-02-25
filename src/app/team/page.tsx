@@ -102,7 +102,7 @@ export default function TeamPage() {
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 2, lineHeight: 1.8 }}>
             IT Ant ehf was founded on a simple belief: software should be fast, small, and uncompromising.
-            Like ants — we carry loads many times our own weight. SpeedPad is a 758KB executable that opens
+            Like ants — we carry loads many times our own weight. SpeedPad is a 860KB executable that opens
             files 5 million times its own size. No splash screens. No loading bars. No external dependencies.
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 2, lineHeight: 1.8 }}>
@@ -112,7 +112,7 @@ export default function TeamPage() {
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>
             We don&apos;t do bloat. We don&apos;t do compromise. We ship fast, we ship correct, and we
-            keep SpeedPad at 758KB. That&apos;s the ant way.
+            keep SpeedPad at 860KB. That&apos;s the ant way.
           </Typography>
         </Container>
       </Box>
@@ -190,7 +190,7 @@ export default function TeamPage() {
           <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" }, gap: 3 }}>
             {[
               { title: "Speed First", desc: "If file open takes > 5ms or scrolling drops a frame — we fix it before shipping." },
-              { title: "Zero Bloat", desc: "758KB total. No frameworks, no runtimes, no external dependencies." },
+              { title: "Zero Bloat", desc: "860KB total. No frameworks, no runtimes, no external dependencies." },
               { title: "One File, One Window", desc: "No tabs. No split views. New instance for multi-file. Keep it focused." },
               { title: "Opt-in, Never Forced", desc: "Lenses and features activated by the user. No popups, no dialogs, no interruptions." },
             ].map((p) => (
