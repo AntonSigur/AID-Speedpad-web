@@ -478,6 +478,9 @@ export default function DocsPage() {
             <Button variant="text" href="/command-explorer" sx={{ color: "#00BCD4" }}>
               Command Explorer →
             </Button>
+            <Button variant="text" href="/shortcuts" sx={{ color: "#00BCD4" }}>
+              Keyboard Shortcuts →
+            </Button>
           </Box>
         </Container>
       </Box>

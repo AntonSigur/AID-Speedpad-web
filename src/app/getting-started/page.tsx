@@ -683,6 +683,9 @@ export default function GettingStartedPage() {
             >
               Documentation
             </Button>
+            <Button variant="outlined" href="/shortcuts" sx={{ textTransform: "none" }}>
+              Keyboard Shortcuts
+            </Button>
           </Box>
         </Container>
       </Box>

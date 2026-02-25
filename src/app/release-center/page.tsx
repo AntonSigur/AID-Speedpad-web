@@ -313,6 +313,9 @@ export default function ReleaseCenterPage() {
             <Button variant="outlined" component={Link} href="/features">
               Explore Features →
             </Button>
+            <Button variant="outlined" component={Link} href="/changelog" sx={{ textTransform: "none" }}>
+              Full Changelog →
+            </Button>
           </Box>
         </Container>
       </Box>
