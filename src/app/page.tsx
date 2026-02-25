@@ -151,6 +151,38 @@ export default function Home() {
           </Typography>
         </Box>
 
+        {/* Tail Mode Demo */}
+        <Box sx={{ mt: 6, mb: 2, textAlign: "center" }}>
+          <Typography variant="overline" color="primary.light" sx={{ mb: 1, display: "block", letterSpacing: 2 }}>
+            LIVE TAIL MODE
+          </Typography>
+          <Typography variant="h5" sx={{ mb: 2, fontWeight: 600 }}>
+            Watch logs grow in real-time
+          </Typography>
+          <Paper
+            elevation={8}
+            sx={{
+              display: "inline-block",
+              borderRadius: 2,
+              overflow: "hidden",
+              border: "1px solid rgba(0, 188, 212, 0.3)",
+              maxWidth: "100%",
+            }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/screenshots/speedpad-tail-mode.gif"
+              alt="SpeedPad tail mode — new log entries appearing in real-time with color-coded severity levels"
+              width={800}
+              height={600}
+              style={{ display: "block", maxWidth: "100%", height: "auto" }}
+            />
+          </Paper>
+          <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: "block" }}>
+            Ctrl+Shift+T — new lines appear as the log file grows. Status bar shows live line rate.
+          </Typography>
+        </Box>
+
         {/* Size comparison visual */}
         <Box sx={{ mt: 8, p: 4, borderRadius: 3, background: "rgba(33, 150, 243, 0.05)", border: "1px solid rgba(33, 150, 243, 0.15)" }}>
           <Typography variant="overline" color="text.secondary" sx={{ mb: 3, display: "block" }}>
