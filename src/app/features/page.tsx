@@ -116,10 +116,11 @@ const featureGroups = [
 
 const comparison = [
   { feature: "EXE Size", sp: "758 KB", npp: "14 MB", vsc: "400 MB", hxd: "3.5 MB" },
+  { feature: "4GB File Open Time", sp: "< 2s", npp: "❌ Crashes", vsc: "❌ Refuses", hxd: "~8s" },
+  { feature: "RAM on 4GB File", sp: "< 100 MB", npp: "❌", vsc: "❌", hxd: "~200 MB" },
   { feature: "Startup Time", sp: "< 50ms", npp: "~1.5s", vsc: "~3s", hxd: "~500ms" },
   { feature: "Multi-Cursor", sp: "✅ Full", npp: "✅ Plugin", vsc: "✅ Built-in", hxd: "❌" },
   { feature: "Multi-Log Merge", sp: "✅ + .gz/.bz2/.zst", npp: "❌", vsc: "❌", hxd: "❌" },
-  { feature: "4GB+ File Support", sp: "✅ Memory-mapped", npp: "❌ Crashes", vsc: "❌ Refuses", hxd: "✅ Hex only" },
   { feature: "Tail Mode", sp: "✅", npp: "❌", vsc: "❌", hxd: "❌" },
   { feature: "Pipe / Stdin", sp: "✅", npp: "❌", vsc: "❌", hxd: "❌" },
   { feature: "Cross-File Search", sp: "✅ Parallel", npp: "✅ Single-thread", vsc: "✅ Indexed", hxd: "❌" },
