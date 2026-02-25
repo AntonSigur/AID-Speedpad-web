@@ -62,7 +62,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ThemeRegistry>{children}</ThemeRegistry>
+        <ThemeRegistry>
+          <div id="main-content">{children}</div>
+        </ThemeRegistry>
       </body>
     </html>
   );
