@@ -298,7 +298,7 @@ export default function FeaturesPage() {
             sx={{ bgcolor: "background.paper", border: "1px solid rgba(255,255,255,0.06)", mb: 1, "&:before": { display: "none" } }}
           >
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6">
+              <Typography variant="h6" component="div">
                 {group.title}
                 <Chip label={group.features.length} size="small" sx={{ ml: 1.5, height: 22 }} />
               </Typography>

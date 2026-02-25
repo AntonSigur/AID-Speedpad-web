@@ -364,7 +364,7 @@ export default function GettingStartedPage() {
           <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 1 }}>
             View Mode vs Edit Mode
           </Typography>
-          <Typography sx={{ color: "#94A3B8" }}>
+          <Typography component="div" sx={{ color: "#94A3B8" }}>
             SpeedPad opens large files in <strong>view mode</strong> (memory-mapped,
             read-only). Just start typing to switch to edit mode automatically for
             files under 256 MB. Toggle read-only anytime with{" "}
@@ -497,7 +497,7 @@ export default function GettingStartedPage() {
               <Box component="code" sx={codeSx}>
                 speedpad --reverse production.log
               </Box>
-              <Typography sx={{ color: "#94A3B8", mt: 1.5, fontSize: "0.9rem" }}>
+              <Typography component="div" sx={{ color: "#94A3B8", mt: 1.5, fontSize: "0.9rem" }}>
                 Shows the file bottom-to-top. Most recent entries appear first.
                 Or press{" "}
                 <Chip label="Ctrl+Shift+V" size="small" sx={{ bgcolor: "#0a1628", color: "#00BCD4" }} />{" "}
@@ -513,7 +513,7 @@ export default function GettingStartedPage() {
               <Box component="code" sx={codeSx}>
                 speedpad -t -r production.log
               </Box>
-              <Typography sx={{ color: "#94A3B8", mt: 1.5, fontSize: "0.9rem" }}>
+              <Typography component="div" sx={{ color: "#94A3B8", mt: 1.5, fontSize: "0.9rem" }}>
                 New lines appear at the top, pushing older content down. Or toggle with{" "}
                 <Chip label="Ctrl+Shift+T" size="small" sx={{ bgcolor: "#0a1628", color: "#00BCD4" }} />{" "}
                 then{" "}
@@ -572,7 +572,7 @@ export default function GettingStartedPage() {
           <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
             The Command Palette
           </Typography>
-          <Typography sx={{ color: "#94A3B8" }}>
+          <Typography component="div" sx={{ color: "#94A3B8" }}>
             Press{" "}
             <Chip
               label="Ctrl+Shift+P"
@@ -633,7 +633,7 @@ export default function GettingStartedPage() {
                   Dark Mode
                 </Typography>
               </Box>
-              <Typography sx={{ color: "#94A3B8" }}>
+              <Typography component="div" sx={{ color: "#94A3B8" }}>
                 Press{" "}
                 <Chip
                   label="Ctrl+Shift+D"
