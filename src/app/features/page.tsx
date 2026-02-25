@@ -94,7 +94,7 @@ const featureGroups = [
       { name: "Encoding Converter", shortcut: "—", desc: "UTF-8, UTF-16 LE/BE, ASCII — convert or reinterpret" },
       { name: "Eval Expression", shortcut: "Ctrl+=", desc: "Calculate math expression in selection" },
       { name: "Text Transforms", shortcut: "—", desc: "Uppercase, lowercase, title case, ROT13, Morse, Pig Latin, and more" },
-      { name: "Command Palette", shortcut: "Ctrl+Shift+P", desc: "Fuzzy-search all 87+ commands with role-based filtering" },
+      { name: "Command Palette", shortcut: "Ctrl+Shift+P", desc: "Fuzzy-search all 88 commands with role-based filtering" },
       { name: "Typing Challenge", shortcut: "—", desc: "Interactive typing speed test with WPM, accuracy, persistent high scores, share to clipboard" },
       { name: "File Archaeology", shortcut: "—", desc: "Show file metadata, timestamps, and hashes" },
     ],
@@ -184,7 +184,7 @@ export default function FeaturesPage() {
           Every Feature in SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
-          A comprehensive text editor in 860KB — with zero external dependencies, 6 lens plugins, and 87+ commands.
+          A comprehensive text editor in 860KB — with zero external dependencies, 6 lens plugins, and 88 commands.
         </Typography>
       </Container>
 

@@ -157,7 +157,7 @@ const commands: Cmd[] = [
 
   // ── Help ──
   { name: "Keyboard Shortcuts", shortcut: "F1", category: "Help", roles: ["all"], outcome: "Display complete shortcut reference" },
-  { name: "Command Palette", shortcut: "Ctrl+Shift+P", category: "Help", roles: ["all"], outcome: "Fuzzy-search all 87+ commands with role filtering" },
+  { name: "Command Palette", shortcut: "Ctrl+Shift+P", category: "Help", roles: ["all"], outcome: "Fuzzy-search all 88 commands with role filtering" },
   { name: "Speed Statistics", shortcut: "—", category: "Help", roles: ["casual"], outcome: "Typing and navigation metrics" },
   { name: "Solitaire", shortcut: "Ctrl+Shift+F12", category: "Help", roles: ["casual"], outcome: "Classic card game easter egg (154KB DLL)" },
 ];

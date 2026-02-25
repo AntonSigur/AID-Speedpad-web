@@ -289,8 +289,9 @@ export default function StoryPage() {
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
           The website has grown alongside SpeedPad — from 5 initial pages to {" "}
-          <strong>12 routes</strong> covering features, documentation, download, a command explorer with
-          86 searchable commands, an incident response playbook, team profiles, and this story. Each
+          <strong>23 routes</strong> covering features, documentation, download, a command explorer with
+          88 searchable commands, an incident response playbook, lens plugins, keyboard shortcuts,
+          a changelog timeline, team profiles, and this story. Each
           version bump ripples through every page: stats bars, comparison tables, download links,
           SEO metadata, and JSON-LD structured data all update together.
         </Typography>
@@ -304,7 +305,7 @@ export default function StoryPage() {
       <Container maxWidth="md" sx={{ py: { xs: 3, md: 5 }, textAlign: "center" }}>
         <Typography variant="h5" sx={{ mb: 3 }}>Explore What the Ants Built</Typography>
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
-          <Button variant="contained" component={Link} href="/command-explorer">86 Commands →</Button>
+          <Button variant="contained" component={Link} href="/command-explorer">88 Commands →</Button>
           <Button variant="outlined" component={Link} href="/incident-playbook">Incident Playbook →</Button>
           <Button variant="outlined" component={Link} href="/features">157+ Features →</Button>
           <Button variant="outlined" component={Link} href="/download">Download →</Button>

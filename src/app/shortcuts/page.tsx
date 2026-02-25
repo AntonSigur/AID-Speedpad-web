@@ -241,7 +241,7 @@ export default function ShortcutsPage() {
         {/* Bottom Links */}
         <Box sx={{ mt: 6, display: "flex", gap: 2, flexWrap: "wrap" }}>
           <Button variant="outlined" href="/command-explorer" sx={{ textTransform: "none" }}>
-            Command Explorer (86 commands) →
+            Command Explorer (88 commands) →
           </Button>
           <Button variant="outlined" href="/docs" sx={{ textTransform: "none" }}>
             Full Documentation →
