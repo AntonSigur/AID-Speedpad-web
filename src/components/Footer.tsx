@@ -26,6 +26,7 @@ export default function Footer() {
               { label: "Commands", href: "/command-explorer" },
               { label: "Playbook", href: "/incident-playbook" },
               { label: "Releases", href: "/release-center" },
+              { label: "Changelog", href: "/changelog" },
               { label: "Screenshots", href: "/screenshots" },
               { label: "Quick Start", href: "/getting-started" },
               { label: "Download", href: "/download" },

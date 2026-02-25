@@ -35,6 +35,7 @@ const moreNav = [
   { label: "Command Explorer", href: "/command-explorer" },
   { label: "Incident Playbook", href: "/incident-playbook" },
   { label: "Release Center", href: "/release-center" },
+  { label: "Changelog", href: "/changelog" },
   { label: "AV FAQ", href: "/av-faq" },
   { label: "Team", href: "/team" },
   { label: "Story", href: "/story" },
