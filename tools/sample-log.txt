@@ -1,0 +1,48 @@
+2026-02-24 08:15:01.234 [INFO]  Application server starting on port 8080
+2026-02-24 08:15:01.567 [INFO]  Loading configuration from /etc/app/config.yaml
+2026-02-24 08:15:02.123 [INFO]  Database connection pool initialized (max=50, idle=10)
+2026-02-24 08:15:02.890 [WARN]  SSL certificate expires in 14 days — consider renewal
+2026-02-24 08:15:03.456 [INFO]  Health check endpoint registered at /api/health
+2026-02-24 08:15:04.012 [INFO]  Loading 23 middleware plugins...
+2026-02-24 08:15:05.789 [DEBUG] Plugin auth-jwt loaded in 45ms
+2026-02-24 08:15:05.891 [DEBUG] Plugin rate-limiter loaded in 12ms
+2026-02-24 08:15:06.123 [DEBUG] Plugin cors-handler loaded in 8ms
+2026-02-24 08:15:07.456 [INFO]  All middleware plugins loaded successfully
+2026-02-24 08:15:08.000 [INFO]  Server ready. Accepting connections.
+2026-02-24 08:15:12.345 [INFO]  GET /api/health → 200 (2ms)
+2026-02-24 08:15:15.678 [INFO]  POST /api/auth/login → 200 (45ms) user=admin
+2026-02-24 08:15:18.901 [WARN]  Rate limit approaching for IP 192.168.1.105 (48/50 requests)
+2026-02-24 08:15:20.234 [INFO]  GET /api/users?page=1 → 200 (120ms) rows=50
+2026-02-24 08:15:22.567 [ERROR] POST /api/orders → 500 Internal Server Error
+2026-02-24 08:15:22.568 [ERROR] java.lang.NullPointerException: Order.getCustomerId() returned null
+2026-02-24 08:15:22.569 [ERROR]     at com.app.service.OrderService.processOrder(OrderService.java:142)
+2026-02-24 08:15:22.570 [ERROR]     at com.app.controller.OrderController.create(OrderController.java:67)
+2026-02-24 08:15:22.571 [ERROR]     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2026-02-24 08:15:25.890 [INFO]  GET /api/orders/12345 → 200 (35ms)
+2026-02-24 08:15:30.123 [WARN]  Slow query detected: SELECT * FROM orders WHERE status='pending' (2340ms)
+2026-02-24 08:15:32.456 [DEBUG] Cache hit for key: user-profile-admin (TTL: 1200s remaining)
+2026-02-24 08:15:35.789 [INFO]  WebSocket connection established: client=ws-001
+2026-02-24 08:15:40.012 [INFO]  Scheduled job 'daily-report' triggered
+2026-02-24 08:15:42.345 [INFO]  Generating daily report for 2026-02-23...
+2026-02-24 08:15:45.678 [WARN]  Memory usage at 78% — threshold is 85%
+2026-02-24 08:15:48.901 [DEBUG] GC pause: 12ms (young generation)
+2026-02-24 08:15:50.234 [INFO]  Daily report generated: 1,247 orders, $45,230 revenue
+2026-02-24 08:15:55.567 [ERROR] Connection refused: redis://cache-node-3:6379 — retrying in 5s
+2026-02-24 08:15:58.890 [WARN]  Failover: routing cache requests to redis://cache-node-1:6379
+2026-02-24 08:16:00.123 [INFO]  Cache failover successful. All requests routed to node-1.
+2026-02-24 08:16:05.456 [INFO]  GET /api/dashboard → 200 (89ms)
+2026-02-24 08:16:10.789 [DEBUG] Session cleanup: removed 42 expired sessions
+2026-02-24 08:16:15.012 [INFO]  POST /api/auth/login → 200 (38ms) user=operator
+2026-02-24 08:16:20.345 [INFO]  File upload: invoice-2026-02.pdf (2.3MB) → /storage/invoices/
+2026-02-24 08:16:25.678 [WARN]  Disk usage at 82% on /data partition
+2026-02-24 08:16:30.901 [INFO]  GET /api/metrics → 200 (15ms) prometheus_scrape
+2026-02-24 08:16:35.234 [ERROR] CRITICAL: Database primary node unreachable — activating read replica
+2026-02-24 08:16:35.567 [ERROR] Failover initiated: primary → replica-east-1
+2026-02-24 08:16:36.890 [WARN]  Write operations queued (12 pending) until primary recovery
+2026-02-24 08:16:40.123 [INFO]  Read replica active. Read-only mode enabled.
+2026-02-24 08:16:45.456 [INFO]  Primary node reconnected after 10.2s downtime
+2026-02-24 08:16:46.789 [INFO]  Replaying 12 queued write operations...
+2026-02-24 08:16:47.012 [INFO]  All queued writes committed successfully
+2026-02-24 08:16:48.345 [INFO]  Full read-write mode restored
+2026-02-24 08:16:50.678 [DEBUG] Connection pool stats: active=23, idle=27, waiting=0
+2026-02-24 08:16:55.901 [INFO]  Heartbeat: all systems nominal

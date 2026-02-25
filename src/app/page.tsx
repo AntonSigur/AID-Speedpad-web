@@ -113,7 +113,7 @@ export default function Home() {
         <Box sx={{ mt: 5, display: "flex", flexWrap: "wrap", justifyContent: "center", gap: { xs: 2, md: 4 } }}>
           {[
             { value: "758KB", label: "EXE size" },
-            { value: "210", label: "automated tests" },
+            { value: "220", label: "automated tests" },
             { value: "100GB+", label: "file support" },
             { value: "60+", label: "releases shipped" },
             { value: "0", label: "external deps" },
@@ -123,6 +123,32 @@ export default function Home() {
               <Typography variant="caption" color="text.secondary">{m.label}</Typography>
             </Box>
           ))}
+        </Box>
+
+        {/* App Screenshot */}
+        <Box sx={{ mt: 6, mb: 2, textAlign: "center" }}>
+          <Paper
+            elevation={8}
+            sx={{
+              display: "inline-block",
+              borderRadius: 2,
+              overflow: "hidden",
+              border: "1px solid rgba(255,255,255,0.1)",
+              maxWidth: "100%",
+            }}
+          >
+            <Image
+              src="/screenshots/speedpad-dark-log-20260225.png"
+              alt="SpeedPad dark mode showing a production log file with color-coded ERROR (red), WARN (yellow), DEBUG (blue), and INFO entries"
+              width={1024}
+              height={768}
+              style={{ display: "block", maxWidth: "100%", height: "auto" }}
+              priority
+            />
+          </Paper>
+          <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: "block" }}>
+            SpeedPad v2.48.0 — viewing a production log file with 49 lines, 3.8 KB, auto-detected UTF-8
+          </Typography>
         </Box>
 
         {/* Size comparison visual */}
