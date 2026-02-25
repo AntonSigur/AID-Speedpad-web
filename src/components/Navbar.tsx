@@ -31,6 +31,7 @@ const primaryNav = [
 
 const moreNav = [
   { label: "Multi-Log", href: "/multilog" },
+  { label: "Screenshots", href: "/screenshots" },
   { label: "Command Explorer", href: "/command-explorer" },
   { label: "Incident Playbook", href: "/incident-playbook" },
   { label: "Release Center", href: "/release-center" },

@@ -29,7 +29,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyDownloadCTA from "@/components/StickyDownloadCTA";
 import Link from "next/link";
-import Image from "next/image";
 
 const capabilities = [
   {
@@ -122,22 +121,6 @@ export default function MultiLogPage() {
             See All Features
           </Button>
         </Box>
-      </Container>
-
-      {/* Multi-File Preview */}
-      <Container maxWidth="md" sx={{ pb: 2, textAlign: "center" }}>
-        <Paper elevation={6} sx={{ display: "inline-block", borderRadius: 2, overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)" }}>
-          <Image
-            src="/screenshots/speedpad-multi-file.png"
-            alt="SpeedPad with multiple log files open in tabs"
-            width={1010}
-            height={761}
-            style={{ display: "block", maxWidth: "100%", height: "auto" }}
-          />
-        </Paper>
-        <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: "block" }}>
-          Multiple log files open side-by-side with tab navigation
-        </Typography>
       </Container>
 
       {/* The Problem */}

@@ -28,7 +28,6 @@ import {
 } from "@mui/icons-material";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Image from "next/image";
 import {
   CURRENT_VERSION,
   EXE_SIZE,
@@ -210,22 +209,6 @@ export default function GettingStartedPage() {
           </Box>
         </Container>
       </Box>
-
-      {/* App Preview */}
-      <Container maxWidth="md" sx={{ py: 4, textAlign: "center" }}>
-        <Paper elevation={6} sx={{ display: "inline-block", borderRadius: 2, overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)" }}>
-          <Image
-            src="/screenshots/speedpad-app-screenshot.png"
-            alt="SpeedPad viewing a production log file"
-            width={1010}
-            height={761}
-            style={{ display: "block", maxWidth: "100%", height: "auto" }}
-          />
-        </Paper>
-        <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: "block" }}>
-          SpeedPad viewing a production log — timestamps, severity levels, and status bar info
-        </Typography>
-      </Container>
 
       {/* 3-Step Install */}
       <Container maxWidth="lg" sx={sectionSx}>
