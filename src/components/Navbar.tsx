@@ -36,6 +36,7 @@ const moreNav = [
   { label: "Workflows", href: "/workflows" },
   { label: "Use Cases", href: "/use-cases" },
   { label: "Benchmarks", href: "/benchmarks" },
+  { label: "Testimonials", href: "/testimonials" },
   { label: "Screenshots", href: "/screenshots" },
   { label: "Command Explorer", href: "/command-explorer" },
   { label: "Incident Playbook", href: "/incident-playbook" },

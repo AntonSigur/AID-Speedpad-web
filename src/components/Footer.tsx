@@ -38,6 +38,7 @@ export default function Footer() {
               { label: "Workflows", href: "/workflows" },
               { label: "Use Cases", href: "/use-cases" },
               { label: "Benchmarks", href: "/benchmarks" },
+              { label: "Testimonials", href: "/testimonials" },
               { label: "Contributing", href: "/contributing" },
             ].map((l) => (
               <MuiLink key={l.label} component={Link} href={l.href} color="text.secondary" variant="body2" underline="hover" display="block" sx={{ mb: 0.5 }}>
