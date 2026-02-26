@@ -28,7 +28,7 @@ import {
 } from "@mui/icons-material";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { EXE_SIZE } from "@/lib/product-config";
+import { EXE_SIZE, TEST_COUNT, RELEASE_NUMBER } from "@/lib/product-config";
 
 /* ─── Data ─── */
 const FOUR_PILLARS = [
@@ -555,6 +555,33 @@ export default function HowItWorksPage() {
               Quick Start Guide
             </Button>
           </Box>
+        </Container>
+      </Box>
+
+      {/* Security Posture */}
+      <Box sx={{ py: 8, bgcolor: "rgba(33,150,243,0.04)" }}>
+        <Container maxWidth="lg">
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 3 }}>
+            <SecurityIcon color="primary" />
+            <Typography variant="h4" sx={{ fontWeight: 700 }}>
+              Security Posture
+            </Typography>
+          </Box>
+          <Grid container spacing={3}>
+            {[
+              { title: "Memory-Safe Coding Discipline", desc: "C++17 with RAII throughout. No raw new/delete in application code. Smart pointers and stack allocation prevent memory leaks and use-after-free bugs." },
+              { title: "Continuous Test Growth", desc: `${TEST_COUNT} automated test suites and growing. Every bug fix ships with a regression test. Full validation runs on every build.` },
+              { title: "Release Verification Cadence", desc: `${RELEASE_NUMBER} releases across 41 consecutive sprints. Every release passes ctest -C Release before deployment.` },
+              { title: "Vulnerability Response Workflow", desc: "Bugs are tracked (B-series), fixed, and verified within sprint boundaries. The team's incident playbook ensures reproducible root-cause analysis." },
+            ].map((item) => (
+              <Grid key={item.title} size={{ xs: 12, sm: 6 }}>
+                <Paper elevation={0} sx={{ p: 2.5, height: "100%", bgcolor: "background.paper", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 2 }}>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 1 }}>{item.title}</Typography>
+                  <Typography variant="body2" color="text.secondary">{item.desc}</Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
         </Container>
       </Box>
 

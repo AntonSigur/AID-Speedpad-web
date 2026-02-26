@@ -369,6 +369,21 @@ export default function DownloadPage() {
         </Container>
       </Box>
 
+      {/* Security Trust */}
+      <Container maxWidth="md" sx={{ py: 4 }}>
+        <Paper elevation={0} sx={{ p: 3, bgcolor: "rgba(33,150,243,0.04)", border: "1px solid rgba(33,150,243,0.12)", borderRadius: 2 }}>
+          <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>🔒 Security Posture</Typography>
+          {[
+            "Memory-safe C++17 with RAII — no raw allocations in application code",
+            `${TEST_COUNT} automated test suites — every bug fix ships with a regression test`,
+            "Release verification: full ctest pass required before every deployment",
+            "Vulnerability response within sprint boundaries — tracked B-series bug fixes",
+          ].map((item, i) => (
+            <Typography key={i} variant="body2" color="text.secondary" sx={{ pl: 2, mb: 0.5 }}>• {item}</Typography>
+          ))}
+        </Paper>
+      </Container>
+
       <Footer />
     </Box>
   );
