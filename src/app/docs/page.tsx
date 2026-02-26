@@ -405,6 +405,7 @@ export default function DocsPage() {
             { title: "CSV Tools", items: "Column alignment with auto-detection, delimiter conversion, column extraction" },
             { title: "Regex Highlights", items: "Multi-pattern highlighting with color groups, ReDoS protection built in" },
             { title: "Log Analysis", items: "Anomaly detection (5s/30s gap thresholds), severity parsing (syslog, Apache, nginx, IIS)" },
+            { title: "SpeedHexPad", items: "Hex view & edit (Ctrl+Alt+H), Binary Inspector (F64), endianness toggle, hex search, goto offset" },
           ].map((tool) => (
             <Grid key={tool.title} size={{ xs: 12, sm: 6 }}>
               <Card sx={{ bgcolor: "background.paper", height: "100%" }}>

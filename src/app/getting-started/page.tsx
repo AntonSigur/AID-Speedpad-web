@@ -67,6 +67,7 @@ const NAV_SHORTCUTS = [
   { action: "Next / prev bookmark", shortcut: "F2 / Shift+F2" },
   { action: "Toggle word wrap", shortcut: "Ctrl+W" },
   { action: "Toggle line numbers", shortcut: "Ctrl+L" },
+  { action: "Hex editor view", shortcut: "Ctrl+Alt+H" },
 ];
 
 const EDIT_SHORTCUTS = [
