@@ -30,6 +30,7 @@ const primaryNav = [
 ];
 
 const moreNav = [
+  { label: "Hex Editor", href: "/hex-editor" },
   { label: "Multi-Log", href: "/multilog" },
   { label: "Lens Plugins", href: "/lenses" },
   { label: "Workflows", href: "/workflows" },

@@ -21,6 +21,7 @@ export default function Footer() {
             <Typography variant="subtitle2" sx={{ mb: 1.5 }}>Product</Typography>
             {[
               { label: "Features", href: "/features" },
+              { label: "Hex Editor", href: "/hex-editor" },
               { label: "Multi-Log", href: "/multilog" },
               { label: "Lens Plugins", href: "/lenses" },
               { label: "How It Works", href: "/how-it-works" },
@@ -56,7 +57,7 @@ export default function Footer() {
           <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="subtitle2" sx={{ mb: 1.5 }}>Quick Stats</Typography>
             <Typography variant="body2" color="text.secondary">v2.62.0 · 844KB · 165+ features · 350 tests</Typography>
-            <Typography variant="body2" color="text.secondary">30 unique features no other editor has</Typography>
+            <Typography variant="body2" color="text.secondary">36 unique features no other editor has</Typography>
           </Grid>
         </Grid>
         <Box sx={{ mt: 4, pt: 3, borderTop: "1px solid rgba(255,255,255,0.06)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 1 }}>
