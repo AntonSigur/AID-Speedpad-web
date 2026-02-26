@@ -20,13 +20,22 @@ import Footer from "@/components/Footer";
 
 const releases = [
   {
-    version: "v2.51.0",
+    version: "v2.52.0",
     date: "2026-02-25",
     latest: true,
     highlights: [
-      "B181: Lens redirect stale state fix (encoding, piece table, edit buffer)",
-      "5 new test suites for lens redirect paths",
+      "B182: Sparse index bug fixes (interpolation bounds, divide-by-zero guard)",
+      "P-009: Renderer performance (cached brushes, reused dx buffer)",
       `${EXE_SIZE} EXE, ${TEST_COUNT}/${TEST_COUNT} tests passing`,
+    ],
+  },
+  {
+    version: "v2.51.0",
+    date: "2026-02-25",
+    latest: false,
+    highlights: [
+      "B181: Lens redirect stale state fix (encoding, piece table, edit buffer)",
+      "235 tests passing",
     ],
   },
   {

@@ -33,6 +33,20 @@ import {
 /* ───── Release data ───── */
 const releases = [
   {
+    version: "v2.52.0",
+    release: 73,
+    date: "2026-02-25",
+    size: "841 KiB (861,184 bytes)",
+    tests: 240,
+    highlights: [
+      "B182: Sparse index interpolation bounds + divide-by-zero guard",
+      "P-009: Renderer brush caching + dx buffer reuse",
+      "5 new test suites (sparse index + renderer)",
+      "240 test suites passing",
+    ],
+    milestone: "Index Precision & Renderer Performance",
+  },
+  {
     version: "v2.51.0",
     release: 72,
     date: "2026-02-25",

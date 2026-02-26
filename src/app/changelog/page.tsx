@@ -22,6 +22,17 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "v2.52.0",
+    date: "2026-02-25",
+    title: "B182 Sparse Index Fix & P-009 Renderer Perf",
+    tests: 240,
+    features: [
+      "B182 sparse index bug fixes — interpolation upper-bound selection, divide-by-zero guard, timestamp scan bounds",
+      "P-009 renderer performance — cached background/gutter/cursor-line brushes, reused dx buffer for tab-aware text width",
+      "5 new test suites (B182InterpolationBounds, B182DivideByZero, B182TimestampScan, RendererBrushCache, RendererDxBufferCache)",
+    ],
+  },
+  {
     version: "v2.51.0",
     date: "2026-02-25",
     title: "B181 Lens Redirect Fix & 235 Tests",
@@ -150,14 +161,14 @@ export default function ChangelogPage() {
           Changelog
         </Typography>
         <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-          Every feature, fix, and improvement — from v2.30.0 to v2.51.0.
+          Every feature, fix, and improvement — from v2.30.0 to v2.52.0.
         </Typography>
 
         {/* Test count progress bar */}
         <Paper elevation={0} sx={{ p: 2, mb: 4, background: "rgba(33, 150, 243, 0.06)", border: "1px solid rgba(33, 150, 243, 0.15)", borderRadius: 2 }}>
           <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
             <Typography variant="body2" color="text.secondary">Test suite growth</Typography>
-            <Typography variant="body2" color="primary.light">153 → 235 tests</Typography>
+            <Typography variant="body2" color="primary.light">153 → 240 tests</Typography>
           </Box>
           <Box sx={{ height: 8, borderRadius: 4, background: "rgba(255,255,255,0.05)", overflow: "hidden" }}>
             <Box sx={{ height: "100%", width: "100%", borderRadius: 4, background: "linear-gradient(90deg, #2196F3 0%, #00BCD4 100%)" }} />

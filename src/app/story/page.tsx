@@ -151,8 +151,17 @@ const timeline = [
     highlights: ["B181: lens redirect encoding + piece table fix", "5 new lens redirect test suites", "235 tests, 157+ features", "860KB EXE, Sprint 40 streak"],
   },
   {
+    phase: "Index Precision & Renderer Performance",
+    period: "v2.52.0 — Sprint 69",
+    color: "#455A64",
+    title: "Faster rendering, precise navigation",
+    description:
+      "B182 fixes sparse index interpolation bounds, adds a divide-by-zero guard for equal-byte-offset probe pairs, and tightens timestamp scan bounds. P-009 caches renderer brushes and reuses a dx buffer for tab-aware text width, eliminating per-frame allocations. 5 new test suites, 240 passing, release #73.",
+    highlights: ["B182: sparse index interpolation + div-by-zero guard", "P-009: renderer brush cache + dx buffer reuse", "240 tests, 157+ features", "860KB EXE, Sprint 41 streak"],
+  },
+  {
     phase: "What's Next",
-    period: "Sprint 69+",
+    period: "Sprint 70+",
     color: "#607D8B",
     title: "GPU rendering, session extraction, and beyond",
     description:
@@ -162,10 +171,10 @@ const timeline = [
 ];
 
 const stats = [
-  { label: "Releases", value: "72", color: "#2196F3" },
+  { label: "Releases", value: "73", color: "#2196F3" },
   { label: "Features", value: "157+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "181+", color: "#F44336" },
-  { label: "Test Suites", value: "235", color: "#FF9800" },
+  { label: "Test Suites", value: "240", color: "#FF9800" },
   { label: "EXE Size", value: "860 KB", color: "#9C27B0" },
   { label: "Team Size", value: "7 agents", color: "#00BCD4" },
 ];
@@ -321,8 +330,8 @@ export default function StoryPage() {
           <Grid container spacing={2}>
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
-              { value: "72", label: "Releases Shipped", sub: "40 consecutive sprint deliveries", color: "#4CAF50" },
-              { value: "235", label: "Test Suites", sub: "From 153 → 235 (+54% growth)", color: "#FF9800" },
+              { value: "73", label: "Releases Shipped", sub: "41 consecutive sprint deliveries", color: "#4CAF50" },
+              { value: "240", label: "Test Suites", sub: "From 153 → 240 (+57% growth)", color: "#FF9800" },
               { value: "181+", label: "Bugs Fixed", sub: "B001 through B181, all verified", color: "#F44336" },
               { value: "70+", label: "Website Commits", sub: "23 routes, 6,800+ lines of TypeScript", color: "#9C27B0" },
               { value: "73", label: "Inbox Messages", sub: "File-based async communication", color: "#00BCD4" },

@@ -145,7 +145,7 @@ export default function MultiLogPage() {
             decompressed, merged, and ready to search.
           </Typography>
           <Typography variant="body1" sx={{ lineHeight: 1.8, mt: 2, color: "primary.light" }}>
-            <strong>New in v2.51.0:</strong> Lens redirect now properly re-initializes encoding and piece table. Combine with the Log Correlation Engine (Ctrl+Shift+E) to link related
+            <strong>New in v2.52.0:</strong> B182 sparse index fixes improve large-file navigation accuracy. Combine with the Log Correlation Engine (Ctrl+Shift+E) to link related
             events across up to 8 files — timestamps sync automatically with clickable ⛓ indicators.
           </Typography>
         </Container>
