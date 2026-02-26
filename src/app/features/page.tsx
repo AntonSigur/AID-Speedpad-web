@@ -178,7 +178,7 @@ const uniqueFeatures = [
   "Navigate Menu — centralized MIA-01 toolbar access to Find, GoTo, Bookmarks, Compare, and Diff in one place",
   "Arkanoid Game — built-in arcade game loaded as a DLL easter egg alongside Solitaire",
   "Snake Game — 🐍 second arcade easter egg (Ctrl+Shift+F10), DLL-loaded on demand",
-  "SpeedHexPad — Ctrl+Alt+H opens hex editor view mode for binary file inspection",
+  "SpeedHexPad — standalone hex editor (SpeedHexPad.exe) or built into SpeedPad via Ctrl+Alt+H",
   "Column/Block Selection — Alt+Drag + Alt+Shift+Arrows for rectangular text selection with multi-cursor editing",
   "F64 Binary Inspector — select hex bytes to interpret as int8/16/32/64, float, double, and strings",
   "Structure Templates — JSON-based binary format overlays for PE, ELF, PNG, ZIP headers with cursor-follows-field",

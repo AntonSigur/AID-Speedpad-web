@@ -315,7 +315,7 @@ export default function Home() {
           <Grid container spacing={3}>
             {[
               { role: "DevOps Engineers", items: ["Tail mode for live log monitoring", "Multi-log merge across rotated files", "Anomaly detection with timestamp gaps", "8-file tail dashboard"] },
-              { role: "Security Analysts", items: ["SpeedHexPad hex editor (Ctrl+Alt+H)", "Binary Inspector with endianness toggle", "Frequency analysis (IPs, UUIDs)", "Forensic log correlation across files"] },
+              { role: "Security Analysts", items: ["SpeedHexPad.exe standalone hex editor", "Binary Inspector with endianness toggle", "Structure templates for PE/ELF analysis", "Forensic log correlation across files"] },
               { role: "Data Analysts", items: ["CSV lens with column-aligned display", "Frequency analysis (IPs, URLs, UUIDs)", "Handle 4GB+ files without lag", "JSON breadcrumb navigation"] },
               { role: "Developers", items: ["Multi-cursor editing (Ctrl+D)", "Code folding & bracket matching", "Parallel cross-file search", "Workspace persistence"] },
             ].map((persona) => (
