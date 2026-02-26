@@ -20,13 +20,22 @@ import Footer from "@/components/Footer";
 
 const releases = [
   {
-    version: "v2.52.0",
+    version: "v2.53.0",
     date: "2026-02-25",
     latest: true,
     highlights: [
-      "B182: Sparse index bug fixes (interpolation bounds, divide-by-zero guard)",
-      "P-009: Renderer performance (cached brushes, reused dx buffer)",
+      "S-007: Command-injection hardening (CreateProcessW replaces shell decompression)",
+      "B190: Dialog centering migration across 6 dialogs",
       `${EXE_SIZE} EXE, ${TEST_COUNT}/${TEST_COUNT} tests passing`,
+    ],
+  },
+  {
+    version: "v2.52.0",
+    date: "2026-02-25",
+    latest: false,
+    highlights: [
+      "B182: Sparse index bug fixes, P-009: Renderer performance",
+      "240 tests passing",
     ],
   },
   {

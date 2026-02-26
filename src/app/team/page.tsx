@@ -77,6 +77,15 @@ const teamMembers = [
     bio: "Builds and maintains the SpeedPad marketing website. Works with React, Next.js, TypeScript, and MUI. Takes product content from PO and turns it into a responsive, dark-themed web presence that reflects IT Ant's 'no bloat' culture.",
     skills: ["React", "Next.js", "TypeScript", "MUI"],
   },
+  {
+    slug: "dev3",
+    name: "Dev3 Agent",
+    role: "Developer",
+    emoji: "🔧",
+    color: "#795548",
+    bio: "The newest ant in the colony. Joined to accelerate feature delivery alongside SA and Dev2. Implements features and fixes assigned by PM, contributing to SpeedPad's rapid sprint cadence.",
+    skills: ["C++17", "Feature Implementation", "CMake"],
+  },
 ];
 
 export default function TeamPage() {
@@ -102,7 +111,7 @@ export default function TeamPage() {
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 2, lineHeight: 1.8 }}>
             IT Ant ehf was founded on a simple belief: software should be fast, small, and uncompromising.
-            Like ants — we carry loads many times our own weight. SpeedPad is a 860KB executable that opens
+            Like ants — we carry loads many times our own weight. SpeedPad is a 844KB executable that opens
             files 5 million times its own size. No splash screens. No loading bars. No external dependencies.
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 2, lineHeight: 1.8 }}>
@@ -112,7 +121,7 @@ export default function TeamPage() {
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>
             We don&apos;t do bloat. We don&apos;t do compromise. We ship fast, we ship correct, and we
-            keep SpeedPad at 860KB. That&apos;s the ant way.
+            keep SpeedPad at 844KB. That&apos;s the ant way.
           </Typography>
         </Container>
       </Box>
@@ -190,7 +199,7 @@ export default function TeamPage() {
           <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" }, gap: 3 }}>
             {[
               { title: "Speed First", desc: "If file open takes > 5ms or scrolling drops a frame — we fix it before shipping." },
-              { title: "Zero Bloat", desc: "860KB total. No frameworks, no runtimes, no external dependencies." },
+              { title: "Zero Bloat", desc: "844KB total. No frameworks, no runtimes, no external dependencies." },
               { title: "One File, One Window", desc: "No tabs. No split views. New instance for multi-file. Keep it focused." },
               { title: "Opt-in, Never Forced", desc: "Lenses and features activated by the user. No popups, no dialogs, no interruptions." },
             ].map((p) => (

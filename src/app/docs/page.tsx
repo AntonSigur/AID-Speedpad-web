@@ -148,7 +148,7 @@ export default function DocsPage() {
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 3, lineHeight: 1.8 }}>
             SpeedPad is a portable application — no installer needed. Download the EXE, place it in any folder,
-            and run it. That&apos;s it. SpeedPad is a single 860KB executable with zero external dependencies.
+            and run it. That&apos;s it. SpeedPad is a single 844KB executable with zero external dependencies.
           </Typography>
 
           <Typography variant="h5" sx={{ mb: 2 }}>Installation</Typography>
@@ -448,7 +448,7 @@ export default function DocsPage() {
             },
             {
               title: "Zero Dependencies",
-              desc: "Pure Win32 API + C++17 standard library. No frameworks, no runtimes, no package managers. The entire editor compiles to a single 860KB EXE that runs on Windows 7 through 11.",
+              desc: "Pure Win32 API + C++17 standard library. No frameworks, no runtimes, no package managers. The entire editor compiles to a single 844KB EXE that runs on Windows 7 through 11.",
             },
           ].map((item) => (
             <Grid key={item.title} size={{ xs: 12, sm: 6 }}>

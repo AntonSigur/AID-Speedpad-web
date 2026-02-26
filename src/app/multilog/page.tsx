@@ -145,7 +145,7 @@ export default function MultiLogPage() {
             decompressed, merged, and ready to search.
           </Typography>
           <Typography variant="body1" sx={{ lineHeight: 1.8, mt: 2, color: "primary.light" }}>
-            <strong>New in v2.52.0:</strong> B182 sparse index fixes improve large-file navigation accuracy. Combine with the Log Correlation Engine (Ctrl+Shift+E) to link related
+            <strong>New in v2.53.0:</strong> S-007 command-injection hardening replaces shell-based decompression with direct CreateProcessW. Combine with the Log Correlation Engine (Ctrl+Shift+E) to link related
             events across up to 8 files — timestamps sync automatically with clickable ⛓ indicators.
           </Typography>
         </Container>
@@ -271,7 +271,7 @@ export default function MultiLogPage() {
               Download SpeedPad — Free
             </Button>
             <Typography variant="body1" color="text.secondary" sx={{ mt: 2, fontStyle: "italic" }}>
-              All of this in 860KB. No plugins. No extensions. Just speed.
+              All of this in 844KB. No plugins. No extensions. Just speed.
             </Typography>
             <Button variant="outlined" component={Link} href="/incident-playbook#log-rotation-failure-investigation" sx={{ mt: 2, textTransform: "none", fontWeight: 700, borderColor: "#FF9800", color: "#FF9800" }}>
               See Log Rotation Playbook →

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Screenshots — SpeedPad in Action | IT Ant ehf",
   description:
-    "See SpeedPad in action: log file viewing, multi-file tabs, live tail mode animation, and more. Real screenshots from v2.52.0.",
+    "See SpeedPad in action: log file viewing, multi-file tabs, live tail mode animation, and more. Real screenshots from v2.53.0.",
 };
 
 export default function ScreenshotsLayout({

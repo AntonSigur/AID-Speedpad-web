@@ -152,7 +152,7 @@ export default function AVFaqPage() {
             Convinced it&apos;s safe?
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-            SpeedPad is 860KB with zero dependencies. No telemetry, no network calls, no hidden behavior.
+            SpeedPad is 844KB with zero dependencies. No telemetry, no network calls, no hidden behavior.
           </Typography>
           <Button variant="contained" size="large" component={Link} href="/download" sx={{ px: 4, py: 1.5, fontWeight: 700, textTransform: "none" }}>
             Download SpeedPad

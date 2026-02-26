@@ -33,6 +33,20 @@ import {
 /* ───── Release data ───── */
 const releases = [
   {
+    version: "v2.53.0",
+    release: 74,
+    date: "2026-02-25",
+    size: "843 KiB (863,232 bytes)",
+    tests: 246,
+    highlights: [
+      "S-007: Command-injection hardening — CreateProcessW replaces shell decompression",
+      "B190: Dialog centering migration across 6 dialogs",
+      "5 new test suites (S-007 process spawn + B190 centering)",
+      "246 test suites passing",
+    ],
+    milestone: "Security Hardening & UX Polish",
+  },
+  {
     version: "v2.52.0",
     release: 73,
     date: "2026-02-25",

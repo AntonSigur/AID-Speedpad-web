@@ -22,6 +22,17 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "v2.53.0",
+    date: "2026-02-25",
+    title: "S-007 Security Hardening & B190 Dialog Centering",
+    tests: 246,
+    features: [
+      "S-007 command-injection hardening — replaced shell-based decompression with direct CreateProcessW in gz_lens and multi_log",
+      "B190 dialog centering migration — shared CenterDialogToParent across 6 dialogs (correlation, reverse, regex, challenge, time browse, general)",
+      "5 new test suites (S007GzLensProcessSpawn, S007MultiLogProcessSpawn, B190CenterMath, B190CenterCallsites, B190NoDsCenter)",
+    ],
+  },
+  {
     version: "v2.52.0",
     date: "2026-02-25",
     title: "B182 Sparse Index Fix & P-009 Renderer Perf",
@@ -161,14 +172,14 @@ export default function ChangelogPage() {
           Changelog
         </Typography>
         <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-          Every feature, fix, and improvement — from v2.30.0 to v2.52.0.
+          Every feature, fix, and improvement — from v2.30.0 to v2.53.0.
         </Typography>
 
         {/* Test count progress bar */}
         <Paper elevation={0} sx={{ p: 2, mb: 4, background: "rgba(33, 150, 243, 0.06)", border: "1px solid rgba(33, 150, 243, 0.15)", borderRadius: 2 }}>
           <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
             <Typography variant="body2" color="text.secondary">Test suite growth</Typography>
-            <Typography variant="body2" color="primary.light">153 → 240 tests</Typography>
+            <Typography variant="body2" color="primary.light">153 → 246 tests</Typography>
           </Box>
           <Box sx={{ height: 8, borderRadius: 4, background: "rgba(255,255,255,0.05)", overflow: "hidden" }}>
             <Box sx={{ height: "100%", width: "100%", borderRadius: 4, background: "linear-gradient(90deg, #2196F3 0%, #00BCD4 100%)" }} />
@@ -181,6 +192,7 @@ export default function ChangelogPage() {
           const previous = releases[1];
           const testDelta = latest.tests - previous.tests;
           const byteSizes: Record<string, number> = {
+            "v2.53.0": 863232,
             "v2.52.0": 861184,
             "v2.51.0": 860672,
             "v2.50.0": 859648,

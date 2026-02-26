@@ -160,21 +160,30 @@ const timeline = [
     highlights: ["B182: sparse index interpolation + div-by-zero guard", "P-009: renderer brush cache + dx buffer reuse", "240 tests, 157+ features", "860KB EXE, Sprint 41 streak"],
   },
   {
+    phase: "Security Hardening & UX Polish",
+    period: "v2.53.0 — Sprint 70",
+    color: "#D32F2F",
+    title: "Hardening the shell, centering the experience",
+    description:
+      "S-007 replaces shell-based decompression (cmd.exe /c) with direct CreateProcessW process invocation in gz_lens and multi_log — eliminating command-injection vectors. B190 migrates dialog centering to a shared CenterDialogToParent flow across 6 dialogs. 5 new test suites, 246 passing, release #74.",
+    highlights: ["S-007: CreateProcessW replaces shell decompression", "B190: unified dialog centering across 6 dialogs", "246 tests, 157+ features", "844KB EXE, Sprint 42 streak"],
+  },
+  {
     phase: "What's Next",
-    period: "Sprint 70+",
+    period: "Sprint 71+",
     color: "#607D8B",
     title: "GPU rendering, session extraction, and beyond",
     description:
-      "The roadmap includes GPU rendering via Direct2D/DirectWrite for buttery smooth 4K scrolling, session/request extraction for tracing IDs across log files, and code signing for zero false positives. The philosophy stays the same: speed first, zero bloat, one window per file. The ant colony never stops building.",
-    highlights: ["GPU rendering for 4K/HiDPI displays", "Session/Request ID tracing across log files", "Authenticode code signing", "Community open-source contributions"],
+      "The roadmap includes GPU rendering via Direct2D/DirectWrite for buttery smooth 4K scrolling, session/request extraction for tracing IDs across log files, code signing (S-012 in progress), and lens DLL integrity verification (S-010). The philosophy stays the same: speed first, zero bloat, one window per file. The ant colony never stops building.",
+    highlights: ["GPU rendering for 4K/HiDPI displays", "S-010 lens DLL SHA-256 integrity", "S-012 Authenticode code signing", "Community open-source contributions"],
   },
 ];
 
 const stats = [
-  { label: "Releases", value: "73", color: "#2196F3" },
+  { label: "Releases", value: "74", color: "#2196F3" },
   { label: "Features", value: "157+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "181+", color: "#F44336" },
-  { label: "Test Suites", value: "240", color: "#FF9800" },
+  { label: "Test Suites", value: "246", color: "#FF9800" },
   { label: "EXE Size", value: "860 KB", color: "#9C27B0" },
   { label: "Team Size", value: "7 agents", color: "#00BCD4" },
 ];
@@ -199,7 +208,7 @@ export default function StoryPage() {
           Our Story
         </Typography>
         <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 650, mx: "auto", fontWeight: 400 }}>
-          How a frustration with slow text editors became a 860KB powerhouse
+          How a frustration with slow text editors became a 844KB powerhouse
           that opens 100GB files — while staying under 1MB.
         </Typography>
       </Container>
@@ -330,8 +339,8 @@ export default function StoryPage() {
           <Grid container spacing={2}>
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
-              { value: "73", label: "Releases Shipped", sub: "41 consecutive sprint deliveries", color: "#4CAF50" },
-              { value: "240", label: "Test Suites", sub: "From 153 → 240 (+57% growth)", color: "#FF9800" },
+              { value: "74", label: "Releases Shipped", sub: "42 consecutive sprint deliveries", color: "#4CAF50" },
+              { value: "246", label: "Test Suites", sub: "From 153 → 246 (+61% growth)", color: "#FF9800" },
               { value: "181+", label: "Bugs Fixed", sub: "B001 through B181, all verified", color: "#F44336" },
               { value: "70+", label: "Website Commits", sub: "23 routes, 6,800+ lines of TypeScript", color: "#9C27B0" },
               { value: "73", label: "Inbox Messages", sub: "File-based async communication", color: "#00BCD4" },
@@ -371,7 +380,7 @@ export default function StoryPage() {
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
           The development cadence is remarkable: the team has delivered <strong>40 consecutive sprints</strong> without
           a single missed delivery. Each sprint produces a new release with bug fixes, features, and test
-          suites — all in a single-file 860KB executable. The website mirrors this velocity, growing from
+          suites — all in a single-file 844KB executable. The website mirrors this velocity, growing from
           5 pages to 23 routes while maintaining zero lint warnings and clean builds.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>

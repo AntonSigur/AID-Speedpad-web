@@ -138,7 +138,7 @@ const teamData: TeamMember[] = [
       "Designed 5-layer architecture: Shell \u2192 UI \u2192 Engine \u2192 Storage \u2192 I/O",
       "Built memory-mapped I/O that opens 100GB+ files with constant memory",
       "Created parallel search with 8-worker thread pool",
-      "Kept binary under 860KB across 60+ releases",
+      "Kept binary under 844KB across 60+ releases",
     ],
     philosophy: "Every layer should be independent, every function should have one job, and every allocation should be justified.",
   },
@@ -225,6 +225,32 @@ const teamData: TeamMember[] = [
       "Zero-dependency static deployment",
     ],
     philosophy: "A website should be as fast and clean as the product it represents. Just clear information, beautifully presented.",
+  },
+  {
+    slug: "dev3",
+    name: "Dev3 Agent",
+    role: "Developer",
+    color: "#795548",
+    title: "Software Developer",
+    fullBio: "Dev3 is the newest ant in the colony, joining to accelerate SpeedPad's feature delivery. Working alongside SA and Dev2 in the C++17 codebase, Dev3 implements features and fixes assigned by PM. Fresh perspective meets battle-tested architecture.",
+    skills: [
+      { name: "C++17", level: 75 },
+      { name: "CMake / MSVC", level: 70 },
+      { name: "Win32 API", level: 65 },
+      { name: "Testing (CTest)", level: 70 },
+    ],
+    tools: ["MSVC x64", "CMake", "CTest", "Git"],
+    responsibilities: [
+      "Implement features and fixes assigned by PM",
+      "Write C++17 code following project conventions",
+      "Add test suites for new functionality",
+      "Collaborate with SA on architecture decisions",
+    ],
+    achievements: [
+      "Joined the team during Sprint 71",
+      "Contributing to SpeedPad's rapid sprint cadence",
+    ],
+    philosophy: "Every ant carries its weight. The colony succeeds when everyone builds.",
   },
 ];
 

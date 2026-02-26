@@ -184,7 +184,7 @@ export default function FeaturesPage() {
           Every Feature in SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
-          A comprehensive text editor in 860KB — with zero external dependencies, 6 lens plugins, and 88 commands.
+          A comprehensive text editor in 844KB — with zero external dependencies, 6 lens plugins, and 88 commands.
         </Typography>
       </Container>
 
