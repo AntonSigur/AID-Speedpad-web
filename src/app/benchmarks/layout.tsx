@@ -9,6 +9,20 @@ export const metadata: Metadata = {
     description:
       "Every performance claim is measured. See startup, file open, search, and memory benchmarks vs popular editors.",
   },
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      headline: "SpeedPad Performance Benchmarks",
+      description: "Measured performance benchmarks comparing SpeedPad to Notepad++, VS Code, and Sublime Text across startup, file open, search, memory, and installation size.",
+      about: {
+        "@type": "SoftwareApplication",
+        name: "SpeedPad",
+        applicationCategory: "DeveloperApplication",
+        operatingSystem: "Windows",
+      },
+    }),
+  },
 };
 
 export default function BenchmarksLayout({ children }: { children: React.ReactNode }) {
