@@ -75,7 +75,7 @@ const shortcuts: Shortcut[] = [
   { keys: "Ctrl+Shift+J", action: "Correlation Timeline", category: "View Modes" },
   { keys: "Ctrl+Shift+H", action: "Regex Highlight", category: "View Modes" },
   { keys: "Ctrl+Shift+R", action: "Regex Builder Panel / Time Range Summary", category: "View Modes" },
-  { keys: "Ctrl+Alt+H", action: "File Histogram (giant file navigator)", category: "View Modes" },
+  { keys: "Ctrl+Alt+H", action: "SpeedHexPad hex editor / File Histogram", category: "View Modes" },
   { keys: "Ctrl+Alt+Left", action: "Previous Histogram Slice", category: "View Modes" },
   { keys: "Ctrl+Alt+Right", action: "Next Histogram Slice", category: "View Modes" },
   { keys: "Ctrl+PgUp", action: "Previous Slice/Probe (sparse mode)", category: "View Modes" },
@@ -112,7 +112,7 @@ const shortcuts: Shortcut[] = [
   // Easter Eggs
   { keys: "Ctrl+Shift+F12", action: "Solitaire 🐜", category: "Easter Eggs" },
   { keys: "Ctrl+Shift+F10", action: "Snake 🐍", category: "Easter Eggs" },
-  { keys: "Ctrl+Alt+H", action: "SpeedHexPad (hex editor view)", category: "View Modes" },
+  { keys: "Ctrl+E", action: "Endianness toggle (hex mode)", category: "View Modes" },
 ];
 
 const categories = Array.from(new Set(shortcuts.map((s) => s.category)));
@@ -370,7 +370,7 @@ export default function ShortcutsPage() {
         {/* Bottom Links */}
         <Box sx={{ mt: 6, display: "flex", gap: 2, flexWrap: "wrap" }}>
           <Button variant="outlined" href="/command-explorer" sx={{ textTransform: "none" }}>
-            Command Explorer (93 commands) →
+            Command Explorer (94 commands) →
           </Button>
           <Button variant="outlined" href="/docs" sx={{ textTransform: "none" }}>
             Full Documentation →

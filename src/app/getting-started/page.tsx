@@ -563,7 +563,7 @@ export default function GettingStartedPage() {
               size="small"
               sx={{ bgcolor: "#0a1628", color: "#00BCD4", fontFamily: "monospace" }}
             />{" "}
-            for fuzzy search across 93 commands.
+            for fuzzy search across 94 commands.
           </Typography>
         </Box>
         <Paper sx={{ ...cardSx, maxWidth: 500, mx: "auto" }}>

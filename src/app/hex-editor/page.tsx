@@ -45,7 +45,7 @@ const capabilities = [
     icon: <SwapIcon sx={{ fontSize: 36 }} />,
     title: "Endianness Toggle",
     desc: "Switch between little-endian and big-endian byte interpretation with one click. Essential for cross-platform binary analysis.",
-    shortcut: "Toggle button",
+    shortcut: "Ctrl+E",
   },
   {
     icon: <SearchIcon sx={{ fontSize: 36 }} />,
