@@ -303,7 +303,7 @@ const releases = [
 ];
 
 /* ───── centralized download config ───── */
-import { CURRENT_VERSION, GITHUB_RELEASES, EXE_SIZE, EXE_SIZE_SPACED, TEST_COUNT, DOWNLOAD_EXE, DOWNLOAD_ZIP } from "@/lib/product-config";
+import { CURRENT_VERSION, GITHUB_RELEASES, EXE_SIZE, EXE_SIZE_SPACED, TEST_COUNT, DOWNLOAD_EXE, DOWNLOAD_ZIP, SPEEDHEXPAD_ZIP } from "@/lib/product-config";
 
 export default function DownloadPage() {
   return (
@@ -313,21 +313,48 @@ export default function DownloadPage() {
       {/* Hero */}
       <Container maxWidth="lg" sx={{ pt: { xs: 6, md: 10 }, pb: 4, textAlign: "center" }}>
         <Typography variant="h1" sx={{ fontSize: { xs: "2.2rem", md: "3.5rem" }, mb: 2 }}>
-          Download SpeedPad
+          Download
         </Typography>
-        <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 500, mx: "auto", mb: 4 }}>
-          A single {EXE_SIZE} executable. No installer. No dependencies. Just extract and run.
+        <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 550, mx: "auto", mb: 4 }}>
+          Two products. Same engine. Both under 1MB, zero dependencies. Just extract and run.
         </Typography>
-        <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap", mb: 2 }}>
-          <Button variant="contained" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href={DOWNLOAD_EXE} target="_blank" rel="noopener">
-            Download EXE ({CURRENT_VERSION})
-          </Button>
-          <Button variant="outlined" size="large" startIcon={<DownloadIcon />} sx={{ px: 4, py: 1.5 }} href={DOWNLOAD_ZIP} target="_blank" rel="noopener">
-            Download ZIP ({CURRENT_VERSION})
-          </Button>
+
+        {/* Dual Product Cards */}
+        <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" }, gap: 3, mb: 4, maxWidth: 700, mx: "auto" }}>
+          {/* SpeedPad */}
+          <Paper elevation={0} sx={{ p: 3, border: "1px solid rgba(33,150,243,0.3)", borderRadius: 2, bgcolor: "rgba(33,150,243,0.04)" }}>
+            <Chip label="Text Editor" size="small" color="primary" sx={{ mb: 1.5 }} />
+            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1, color: "#64B5F6" }}>SpeedPad.exe</Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              The fastest Windows text editor. Opens 100GB+ logs, hex mode via Ctrl+Alt+H, {EXE_SIZE}.
+            </Typography>
+            <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", justifyContent: "center" }}>
+              <Button variant="contained" size="small" startIcon={<DownloadIcon />} href={DOWNLOAD_EXE} target="_blank" rel="noopener">
+                EXE
+              </Button>
+              <Button variant="outlined" size="small" startIcon={<DownloadIcon />} href={DOWNLOAD_ZIP} target="_blank" rel="noopener">
+                ZIP
+              </Button>
+            </Box>
+          </Paper>
+
+          {/* SpeedHexPad */}
+          <Paper elevation={0} sx={{ p: 3, border: "1px solid rgba(76,175,80,0.3)", borderRadius: 2, bgcolor: "rgba(76,175,80,0.04)" }}>
+            <Chip label="Hex Editor" size="small" sx={{ mb: 1.5, bgcolor: "rgba(76,175,80,0.2)", color: "#66BB6A" }} />
+            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1, color: "#66BB6A" }}>SpeedHexPad.exe</Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              Standalone hex editor. Structure templates, data bookmarks, binary inspector. Under 1MB.
+            </Typography>
+            <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", justifyContent: "center" }}>
+              <Button variant="contained" size="small" startIcon={<DownloadIcon />} sx={{ bgcolor: "#4CAF50", "&:hover": { bgcolor: "#388E3C" } }} href={SPEEDHEXPAD_ZIP} target="_blank" rel="noopener">
+                ZIP
+              </Button>
+            </Box>
+          </Paper>
         </Box>
+
         <Typography variant="body2" color="text.secondary" textAlign="center" sx={{ mb: 1 }}>
-          Primary downloads are hosted on IT Ant infrastructure.
+          {CURRENT_VERSION} · Primary downloads hosted on IT Ant infrastructure.
         </Typography>
         <Typography variant="body2" color="text.secondary" textAlign="center">
           <a href={GITHUB_RELEASES} target="_blank" rel="noopener" style={{ color: "#64B5F6" }}>
