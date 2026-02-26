@@ -79,6 +79,8 @@ const comparison = [
   { feature: "Anomaly Detection", sp: "✅", npp: "❌", vsc: "❌" },
   { feature: "Compressed Files", sp: "✅", npp: "❌", vsc: "❌" },
   { feature: "Solitaire", sp: "🐜", npp: "❌", vsc: "❌" },
+  { feature: "Direct2D Renderer", sp: "✅", npp: "❌", vsc: "❌" },
+  { feature: "Code-Signed Binary", sp: "✅", npp: "✅", vsc: "✅" },
 ];
 
 export default function Home() {
