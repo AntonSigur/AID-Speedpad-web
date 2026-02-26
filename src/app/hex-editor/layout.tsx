@@ -1,27 +1,23 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SpeedHexPad — Hex Editor Inside SpeedPad",
+  title: "SpeedHexPad.exe — Standalone Hex Editor by IT Ant ehf",
   description:
-    "SpeedHexPad brings a full hex editor into SpeedPad: view, edit, search, and inspect binary files with Ctrl+Alt+H. Binary Inspector (F64), endianness toggle, PieceTable undo/redo. All in 844KB.",
+    "SpeedHexPad.exe: a free standalone hex editor under 1MB. Structure templates, data bookmarks, binary inspector, endianness toggle, PieceTable undo/redo. Also built into SpeedPad via Ctrl+Alt+H.",
   openGraph: {
-    title: "SpeedHexPad — Hex Editor Built Into SpeedPad",
-    description: "View and edit binary files with a built-in hex editor. Binary Inspector, endianness toggle, hex search, goto offset — all with PieceTable undo/redo.",
+    title: "SpeedHexPad.exe — Standalone Hex Editor + Built Into SpeedPad",
+    description: "Dedicated hex editor or built into SpeedPad. Structure templates for PE/ELF/PNG, data bookmarks, binary inspector, endianness toggle — all free, under 1MB.",
   },
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       name: "SpeedHexPad",
-      description: "Built-in hex editor inside SpeedPad — view, edit, search, and inspect binary files with full PieceTable undo/redo support.",
+      description: "Standalone hex editor and built-in hex mode for SpeedPad. Structure templates, data bookmarks, binary inspector, PieceTable undo/redo.",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Windows",
-      featureList: "Hex View, Binary Inspector, Endianness Toggle, Hex Search, Goto Offset, PieceTable Undo/Redo",
-      isPartOf: {
-        "@type": "SoftwareApplication",
-        name: "SpeedPad",
-        applicationCategory: "DeveloperApplication",
-      },
+      featureList: "Hex View, Hex Edit, Binary Inspector, Endianness Toggle, Structure Templates, Data Bookmarks, Hex Search, PieceTable Undo/Redo",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     }),
   },
 };

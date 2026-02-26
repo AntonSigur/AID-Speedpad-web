@@ -14,6 +14,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Divider,
 } from "@mui/material";
 import {
   Memory as MemoryIcon,
@@ -28,7 +29,13 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { CURRENT_VERSION, EXE_SIZE, TEST_COUNT } from "@/lib/product-config";
+import { CURRENT_VERSION, EXE_SIZE, TEST_COUNT, SPEEDHEXPAD_ZIP } from "@/lib/product-config";
+
+/* Green accent palette for SpeedHexPad (PO-confirmed) */
+const HEX_GREEN = "#4CAF50";
+const HEX_GREEN_LIGHT = "#66BB6A";
+const HEX_GREEN_BG = "rgba(76,175,80,0.04)";
+const HEX_GREEN_BORDER = "rgba(76,175,80,0.15)";
 
 const capabilities = [
   {
@@ -63,35 +70,35 @@ const capabilities = [
   },
   {
     icon: <SpeedIcon sx={{ fontSize: 36 }} />,
-    title: "Zero Extra Cost",
-    desc: `SpeedHexPad is built into the same ${EXE_SIZE} executable. No plugins to install, no extra downloads. It's just SpeedPad.`,
-    shortcut: "Built-in",
+    title: "Standalone or Built-in",
+    desc: "SpeedHexPad.exe runs independently or is accessible inside SpeedPad via Ctrl+Alt+H. Same engine, your choice of workflow.",
+    shortcut: "v2.64.0+",
   },
   {
     icon: <TemplateIcon sx={{ fontSize: 36 }} />,
     title: "Structure Templates",
     desc: "Overlay JSON-based binary format definitions on hex data. PE headers, ELF binaries, PNG files — field names, types, and values appear inline.",
-    shortcut: "New in v2.63.0",
+    shortcut: ".hextemplate.json",
   },
   {
     icon: <BookmarkIcon sx={{ fontSize: 36 }} />,
     title: "Data Bookmarks",
     desc: "Mark hex positions, navigate between bookmarks, and serialize them for later. Essential for tracking offsets in large binary files.",
-    shortcut: "New in v2.63.0",
+    shortcut: "Toggle bookmark",
   },
 ];
 
 const comparison = [
-  { feature: "Hex View", sp: "✅", hxd: "✅", winhex: "✅", vsc: "Plugin" },
-  { feature: "Hex Edit", sp: "✅", hxd: "✅", winhex: "✅", vsc: "Plugin" },
+  { feature: "Standalone Binary", sp: "✅", hxd: "✅", winhex: "✅", vsc: "Plugin" },
+  { feature: "Hex View & Edit", sp: "✅", hxd: "✅", winhex: "✅", vsc: "Plugin" },
   { feature: "Binary Inspector", sp: "✅", hxd: "✅", winhex: "✅", vsc: "❌" },
   { feature: "Endianness Toggle", sp: "✅", hxd: "❌", winhex: "✅", vsc: "❌" },
-  { feature: "Text Editor Built-in", sp: "✅", hxd: "❌", winhex: "❌", vsc: "✅" },
-  { feature: "100GB+ File Support", sp: "✅", hxd: "❌", winhex: "✅", vsc: "❌" },
-  { feature: "Tail Mode", sp: "✅", hxd: "❌", winhex: "❌", vsc: "❌" },
-  { feature: "Log Correlation", sp: "✅", hxd: "❌", winhex: "❌", vsc: "❌" },
   { feature: "Structure Templates", sp: "✅", hxd: "❌", winhex: "❌", vsc: "❌" },
   { feature: "Data Bookmarks", sp: "✅", hxd: "✅", winhex: "✅", vsc: "Plugin" },
+  { feature: "Text Editor Built-in", sp: "✅ (SpeedPad)", hxd: "❌", winhex: "❌", vsc: "✅" },
+  { feature: "100GB+ File Support", sp: "✅", hxd: "❌", winhex: "✅", vsc: "❌" },
+  { feature: "Tail Mode", sp: "✅ (SpeedPad)", hxd: "❌", winhex: "❌", vsc: "❌" },
+  { feature: "Log Correlation", sp: "✅ (SpeedPad)", hxd: "❌", winhex: "❌", vsc: "❌" },
   { feature: "Undo/Redo", sp: "500 levels", hxd: "∞", winhex: "Limited", vsc: "Plugin" },
   { feature: "Price", sp: "Free", hxd: "Free", winhex: "€89+", vsc: "Free + Plugin" },
   { feature: "Total Size", sp: EXE_SIZE, hxd: "~4 MB", winhex: "~8 MB", vsc: "~400 MB" },
@@ -102,43 +109,79 @@ export default function HexEditorPage() {
     <Box sx={{ minHeight: "100vh" }}>
       <Navbar />
 
-      {/* Hero */}
+      {/* Hero — SpeedHexPad.exe standalone */}
       <Box sx={{ pt: { xs: 8, md: 14 }, pb: { xs: 6, md: 10 }, textAlign: "center" }}>
         <Container maxWidth="md">
-          <Chip label={`New in ${CURRENT_VERSION}`} color="secondary" variant="outlined" sx={{ mb: 2 }} />
+          <Chip label="Now a Standalone Binary" sx={{ mb: 2, bgcolor: "rgba(76,175,80,0.15)", color: HEX_GREEN_LIGHT, borderColor: HEX_GREEN, fontWeight: 600 }} variant="outlined" />
           <Typography
             variant="h1"
             sx={{
               fontSize: { xs: "2.2rem", md: "3.8rem" },
               fontWeight: 800,
               mb: 2,
-              background: "linear-gradient(135deg, #00BCD4, #9C27B0)",
+              background: `linear-gradient(135deg, ${HEX_GREEN}, #00BCD4)`,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
           >
-            SpeedHexPad
+            SpeedHexPad.exe
           </Typography>
-          <Typography variant="h5" color="text.secondary" sx={{ mb: 1, fontWeight: 400, maxWidth: 600, mx: "auto" }}>
-            A full hex editor — built into SpeedPad.
+          <Typography variant="h5" color="text.secondary" sx={{ mb: 1, fontWeight: 400, maxWidth: 650, mx: "auto" }}>
+            A dedicated hex editor. Free. Under 1MB. Zero dependencies.
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 550, mx: "auto" }}>
-            View, edit, search, and inspect binary files without leaving your text editor.
-            Press <strong>Ctrl+Alt+H</strong> to enter hex mode. That&apos;s it.
+            Since {CURRENT_VERSION}, SpeedHexPad ships as its own standalone binary — built on the same
+            engine that powers SpeedPad, sharing the <code>speedpad_core.lib</code> foundation.
           </Typography>
           <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
-            <Button variant="contained" size="large" href="/download" sx={{ px: 4, py: 1.5 }}>
-              Download SpeedPad
+            <Button
+              variant="contained"
+              size="large"
+              href="/download"
+              sx={{ px: 4, py: 1.5, bgcolor: HEX_GREEN, "&:hover": { bgcolor: "#388E3C" } }}
+            >
+              Download SpeedHexPad.exe
             </Button>
-            <Button variant="outlined" size="large" href="/features" sx={{ px: 4, py: 1.5, borderColor: "#00BCD4", color: "#00BCD4" }}>
-              All Features
+            <Button variant="outlined" size="large" href="/download" sx={{ px: 4, py: 1.5, borderColor: "#2196F3", color: "#2196F3" }}>
+              Download SpeedPad.exe
             </Button>
           </Box>
         </Container>
       </Box>
 
+      {/* Dual Product Architecture */}
+      <Box sx={{ py: { xs: 3, md: 5 }, bgcolor: HEX_GREEN_BG }}>
+        <Container maxWidth="md">
+          <Grid container spacing={3}>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Paper elevation={0} sx={{ p: 3, height: "100%", border: `1px solid ${HEX_GREEN_BORDER}`, borderRadius: 2, bgcolor: "rgba(76,175,80,0.03)" }}>
+                <Chip label="Standalone" size="small" sx={{ mb: 1.5, bgcolor: "rgba(76,175,80,0.2)", color: HEX_GREEN_LIGHT }} />
+                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: HEX_GREEN_LIGHT }}>SpeedHexPad.exe</Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Dedicated hex editor binary. Run it directly for pure binary analysis without the text editor.
+                  Same engine, focused workflow.
+                </Typography>
+              </Paper>
+            </Grid>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Paper elevation={0} sx={{ p: 3, height: "100%", border: "1px solid rgba(33,150,243,0.15)", borderRadius: 2, bgcolor: "rgba(33,150,243,0.03)" }}>
+                <Chip label="Built into SpeedPad" size="small" sx={{ mb: 1.5, bgcolor: "rgba(33,150,243,0.2)", color: "#64B5F6" }} />
+                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: "#64B5F6" }}>Ctrl+Alt+H in SpeedPad</Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Toggle hex mode inside SpeedPad. Switch between text and hex views instantly.
+                  Same capabilities, integrated into your text editor.
+                </Typography>
+              </Paper>
+            </Grid>
+          </Grid>
+          <Typography variant="body2" color="text.secondary" sx={{ mt: 2, textAlign: "center", fontStyle: "italic" }}>
+            Both share <code>speedpad_core.lib</code> — the same C++17 foundation. Same features, same performance.
+          </Typography>
+        </Container>
+      </Box>
+
       {/* Capabilities Grid */}
-      <Box sx={{ py: { xs: 4, md: 8 }, bgcolor: "rgba(0,188,212,0.03)" }}>
+      <Box sx={{ py: { xs: 4, md: 8 } }}>
         <Container maxWidth="lg">
           <Typography variant="h4" sx={{ fontWeight: 700, mb: 4, textAlign: "center" }}>
             Capabilities
@@ -151,16 +194,16 @@ export default function HexEditorPage() {
                   sx={{
                     p: 3,
                     height: "100%",
-                    bgcolor: "rgba(0,188,212,0.05)",
-                    border: "1px solid rgba(0,188,212,0.12)",
+                    bgcolor: HEX_GREEN_BG,
+                    border: `1px solid ${HEX_GREEN_BORDER}`,
                     borderRadius: 2,
                   }}
                 >
                   <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2 }}>
-                    <Box sx={{ color: "secondary.main" }}>{c.icon}</Box>
+                    <Box sx={{ color: HEX_GREEN }}>{c.icon}</Box>
                     <Box>
                       <Typography variant="h6" sx={{ fontWeight: 600 }}>{c.title}</Typography>
-                      <Chip label={c.shortcut} size="small" variant="outlined" sx={{ mt: 0.5 }} />
+                      <Chip label={c.shortcut} size="small" variant="outlined" sx={{ mt: 0.5, borderColor: HEX_GREEN_BORDER, color: HEX_GREEN_LIGHT }} />
                     </Box>
                   </Box>
                   <Typography variant="body2" color="text.secondary">{c.desc}</Typography>
@@ -174,16 +217,16 @@ export default function HexEditorPage() {
       {/* How It Works */}
       <Container maxWidth="md" sx={{ py: { xs: 4, md: 8 } }}>
         <Typography variant="h4" sx={{ fontWeight: 700, mb: 4, textAlign: "center" }}>
-          How It Works
+          Get Started
         </Typography>
         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr" }, gap: 3 }}>
           {[
-            { step: "1", title: "Open Any File", desc: "Open a binary file normally — SpeedPad opens it in text mode." },
-            { step: "2", title: "Press Ctrl+Alt+H", desc: "Switch to hex view. The file is displayed as hex bytes with an ASCII sidebar." },
-            { step: "3", title: "Edit & Inspect", desc: "Click to edit bytes, select to inspect data types, search for patterns." },
+            { step: "1", title: "Download", desc: "Grab SpeedHexPad.exe (standalone) or SpeedPad.exe (text + hex). Both under 1MB." },
+            { step: "2", title: "Open a Binary", desc: "Drag & drop any file, or use Ctrl+Alt+H inside SpeedPad to switch to hex view." },
+            { step: "3", title: "Edit & Inspect", desc: "Click to edit bytes, select to inspect data types, load structure templates for format overlays." },
           ].map((s) => (
-            <Paper key={s.step} elevation={0} sx={{ p: 3, textAlign: "center", bgcolor: "background.paper", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 2 }}>
-              <Typography variant="h2" color="secondary.main" sx={{ fontSize: "2.5rem", mb: 1 }}>
+            <Paper key={s.step} elevation={0} sx={{ p: 3, textAlign: "center", bgcolor: "background.paper", border: `1px solid ${HEX_GREEN_BORDER}`, borderRadius: 2 }}>
+              <Typography variant="h2" sx={{ fontSize: "2.5rem", mb: 1, color: HEX_GREEN }}>
                 {s.step}
               </Typography>
               <Typography variant="h6" sx={{ mb: 1 }}>{s.title}</Typography>
@@ -194,17 +237,17 @@ export default function HexEditorPage() {
       </Container>
 
       {/* Comparison Table */}
-      <Box sx={{ py: { xs: 4, md: 8 }, bgcolor: "rgba(33,150,243,0.03)" }}>
+      <Box sx={{ py: { xs: 4, md: 8 }, bgcolor: HEX_GREEN_BG }}>
         <Container maxWidth="lg">
           <Typography variant="h4" sx={{ fontWeight: 700, mb: 4, textAlign: "center" }}>
             SpeedHexPad vs Dedicated Hex Editors
           </Typography>
-          <TableContainer component={Paper} elevation={0} sx={{ bgcolor: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.08)" }}>
+          <TableContainer component={Paper} elevation={0} sx={{ bgcolor: "rgba(255,255,255,0.02)", border: `1px solid ${HEX_GREEN_BORDER}` }}>
             <Table>
               <TableHead>
                 <TableRow>
                   <TableCell sx={{ fontWeight: 700 }}>Feature</TableCell>
-                  <TableCell sx={{ fontWeight: 700, color: "primary.light" }}>SpeedPad</TableCell>
+                  <TableCell sx={{ fontWeight: 700, color: HEX_GREEN_LIGHT }}>SpeedHexPad</TableCell>
                   <TableCell sx={{ fontWeight: 700 }}>HxD</TableCell>
                   <TableCell sx={{ fontWeight: 700 }}>WinHex</TableCell>
                   <TableCell sx={{ fontWeight: 700 }}>VS Code</TableCell>
@@ -214,7 +257,7 @@ export default function HexEditorPage() {
                 {comparison.map((row) => (
                   <TableRow key={row.feature}>
                     <TableCell>{row.feature}</TableCell>
-                    <TableCell sx={{ color: "primary.light", fontWeight: 600 }}>{row.sp}</TableCell>
+                    <TableCell sx={{ color: HEX_GREEN_LIGHT, fontWeight: 600 }}>{row.sp}</TableCell>
                     <TableCell sx={{ color: "text.secondary" }}>{row.hxd}</TableCell>
                     <TableCell sx={{ color: "text.secondary" }}>{row.winhex}</TableCell>
                     <TableCell sx={{ color: "text.secondary" }}>{row.vsc}</TableCell>
@@ -226,21 +269,40 @@ export default function HexEditorPage() {
         </Container>
       </Box>
 
+      {/* Also Built Into SpeedPad */}
+      <Box sx={{ py: { xs: 4, md: 8 } }}>
+        <Container maxWidth="md" sx={{ textAlign: "center" }}>
+          <Divider sx={{ mb: 6, borderColor: "rgba(255,255,255,0.06)" }} />
+          <Chip label="Also Available" color="primary" variant="outlined" sx={{ mb: 2 }} />
+          <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
+            Built Into SpeedPad
+          </Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 3, maxWidth: 550, mx: "auto" }}>
+            Don&apos;t need a standalone hex editor? SpeedHexPad is also built into SpeedPad.
+            Press <strong>Ctrl+Alt+H</strong> to switch between text and hex views instantly.
+            Same capabilities — plus tail mode, log correlation, and multi-file workflows.
+          </Typography>
+          <Button variant="outlined" size="large" href="/features" sx={{ borderColor: "#2196F3", color: "#2196F3" }}>
+            See All SpeedPad Features →
+          </Button>
+        </Container>
+      </Box>
+
       {/* CTA */}
       <Container maxWidth="md" sx={{ py: 8, textAlign: "center" }}>
         <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
-          One Editor. Text + Hex.
+          Two Products. One Engine. Zero Bloat.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 500, mx: "auto" }}>
-          Stop switching between your text editor and your hex editor.
-          SpeedPad does both — in {EXE_SIZE}, with {TEST_COUNT} tests, and zero dependencies.
+          SpeedHexPad.exe for dedicated hex editing. SpeedPad.exe for text + hex.
+          Both free, both under 1MB, both backed by {TEST_COUNT} tests.
         </Typography>
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
+          <Button variant="contained" size="large" href="/download" sx={{ px: 4, bgcolor: HEX_GREEN, "&:hover": { bgcolor: "#388E3C" } }}>
+            Download SpeedHexPad
+          </Button>
           <Button variant="contained" size="large" href="/download" sx={{ px: 4 }}>
             Download SpeedPad
-          </Button>
-          <Button variant="outlined" href="/shortcuts" sx={{ borderColor: "#00BCD4", color: "#00BCD4" }}>
-            Keyboard Shortcuts
           </Button>
           <Button variant="outlined" component={Link} href="/benchmarks" sx={{ borderColor: "#94A3B8", color: "#94A3B8" }}>
             See Benchmarks
