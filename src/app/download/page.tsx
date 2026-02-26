@@ -20,13 +20,23 @@ import Footer from "@/components/Footer";
 
 const releases = [
   {
-    version: "v2.62.0",
+    version: "v2.63.0",
     date: "2026-02-26",
     latest: true,
     highlights: [
+      "Structure templates for binary format overlays",
+      "Data bookmarks with serialize/navigate support",
+      `${EXE_SIZE} EXE, ${TEST_COUNT}/${TEST_COUNT} tests passing`,
+    ],
+  },
+  {
+    version: "v2.62.0",
+    date: "2026-02-26",
+    latest: false,
+    highlights: [
       "SpeedHexPad hex editing with endianness toggle",
       "F64 Binary Inspector enhancements, column selection polish",
-      `${EXE_SIZE} EXE, ${TEST_COUNT}/${TEST_COUNT} tests passing`,
+      "350 tests passing",
     ],
   },
   {
@@ -331,9 +341,9 @@ export default function DownloadPage() {
       <Container maxWidth="md" sx={{ pb: 4 }}>
         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr" }, gap: 2 }}>
           {[
-            { v: CURRENT_VERSION, label: "Latest", summary: "SpeedHexPad hex editing, endianness toggle, 384 tests", color: "primary" as const },
-            { v: "v2.60.0", label: "Stable", summary: "SpeedHexPad scaffold, Snake game, Ant Kings branding", color: "secondary" as const },
-            { v: "v2.58.0", label: "Stable", summary: "Arkanoid game, D2D renderer polish, 265 tests", color: "default" as const },
+            { v: CURRENT_VERSION, label: "Latest", summary: "Structure templates, data bookmarks, 393 tests", color: "primary" as const },
+            { v: "v2.62.0", label: "Stable", summary: "SpeedHexPad hex editing, endianness toggle, 350 tests", color: "secondary" as const },
+            { v: "v2.60.0", label: "Stable", summary: "SpeedHexPad scaffold, Snake game, Ant Kings branding", color: "default" as const },
           ].map((r) => (
             <Card key={r.v} elevation={0} sx={{ bgcolor: "rgba(255,255,255,0.03)", border: r.color === "primary" ? "1px solid rgba(33,150,243,0.3)" : "1px solid rgba(255,255,255,0.06)" }}>
               <CardContent sx={{ p: 2.5 }}>

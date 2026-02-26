@@ -33,17 +33,32 @@ import {
 /* ───── Release data ───── */
 const releases = [
   {
+    version: "v2.63.0",
+    release: 84,
+    date: "2026-02-26",
+    size: "843 KiB (863,232 bytes)",
+    tests: 393,
+    highlights: [
+      "Structure templates — JSON-based binary format overlays (PE, ELF, PNG, ZIP headers)",
+      "Data bookmarks — toggle, navigate, and serialize hex position bookmarks",
+      "Structure panel with field names, types, values, cursor-follows-field",
+      "UX audit — Ctrl+Alt+H conflict fix, mnemonics, shortcuts reference",
+      "393 test suites passing",
+    ],
+    milestone: "Structure Templates & Data Bookmarks",
+  },
+  {
     version: "v2.62.0",
     release: 83,
     date: "2026-02-26",
     size: "843 KiB (863,232 bytes)",
-    tests: 384,
+    tests: 350,
     highlights: [
       "SpeedHexPad hex editing — overwrite, insert, delete bytes with full PieceTable undo/redo",
       "Endianness toggle — switch between little-endian and big-endian byte interpretation",
       "F64 Binary Inspector enhancements with string decoding",
       "Column/Block Selection polish",
-      "384 test suites passing",
+      "350 test suites passing",
     ],
     milestone: "SpeedHexPad Hex Editing",
   },

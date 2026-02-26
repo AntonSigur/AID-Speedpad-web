@@ -145,7 +145,7 @@ export default function MultiLogPage() {
             decompressed, merged, and ready to search.
           </Typography>
           <Typography variant="body1" sx={{ lineHeight: 1.8, mt: 2, color: "primary.light" }}>
-            <strong>New in v2.62.0:</strong> SpeedHexPad now supports full hex editing (overwrite, insert, delete) with PieceTable undo/redo and endianness toggle. D3D renderer toggle (Ctrl+Alt+D) for hardware-accelerated rendering. Combine with the Log Correlation Engine (Ctrl+Shift+E) to link related
+            <strong>New in v2.63.0:</strong> Structure templates let you overlay binary format definitions (PE, ELF, PNG) on hex data. Data bookmarks let you mark and navigate hex positions. SpeedHexPad now supports full hex editing (overwrite, insert, delete) with PieceTable undo/redo and endianness toggle. D3D renderer toggle (Ctrl+Alt+D) for hardware-accelerated rendering. Combine with the Log Correlation Engine (Ctrl+Shift+E) to link related
             events across up to 8 files — timestamps sync automatically with clickable ⛓ indicators.
           </Typography>
         </Container>

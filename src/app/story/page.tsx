@@ -246,25 +246,34 @@ const timeline = [
     color: "#4A148C",
     title: "A full hex editor is born inside SpeedPad",
     description:
-      "SpeedHexPad evolves from a viewer to a full hex editor with overwrite, insert, and delete operations — all backed by the PieceTable with full undo/redo. The endianness toggle lets you switch between little-endian and big-endian byte interpretation. F64 Binary Inspector gains string decoding. Test suites surge to 384 — more than double the 153 from v2.30.0. Release #83, Sprint 51 streak.",
-    highlights: ["Hex editing (overwrite/insert/delete)", "Endianness toggle", "PieceTable undo/redo in hex", "384 tests, Sprint 51 streak"],
+      "SpeedHexPad evolves from a viewer to a full hex editor with overwrite, insert, and delete operations — all backed by the PieceTable with full undo/redo. The endianness toggle lets you switch between little-endian and big-endian byte interpretation. F64 Binary Inspector gains string decoding. Test suites surge past 350. Release #83, Sprint 51 streak.",
+    highlights: ["Hex editing (overwrite/insert/delete)", "Endianness toggle", "PieceTable undo/redo in hex", "350 tests"],
+  },
+  {
+    phase: "Structure Templates & Data Bookmarks",
+    period: "v2.63.0 — Sprint 79",
+    color: "#1B5E20",
+    title: "Binary format overlays bring hex inspection to the next level",
+    description:
+      "Structure templates let users define JSON-based binary format layouts that SpeedHexPad overlays on raw hex data. PE headers, ELF binaries, PNG files — all become readable with field names, types, and values. Data bookmarks let you mark and navigate hex positions. The test suite reaches 393 — 157% growth from v2.30.0. Release #84, Sprint 52 streak.",
+    highlights: ["Structure templates (JSON-based)", "Data bookmarks", "Cursor-follows-field navigation", "393 tests, Sprint 52 streak"],
   },
   {
     phase: "What's Next",
-    period: "Sprint 79+",
+    period: "Sprint 80+",
     color: "#607D8B",
-    title: "Hex search, binary diff, and the colony expands",
+    title: "SpeedHexPad becomes its own EXE, and the colony expands",
     description:
-      "The roadmap includes hex search and goto in the hex editor, binary file diff, session extraction for tracing IDs across log files, community open-source contributions, and more surprise features. The ant colony never stops building.",
-    highlights: ["Binary file diff", "Session extraction", "Community contributions", "More features"],
+      "The CEO has directed SpeedHexPad to become a standalone executable — a companion product to SpeedPad. The roadmap includes binary file diff, session extraction for tracing IDs across log files, self-signed code signing, and removing binaries from Git. The ant colony never stops building.",
+    highlights: ["SpeedHexPad.exe standalone", "Binary file diff", "Code signing", "Community contributions"],
   },
 ];
 
 const stats = [
-  { label: "Releases", value: "83", color: "#2196F3" },
+  { label: "Releases", value: "84", color: "#2196F3" },
   { label: "Features", value: "165+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "211+", color: "#F44336" },
-  { label: "Test Suites", value: "384", color: "#FF9800" },
+  { label: "Test Suites", value: "393", color: "#FF9800" },
   { label: "EXE Size", value: "844 KB", color: "#9C27B0" },
   { label: "Team Size", value: "8 agents", color: "#00BCD4" },
 ];
@@ -420,8 +429,8 @@ export default function StoryPage() {
           <Grid container spacing={2}>
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
-              { value: "83", label: "Releases Shipped", sub: "51 consecutive sprint deliveries", color: "#4CAF50" },
-              { value: "384", label: "Test Suites", sub: "From 153 → 384 (+151% growth)", color: "#FF9800" },
+              { value: "84", label: "Releases Shipped", sub: "52 consecutive sprint deliveries", color: "#4CAF50" },
+              { value: "393", label: "Test Suites", sub: "From 153 → 393 (+157% growth)", color: "#FF9800" },
               { value: "181+", label: "Bugs Fixed", sub: "B001 through B181, all verified", color: "#F44336" },
               { value: "100+", label: "Website Commits", sub: "28 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },
               { value: "100+", label: "Inbox Messages", sub: "File-based async communication", color: "#00BCD4" },

@@ -1,13 +1,13 @@
 /** Centralized product configuration — single source of truth for version, stats, and download URLs */
 
-export const CURRENT_VERSION = "v2.62.0";
+export const CURRENT_VERSION = "v2.63.0";
 export const EXE_SIZE = "844KB";
 export const EXE_SIZE_SPACED = "844 KB";
-export const TEST_COUNT = 384;
+export const TEST_COUNT = 393;
 export const FEATURE_COUNT = "165+";
 export const UNIQUE_FEATURES = 36;
-export const RELEASE_COUNT = "83";
-export const RELEASE_NUMBER = 83;
+export const RELEASE_COUNT = "84";
+export const RELEASE_NUMBER = 84;
 
 export const SELF_HOSTED_BASE = `https://itant.is/releases/${CURRENT_VERSION}`;
 export const DOWNLOAD_EXE = `${SELF_HOSTED_BASE}/SpeedPad.exe`;
