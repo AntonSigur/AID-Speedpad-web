@@ -686,6 +686,9 @@ export default function GettingStartedPage() {
             <Button variant="outlined" href="/shortcuts" sx={{ textTransform: "none" }}>
               Keyboard Shortcuts
             </Button>
+            <Button variant="outlined" href="/workflows" sx={{ textTransform: "none" }}>
+              Workflow Packs
+            </Button>
           </Box>
         </Container>
       </Box>

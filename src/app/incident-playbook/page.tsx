@@ -240,6 +240,13 @@ export default function IncidentPlaybookPage() {
             >
               Keyboard Shortcuts →
             </Button>
+            <Button
+              variant="outlined"
+              href="/workflows"
+              sx={{ borderColor: "#94A3B8", color: "#94A3B8", fontWeight: 700, textTransform: "none", px: 4 }}
+            >
+              Workflow Packs →
+            </Button>
           </Box>
         </Box>
       </Container>
