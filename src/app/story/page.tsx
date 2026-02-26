@@ -398,9 +398,9 @@ export default function StoryPage() {
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
           The website has grown alongside SpeedPad — from 5 initial pages to {" "}
-          <strong>25 routes</strong> covering features, documentation, download, a command explorer with
-          93 searchable commands, an incident response playbook, lens plugins, keyboard shortcuts,
-          a dedicated hex editor page, a changelog timeline, team profiles, and this story. Each
+          <strong>28 routes</strong> covering features, documentation, download, a command explorer with
+          94 searchable commands, an incident response playbook, lens plugins, keyboard shortcuts,
+          a dedicated hex editor page, benchmarks, real-world use cases, user testimonials, a changelog timeline, team profiles, and this story. Each
           version bump ripples through every page: stats bars, comparison tables, download links,
           SEO metadata, and JSON-LD structured data all update together.
         </Typography>
@@ -423,7 +423,7 @@ export default function StoryPage() {
               { value: "83", label: "Releases Shipped", sub: "51 consecutive sprint deliveries", color: "#4CAF50" },
               { value: "384", label: "Test Suites", sub: "From 153 → 384 (+151% growth)", color: "#FF9800" },
               { value: "181+", label: "Bugs Fixed", sub: "B001 through B181, all verified", color: "#F44336" },
-              { value: "100+", label: "Website Commits", sub: "27 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },
+              { value: "100+", label: "Website Commits", sub: "28 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },
               { value: "100+", label: "Inbox Messages", sub: "File-based async communication", color: "#00BCD4" },
               { value: "860", label: "KB Total", sub: "Entire editor in less than 1MB", color: "#E91E63" },
               { value: "10s", label: "Build Time", sub: "Next.js 16 — full rebuild in seconds", color: "#607D8B" },
@@ -462,7 +462,7 @@ export default function StoryPage() {
           the development cadence is remarkable: the team has delivered <strong>51 consecutive sprints</strong> without
           a single missed delivery. Each sprint produces a new release with bug fixes, features, and test
           suites — all in a single-file 844KB executable. The website mirrors this velocity, growing from
-          5 pages to 25 routes while maintaining zero lint warnings and clean builds.
+          5 pages to 28 routes while maintaining zero lint warnings and clean builds.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>
           Every number on this website is traceable. Feature counts come from FEATURES.md. Shortcut
