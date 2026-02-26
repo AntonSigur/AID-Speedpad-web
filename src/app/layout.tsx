@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ThemeRegistry from "@/theme/ThemeRegistry";
+import SkipToContent from "@/components/SkipToContent";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://speedpad.itant.is"),
@@ -63,7 +64,8 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeRegistry>
-          <div id="main-content">{children}</div>
+          <SkipToContent />
+          <main id="main-content" role="main">{children}</main>
         </ThemeRegistry>
       </body>
     </html>

@@ -55,6 +55,8 @@ export default function Navbar() {
         position="sticky"
         color="transparent"
         elevation={0}
+        component="nav"
+        aria-label="Main navigation"
         sx={{ backdropFilter: "blur(20px)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>

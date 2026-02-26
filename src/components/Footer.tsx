@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <Box sx={{ borderTop: "1px solid rgba(255,255,255,0.08)", py: { xs: 4, md: 6 } }}>
+    <Box component="footer" role="contentinfo" sx={{ borderTop: "1px solid rgba(255,255,255,0.08)", py: { xs: 4, md: 6 } }}>
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           <Grid size={{ xs: 12, md: 4 }}>
