@@ -145,7 +145,7 @@ export default function MultiLogPage() {
             decompressed, merged, and ready to search.
           </Typography>
           <Typography variant="body1" sx={{ lineHeight: 1.8, mt: 2, color: "primary.light" }}>
-            <strong>New in v2.58.0:</strong> D3D Phase 2 renderer toggle (Ctrl+Alt+D) enables Direct2D hardware-accelerated rendering. Combine with the Log Correlation Engine (Ctrl+Shift+E) to link related
+            <strong>New in v2.60.0:</strong> SpeedHexPad hex view (Ctrl+Alt+H) for binary log inspection. D3D renderer toggle (Ctrl+Alt+D) for hardware-accelerated rendering. Combine with the Log Correlation Engine (Ctrl+Shift+E) to link related
             events across up to 8 files — timestamps sync automatically with clickable ⛓ indicators.
           </Typography>
         </Container>
