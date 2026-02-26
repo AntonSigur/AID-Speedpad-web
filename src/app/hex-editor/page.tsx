@@ -22,6 +22,8 @@ import {
   SwapHoriz as SwapIcon,
   Undo as UndoIcon,
   Speed as SpeedIcon,
+  ViewList as TemplateIcon,
+  Bookmark as BookmarkIcon,
 } from "@mui/icons-material";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -65,6 +67,18 @@ const capabilities = [
     desc: `SpeedHexPad is built into the same ${EXE_SIZE} executable. No plugins to install, no extra downloads. It's just SpeedPad.`,
     shortcut: "Built-in",
   },
+  {
+    icon: <TemplateIcon sx={{ fontSize: 36 }} />,
+    title: "Structure Templates",
+    desc: "Overlay JSON-based binary format definitions on hex data. PE headers, ELF binaries, PNG files — field names, types, and values appear inline.",
+    shortcut: "New in v2.63.0",
+  },
+  {
+    icon: <BookmarkIcon sx={{ fontSize: 36 }} />,
+    title: "Data Bookmarks",
+    desc: "Mark hex positions, navigate between bookmarks, and serialize them for later. Essential for tracking offsets in large binary files.",
+    shortcut: "New in v2.63.0",
+  },
 ];
 
 const comparison = [
@@ -76,6 +90,8 @@ const comparison = [
   { feature: "100GB+ File Support", sp: "✅", hxd: "❌", winhex: "✅", vsc: "❌" },
   { feature: "Tail Mode", sp: "✅", hxd: "❌", winhex: "❌", vsc: "❌" },
   { feature: "Log Correlation", sp: "✅", hxd: "❌", winhex: "❌", vsc: "❌" },
+  { feature: "Structure Templates", sp: "✅", hxd: "❌", winhex: "❌", vsc: "❌" },
+  { feature: "Data Bookmarks", sp: "✅", hxd: "✅", winhex: "✅", vsc: "Plugin" },
   { feature: "Undo/Redo", sp: "500 levels", hxd: "∞", winhex: "Limited", vsc: "Plugin" },
   { feature: "Price", sp: "Free", hxd: "Free", winhex: "€89+", vsc: "Free + Plugin" },
   { feature: "Total Size", sp: EXE_SIZE, hxd: "~4 MB", winhex: "~8 MB", vsc: "~400 MB" },
