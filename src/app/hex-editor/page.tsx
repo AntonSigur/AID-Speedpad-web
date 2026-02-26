@@ -226,8 +226,8 @@ export default function HexEditorPage() {
           <Button variant="outlined" href="/shortcuts" sx={{ borderColor: "#00BCD4", color: "#00BCD4" }}>
             Keyboard Shortcuts
           </Button>
-          <Button variant="outlined" component={Link} href="/story" sx={{ borderColor: "#94A3B8", color: "#94A3B8" }}>
-            The Full Story
+          <Button variant="outlined" component={Link} href="/benchmarks" sx={{ borderColor: "#94A3B8", color: "#94A3B8" }}>
+            See Benchmarks
           </Button>
         </Box>
       </Container>
