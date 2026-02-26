@@ -22,6 +22,19 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "v2.64.0",
+    date: "2026-02-26",
+    title: "SpeedHexPad.exe Standalone Split",
+    tests: 404,
+    features: [
+      "SpeedHexPad.exe ships as a standalone binary — CEO directive complete",
+      "Architecture: speedpad_core.lib shared between SpeedPad.exe and SpeedHexPad.exe",
+      "559 binary artifacts removed from Git tracking",
+      "Test suite expanded to 404 (400 milestone!)",
+      "53 consecutive sprint deliveries",
+    ],
+  },
+  {
     version: "v2.63.0",
     date: "2026-02-26",
     title: "Structure Templates & Data Bookmarks",
@@ -314,14 +327,14 @@ export default function ChangelogPage() {
           Changelog
         </Typography>
         <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-          Every feature, fix, and improvement — from v2.30.0 to v2.63.0.
+          Every feature, fix, and improvement — from v2.30.0 to v2.64.0.
         </Typography>
 
         {/* Test count progress bar */}
         <Paper elevation={0} sx={{ p: 2, mb: 4, background: "rgba(33, 150, 243, 0.06)", border: "1px solid rgba(33, 150, 243, 0.15)", borderRadius: 2 }}>
           <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
             <Typography variant="body2" color="text.secondary">Test suite growth</Typography>
-            <Typography variant="body2" color="primary.light">153 → 393 tests</Typography>
+            <Typography variant="body2" color="primary.light">153 → 404 tests</Typography>
           </Box>
           <Box sx={{ height: 8, borderRadius: 4, background: "rgba(255,255,255,0.05)", overflow: "hidden" }}>
             <Box sx={{ height: "100%", width: "100%", borderRadius: 4, background: "linear-gradient(90deg, #2196F3 0%, #00BCD4 100%)" }} />
@@ -334,6 +347,7 @@ export default function ChangelogPage() {
           const previous = releases[1];
           const testDelta = latest.tests - previous.tests;
           const byteSizes: Record<string, number> = {
+            "v2.64.0": 863232,
             "v2.63.0": 863232,
             "v2.62.0": 863232,
             "v2.61.0": 863232,

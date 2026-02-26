@@ -381,7 +381,7 @@ export default function Home() {
               { label: "Build Artifact Path", detail: "Release EXE built from tagged commit via MSVC /O2 with LTCG. Artifact path: build/Release/SpeedPad.exe → signed and checksummed before distribution." },
               { label: "Startup & File Open", detail: "Measured by automated release verification runs on reference hardware. Every release is timed before shipping. 100GB opens via memory-mapped I/O (no full load)." },
               { label: "Memory Usage", detail: "Profiled with Windows Performance Toolkit on 4GB+ files. Stays under 100MB using a 64MB memory-mapped view window. No file size affects memory." },
-              { label: "Update Cadence", detail: "Validated every sprint (~2 weeks). 84 releases shipped since v1.0. Every release under 1MB. Every claim re-verified against the latest build." },
+              { label: "Update Cadence", detail: "Validated every sprint (~2 weeks). 85 releases shipped since v1.0. Every release under 1MB. Every claim re-verified against the latest build." },
               { label: "Source of Truth", detail: "All feature claims trace to FEATURES.md, SHORTCUTS.md, and CHANGELOG.md in the source repository. PO reviews every marketing statement before publish." },
             ].map((item) => (
               <Grid size={{ xs: 12, sm: 6 }} key={item.label}>

@@ -259,21 +259,30 @@ const timeline = [
     highlights: ["Structure templates (JSON-based)", "Data bookmarks", "Cursor-follows-field navigation", "393 tests, Sprint 52 streak"],
   },
   {
+    phase: "SpeedHexPad.exe Standalone Split",
+    period: "v2.64.0 — Sprint 80",
+    color: "#4CAF50",
+    title: "SpeedHexPad becomes its own binary — the colony's second product",
+    description:
+      "The CEO's directive is complete: SpeedHexPad.exe ships as a standalone binary alongside SpeedPad.exe. Both share speedpad_core.lib — the shared foundation library. 559 binary artifacts removed from Git tracking. The test suite reaches 404 — the 400 milestone. Release #85, 53 consecutive sprint deliveries.",
+    highlights: ["SpeedHexPad.exe standalone", "speedpad_core.lib shared library", "559 artifacts removed from Git", "404 tests, 53 sprints"],
+  },
+  {
     phase: "What's Next",
-    period: "Sprint 80+",
+    period: "Sprint 81+",
     color: "#607D8B",
     title: "SpeedHexPad becomes its own EXE, and the colony expands",
     description:
-      "The CEO has directed SpeedHexPad to become a standalone executable — a companion product to SpeedPad. The roadmap includes binary file diff, session extraction for tracing IDs across log files, self-signed code signing, and removing binaries from Git. The ant colony never stops building.",
-    highlights: ["SpeedHexPad.exe standalone", "Binary file diff", "Code signing", "Community contributions"],
+      "The roadmap includes binary file diff, session extraction for tracing IDs across log files, self-signed code signing, and dual-product expansion. The ant colony never stops building.",
+    highlights: ["Binary file diff", "Session extraction", "Code signing", "Community contributions"],
   },
 ];
 
 const stats = [
-  { label: "Releases", value: "84", color: "#2196F3" },
+  { label: "Releases", value: "85", color: "#2196F3" },
   { label: "Features", value: "165+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "211+", color: "#F44336" },
-  { label: "Test Suites", value: "393", color: "#FF9800" },
+  { label: "Test Suites", value: "404", color: "#FF9800" },
   { label: "EXE Size", value: "844 KB", color: "#9C27B0" },
   { label: "Team Size", value: "8 agents", color: "#00BCD4" },
 ];
@@ -429,8 +438,8 @@ export default function StoryPage() {
           <Grid container spacing={2}>
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
-              { value: "84", label: "Releases Shipped", sub: "52 consecutive sprint deliveries", color: "#4CAF50" },
-              { value: "393", label: "Test Suites", sub: "From 153 → 393 (+157% growth)", color: "#FF9800" },
+              { value: "85", label: "Releases Shipped", sub: "53 consecutive sprint deliveries", color: "#4CAF50" },
+              { value: "404", label: "Test Suites", sub: "From 153 → 404 (+164% growth)", color: "#FF9800" },
               { value: "181+", label: "Bugs Fixed", sub: "B001 through B181, all verified", color: "#F44336" },
               { value: "100+", label: "Website Commits", sub: "28 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },
               { value: "100+", label: "Inbox Messages", sub: "File-based async communication", color: "#00BCD4" },

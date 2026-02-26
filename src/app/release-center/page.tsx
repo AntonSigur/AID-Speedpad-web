@@ -33,6 +33,21 @@ import {
 /* ───── Release data ───── */
 const releases = [
   {
+    version: "v2.64.0",
+    release: 85,
+    date: "2026-02-26",
+    size: "843 KiB (863,232 bytes)",
+    tests: 404,
+    highlights: [
+      "SpeedHexPad.exe ships as standalone binary — dual-product architecture",
+      "speedpad_core.lib shared library between SpeedPad.exe and SpeedHexPad.exe",
+      "559 binary artifacts removed from Git tracking",
+      "Test suite expanded to 404 — 400 milestone!",
+      "53 consecutive sprint deliveries",
+    ],
+    milestone: "SpeedHexPad.exe Standalone Split",
+  },
+  {
     version: "v2.63.0",
     release: 84,
     date: "2026-02-26",

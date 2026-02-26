@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "SpeedPad — 844KB Text Editor",
-    description: "The fastest Windows text editor. Opens 100GB+ files, 393 tests, zero dependencies.",
+    description: "The fastest Windows text editor. Opens 100GB+ files, 404 tests, zero dependencies.",
     images: ["/screenshots/speedpad-app-screenshot.png"],
   },
   icons: {
