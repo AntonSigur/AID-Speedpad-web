@@ -405,11 +405,14 @@ export default function FeaturesPage() {
             <Button variant="text" component={Link} href="/hex-editor" sx={{ color: "#00BCD4" }}>
               SpeedHexPad →
             </Button>
+            <Button variant="text" component={Link} href="/use-cases" sx={{ color: "#00BCD4" }}>
+              Real-World Use Cases →
+            </Button>
+            <Button variant="text" component={Link} href="/benchmarks" sx={{ color: "#00BCD4" }}>
+              Benchmarks →
+            </Button>
             <Button variant="text" component={Link} href="/how-it-works" sx={{ color: "#00BCD4" }}>
               How It Works →
-            </Button>
-            <Button variant="text" component={Link} href="/getting-started" sx={{ color: "#00BCD4" }}>
-              Quick Start Guide →
             </Button>
           </Box>
         </Container>

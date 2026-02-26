@@ -477,11 +477,11 @@ export default function DocsPage() {
             <Button variant="text" href="/how-it-works" sx={{ color: "#00BCD4" }}>
               Architecture Deep Dive →
             </Button>
-            <Button variant="text" href="/command-explorer" sx={{ color: "#00BCD4" }}>
-              Command Explorer →
+            <Button variant="text" href="/use-cases" sx={{ color: "#00BCD4" }}>
+              Real-World Use Cases →
             </Button>
-            <Button variant="text" href="/shortcuts" sx={{ color: "#00BCD4" }}>
-              Keyboard Shortcuts →
+            <Button variant="text" href="/benchmarks" sx={{ color: "#00BCD4" }}>
+              Benchmarks →
             </Button>
           </Box>
         </Container>
