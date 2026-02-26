@@ -398,9 +398,9 @@ export default function StoryPage() {
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
           The website has grown alongside SpeedPad — from 5 initial pages to {" "}
-          <strong>24 routes</strong> covering features, documentation, download, a command explorer with
-          88 searchable commands, an incident response playbook, lens plugins, keyboard shortcuts,
-          a changelog timeline, team profiles, and this story. Each
+          <strong>25 routes</strong> covering features, documentation, download, a command explorer with
+          93 searchable commands, an incident response playbook, lens plugins, keyboard shortcuts,
+          a dedicated hex editor page, a changelog timeline, team profiles, and this story. Each
           version bump ripples through every page: stats bars, comparison tables, download links,
           SEO metadata, and JSON-LD structured data all update together.
         </Typography>
@@ -420,11 +420,11 @@ export default function StoryPage() {
           <Grid container spacing={2}>
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
-              { value: "74", label: "Releases Shipped", sub: "42 consecutive sprint deliveries", color: "#4CAF50" },
+              { value: "83", label: "Releases Shipped", sub: "51 consecutive sprint deliveries", color: "#4CAF50" },
               { value: "350", label: "Test Suites", sub: "From 153 → 350 (+129% growth)", color: "#FF9800" },
               { value: "181+", label: "Bugs Fixed", sub: "B001 through B181, all verified", color: "#F44336" },
-              { value: "70+", label: "Website Commits", sub: "24 routes, 7,000+ lines of TypeScript", color: "#9C27B0" },
-              { value: "73", label: "Inbox Messages", sub: "File-based async communication", color: "#00BCD4" },
+              { value: "90+", label: "Website Commits", sub: "25 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },
+              { value: "100+", label: "Inbox Messages", sub: "File-based async communication", color: "#00BCD4" },
               { value: "860", label: "KB Total", sub: "Entire editor in less than 1MB", color: "#E91E63" },
               { value: "10s", label: "Build Time", sub: "Next.js 16 — full rebuild in seconds", color: "#607D8B" },
             ].map((stat) => (
@@ -459,10 +459,10 @@ export default function StoryPage() {
           test suites, every commit is verified, every deployment is tracked.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
-          The development cadence is remarkable: the team has delivered <strong>40 consecutive sprints</strong> without
+          the development cadence is remarkable: the team has delivered <strong>51 consecutive sprints</strong> without
           a single missed delivery. Each sprint produces a new release with bug fixes, features, and test
           suites — all in a single-file 844KB executable. The website mirrors this velocity, growing from
-          5 pages to 24 routes while maintaining zero lint warnings and clean builds.
+          5 pages to 25 routes while maintaining zero lint warnings and clean builds.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>
           Every number on this website is traceable. Feature counts come from FEATURES.md. Shortcut
