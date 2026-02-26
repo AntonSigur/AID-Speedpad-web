@@ -690,6 +690,9 @@ export default function GettingStartedPage() {
             <Button variant="outlined" href="/workflows" sx={{ textTransform: "none" }}>
               Workflow Packs
             </Button>
+            <Button variant="outlined" href="/use-cases" sx={{ textTransform: "none" }}>
+              Real-World Use Cases
+            </Button>
           </Box>
         </Container>
       </Box>

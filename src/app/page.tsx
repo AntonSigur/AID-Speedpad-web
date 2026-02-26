@@ -399,6 +399,9 @@ export default function Home() {
             <Button variant="text" href="/benchmarks" sx={{ color: "#FF9800" }}>
               Full Benchmarks →
             </Button>
+            <Button variant="text" href="/testimonials" sx={{ color: "#4CAF50" }}>
+              What Users Say →
+            </Button>
           </Box>
         </Container>
       </Box>
