@@ -558,6 +558,52 @@ export default function HowItWorksPage() {
         </Container>
       </Box>
 
+      {/* D3D Renderer Section */}
+      <Box sx={{ py: 8, bgcolor: "rgba(0,188,212,0.04)" }}>
+        <Container maxWidth="lg">
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 3 }}>
+            <SpeedIcon color="secondary" />
+            <Typography variant="h4" sx={{ fontWeight: 700 }}>
+              Direct2D Hardware Renderer
+            </Typography>
+            <Chip label="New in v2.56.0" color="secondary" size="small" />
+          </Box>
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 700 }}>
+            SpeedPad now includes a Direct2D hardware-accelerated text renderer alongside the classic GDI path.
+            Toggle between them at runtime with <strong>Ctrl+Alt+D</strong> — no restart required.
+          </Typography>
+          <Grid container spacing={3}>
+            <Grid size={{ xs: 12, md: 4 }}>
+              <Paper elevation={0} sx={{ p: 3, height: "100%", bgcolor: "rgba(0,188,212,0.06)", border: "1px solid rgba(0,188,212,0.15)", borderRadius: 2 }}>
+                <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>Phase 1 — Foundation</Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Direct2D/DirectWrite rendering pipeline with GPU-accelerated text layout.
+                  ClearType subpixel positioning. ~400 lines of focused rendering code.
+                </Typography>
+              </Paper>
+            </Grid>
+            <Grid size={{ xs: 12, md: 4 }}>
+              <Paper elevation={0} sx={{ p: 3, height: "100%", bgcolor: "rgba(0,188,212,0.06)", border: "1px solid rgba(0,188,212,0.15)", borderRadius: 2 }}>
+                <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>Phase 2 — Runtime Toggle</Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Press <strong>Ctrl+Alt+D</strong> to switch between GDI (classic) and Direct2D
+                  (hardware) renderers instantly. GDI remains the proven default.
+                </Typography>
+              </Paper>
+            </Grid>
+            <Grid size={{ xs: 12, md: 4 }}>
+              <Paper elevation={0} sx={{ p: 3, height: "100%", bgcolor: "rgba(0,188,212,0.06)", border: "1px solid rgba(0,188,212,0.15)", borderRadius: 2 }}>
+                <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>Phase 3 — Benchmark</Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Built-in real-time benchmark compares GDI vs D2D rendering performance
+                  side by side. See exact frame times and paint metrics for your hardware.
+                </Typography>
+              </Paper>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+
       {/* Security Posture */}
       <Box sx={{ py: 8, bgcolor: "rgba(33,150,243,0.04)" }}>
         <Container maxWidth="lg">
