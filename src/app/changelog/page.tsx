@@ -22,6 +22,35 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "v2.62.0",
+    date: "2026-02-26",
+    title: "SpeedHexPad Hex Editing & Endianness Toggle",
+    tests: 350,
+    features: [
+      "SpeedHexPad hex editing — overwrite, insert, and delete bytes with PieceTable undo/redo",
+      "Endianness toggle — switch between little-endian and big-endian byte interpretation",
+      "F64 Binary Inspector enhancements — expanded data type panel with string decoding",
+      "Column/Block Selection polish — Alt+Drag and Alt+Shift+Arrow improvements",
+    ],
+  },
+  {
+    version: "v2.61.0",
+    date: "2026-02-26",
+    title: "F64 Binary Inspector & Column Selection",
+    tests: 311,
+    features: [
+      "F64 Binary Inspector — data type panel in hex view: int8/16/32/64, float32, float64, strings",
+      "Column/Block Selection — Alt+Drag (mouse) + Alt+Shift+Arrows (keyboard) for rectangular selection",
+      "SpeedHexPad Search — Ctrl+F for hex byte search, F3/Shift+F3 for next/prev match",
+      "SpeedHexPad Goto — Ctrl+G for offset navigation (hex or decimal)",
+      "Scroll + keyboard navigation in hex view mode",
+    ],
+    fixes: [
+      "B211: Dialog centering via CBT hook (68 calls across 27 files)",
+      "HexView ScrollBy integer overflow fix",
+    ],
+  },
+  {
     version: "v2.60.0",
     date: "2026-02-26",
     title: "SpeedHexPad Scaffold & Ant Kings Branding",
@@ -272,14 +301,14 @@ export default function ChangelogPage() {
           Changelog
         </Typography>
         <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-          Every feature, fix, and improvement — from v2.30.0 to v2.60.0.
+          Every feature, fix, and improvement — from v2.30.0 to v2.62.0.
         </Typography>
 
         {/* Test count progress bar */}
         <Paper elevation={0} sx={{ p: 2, mb: 4, background: "rgba(33, 150, 243, 0.06)", border: "1px solid rgba(33, 150, 243, 0.15)", borderRadius: 2 }}>
           <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
             <Typography variant="body2" color="text.secondary">Test suite growth</Typography>
-            <Typography variant="body2" color="primary.light">153 → 306 tests</Typography>
+            <Typography variant="body2" color="primary.light">153 → 350 tests</Typography>
           </Box>
           <Box sx={{ height: 8, borderRadius: 4, background: "rgba(255,255,255,0.05)", overflow: "hidden" }}>
             <Box sx={{ height: "100%", width: "100%", borderRadius: 4, background: "linear-gradient(90deg, #2196F3 0%, #00BCD4 100%)" }} />
@@ -292,6 +321,8 @@ export default function ChangelogPage() {
           const previous = releases[1];
           const testDelta = latest.tests - previous.tests;
           const byteSizes: Record<string, number> = {
+            "v2.62.0": 863232,
+            "v2.61.0": 863232,
             "v2.60.0": 863232,
             "v2.59.0": 863232,
             "v2.58.0": 863232,

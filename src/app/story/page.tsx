@@ -232,21 +232,39 @@ const timeline = [
     highlights: ["SpeedHexPad hex editor (Ctrl+Alt+H)", "Ant Kings card branding", "B211 dialog centering", "306 tests, Sprint 49 streak"],
   },
   {
-    phase: "What's Next",
-    period: "Sprint 77+",
-    color: "#607D8B",
-    title: "SpeedHexPad completion, more games, and beyond",
+    phase: "Binary Inspector & Column Selection",
+    period: "v2.61.0 — Sprint 77",
+    color: "#0D47A1",
+    title: "F64 inspects bytes, Alt+Drag selects blocks",
     description:
-      "The roadmap includes completing SpeedHexPad into a full hex editor, session extraction for tracing IDs across log files, community open-source contributions, and more surprise features. The ant colony never stops building.",
-    highlights: ["SpeedHexPad completion", "Session extraction", "Community contributions", "More easter eggs"],
+      "F64 Binary Inspector adds a data type panel to the hex view — select bytes to see them interpreted as int8/16/32/64, float32, float64, or decoded strings. Column/Block Selection (Alt+Drag, Alt+Shift+Arrows) brings rectangular selection with multi-cursor cut/copy/paste. SpeedHexPad gets search (Ctrl+F) and goto offset (Ctrl+G). B211 fixes dialog centering via CBT hook across 68 calls in 27 files. 311 tests, release #82.",
+    highlights: ["F64 Binary Inspector panel", "Column/Block Selection (Alt+Drag)", "SpeedHexPad search + goto", "311 tests, Sprint 50 streak"],
+  },
+  {
+    phase: "SpeedHexPad Hex Editing",
+    period: "v2.62.0 — Sprint 78",
+    color: "#4A148C",
+    title: "A full hex editor is born inside SpeedPad",
+    description:
+      "SpeedHexPad evolves from a viewer to a full hex editor with overwrite, insert, and delete operations — all backed by the PieceTable with full undo/redo. The endianness toggle lets you switch between little-endian and big-endian byte interpretation. F64 Binary Inspector gains string decoding. Test suites surge to 350 — more than double the 153 from v2.30.0. Release #83, Sprint 51 streak.",
+    highlights: ["Hex editing (overwrite/insert/delete)", "Endianness toggle", "PieceTable undo/redo in hex", "350 tests, Sprint 51 streak"],
+  },
+  {
+    phase: "What's Next",
+    period: "Sprint 79+",
+    color: "#607D8B",
+    title: "Hex search, binary diff, and the colony expands",
+    description:
+      "The roadmap includes hex search and goto in the hex editor, binary file diff, session extraction for tracing IDs across log files, community open-source contributions, and more surprise features. The ant colony never stops building.",
+    highlights: ["Binary file diff", "Session extraction", "Community contributions", "More features"],
   },
 ];
 
 const stats = [
-  { label: "Releases", value: "81", color: "#2196F3" },
-  { label: "Features", value: "160+", color: "#4CAF50" },
+  { label: "Releases", value: "83", color: "#2196F3" },
+  { label: "Features", value: "165+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "211+", color: "#F44336" },
-  { label: "Test Suites", value: "306", color: "#FF9800" },
+  { label: "Test Suites", value: "350", color: "#FF9800" },
   { label: "EXE Size", value: "844 KB", color: "#9C27B0" },
   { label: "Team Size", value: "8 agents", color: "#00BCD4" },
 ];
@@ -403,7 +421,7 @@ export default function StoryPage() {
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
               { value: "74", label: "Releases Shipped", sub: "42 consecutive sprint deliveries", color: "#4CAF50" },
-              { value: "306", label: "Test Suites", sub: "From 153 → 306 (+100% growth)", color: "#FF9800" },
+              { value: "350", label: "Test Suites", sub: "From 153 → 350 (+129% growth)", color: "#FF9800" },
               { value: "181+", label: "Bugs Fixed", sub: "B001 through B181, all verified", color: "#F44336" },
               { value: "70+", label: "Website Commits", sub: "24 routes, 7,000+ lines of TypeScript", color: "#9C27B0" },
               { value: "73", label: "Inbox Messages", sub: "File-based async communication", color: "#00BCD4" },
@@ -460,7 +478,7 @@ export default function StoryPage() {
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
           <Button variant="contained" component={Link} href="/command-explorer">88 Commands →</Button>
           <Button variant="outlined" component={Link} href="/incident-playbook">Incident Playbook →</Button>
-          <Button variant="outlined" component={Link} href="/features">160+ Features →</Button>
+          <Button variant="outlined" component={Link} href="/features">165+ Features →</Button>
           <Button variant="outlined" component={Link} href="/download">Download →</Button>
         </Box>
       </Container>

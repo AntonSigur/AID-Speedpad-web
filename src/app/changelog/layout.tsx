@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Changelog — SpeedPad Version History",
   description:
-    "Complete version history for SpeedPad. Every feature, bug fix, and test improvement across 81 releases — from v2.30.0 to v2.60.0.",
+    "Complete version history for SpeedPad. Every feature, bug fix, and test improvement across 83 releases — from v2.30.0 to v2.62.0.",
   openGraph: {
     title: "SpeedPad Changelog — Visual Version Timeline",
-    description: "Track every SpeedPad release: features, bug fixes, and test suite growth from 153 to 306 tests.",
+    description: "Track every SpeedPad release: features, bug fixes, and test suite growth from 153 to 350 tests.",
   },
 };
 
@@ -15,11 +15,13 @@ const jsonLd = {
   "@type": "ItemList",
   name: "SpeedPad Version History",
   description: "Release timeline for SpeedPad text editor",
-  numberOfItems: 20,
+  numberOfItems: 22,
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "v2.60.0", description: "SpeedHexPad Scaffold & Ant Kings — hex editor Ctrl+Alt+H, Snake game, 306 tests" },
-    { "@type": "ListItem", position: 2, name: "v2.59.0", description: "Critical Security — B207 command injection fix, B208 integer overflow, 297 tests" },
-    { "@type": "ListItem", position: 3, name: "v2.58.0", description: "Games & Test Coverage Surge — Arkanoid game DLL, D2D polish, 265 tests" },
+    { "@type": "ListItem", position: 1, name: "v2.62.0", description: "SpeedHexPad Hex Editing — hex editing, endianness toggle, 350 tests" },
+    { "@type": "ListItem", position: 2, name: "v2.61.0", description: "Binary Inspector & Column Selection — F64 data types, Alt+Drag block select, 311 tests" },
+    { "@type": "ListItem", position: 3, name: "v2.60.0", description: "SpeedHexPad Scaffold & Ant Kings — hex editor Ctrl+Alt+H, Snake game, 306 tests" },
+    { "@type": "ListItem", position: 4, name: "v2.59.0", description: "Critical Security — B207 command injection fix, B208 integer overflow, 297 tests" },
+    { "@type": "ListItem", position: 5, name: "v2.58.0", description: "Games & Test Coverage Surge — Arkanoid game DLL, D2D polish, 265 tests" },
     { "@type": "ListItem", position: 4, name: "v2.57.0", description: "Critical Stability — B200 correlation UAF fix, 53× buffer overflow hardening, 259 tests" },
     { "@type": "ListItem", position: 5, name: "v2.56.0", description: "D3D Runtime Toggle — Ctrl+Alt+D renderer switch, GDI/D2D benchmark, 258 tests" },
     { "@type": "ListItem", position: 6, name: "v2.55.0", description: "Code Signing & D2D — S-012 Authenticode, Direct2D Phase 1, 80+ file audit, 257 tests" },

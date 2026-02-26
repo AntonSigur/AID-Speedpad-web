@@ -33,6 +33,36 @@ import {
 /* ───── Release data ───── */
 const releases = [
   {
+    version: "v2.62.0",
+    release: 83,
+    date: "2026-02-26",
+    size: "843 KiB (863,232 bytes)",
+    tests: 350,
+    highlights: [
+      "SpeedHexPad hex editing — overwrite, insert, delete bytes with full PieceTable undo/redo",
+      "Endianness toggle — switch between little-endian and big-endian byte interpretation",
+      "F64 Binary Inspector enhancements with string decoding",
+      "Column/Block Selection polish",
+      "350 test suites passing",
+    ],
+    milestone: "SpeedHexPad Hex Editing",
+  },
+  {
+    version: "v2.61.0",
+    release: 82,
+    date: "2026-02-26",
+    size: "843 KiB (863,232 bytes)",
+    tests: 311,
+    highlights: [
+      "F64 Binary Inspector — int8/16/32/64, float32, float64, string interpretation in hex view",
+      "Column/Block Selection — Alt+Drag + Alt+Shift+Arrow rectangular selection",
+      "SpeedHexPad Search (Ctrl+F) + Goto Offset (Ctrl+G)",
+      "B211: Dialog centering via CBT hook (68 calls across 27 files)",
+      "311 test suites passing",
+    ],
+    milestone: "Binary Inspector & Column Selection",
+  },
+  {
     version: "v2.60.0",
     release: 81,
     date: "2026-02-26",

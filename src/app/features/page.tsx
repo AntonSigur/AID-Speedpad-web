@@ -48,7 +48,7 @@ const featureGroups = [
       { name: "Diff with Clipboard", shortcut: "—", desc: "Compare selection against clipboard content" },
       { name: "Select Next Occurrence", shortcut: "Ctrl+D", desc: "Add next match to multi-cursor selections" },
       { name: "Add Cursor Above/Below", shortcut: "Ctrl+Alt+Up/Down", desc: "Insert extra cursors on adjacent lines" },
-      { name: "Column Select", shortcut: "Alt+Shift+Drag", desc: "Rectangular box selection with cursors per line" },
+      { name: "Column/Block Select", shortcut: "Alt+Drag / Alt+Shift+Arrow", desc: "Rectangular block selection with multi-cursor cut/copy/paste" },
       { name: "Multi-Cursor Find+Replace", shortcut: "Ctrl+H", desc: "Replace operates across all cursor selections simultaneously" },
     ],
   },
@@ -179,6 +179,8 @@ const uniqueFeatures = [
   "Arkanoid Game — built-in arcade game loaded as a DLL easter egg alongside Solitaire",
   "Snake Game — 🐍 second arcade easter egg (Ctrl+Shift+F10), DLL-loaded on demand",
   "SpeedHexPad — Ctrl+Alt+H opens hex editor view mode for binary file inspection",
+  "Column/Block Selection — Alt+Drag + Alt+Shift+Arrows for rectangular text selection with multi-cursor editing",
+  "F64 Binary Inspector — select hex bytes to interpret as int8/16/32/64, float, double, and strings",
 ];
 
 export default function FeaturesPage() {
@@ -188,7 +190,7 @@ export default function FeaturesPage() {
 
       {/* Hero */}
       <Container maxWidth="lg" sx={{ pt: { xs: 6, md: 10 }, pb: 4, textAlign: "center" }}>
-        <Chip label="160+ features" color="primary" variant="outlined" sx={{ mb: 2 }} />
+        <Chip label="165+ features" color="primary" variant="outlined" sx={{ mb: 2 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.2rem", md: "3.5rem" }, mb: 2 }}>
           Every Feature in SpeedPad
         </Typography>
