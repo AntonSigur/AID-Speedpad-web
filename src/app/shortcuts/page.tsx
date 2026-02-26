@@ -11,7 +11,7 @@ import {
   Grid,
 } from "@mui/material";
 import { Search as SearchIcon } from "@mui/icons-material";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -125,6 +125,132 @@ const categoryColors: Record<string, string> = {
   "Multi-Cursor": "#CDDC39",
   "Easter Eggs": "#FF5722",
 };
+
+/* Shortcuts Trainer — 10-question quiz */
+function ShortcutsTrainer({ shortcuts: allShortcuts }: { shortcuts: Shortcut[] }) {
+  const QUIZ_SIZE = 10;
+  const [quizState, setQuizState] = useState<"idle" | "active" | "done">("idle");
+  const [questions, setQuestions] = useState<{ shortcut: Shortcut; options: string[]; correct: number }[]>([]);
+  const [currentQ, setCurrentQ] = useState(0);
+  const [score, setScore] = useState(0);
+  const [selected, setSelected] = useState<number | null>(null);
+
+  const startQuiz = useCallback(() => {
+    const shuffled = [...allShortcuts].sort(() => Math.random() - 0.5);
+    const picked = shuffled.slice(0, QUIZ_SIZE);
+    const qs = picked.map((s) => {
+      const wrong = allShortcuts
+        .filter((w) => w.keys !== s.keys)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3)
+        .map((w) => w.action);
+      const options = [...wrong, s.action].sort(() => Math.random() - 0.5);
+      return { shortcut: s, options, correct: options.indexOf(s.action) };
+    });
+    setQuestions(qs);
+    setCurrentQ(0);
+    setScore(0);
+    setSelected(null);
+    setQuizState("active");
+  }, [allShortcuts]);
+
+  const handleAnswer = (idx: number) => {
+    if (selected !== null) return;
+    setSelected(idx);
+    const isCorrect = idx === questions[currentQ].correct;
+    if (isCorrect) setScore((s) => s + 1);
+    setTimeout(() => {
+      if (currentQ + 1 >= QUIZ_SIZE) {
+        setQuizState("done");
+      } else {
+        setCurrentQ((q) => q + 1);
+        setSelected(null);
+      }
+    }, 800);
+  };
+
+  if (quizState === "idle") {
+    return (
+      <Paper elevation={0} sx={{ mt: 6, p: 3, bgcolor: "rgba(33,150,243,0.06)", border: "1px solid rgba(33,150,243,0.15)", borderRadius: 2, textAlign: "center" }}>
+        <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>⌨️ Shortcuts Trainer</Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+          Test your SpeedPad shortcut knowledge — {QUIZ_SIZE} questions, multiple choice.
+        </Typography>
+        <Button variant="contained" onClick={startQuiz} sx={{ textTransform: "none", fontWeight: 600 }}>
+          Start Quiz
+        </Button>
+      </Paper>
+    );
+  }
+
+  if (quizState === "done") {
+    const pct = Math.round((score / QUIZ_SIZE) * 100);
+    const emoji = pct >= 80 ? "🏆" : pct >= 50 ? "👍" : "📚";
+    return (
+      <Paper elevation={0} sx={{ mt: 6, p: 3, bgcolor: "rgba(33,150,243,0.06)", border: "1px solid rgba(33,150,243,0.15)", borderRadius: 2, textAlign: "center" }}>
+        <Typography variant="h4" sx={{ mb: 1 }}>{emoji}</Typography>
+        <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
+          {score}/{QUIZ_SIZE} Correct ({pct}%)
+        </Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+          {pct >= 80 ? "Excellent! You know your shortcuts." : pct >= 50 ? "Good effort! Practice makes perfect." : "Keep practicing — review the shortcuts above and try again!"}
+        </Typography>
+        <Button variant="contained" onClick={startQuiz} sx={{ textTransform: "none", fontWeight: 600 }}>
+          Try Again
+        </Button>
+      </Paper>
+    );
+  }
+
+  const q = questions[currentQ];
+  return (
+    <Paper elevation={0} sx={{ mt: 6, p: 3, bgcolor: "rgba(33,150,243,0.06)", border: "1px solid rgba(33,150,243,0.15)", borderRadius: 2 }}>
+      <Box sx={{ display: "flex", justifyContent: "space-between", mb: 2 }}>
+        <Typography variant="subtitle2" color="text.secondary">
+          Question {currentQ + 1} of {QUIZ_SIZE}
+        </Typography>
+        <Typography variant="subtitle2" color="primary.light">
+          Score: {score}/{currentQ}
+        </Typography>
+      </Box>
+      <Typography variant="h6" sx={{ fontWeight: 700, mb: 0.5 }}>
+        What does <Chip label={q.shortcut.keys} size="small" sx={{ fontFamily: "monospace", bgcolor: "rgba(33,150,243,0.2)", border: "1px solid rgba(33,150,243,0.4)", mx: 0.5 }} /> do?
+      </Typography>
+      <Typography variant="caption" color="text.secondary" sx={{ mb: 2, display: "block" }}>
+        Category: {q.shortcut.category}
+      </Typography>
+      <Grid container spacing={1}>
+        {q.options.map((opt, i) => {
+          let bgcolor = "rgba(255,255,255,0.03)";
+          let borderColor = "rgba(255,255,255,0.1)";
+          if (selected !== null) {
+            if (i === q.correct) { bgcolor = "rgba(76,175,80,0.15)"; borderColor = "#4CAF50"; }
+            else if (i === selected) { bgcolor = "rgba(244,67,54,0.15)"; borderColor = "#F44336"; }
+          }
+          return (
+            <Grid key={i} size={{ xs: 12, sm: 6 }}>
+              <Paper
+                elevation={0}
+                onClick={() => handleAnswer(i)}
+                sx={{
+                  p: 1.5,
+                  cursor: selected === null ? "pointer" : "default",
+                  bgcolor,
+                  border: `1px solid ${borderColor}`,
+                  borderRadius: 1,
+                  transition: "all 0.2s",
+                  "&:hover": selected === null ? { bgcolor: "rgba(33,150,243,0.1)", borderColor: "#2196F3" } : {},
+                }}
+              >
+                <Typography variant="body2">{opt}</Typography>
+              </Paper>
+            </Grid>
+          );
+        })}
+      </Grid>
+    </Paper>
+  );
+}
 
 export default function ShortcutsPage() {
   const [search, setSearch] = useState("");
@@ -250,6 +376,9 @@ export default function ShortcutsPage() {
             Quick Start Guide →
           </Button>
         </Box>
+
+        {/* Shortcuts Trainer */}
+        <ShortcutsTrainer shortcuts={shortcuts} />
       </Container>
       <Footer />
     </>
