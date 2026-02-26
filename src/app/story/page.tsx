@@ -408,7 +408,7 @@ export default function StoryPage() {
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
           The website has grown alongside SpeedPad — from 5 initial pages to {" "}
           <strong>28 routes</strong> covering features, documentation, download, a command explorer with
-          94 searchable commands, an incident response playbook, lens plugins, keyboard shortcuts,
+          96 searchable commands, an incident response playbook, lens plugins, keyboard shortcuts,
           a dedicated hex editor page, benchmarks, real-world use cases, user testimonials, a changelog timeline, team profiles, and this story. Each
           version bump ripples through every page: stats bars, comparison tables, download links,
           SEO metadata, and JSON-LD structured data all update together.
