@@ -96,7 +96,9 @@ export default function BenchmarksPage() {
           <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.8 }}>
             All benchmarks run on reference hardware (Intel i7-12700K, 32 GB DDR5, NVMe SSD, Windows 11).
             Each test is repeated 5 times; median values are reported. SpeedPad {CURRENT_VERSION} ({EXE_SIZE})
-            compared against Notepad++ 8.x, Sublime Text 4, and VS Code 1.9x. &ldquo;OOM&rdquo; means the editor
+            compared against Notepad++ 8.x, Sublime Text 4, and VS Code 1.9x. Large-file benchmarks (up to 100 GB)
+            rely on SpeedPad&apos;s memory-mapped I/O architecture — the file is mapped into virtual address space,
+            not loaded into RAM, which is why open times remain sub-second regardless of file size. &ldquo;OOM&rdquo; means the editor
             ran out of memory or crashed. &ldquo;Fails&rdquo; means the editor refused to open the file.
             &ldquo;—&rdquo; means the editor cannot handle that scenario at all.
           </Typography>

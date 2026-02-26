@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "Complete version history for SpeedPad. Every feature, bug fix, and test improvement across 83 releases — from v2.30.0 to v2.62.0.",
   openGraph: {
     title: "SpeedPad Changelog — Visual Version Timeline",
-    description: "Track every SpeedPad release: features, bug fixes, and test suite growth from 153 to 350 tests.",
+    description: "Track every SpeedPad release: features, bug fixes, and test suite growth from 153 to 384 tests.",
   },
 };
 
@@ -17,7 +17,7 @@ const jsonLd = {
   description: "Release timeline for SpeedPad text editor",
   numberOfItems: 22,
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "v2.62.0", description: "SpeedHexPad Hex Editing — hex editing, endianness toggle, 350 tests" },
+    { "@type": "ListItem", position: 1, name: "v2.62.0", description: "SpeedHexPad Hex Editing — hex editing, endianness toggle, 384 tests" },
     { "@type": "ListItem", position: 2, name: "v2.61.0", description: "Binary Inspector & Column Selection — F64 data types, Alt+Drag block select, 311 tests" },
     { "@type": "ListItem", position: 3, name: "v2.60.0", description: "SpeedHexPad Scaffold & Ant Kings — hex editor Ctrl+Alt+H, Snake game, 306 tests" },
     { "@type": "ListItem", position: 4, name: "v2.59.0", description: "Critical Security — B207 command injection fix, B208 integer overflow, 297 tests" },

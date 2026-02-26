@@ -3,7 +3,7 @@
 export const CURRENT_VERSION = "v2.62.0";
 export const EXE_SIZE = "844KB";
 export const EXE_SIZE_SPACED = "844 KB";
-export const TEST_COUNT = 350;
+export const TEST_COUNT = 384;
 export const FEATURE_COUNT = "165+";
 export const UNIQUE_FEATURES = 36;
 export const RELEASE_COUNT = "83";

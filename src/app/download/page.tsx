@@ -331,7 +331,7 @@ export default function DownloadPage() {
       <Container maxWidth="md" sx={{ pb: 4 }}>
         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr" }, gap: 2 }}>
           {[
-            { v: CURRENT_VERSION, label: "Latest", summary: "SpeedHexPad hex editing, endianness toggle, 350 tests", color: "primary" as const },
+            { v: CURRENT_VERSION, label: "Latest", summary: "SpeedHexPad hex editing, endianness toggle, 384 tests", color: "primary" as const },
             { v: "v2.60.0", label: "Stable", summary: "SpeedHexPad scaffold, Snake game, Ant Kings branding", color: "secondary" as const },
             { v: "v2.58.0", label: "Stable", summary: "Arkanoid game, D2D renderer polish, 265 tests", color: "default" as const },
           ].map((r) => (

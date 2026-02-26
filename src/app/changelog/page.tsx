@@ -25,7 +25,7 @@ const releases: Release[] = [
     version: "v2.62.0",
     date: "2026-02-26",
     title: "SpeedHexPad Hex Editing & Endianness Toggle",
-    tests: 350,
+    tests: 384,
     features: [
       "SpeedHexPad hex editing — overwrite, insert, and delete bytes with PieceTable undo/redo",
       "Endianness toggle — switch between little-endian and big-endian byte interpretation",
@@ -308,7 +308,7 @@ export default function ChangelogPage() {
         <Paper elevation={0} sx={{ p: 2, mb: 4, background: "rgba(33, 150, 243, 0.06)", border: "1px solid rgba(33, 150, 243, 0.15)", borderRadius: 2 }}>
           <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
             <Typography variant="body2" color="text.secondary">Test suite growth</Typography>
-            <Typography variant="body2" color="primary.light">153 → 350 tests</Typography>
+            <Typography variant="body2" color="primary.light">153 → 384 tests</Typography>
           </Box>
           <Box sx={{ height: 8, borderRadius: 4, background: "rgba(255,255,255,0.05)", overflow: "hidden" }}>
             <Box sx={{ height: "100%", width: "100%", borderRadius: 4, background: "linear-gradient(90deg, #2196F3 0%, #00BCD4 100%)" }} />
