@@ -402,6 +402,9 @@ export default function FeaturesPage() {
             Want to go deeper?
           </Typography>
           <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
+            <Button variant="text" component={Link} href="/hex-editor" sx={{ color: "#00BCD4" }}>
+              SpeedHexPad →
+            </Button>
             <Button variant="text" component={Link} href="/how-it-works" sx={{ color: "#00BCD4" }}>
               How It Works →
             </Button>
