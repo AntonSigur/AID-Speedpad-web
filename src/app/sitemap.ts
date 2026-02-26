@@ -24,5 +24,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/lenses`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/workflows`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/hex-editor`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/use-cases`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
   ];
 }
