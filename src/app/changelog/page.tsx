@@ -175,6 +175,89 @@ export default function ChangelogPage() {
           </Box>
         </Paper>
 
+        {/* Release Delta Card — What's New */}
+        {releases.length >= 2 && (() => {
+          const latest = releases[0];
+          const previous = releases[1];
+          const testDelta = latest.tests - previous.tests;
+          const byteSizes: Record<string, number> = {
+            "v2.52.0": 861184,
+            "v2.51.0": 860672,
+            "v2.50.0": 859648,
+            "v2.49.0": 859136,
+            "v2.48.0": 858624,
+          };
+          const byteDelta = (byteSizes[latest.version] ?? 0) - (byteSizes[previous.version] ?? 0);
+          const bugFixes = latest.features.filter(f => /^B\d+/.test(f));
+          const perfImprovements = latest.features.filter(f => /^P-\d+/.test(f));
+          const newFeatures = latest.features.filter(f => !(/^B\d+/.test(f)) && !(/^P-\d+/.test(f)));
+          return (
+            <Paper
+              elevation={0}
+              sx={{
+                p: 3,
+                mb: 4,
+                background: "linear-gradient(135deg, rgba(33,150,243,0.08) 0%, rgba(0,188,212,0.08) 100%)",
+                border: "1px solid rgba(33,150,243,0.25)",
+                borderRadius: 2,
+              }}
+            >
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700 }}>
+                  What&apos;s New in {latest.version}
+                </Typography>
+                <Chip label="Latest" size="small" color="primary" />
+              </Box>
+              <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                Since {previous.version} ({previous.date})
+              </Typography>
+              <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" }, gap: 2, mb: 2 }}>
+                <Box sx={{ p: 1.5, borderRadius: 1, bgcolor: "rgba(255,255,255,0.03)" }}>
+                  <Typography variant="caption" color="text.secondary">Tests</Typography>
+                  <Typography variant="h6" color="primary.light">
+                    {previous.tests} → {latest.tests} ({testDelta > 0 ? "+" : ""}{testDelta})
+                  </Typography>
+                </Box>
+                <Box sx={{ p: 1.5, borderRadius: 1, bgcolor: "rgba(255,255,255,0.03)" }}>
+                  <Typography variant="caption" color="text.secondary">EXE Size</Typography>
+                  <Typography variant="h6" color="primary.light">
+                    {byteDelta > 0 ? "+" : ""}{byteDelta.toLocaleString()} bytes
+                  </Typography>
+                </Box>
+              </Box>
+              {bugFixes.length > 0 && (
+                <Box sx={{ mb: 1 }}>
+                  <Typography variant="body2" sx={{ fontWeight: 600, mb: 0.5 }}>🐛 Bug Fixes</Typography>
+                  {bugFixes.map((f, i) => (
+                    <Typography key={i} variant="body2" color="text.secondary" sx={{ pl: 2 }}>• {f}</Typography>
+                  ))}
+                </Box>
+              )}
+              {perfImprovements.length > 0 && (
+                <Box sx={{ mb: 1 }}>
+                  <Typography variant="body2" sx={{ fontWeight: 600, mb: 0.5 }}>⚡ Performance</Typography>
+                  {perfImprovements.map((f, i) => (
+                    <Typography key={i} variant="body2" color="text.secondary" sx={{ pl: 2 }}>• {f}</Typography>
+                  ))}
+                </Box>
+              )}
+              {newFeatures.length > 0 && (
+                <Box sx={{ mb: 1 }}>
+                  <Typography variant="body2" sx={{ fontWeight: 600, mb: 0.5 }}>✨ New</Typography>
+                  {newFeatures.map((f, i) => (
+                    <Typography key={i} variant="body2" color="text.secondary" sx={{ pl: 2 }}>• {f}</Typography>
+                  ))}
+                </Box>
+              )}
+              <Box sx={{ mt: 1 }}>
+                <Typography variant="body2" sx={{ fontWeight: 600 }}>
+                  ⚠️ Breaking Changes: <Typography component="span" variant="body2" color="success.light">None</Typography>
+                </Typography>
+              </Box>
+            </Paper>
+          );
+        })()}
+
         {/* Release Timeline */}
         <Box sx={{ position: "relative", pl: 4 }}>
           {/* Timeline line */}
