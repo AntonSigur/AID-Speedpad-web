@@ -34,6 +34,7 @@ export default function Footer() {
               { label: "Documentation", href: "/docs" },
               { label: "AV FAQ", href: "/av-faq" },
               { label: "Shortcuts", href: "/shortcuts" },
+              { label: "Workflows", href: "/workflows" },
               { label: "Contributing", href: "/contributing" },
             ].map((l) => (
               <MuiLink key={l.label} component={Link} href={l.href} color="text.secondary" variant="body2" underline="hover" display="block" sx={{ mb: 0.5 }}>
