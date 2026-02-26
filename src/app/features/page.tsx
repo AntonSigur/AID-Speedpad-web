@@ -181,6 +181,8 @@ const uniqueFeatures = [
   "SpeedHexPad — Ctrl+Alt+H opens hex editor view mode for binary file inspection",
   "Column/Block Selection — Alt+Drag + Alt+Shift+Arrows for rectangular text selection with multi-cursor editing",
   "F64 Binary Inspector — select hex bytes to interpret as int8/16/32/64, float, double, and strings",
+  "Structure Templates — JSON-based binary format overlays for PE, ELF, PNG, ZIP headers with cursor-follows-field",
+  "Data Bookmarks — mark, navigate, and serialize hex positions for quick offset navigation",
 ];
 
 export default function FeaturesPage() {

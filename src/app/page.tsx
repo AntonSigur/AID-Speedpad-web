@@ -249,7 +249,7 @@ export default function Home() {
             Built for Speed
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 6, maxWidth: 500, mx: "auto" }}>
-            36 unique features no other editor has. Opens 10GB files with the same startup time as 10KB.
+            38 unique features no other editor has. Opens 10GB files with the same startup time as 10KB.
           </Typography>
           <Grid container spacing={3}>
             {features.map((f) => (
