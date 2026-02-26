@@ -82,6 +82,8 @@ const featureGroups = [
       { name: "Regex Builder", shortcut: "Ctrl+Shift+R", desc: "4-color regex panel with live preview" },
       { name: "Code Folding", shortcut: "Ctrl+Shift+[/]", desc: "Collapse and expand indented blocks" },
       { name: "Dark Mode", shortcut: "Ctrl+Shift+D", desc: "Toggle dark/light theme" },
+      { name: "Direct2D Renderer", shortcut: "Ctrl+Alt+D", desc: "Toggle between GDI (classic) and Direct2D hardware-accelerated rendering at runtime" },
+      { name: "D3D Benchmark", shortcut: "—", desc: "Built-in GDI vs Direct2D real-time rendering performance comparison" },
     ],
   },
   {
@@ -97,6 +99,8 @@ const featureGroups = [
       { name: "Command Palette", shortcut: "Ctrl+Shift+P", desc: "Fuzzy-search all 88 commands with role-based filtering" },
       { name: "Typing Challenge", shortcut: "—", desc: "Interactive typing speed test with WPM, accuracy, persistent high scores, share to clipboard" },
       { name: "File Archaeology", shortcut: "—", desc: "Show file metadata, timestamps, and hashes" },
+      { name: "Arkanoid Game", shortcut: "—", desc: "Built-in arcade game DLL — break bricks between debugging sessions" },
+      { name: "Navigate Menu", shortcut: "—", desc: "Centralized toolbar access to Find, GoTo, Bookmarks, Compare, and Diff (MIA-01)" },
     ],
   },
   {
@@ -170,6 +174,9 @@ const uniqueFeatures = [
   "Performance Dashboard — real-time status bar metrics: file open time, search speed, memory usage (zero overhead when inactive)",
   "Timestamp Intelligence — relative time display (\"2m ago\"), line deltas (Δ+3.2s), auto timezone detection, time range summaries",
   "Log Correlation Engine — Ctrl+Shift+E links related entries across up to 8 files with timestamp sync and timeline window",
+  "Direct2D Renderer — Ctrl+Alt+D toggles between GDI (classic) and Direct2D hardware-accelerated rendering with built-in benchmark",
+  "Navigate Menu — centralized MIA-01 toolbar access to Find, GoTo, Bookmarks, Compare, and Diff in one place",
+  "Arkanoid Game — built-in arcade game loaded as a DLL easter egg alongside Solitaire",
 ];
 
 export default function FeaturesPage() {
