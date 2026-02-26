@@ -84,6 +84,7 @@ const shortcuts: Shortcut[] = [
   { keys: "Ctrl+End", action: "Last Slice (sparse mode)", category: "View Modes" },
   { keys: "Ctrl+Shift+A", action: "Anomaly Highlighting (timestamp gap detection)", category: "View Modes" },
   { keys: "Ctrl+Alt+M", action: "Toggle Minimap Sidebar", category: "View Modes" },
+  { keys: "Ctrl+Alt+D", action: "Toggle Direct2D Renderer (GDI ↔ D2D)", category: "View Modes" },
 
   // Search & Compare
   { keys: "Ctrl+Shift+F", action: "Cross-File Search", category: "Search" },
@@ -367,7 +368,7 @@ export default function ShortcutsPage() {
         {/* Bottom Links */}
         <Box sx={{ mt: 6, display: "flex", gap: 2, flexWrap: "wrap" }}>
           <Button variant="outlined" href="/command-explorer" sx={{ textTransform: "none" }}>
-            Command Explorer (88 commands) →
+            Command Explorer (91 commands) →
           </Button>
           <Button variant="outlined" href="/docs" sx={{ textTransform: "none" }}>
             Full Documentation →

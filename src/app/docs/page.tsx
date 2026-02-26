@@ -198,7 +198,7 @@ export default function DocsPage() {
 
           <Typography variant="h5" sx={{ mb: 2, mt: 4 }}>The Command Palette</Typography>
           <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>
-            Press <strong>Ctrl+Shift+P</strong> to access all 88 commands with fuzzy search.
+            Press <strong>Ctrl+Shift+P</strong> to access all 91 commands with fuzzy search.
             Supports role-based filtering: type <code style={{ color: "#64B5F6" }}>@ops</code> for DevOps commands,{" "}
             <code style={{ color: "#64B5F6" }}>@dev</code> for developer tools,{" "}
             <code style={{ color: "#64B5F6" }}>@data</code> for data analyst features.
