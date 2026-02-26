@@ -111,6 +111,8 @@ const shortcuts: Shortcut[] = [
 
   // Easter Eggs
   { keys: "Ctrl+Shift+F12", action: "Solitaire 🐜", category: "Easter Eggs" },
+  { keys: "Ctrl+Shift+F10", action: "Snake 🐍", category: "Easter Eggs" },
+  { keys: "Ctrl+Alt+H", action: "SpeedHexPad (hex editor view)", category: "View Modes" },
 ];
 
 const categories = Array.from(new Set(shortcuts.map((s) => s.category)));
@@ -368,7 +370,7 @@ export default function ShortcutsPage() {
         {/* Bottom Links */}
         <Box sx={{ mt: 6, display: "flex", gap: 2, flexWrap: "wrap" }}>
           <Button variant="outlined" href="/command-explorer" sx={{ textTransform: "none" }}>
-            Command Explorer (91 commands) →
+            Command Explorer (93 commands) →
           </Button>
           <Button variant="outlined" href="/docs" sx={{ textTransform: "none" }}>
             Full Documentation →

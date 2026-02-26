@@ -81,6 +81,7 @@ const comparison = [
   { feature: "Solitaire", sp: "🐜", npp: "❌", vsc: "❌" },
   { feature: "Direct2D Renderer", sp: "✅", npp: "❌", vsc: "❌" },
   { feature: "Code-Signed Binary", sp: "✅", npp: "✅", vsc: "✅" },
+  { feature: "Hex Editor View", sp: "✅", npp: "Plugin", vsc: "Plugin" },
 ];
 
 export default function Home() {

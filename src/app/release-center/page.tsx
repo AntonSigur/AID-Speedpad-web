@@ -33,6 +33,35 @@ import {
 /* ───── Release data ───── */
 const releases = [
   {
+    version: "v2.60.0",
+    release: 81,
+    date: "2026-02-26",
+    size: "843 KiB (863,232 bytes)",
+    tests: 306,
+    highlights: [
+      "SpeedHexPad scaffold — Ctrl+Alt+H opens hex editor view mode (new product category)",
+      "F66 Ant Kings card branding — custom king card faces for Solitaire",
+      "Snake game DLL — 🐍 built-in arcade game (Ctrl+Shift+F10)",
+      "B211: Dialog centering fix — all message boxes center on parent window",
+      "306 test suites passing (305 active)",
+    ],
+    milestone: "SpeedHexPad & Ant Kings",
+  },
+  {
+    version: "v2.59.0",
+    release: 80,
+    date: "2026-02-26",
+    size: "843 KiB (863,232 bytes)",
+    tests: 297,
+    highlights: [
+      "B207 CRITICAL: Command injection vulnerability fix",
+      "B208 HIGH: Integer overflow fix in file size calculations",
+      "Snake game DLL — built-in arcade easter egg",
+      "297 test suites passing",
+    ],
+    milestone: "Critical Security Fixes",
+  },
+  {
     version: "v2.58.0",
     release: 79,
     date: "2026-02-26",

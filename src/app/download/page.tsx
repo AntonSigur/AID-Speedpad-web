@@ -20,13 +20,30 @@ import Footer from "@/components/Footer";
 
 const releases = [
   {
-    version: "v2.58.0",
+    version: "v2.60.0",
     date: "2026-02-26",
     latest: true,
     highlights: [
-      "Arkanoid game DLL, D3D renderer polish, 265 tests",
-      "Test coverage surge: Arkanoid, correlation edge cases, thread safety",
+      "SpeedHexPad hex editor scaffold (Ctrl+Alt+H)",
+      "F66 Ant Kings card branding, Snake game DLL",
       `${EXE_SIZE} EXE, ${TEST_COUNT}/${TEST_COUNT} tests passing`,
+    ],
+  },
+  {
+    version: "v2.59.0",
+    date: "2026-02-26",
+    latest: false,
+    highlights: [
+      "B207 CRITICAL: Command injection fix, B208 integer overflow",
+      "297 tests passing",
+    ],
+  },
+  {
+    version: "v2.58.0",
+    date: "2026-02-26",
+    latest: false,
+    highlights: [
+      "Arkanoid game DLL, D3D renderer polish, 265 tests",
     ],
   },
   {
@@ -295,8 +312,8 @@ export default function DownloadPage() {
       <Container maxWidth="md" sx={{ pb: 4 }}>
         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr" }, gap: 2 }}>
           {[
-            { v: CURRENT_VERSION, label: "Latest", summary: "Arkanoid game DLL, D2D renderer polish, 265 tests", color: "primary" as const },
-            { v: "v2.57.0", label: "Stable", summary: "B200 critical UAF fix, 53× buffer overflow hardening", color: "secondary" as const },
+            { v: CURRENT_VERSION, label: "Latest", summary: "SpeedHexPad hex editor, Snake game, Ant Kings branding, 306 tests", color: "primary" as const },
+            { v: "v2.58.0", label: "Stable", summary: "Arkanoid game DLL, D2D renderer polish, 265 tests", color: "secondary" as const },
             { v: "v2.55.0", label: "Stable", summary: "Code signing, Direct2D Phase 1, 80+ file security audit", color: "default" as const },
           ].map((r) => (
             <Card key={r.v} elevation={0} sx={{ bgcolor: "rgba(255,255,255,0.03)", border: r.color === "primary" ? "1px solid rgba(33,150,243,0.3)" : "1px solid rgba(255,255,255,0.06)" }}>

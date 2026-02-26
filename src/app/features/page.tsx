@@ -177,6 +177,8 @@ const uniqueFeatures = [
   "Direct2D Renderer — Ctrl+Alt+D toggles between GDI (classic) and Direct2D hardware-accelerated rendering with built-in benchmark",
   "Navigate Menu — centralized MIA-01 toolbar access to Find, GoTo, Bookmarks, Compare, and Diff in one place",
   "Arkanoid Game — built-in arcade game loaded as a DLL easter egg alongside Solitaire",
+  "Snake Game — 🐍 second arcade easter egg (Ctrl+Shift+F10), DLL-loaded on demand",
+  "SpeedHexPad — Ctrl+Alt+H opens hex editor view mode for binary file inspection",
 ];
 
 export default function FeaturesPage() {
@@ -191,7 +193,7 @@ export default function FeaturesPage() {
           Every Feature in SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
-          A comprehensive text editor in 844KB — with zero external dependencies, 6 lens plugins, and 91 commands.
+          A comprehensive text editor in 844KB — with zero external dependencies, 6 lens plugins, and 93 commands.
         </Typography>
       </Container>
 

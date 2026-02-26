@@ -157,12 +157,14 @@ const commands: Cmd[] = [
 
   // ── Help ──
   { name: "Keyboard Shortcuts", shortcut: "F1", category: "Help", roles: ["all"], outcome: "Display complete shortcut reference" },
-  { name: "Command Palette", shortcut: "Ctrl+Shift+P", category: "Help", roles: ["all"], outcome: "Fuzzy-search all 91 commands with role filtering" },
+  { name: "Command Palette", shortcut: "Ctrl+Shift+P", category: "Help", roles: ["all"], outcome: "Fuzzy-search all 93 commands with role filtering" },
   { name: "Speed Statistics", shortcut: "—", category: "Help", roles: ["casual"], outcome: "Typing and navigation metrics" },
   { name: "Solitaire", shortcut: "Ctrl+Shift+F12", category: "Help", roles: ["casual"], outcome: "Classic card game easter egg (154KB DLL)" },
   { name: "Arkanoid", shortcut: "—", category: "Help", roles: ["casual"], outcome: "Built-in arcade game DLL — break bricks between debugging sessions" },
   { name: "Toggle Direct2D", shortcut: "Ctrl+Alt+D", category: "View", roles: ["developer", "devops"], outcome: "Switch between GDI and Direct2D hardware-accelerated rendering at runtime" },
   { name: "Navigate Menu", shortcut: "—", category: "Navigation", roles: ["all"], outcome: "Centralized access to Find, GoTo, Bookmarks, Compare, Diff" },
+  { name: "Snake", shortcut: "Ctrl+Shift+F10", category: "Help", roles: ["casual"], outcome: "Built-in Snake arcade game DLL easter egg 🐍" },
+  { name: "SpeedHexPad", shortcut: "Ctrl+Alt+H", category: "View", roles: ["developer", "devops"], outcome: "Hex editor view mode — view file contents as hex bytes" },
 ];
 
 const categories = ["View", "Tools", "Edit", "File", "Search", "Navigation", "Help"] as const;
