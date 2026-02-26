@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "SpeedPad — 844KB Text Editor",
-    description: "The fastest Windows text editor. Opens 100GB+ files, 246 tests, zero dependencies.",
+    description: "The fastest Windows text editor. Opens 100GB+ files, 265 tests, zero dependencies.",
     images: ["/screenshots/speedpad-app-screenshot.png"],
   },
   icons: {
@@ -50,7 +50,7 @@ export default function RootLayout({
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     description: "Blazing-fast 844KB Windows text editor. Opens 100GB+ files, multi-cursor editing, log correlation, timestamp intelligence, and 30 unique features.",
     author: { "@type": "Organization", name: "IT Ant ehf", url: "https://itant.is" },
-    softwareVersion: "2.53.0",
+    softwareVersion: "2.58.0",
     fileSize: "844KB",
   };
 

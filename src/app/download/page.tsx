@@ -20,13 +20,59 @@ import Footer from "@/components/Footer";
 
 const releases = [
   {
-    version: "v2.53.0",
-    date: "2026-02-25",
+    version: "v2.58.0",
+    date: "2026-02-26",
     latest: true,
     highlights: [
-      "S-007: Command-injection hardening (CreateProcessW replaces shell decompression)",
-      "B190: Dialog centering migration across 6 dialogs",
+      "Arkanoid game DLL, D3D renderer polish, 265 tests",
+      "Test coverage surge: Arkanoid, correlation edge cases, thread safety",
       `${EXE_SIZE} EXE, ${TEST_COUNT}/${TEST_COUNT} tests passing`,
+    ],
+  },
+  {
+    version: "v2.57.0",
+    date: "2026-02-26",
+    latest: false,
+    highlights: [
+      "B200 CRITICAL: Correlation UAF + data race fix",
+      "53× buffer overflow hardening (swprintf_s → _snwprintf_s)",
+      "259 tests passing",
+    ],
+  },
+  {
+    version: "v2.56.0",
+    date: "2026-02-26",
+    latest: false,
+    highlights: [
+      "D3D Phase 2-3: Runtime D2D toggle (Ctrl+Alt+D) + GDI/D2D benchmark",
+      "258 tests passing",
+    ],
+  },
+  {
+    version: "v2.55.0",
+    date: "2026-02-26",
+    latest: false,
+    highlights: [
+      "S-012 Code Signing, D3D Phase 1, full security audit (80+ files)",
+      "257 tests passing",
+    ],
+  },
+  {
+    version: "v2.54.0",
+    date: "2026-02-26",
+    latest: false,
+    highlights: [
+      "MIA-01 Navigate menu, S-010 lens DLL integrity, 6 bug fixes",
+      "253 tests passing",
+    ],
+  },
+  {
+    version: "v2.53.0",
+    date: "2026-02-25",
+    latest: false,
+    highlights: [
+      "S-007: Command-injection hardening, B190: Dialog centering",
+      "246 tests passing",
     ],
   },
   {

@@ -169,23 +169,68 @@ const timeline = [
     highlights: ["S-007: CreateProcessW replaces shell decompression", "B190: unified dialog centering across 6 dialogs", "246 tests, 157+ features", "844KB EXE, Sprint 42 streak"],
   },
   {
-    phase: "What's Next",
-    period: "Sprint 71+",
-    color: "#607D8B",
-    title: "GPU rendering, session extraction, and beyond",
+    phase: "Navigation & DLL Integrity",
+    period: "v2.54.0 — Sprint 71",
+    color: "#1565C0",
+    title: "Navigate menu, lens integrity, and 6 bug fixes",
     description:
-      "The roadmap includes GPU rendering via Direct2D/DirectWrite for buttery smooth 4K scrolling, session/request extraction for tracing IDs across log files, code signing (S-012 in progress), and lens DLL integrity verification (S-010). The philosophy stays the same: speed first, zero bloat, one window per file. The ant colony never stops building.",
-    highlights: ["GPU rendering for 4K/HiDPI displays", "S-010 lens DLL SHA-256 integrity", "S-012 Authenticode code signing", "Community open-source contributions"],
+      "MIA-01 adds a centralized Navigate menu item giving toolbar-level access to all navigation commands. S-010 introduces lens DLL integrity validation via PE header checksum verification. Six bug fixes including B198 rapid-reload hang and B199 lens state restoration. 253 tests, release #75.",
+    highlights: ["MIA-01: Navigate menu item", "S-010: Lens DLL PE header integrity", "253 tests, 6 bug fixes", "Sprint 43 streak"],
+  },
+  {
+    phase: "Code Signing & Direct2D Foundation",
+    period: "v2.55.0 — Sprint 72-73",
+    color: "#00897B",
+    title: "Authenticode signatures and GPU rendering begins",
+    description:
+      "S-012 delivers Authenticode code signing on the EXE and all DLLs — the binary is now verifiably trusted. D3D Phase 1 lays the Direct2D hardware-accelerated renderer foundation as an opt-in path. An 80+ file security audit hardens the entire codebase. 257 tests, release #76.",
+    highlights: ["S-012: Code signing (Authenticode)", "D3D Phase 1: Direct2D foundation", "80+ file security audit", "257 tests, Sprint 44 streak"],
+  },
+  {
+    phase: "Direct2D Runtime Toggle & Benchmark",
+    period: "v2.56.0 — Sprint 73",
+    color: "#6A1B9A",
+    title: "Ctrl+Alt+D flips between GDI and Direct2D live",
+    description:
+      "D3D Phase 2 delivers the runtime renderer toggle: press Ctrl+Alt+D to switch between GDI (classic) and Direct2D (hardware-accelerated) without restarting. Phase 3 adds a built-in real-time benchmark comparing both renderers side by side. 258 tests, release #77.",
+    highlights: ["D3D Phase 2: Ctrl+Alt+D runtime toggle", "D3D Phase 3: GDI vs D2D benchmark", "258 tests", "Sprint 45 streak"],
+  },
+  {
+    phase: "Critical Stability & Overflow Hardening",
+    period: "v2.57.0 — Sprint 74",
+    color: "#C62828",
+    title: "B200 critical fix and 53× buffer overflow migration",
+    description:
+      "B200 fixes a critical correlation mode use-after-free combined with a data race — a dangling pointer after buffer reallocation. All 53 swprintf_s calls are migrated to _snwprintf_s for consistent buffer overflow prevention. B189 bookmark edge-case and B203 tail-mode stability also resolved. 259 tests, release #78.",
+    highlights: ["B200 CRITICAL: Correlation UAF + data race", "53× buffer overflow hardening", "259 tests", "Sprint 46 streak"],
+  },
+  {
+    phase: "Games & Test Coverage Surge",
+    period: "v2.58.0 — Sprint 75",
+    color: "#E65100",
+    title: "Arkanoid game DLL and test coverage leap",
+    description:
+      "An Arkanoid arcade game ships as a dynamically loaded DLL — bringing easter-egg fun to a serious text editor. The D2D renderer receives final polish. Test coverage surges with new suites covering Arkanoid lifecycle, correlation edge cases, thread safety, and D2D paint validation. 265 tests, release #79.",
+    highlights: ["Arkanoid game DLL", "D2D renderer polish", "265 tests (test surge)", "Sprint 47 streak"],
+  },
+  {
+    phase: "What's Next",
+    period: "Sprint 76+",
+    color: "#607D8B",
+    title: "SpeedHexPad, Snake game, and the ant kingdom grows",
+    description:
+      "v2.59.0 and v2.60.0 are already in source: SpeedHexPad hex-editor scaffold (Ctrl+Alt+H), Snake game DLL, Ant Kings branding, and 306 tests. The roadmap continues with session extraction for tracing IDs across log files, community open-source contributions, and more games. The ant colony never stops building.",
+    highlights: ["SpeedHexPad hex editor scaffold", "Snake game DLL", "306 tests in source", "Community contributions welcome"],
   },
 ];
 
 const stats = [
-  { label: "Releases", value: "74", color: "#2196F3" },
-  { label: "Features", value: "157+", color: "#4CAF50" },
-  { label: "Bugs Fixed", value: "181+", color: "#F44336" },
-  { label: "Test Suites", value: "246", color: "#FF9800" },
-  { label: "EXE Size", value: "860 KB", color: "#9C27B0" },
-  { label: "Team Size", value: "7 agents", color: "#00BCD4" },
+  { label: "Releases", value: "79", color: "#2196F3" },
+  { label: "Features", value: "160+", color: "#4CAF50" },
+  { label: "Bugs Fixed", value: "200+", color: "#F44336" },
+  { label: "Test Suites", value: "265", color: "#FF9800" },
+  { label: "EXE Size", value: "844 KB", color: "#9C27B0" },
+  { label: "Team Size", value: "8 agents", color: "#00BCD4" },
 ];
 
 export default function StoryPage() {
@@ -340,7 +385,7 @@ export default function StoryPage() {
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
               { value: "74", label: "Releases Shipped", sub: "42 consecutive sprint deliveries", color: "#4CAF50" },
-              { value: "246", label: "Test Suites", sub: "From 153 → 246 (+61% growth)", color: "#FF9800" },
+              { value: "265", label: "Test Suites", sub: "From 153 → 265 (+73% growth)", color: "#FF9800" },
               { value: "181+", label: "Bugs Fixed", sub: "B001 through B181, all verified", color: "#F44336" },
               { value: "70+", label: "Website Commits", sub: "24 routes, 7,000+ lines of TypeScript", color: "#9C27B0" },
               { value: "73", label: "Inbox Messages", sub: "File-based async communication", color: "#00BCD4" },
@@ -397,7 +442,7 @@ export default function StoryPage() {
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
           <Button variant="contained" component={Link} href="/command-explorer">88 Commands →</Button>
           <Button variant="outlined" component={Link} href="/incident-playbook">Incident Playbook →</Button>
-          <Button variant="outlined" component={Link} href="/features">157+ Features →</Button>
+          <Button variant="outlined" component={Link} href="/features">160+ Features →</Button>
           <Button variant="outlined" component={Link} href="/download">Download →</Button>
         </Box>
       </Container>

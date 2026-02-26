@@ -22,6 +22,79 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "v2.58.0",
+    date: "2026-02-26",
+    title: "Arkanoid Game DLL & Test Coverage Surge",
+    tests: 265,
+    features: [
+      "Arkanoid game DLL — built-in arcade game loaded dynamically on demand",
+      "D2D renderer polish: final stabilization for hardware-accelerated text rendering",
+      "Test coverage surge: Arkanoid lifecycle, correlation edge cases, thread safety, D2D paint validation",
+    ],
+    fixes: [
+      "D2D render edge-case fixes for high-DPI monitors",
+    ],
+  },
+  {
+    version: "v2.57.0",
+    date: "2026-02-26",
+    title: "B200 Critical Fix & 53× Buffer Overflow Hardening",
+    tests: 259,
+    features: [
+      "53× buffer overflow hardening migration (swprintf_s → _snwprintf_s) across all format strings",
+    ],
+    fixes: [
+      "B200 CRITICAL: Correlation mode use-after-free + data race — dangling pointer after buffer realloc",
+      "B189: Bookmark navigation edge-case in empty files",
+      "B203: Tail-mode stability under rapid append scenarios",
+    ],
+  },
+  {
+    version: "v2.56.0",
+    date: "2026-02-26",
+    title: "D3D Phase 2-3: Runtime Toggle & Benchmark",
+    tests: 258,
+    features: [
+      "D3D Phase 2: Runtime renderer toggle (Ctrl+Alt+D) — switch between GDI and Direct2D without restart",
+      "D3D Phase 3: Built-in GDI vs D2D real-time benchmark comparison tool",
+    ],
+  },
+  {
+    version: "v2.55.0",
+    date: "2026-02-26",
+    title: "Code Signing & Direct2D Foundation",
+    tests: 257,
+    features: [
+      "S-012: Code signing — Authenticode signatures on EXE and all DLLs",
+      "D3D Phase 1: Direct2D hardware-accelerated renderer foundation (opt-in)",
+      "S-013/S-014: Security hardening across 80+ source files",
+    ],
+    fixes: [
+      "B202: Renderer flicker during rapid scroll",
+      "B204: Bookmark persistence after file rename",
+      "B206: Tail mode crash on truncated file",
+    ],
+  },
+  {
+    version: "v2.54.0",
+    date: "2026-02-26",
+    title: "Navigate Menu & DLL Integrity Validation",
+    tests: 253,
+    features: [
+      "MIA-01: Navigate menu item — centralized toolbar access for all navigation commands",
+      "S-010: Lens DLL integrity validation via PE header checksum verification",
+      "F66: Solitaire card-game refresh logic",
+    ],
+    fixes: [
+      "B198: Hang during rapid file reloads with active lenses",
+      "B199: Lens state restoration after tab switch",
+      "B196: Minor toolbar rendering glitch",
+      "B197: Status bar flicker during multi-log merge",
+      "B194: Context menu positioning on multi-monitor setups",
+      "B195: Scroll position drift after find-replace",
+    ],
+  },
+  {
     version: "v2.53.0",
     date: "2026-02-25",
     title: "S-007 Security Hardening & B190 Dialog Centering",
@@ -172,14 +245,14 @@ export default function ChangelogPage() {
           Changelog
         </Typography>
         <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-          Every feature, fix, and improvement — from v2.30.0 to v2.53.0.
+          Every feature, fix, and improvement — from v2.30.0 to v2.58.0.
         </Typography>
 
         {/* Test count progress bar */}
         <Paper elevation={0} sx={{ p: 2, mb: 4, background: "rgba(33, 150, 243, 0.06)", border: "1px solid rgba(33, 150, 243, 0.15)", borderRadius: 2 }}>
           <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
             <Typography variant="body2" color="text.secondary">Test suite growth</Typography>
-            <Typography variant="body2" color="primary.light">153 → 246 tests</Typography>
+            <Typography variant="body2" color="primary.light">153 → 265 tests</Typography>
           </Box>
           <Box sx={{ height: 8, borderRadius: 4, background: "rgba(255,255,255,0.05)", overflow: "hidden" }}>
             <Box sx={{ height: "100%", width: "100%", borderRadius: 4, background: "linear-gradient(90deg, #2196F3 0%, #00BCD4 100%)" }} />
@@ -192,6 +265,11 @@ export default function ChangelogPage() {
           const previous = releases[1];
           const testDelta = latest.tests - previous.tests;
           const byteSizes: Record<string, number> = {
+            "v2.58.0": 863232,
+            "v2.57.0": 891000,
+            "v2.56.0": 863232,
+            "v2.55.0": 863232,
+            "v2.54.0": 863232,
             "v2.53.0": 863232,
             "v2.52.0": 861184,
             "v2.51.0": 860672,
