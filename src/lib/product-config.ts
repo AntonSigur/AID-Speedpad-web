@@ -6,7 +6,7 @@ export const EXE_SIZE_SPACED = "844 KB";
 export const TEST_COUNT = 350;
 export const FEATURE_COUNT = "165+";
 export const UNIQUE_FEATURES = 36;
-export const RELEASE_COUNT = "80+";
+export const RELEASE_COUNT = "83";
 export const RELEASE_NUMBER = 83;
 
 export const SELF_HOSTED_BASE = `https://itant.is/releases/${CURRENT_VERSION}`;
