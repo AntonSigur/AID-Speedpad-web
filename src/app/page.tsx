@@ -315,10 +315,11 @@ export default function Home() {
           <Grid container spacing={3}>
             {[
               { role: "DevOps Engineers", items: ["Tail mode for live log monitoring", "Multi-log merge across rotated files", "Anomaly detection with timestamp gaps", "8-file tail dashboard"] },
+              { role: "Security Analysts", items: ["SpeedHexPad hex editor (Ctrl+Alt+H)", "Binary Inspector with endianness toggle", "Frequency analysis (IPs, UUIDs)", "Forensic log correlation across files"] },
               { role: "Data Analysts", items: ["CSV lens with column-aligned display", "Frequency analysis (IPs, URLs, UUIDs)", "Handle 4GB+ files without lag", "JSON breadcrumb navigation"] },
               { role: "Developers", items: ["Multi-cursor editing (Ctrl+D)", "Code folding & bracket matching", "Parallel cross-file search", "Workspace persistence"] },
             ].map((persona) => (
-              <Grid size={{ xs: 12, md: 4 }} key={persona.role}>
+              <Grid size={{ xs: 12, sm: 6, md: 3 }} key={persona.role}>
                 <Card elevation={0} sx={{ height: "100%", bgcolor: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
                   <CardContent sx={{ p: 3 }}>
                     <Typography variant="h6" sx={{ mb: 2, color: "primary.light" }}>{persona.role}</Typography>
