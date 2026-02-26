@@ -295,9 +295,9 @@ export default function DownloadPage() {
       <Container maxWidth="md" sx={{ pb: 4 }}>
         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr" }, gap: 2 }}>
           {[
-            { v: CURRENT_VERSION, label: "Latest", summary: "B180 auto-reload fix, F60 Tier 3b pattern export/save", color: "primary" as const },
-            { v: "v2.48.0", label: "Stable", summary: "F60 Tier 2b: visual correlation timeline, cross-file linking", color: "secondary" as const },
-            { v: "v2.46.0", label: "Stable", summary: "Log Correlation Engine — cross-file incident triage", color: "default" as const },
+            { v: CURRENT_VERSION, label: "Latest", summary: "Arkanoid game DLL, D2D renderer polish, 265 tests", color: "primary" as const },
+            { v: "v2.57.0", label: "Stable", summary: "B200 critical UAF fix, 53× buffer overflow hardening", color: "secondary" as const },
+            { v: "v2.55.0", label: "Stable", summary: "Code signing, Direct2D Phase 1, 80+ file security audit", color: "default" as const },
           ].map((r) => (
             <Card key={r.v} elevation={0} sx={{ bgcolor: "rgba(255,255,255,0.03)", border: r.color === "primary" ? "1px solid rgba(33,150,243,0.3)" : "1px solid rgba(255,255,255,0.06)" }}>
               <CardContent sx={{ p: 2.5 }}>

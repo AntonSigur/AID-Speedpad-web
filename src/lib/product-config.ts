@@ -5,7 +5,7 @@ export const EXE_SIZE = "844KB";
 export const EXE_SIZE_SPACED = "844 KB";
 export const TEST_COUNT = 265;
 export const FEATURE_COUNT = "160+";
-export const UNIQUE_FEATURES = 30;
+export const UNIQUE_FEATURES = 33;
 export const RELEASE_COUNT = "70+";
 export const RELEASE_NUMBER = 79;
 
