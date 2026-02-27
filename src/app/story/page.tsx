@@ -448,7 +448,7 @@ export default function StoryPage() {
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
               { value: "86", label: "Releases Shipped", sub: "54 consecutive sprint deliveries", color: "#4CAF50" },
-              { value: "409", label: "Test Suites", sub: "From 153 → 432 (+182% growth)", color: "#FF9800" },
+              { value: "432", label: "Test Suites", sub: "From 153 → 432 (+182% growth)", color: "#FF9800" },
               { value: "181+", label: "Bugs Fixed", sub: "B001 through B181, all verified", color: "#F44336" },
               { value: "100+", label: "Website Commits", sub: "28 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },
               { value: "100+", label: "Inbox Messages", sub: "File-based async communication", color: "#00BCD4" },
@@ -486,7 +486,7 @@ export default function StoryPage() {
           test suites, every commit is verified, every deployment is tracked.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
-          the development cadence is remarkable: the team has delivered <strong>51 consecutive sprints</strong> without
+          the development cadence is remarkable: the team has delivered <strong>54 consecutive sprints</strong> without
           a single missed delivery. Each sprint produces a new release with bug fixes, features, and test
           suites — all in a single-file 956KB executable. The website mirrors this velocity, growing from
           5 pages to 28 routes while maintaining zero lint warnings and clean builds.
@@ -499,11 +499,50 @@ export default function StoryPage() {
         </Typography>
       </Container>
 
+      {/* The Sprint Machine */}
+      <Box sx={{ bgcolor: "background.paper", py: { xs: 4, md: 8 } }}>
+        <Container maxWidth="md">
+          <Chip label="Velocity" color="warning" variant="outlined" sx={{ mb: 2, display: "block", width: "fit-content", mx: "auto" }} />
+          <Typography variant="h3" textAlign="center" sx={{ fontSize: { xs: "1.6rem", md: "2.2rem" }, mb: 3 }}>
+            The Sprint Machine
+          </Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
+            The IT Ant team operates on a continuous sprint model. Each sprint follows a strict pipeline:
+            the SA (Software Architect) designs and implements C++ features, Dev2 handles advanced subsystems
+            like the D2D renderer and game DLLs, Dev3 manages binary tooling and SpeedHexPad, the Tester writes
+            and runs automated test suites, and WebDev updates the marketing website to reflect every change.
+          </Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
+            The PM (Project Manager) orchestrates sprint assignments, tracks the delivery streak, and pushes
+            releases. The PO (Product Owner) verifies content accuracy and signs off on website copy. The CEO
+            reviews live deployments, gives UX feedback within minutes, and sets product direction.
+          </Typography>
+          <Grid container spacing={2}>
+            {[
+              { icon: "📨", title: "Async Communication", desc: "100+ inbox messages exchanged via .txt files — no real-time chat needed." },
+              { icon: "🔄", title: "Sprint Pipeline", desc: "PM assigns → SA/Dev builds → Tester verifies → PO reviews → WebDev publishes." },
+              { icon: "🔒", title: "Security First", desc: "Skerity-check runs before every work cycle. 603+ assertions, 458 policy checks." },
+              { icon: "📊", title: "Traceable Data", desc: "Every stat on this site traces back to a source doc. PO is the content authority." },
+              { icon: "🚀", title: "Auto-Deploy", desc: "Every git push triggers Azure deployment. From commit to live in ~110 seconds." },
+              { icon: "🎯", title: "Zero Missed Sprints", desc: "54 consecutive deliveries. Every sprint ships features, fixes, and tests." },
+            ].map((card) => (
+              <Grid key={card.title} size={{ xs: 12, sm: 6, md: 4 }}>
+                <Paper sx={{ p: 2.5, bgcolor: "#162D50", height: "100%" }}>
+                  <Typography variant="h5" sx={{ mb: 1 }}>{card.icon}</Typography>
+                  <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 0.5 }}>{card.title}</Typography>
+                  <Typography variant="caption" color="text.secondary" sx={{ display: "block", lineHeight: 1.4 }}>{card.desc}</Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
       {/* Explore More */}
       <Container maxWidth="md" sx={{ py: { xs: 3, md: 5 }, textAlign: "center" }}>
         <Typography variant="h5" sx={{ mb: 3 }}>Explore What the Ants Built</Typography>
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
-          <Button variant="contained" component={Link} href="/command-explorer">88 Commands →</Button>
+          <Button variant="contained" component={Link} href="/command-explorer">97 Commands →</Button>
           <Button variant="outlined" component={Link} href="/incident-playbook">Incident Playbook →</Button>
           <Button variant="outlined" component={Link} href="/features">165+ Features →</Button>
           <Button variant="outlined" component={Link} href="/download">Download →</Button>

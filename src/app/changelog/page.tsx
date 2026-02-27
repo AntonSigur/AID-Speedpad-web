@@ -6,6 +6,7 @@ import {
   Paper,
   Chip,
   Button,
+  LinearProgress,
 } from "@mui/material";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -15,6 +16,7 @@ interface Release {
   date: string;
   title: string;
   tests: number;
+  sprint: number;
   features: string[];
   fixes?: string[];
   docs?: string[];
@@ -25,7 +27,8 @@ const releases: Release[] = [
     version: "v2.65.0",
     date: "2026-02-27",
     title: "Multi-File Search & Code Signing",
-    tests: 409,
+    tests: 432,
+    sprint: 81,
     features: [
       "F65 Multi-File Search (Ctrl+Alt+F) — folder-first workflow with parallel search and result navigation",
       "Self-signed code signing for both SpeedPad.exe and SpeedHexPad.exe",
@@ -39,6 +42,7 @@ const releases: Release[] = [
     date: "2026-02-26",
     title: "SpeedHexPad.exe Standalone Split",
     tests: 404,
+    sprint: 80,
     features: [
       "SpeedHexPad.exe ships as a standalone binary — CEO directive complete",
       "Architecture: speedpad_core.lib shared between SpeedPad.exe and SpeedHexPad.exe",
@@ -52,6 +56,7 @@ const releases: Release[] = [
     date: "2026-02-26",
     title: "Structure Templates & Data Bookmarks",
     tests: 393,
+    sprint: 79,
     features: [
       "Structure templates — JSON-based binary format overlays for PE, ELF, PNG, ZIP headers",
       "Data bookmarks — toggle, navigate, and serialize hex position bookmarks",
@@ -65,6 +70,7 @@ const releases: Release[] = [
     date: "2026-02-26",
     title: "SpeedHexPad Hex Editing & Endianness Toggle",
     tests: 350,
+    sprint: 78,
     features: [
       "SpeedHexPad hex editing — overwrite, insert, and delete bytes with PieceTable undo/redo",
       "Endianness toggle — switch between little-endian and big-endian byte interpretation",
@@ -77,6 +83,7 @@ const releases: Release[] = [
     date: "2026-02-26",
     title: "F64 Binary Inspector & Column Selection",
     tests: 311,
+    sprint: 77,
     features: [
       "F64 Binary Inspector — data type panel in hex view: int8/16/32/64, float32, float64, strings",
       "Column/Block Selection — Alt+Drag (mouse) + Alt+Shift+Arrows (keyboard) for rectangular selection",
@@ -94,6 +101,7 @@ const releases: Release[] = [
     date: "2026-02-26",
     title: "SpeedHexPad Scaffold & Ant Kings Branding",
     tests: 306,
+    sprint: 76,
     features: [
       "SpeedHexPad hex editor scaffold — Ctrl+Alt+H opens hex view mode, new product category",
       "F66 Ant Kings card branding — custom card faces for the Solitaire easter egg",
@@ -108,6 +116,7 @@ const releases: Release[] = [
     date: "2026-02-26",
     title: "B207 Critical Security Fix & Snake Game",
     tests: 297,
+    sprint: 76,
     features: [
       "Snake game DLL — built-in arcade easter egg (Ctrl+Shift+F10)",
     ],
@@ -121,6 +130,7 @@ const releases: Release[] = [
     date: "2026-02-26",
     title: "Arkanoid Game DLL & Test Coverage Surge",
     tests: 265,
+    sprint: 75,
     features: [
       "Arkanoid game DLL — built-in arcade game loaded dynamically on demand",
       "D2D renderer polish: final stabilization for hardware-accelerated text rendering",
@@ -135,6 +145,7 @@ const releases: Release[] = [
     date: "2026-02-26",
     title: "B200 Critical Fix & 53× Buffer Overflow Hardening",
     tests: 259,
+    sprint: 74,
     features: [
       "53× buffer overflow hardening migration (swprintf_s → _snwprintf_s) across all format strings",
     ],
@@ -149,6 +160,7 @@ const releases: Release[] = [
     date: "2026-02-26",
     title: "D3D Phase 2-3: Runtime Toggle & Benchmark",
     tests: 258,
+    sprint: 73,
     features: [
       "D3D Phase 2: Runtime renderer toggle (Ctrl+Alt+D) — switch between GDI and Direct2D without restart",
       "D3D Phase 3: Built-in GDI vs D2D real-time benchmark comparison tool",
@@ -159,6 +171,7 @@ const releases: Release[] = [
     date: "2026-02-26",
     title: "Code Signing & Direct2D Foundation",
     tests: 257,
+    sprint: 72,
     features: [
       "S-012: Code signing — Authenticode signatures on EXE and all DLLs",
       "D3D Phase 1: Direct2D hardware-accelerated renderer foundation (opt-in)",
@@ -175,6 +188,7 @@ const releases: Release[] = [
     date: "2026-02-26",
     title: "Navigate Menu & DLL Integrity Validation",
     tests: 253,
+    sprint: 71,
     features: [
       "MIA-01: Navigate menu item — centralized toolbar access for all navigation commands",
       "S-010: Lens DLL integrity validation via PE header checksum verification",
@@ -194,6 +208,7 @@ const releases: Release[] = [
     date: "2026-02-25",
     title: "S-007 Security Hardening & B190 Dialog Centering",
     tests: 246,
+    sprint: 70,
     features: [
       "S-007 command-injection hardening — replaced shell-based decompression with direct CreateProcessW in gz_lens and multi_log",
       "B190 dialog centering migration — shared CenterDialogToParent across 6 dialogs (correlation, reverse, regex, challenge, time browse, general)",
@@ -205,6 +220,7 @@ const releases: Release[] = [
     date: "2026-02-25",
     title: "B182 Sparse Index Fix & P-009 Renderer Perf",
     tests: 240,
+    sprint: 69,
     features: [
       "B182 sparse index bug fixes — interpolation upper-bound selection, divide-by-zero guard, timestamp scan bounds",
       "P-009 renderer performance — cached background/gutter/cursor-line brushes, reused dx buffer for tab-aware text width",
@@ -216,6 +232,7 @@ const releases: Release[] = [
     date: "2026-02-25",
     title: "B181 Lens Redirect Fix & 235 Tests",
     tests: 235,
+    sprint: 68,
     features: [
       "B181 lens redirect stale state fix — re-detects encoding, line endings, re-initializes edit buffer and piece table after lens redirect",
       "Syntax highlighting updates for redirect path (e.g., .log instead of .gz)",
@@ -227,6 +244,7 @@ const releases: Release[] = [
     date: "2026-02-25",
     title: "B180 Fix, Tier 3b Export & 230 Tests",
     tests: 230,
+    sprint: 67,
     features: [
       "B180 tail-hang fix — debounced timer flow prevents auto-reload storms on append-heavy logs",
       "F60 Tier 3b — Correlation Pattern Search can now export/save reports to .txt (UTF-8 BOM)",
@@ -238,6 +256,7 @@ const releases: Release[] = [
     date: "2026-02-24",
     title: "F60 Tier 3 Analysis & 225 Tests",
     tests: 225,
+    sprint: 66,
     features: [
       "B179 shortcut remap — Correlation Mode moved to Ctrl+Shift+E (freed Ctrl+Shift+C for CSV)",
       "F60 Tier 3 pattern analysis — Correlation Pattern Search (Ctrl+Shift+G) with +/-5 min timeline window",
@@ -248,6 +267,7 @@ const releases: Release[] = [
     date: "2026-02-24",
     title: "F60 Tier 2b Visual Timeline & 220 Tests",
     tests: 220,
+    sprint: 65,
     features: [
       "F60 Tier 2b Visual Timeline — Ctrl+Shift+J for correlated timeline view",
       "Cross-file timeline navigation with click/double-click jump to matching event",
@@ -259,6 +279,7 @@ const releases: Release[] = [
     date: "2026-02-24",
     title: "F60 Tier 2 & 215 Tests",
     tests: 215,
+    sprint: 65,
     features: [
       "F60 Tier 2: Per-document timestamp storage for multi-doc correlation",
       "Multi-file correlation enabled (up to 8 files)",
@@ -270,6 +291,7 @@ const releases: Release[] = [
     date: "2026-02-24",
     title: "F60 Correlation Engine & 210 Tests",
     tests: 210,
+    sprint: 64,
     features: [
       "F60 Tier 1: Log Correlation Engine — AddSource, BuildTimeline, FindNearestEvent",
       "Ctrl+Shift+C to toggle correlation mode",
@@ -282,6 +304,7 @@ const releases: Release[] = [
     date: "2026-02-24",
     title: "F61 Tier 2 & 200 Tests",
     tests: 200,
+    sprint: 62,
     features: [
       "F61 Tier 2a: Auto Timezone Detection — extracts UTC offset from ISO8601",
       "F61 Tier 2b: Time Range Summary (Ctrl+Shift+R) — duration, busiest minute, largest gap",
@@ -292,6 +315,7 @@ const releases: Release[] = [
     date: "2026-02-24",
     title: "Timestamp Intelligence & 195 Tests",
     tests: 195,
+    sprint: 61,
     features: [
       "F61 Tier 1: Timestamp Intelligence — auto-detect 15+ timestamp formats",
       "Relative time display ('2m ago'), line deltas (Δ+3.2s)",
@@ -303,6 +327,7 @@ const releases: Release[] = [
     date: "2026-02-24",
     title: "Performance Dashboard & 185 Tests",
     tests: 185,
+    sprint: 60,
     features: [
       "F63 Performance Dashboard — real-time CPU, memory, FPS metrics in status bar",
       "Zero overhead when inactive (polling only on demand)",
@@ -313,6 +338,7 @@ const releases: Release[] = [
     date: "2026-02-24",
     title: "Multi-Log & 170 Tests",
     tests: 170,
+    sprint: 58,
     features: [
       "F39 Multi-Log Unified View — merge rotated log files into one chronological timeline",
       "Compressed file support in Multi-Log (.gz, .bz2, .zst)",
@@ -324,12 +350,25 @@ const releases: Release[] = [
     date: "2026-02-24",
     title: "Minimap & 153 Tests",
     tests: 153,
+    sprint: 48,
     features: [
       "Minimap sidebar (Ctrl+Alt+M) — condensed document overview",
       "Click-to-navigate, viewport indicator, bookmark markers",
     ],
   },
 ];
+
+// Group releases by sprint
+const sprintGroups = releases.reduce<Record<number, Release[]>>((acc, r) => {
+  if (!acc[r.sprint]) acc[r.sprint] = [];
+  acc[r.sprint].push(r);
+  return acc;
+}, {});
+const sortedSprints = Object.keys(sprintGroups).map(Number).sort((a, b) => b - a);
+
+const CONSECUTIVE_SPRINTS = 54;
+const TOTAL_TESTS = 432;
+const FIRST_TESTS = 153;
 
 export default function ChangelogPage() {
   return (
@@ -340,159 +379,158 @@ export default function ChangelogPage() {
           Changelog
         </Typography>
         <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-          Every feature, fix, and improvement — from v2.30.0 to v2.65.0.
+          Every feature, fix, and improvement — grouped by sprint.
         </Typography>
 
-        {/* Test count progress bar */}
+        {/* Sprint Streak Banner */}
+        <Paper
+          elevation={0}
+          sx={{
+            p: 3,
+            mb: 4,
+            background: "linear-gradient(135deg, rgba(255,152,0,0.12) 0%, rgba(255,87,34,0.08) 100%)",
+            border: "1px solid rgba(255,152,0,0.3)",
+            borderRadius: 2,
+            textAlign: "center",
+          }}
+        >
+          <Typography variant="h2" sx={{ fontWeight: 800, color: "#FF9800", lineHeight: 1 }}>
+            🔥 {CONSECUTIVE_SPRINTS}
+          </Typography>
+          <Typography variant="h6" sx={{ fontWeight: 600, mt: 1 }}>
+            Consecutive Sprint Deliveries
+          </Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+            Every sprint shipped on time. Zero missed. From Sprint 28 through Sprint {sortedSprints[0]}.
+          </Typography>
+        </Paper>
+
+        {/* Stats Row */}
+        <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr 1fr", md: "1fr 1fr 1fr 1fr" }, gap: 2, mb: 4 }}>
+          {[
+            { value: releases.length, label: "Releases", color: "#2196F3" },
+            { value: TOTAL_TESTS, label: "Test Suites", color: "#00BCD4" },
+            { value: sortedSprints.length, label: "Sprints", color: "#FF9800" },
+            { value: `+${Math.round(((TOTAL_TESTS - FIRST_TESTS) / FIRST_TESTS) * 100)}%`, label: "Test Growth", color: "#4CAF50" },
+          ].map((stat) => (
+            <Paper
+              key={stat.label}
+              elevation={0}
+              sx={{ p: 2, textAlign: "center", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 2 }}
+            >
+              <Typography variant="h4" sx={{ fontWeight: 700, color: stat.color }}>{stat.value}</Typography>
+              <Typography variant="caption" color="text.secondary">{stat.label}</Typography>
+            </Paper>
+          ))}
+        </Box>
+
+        {/* Test growth bar */}
         <Paper elevation={0} sx={{ p: 2, mb: 4, background: "rgba(33, 150, 243, 0.06)", border: "1px solid rgba(33, 150, 243, 0.15)", borderRadius: 2 }}>
           <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
             <Typography variant="body2" color="text.secondary">Test suite growth</Typography>
-            <Typography variant="body2" color="primary.light">153 → 432 tests</Typography>
+            <Typography variant="body2" color="primary.light">{FIRST_TESTS} → {TOTAL_TESTS} tests</Typography>
           </Box>
-          <Box sx={{ height: 8, borderRadius: 4, background: "rgba(255,255,255,0.05)", overflow: "hidden" }}>
-            <Box sx={{ height: "100%", width: "100%", borderRadius: 4, background: "linear-gradient(90deg, #2196F3 0%, #00BCD4 100%)" }} />
-          </Box>
+          <LinearProgress
+            variant="determinate"
+            value={100}
+            sx={{ height: 8, borderRadius: 4, bgcolor: "rgba(255,255,255,0.05)", "& .MuiLinearProgress-bar": { background: "linear-gradient(90deg, #2196F3 0%, #00BCD4 100%)" } }}
+          />
         </Paper>
 
-        {/* Release Delta Card — What's New */}
-        {releases.length >= 2 && (() => {
-          const latest = releases[0];
-          const previous = releases[1];
-          const testDelta = latest.tests - previous.tests;
-          const byteSizes: Record<string, number> = {
-            "v2.65.0": 978432,
-            "v2.64.0": 863232,
-            "v2.63.0": 863232,
-            "v2.62.0": 863232,
-            "v2.61.0": 863232,
-            "v2.60.0": 863232,
-            "v2.59.0": 863232,
-            "v2.58.0": 863232,
-            "v2.57.0": 891000,
-            "v2.56.0": 863232,
-            "v2.55.0": 863232,
-            "v2.54.0": 863232,
-            "v2.53.0": 863232,
-            "v2.52.0": 861184,
-            "v2.51.0": 860672,
-            "v2.50.0": 859648,
-            "v2.49.0": 859136,
-            "v2.48.0": 858624,
-          };
-          const byteDelta = (byteSizes[latest.version] ?? 0) - (byteSizes[previous.version] ?? 0);
-          const bugFixes = latest.features.filter(f => /^B\d+/.test(f));
-          const perfImprovements = latest.features.filter(f => /^P-\d+/.test(f));
-          const newFeatures = latest.features.filter(f => !(/^B\d+/.test(f)) && !(/^P-\d+/.test(f)));
-          return (
-            <Paper
-              elevation={0}
-              sx={{
-                p: 3,
-                mb: 4,
-                background: "linear-gradient(135deg, rgba(33,150,243,0.08) 0%, rgba(0,188,212,0.08) 100%)",
-                border: "1px solid rgba(33,150,243,0.25)",
-                borderRadius: 2,
-              }}
-            >
-              <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2 }}>
-                <Typography variant="h6" sx={{ fontWeight: 700 }}>
-                  What&apos;s New in {latest.version}
-                </Typography>
-                <Chip label="Latest" size="small" color="primary" />
-              </Box>
-              <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                Since {previous.version} ({previous.date})
-              </Typography>
-              <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" }, gap: 2, mb: 2 }}>
-                <Box sx={{ p: 1.5, borderRadius: 1, bgcolor: "rgba(255,255,255,0.03)" }}>
-                  <Typography variant="caption" color="text.secondary">Tests</Typography>
-                  <Typography variant="h6" color="primary.light">
-                    {previous.tests} → {latest.tests} ({testDelta > 0 ? "+" : ""}{testDelta})
-                  </Typography>
-                </Box>
-                <Box sx={{ p: 1.5, borderRadius: 1, bgcolor: "rgba(255,255,255,0.03)" }}>
-                  <Typography variant="caption" color="text.secondary">EXE Size</Typography>
-                  <Typography variant="h6" color="primary.light">
-                    {byteDelta > 0 ? "+" : ""}{byteDelta.toLocaleString()} bytes
-                  </Typography>
-                </Box>
-              </Box>
-              {bugFixes.length > 0 && (
-                <Box sx={{ mb: 1 }}>
-                  <Typography variant="body2" sx={{ fontWeight: 600, mb: 0.5 }}>🐛 Bug Fixes</Typography>
-                  {bugFixes.map((f, i) => (
-                    <Typography key={i} variant="body2" color="text.secondary" sx={{ pl: 2 }}>• {f}</Typography>
-                  ))}
-                </Box>
-              )}
-              {perfImprovements.length > 0 && (
-                <Box sx={{ mb: 1 }}>
-                  <Typography variant="body2" sx={{ fontWeight: 600, mb: 0.5 }}>⚡ Performance</Typography>
-                  {perfImprovements.map((f, i) => (
-                    <Typography key={i} variant="body2" color="text.secondary" sx={{ pl: 2 }}>• {f}</Typography>
-                  ))}
-                </Box>
-              )}
-              {newFeatures.length > 0 && (
-                <Box sx={{ mb: 1 }}>
-                  <Typography variant="body2" sx={{ fontWeight: 600, mb: 0.5 }}>✨ New</Typography>
-                  {newFeatures.map((f, i) => (
-                    <Typography key={i} variant="body2" color="text.secondary" sx={{ pl: 2 }}>• {f}</Typography>
-                  ))}
-                </Box>
-              )}
-              <Box sx={{ mt: 1 }}>
-                <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                  ⚠️ Breaking Changes: <Typography component="span" variant="body2" color="success.light">None</Typography>
-                </Typography>
-              </Box>
-            </Paper>
-          );
-        })()}
-
-        {/* Release Timeline */}
+        {/* Sprint-Grouped Timeline */}
         <Box sx={{ position: "relative", pl: 4 }}>
-          {/* Timeline line */}
-          <Box sx={{ position: "absolute", left: 12, top: 0, bottom: 0, width: 2, background: "linear-gradient(to bottom, #2196F3, #00BCD4)" }} />
+          <Box sx={{ position: "absolute", left: 12, top: 0, bottom: 0, width: 2, background: "linear-gradient(to bottom, #FF9800, #2196F3, #00BCD4)" }} />
 
-          {releases.map((r, i) => (
-            <Box key={r.version} sx={{ position: "relative", mb: 4 }}>
-              {/* Timeline dot */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  left: -28,
-                  top: 4,
-                  width: 12,
-                  height: 12,
-                  borderRadius: "50%",
-                  bgcolor: i === 0 ? "#2196F3" : "rgba(255,255,255,0.2)",
-                  border: i === 0 ? "2px solid #64B5F6" : "2px solid rgba(255,255,255,0.1)",
-                }}
-              />
+          {sortedSprints.map((sprintNum, si) => {
+            const sprintReleases = sprintGroups[sprintNum];
+            const isLatest = si === 0;
+            const totalTests = Math.max(...sprintReleases.map(r => r.tests));
+            const allFeatures = sprintReleases.flatMap(r => r.features);
+            const allFixes = sprintReleases.flatMap(r => r.fixes ?? []);
 
-              <Paper elevation={0} sx={{ p: 2.5, background: i === 0 ? "rgba(33, 150, 243, 0.08)" : "rgba(255,255,255,0.02)", border: i === 0 ? "1px solid rgba(33, 150, 243, 0.2)" : "1px solid rgba(255,255,255,0.05)", borderRadius: 2 }}>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 1, flexWrap: "wrap" }}>
-                  <Typography variant="h6" sx={{ fontWeight: 700, fontFamily: "monospace" }}>
-                    {r.version}
-                  </Typography>
-                  {i === 0 && <Chip label="Latest" size="small" color="primary" />}
-                  <Chip label={`${r.tests} tests`} size="small" variant="outlined" sx={{ borderColor: "#00BCD4", color: "#00BCD4" }} />
-                  <Typography variant="caption" color="text.secondary">{r.date}</Typography>
-                </Box>
-                <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1.5 }}>
-                  {r.title}
-                </Typography>
-                <Box component="ul" sx={{ m: 0, pl: 2.5 }}>
-                  {r.features.map((f, fi) => (
-                    <Box component="li" key={fi} sx={{ mb: 0.5 }}>
-                      <Typography variant="body2" color="text.secondary">{f}</Typography>
+            return (
+              <Box key={sprintNum} sx={{ position: "relative", mb: 4 }}>
+                {/* Sprint dot */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    left: -28,
+                    top: 4,
+                    width: 14,
+                    height: 14,
+                    borderRadius: "50%",
+                    bgcolor: isLatest ? "#FF9800" : "rgba(255,255,255,0.15)",
+                    border: isLatest ? "2px solid #FFB74D" : "2px solid rgba(255,255,255,0.1)",
+                    boxShadow: isLatest ? "0 0 8px rgba(255,152,0,0.4)" : "none",
+                  }}
+                />
+
+                <Paper
+                  elevation={0}
+                  sx={{
+                    p: 3,
+                    background: isLatest ? "rgba(255,152,0,0.06)" : "rgba(255,255,255,0.02)",
+                    border: isLatest ? "1px solid rgba(255,152,0,0.2)" : "1px solid rgba(255,255,255,0.05)",
+                    borderRadius: 2,
+                  }}
+                >
+                  {/* Sprint Header */}
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2, flexWrap: "wrap" }}>
+                    <Typography variant="h6" sx={{ fontWeight: 700, color: isLatest ? "#FF9800" : "inherit" }}>
+                      Sprint {sprintNum}
+                    </Typography>
+                    {isLatest && <Chip label="Current" size="small" sx={{ bgcolor: "rgba(255,152,0,0.15)", color: "#FF9800", fontWeight: 600 }} />}
+                    <Chip label={`${totalTests} tests`} size="small" variant="outlined" sx={{ borderColor: "#00BCD4", color: "#00BCD4" }} />
+                    {sprintReleases.map(r => (
+                      <Chip
+                        key={r.version}
+                        label={r.version}
+                        size="small"
+                        variant="outlined"
+                        sx={{ fontFamily: "monospace", borderColor: "rgba(255,255,255,0.2)", color: "text.secondary" }}
+                      />
+                    ))}
+                  </Box>
+
+                  {/* Release cards within sprint */}
+                  {sprintReleases.map((r, ri) => (
+                    <Box key={r.version} sx={{ mb: ri < sprintReleases.length - 1 ? 2 : 0 }}>
+                      <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
+                        <Typography variant="subtitle1" sx={{ fontWeight: 700, fontFamily: "monospace" }}>
+                          {r.version}
+                        </Typography>
+                        <Typography variant="caption" color="text.secondary">— {r.title}</Typography>
+                        <Typography variant="caption" color="text.secondary" sx={{ ml: "auto" }}>{r.date}</Typography>
+                      </Box>
+
+                      {/* Features */}
+                      <Box component="ul" sx={{ m: 0, pl: 2.5, mb: r.fixes && r.fixes.length > 0 ? 1 : 0 }}>
+                        {r.features.map((f, fi) => (
+                          <Box component="li" key={fi} sx={{ mb: 0.3 }}>
+                            <Typography variant="body2" color="text.secondary">{f}</Typography>
+                          </Box>
+                        ))}
+                      </Box>
+
+                      {/* Fixes */}
+                      {r.fixes && r.fixes.length > 0 && (
+                        <Box sx={{ pl: 2.5 }}>
+                          <Typography variant="caption" sx={{ fontWeight: 600, color: "#FF5722" }}>🐛 Fixes</Typography>
+                          <Box component="ul" sx={{ m: 0, pl: 2.5 }}>
+                            {r.fixes.map((f, fi) => (
+                              <Box component="li" key={fi} sx={{ mb: 0.3 }}>
+                                <Typography variant="body2" color="text.secondary">{f}</Typography>
+                              </Box>
+                            ))}
+                          </Box>
+                        </Box>
+                      )}
                     </Box>
                   ))}
-                </Box>
-              </Paper>
-            </Box>
-          ))}
+                </Paper>
+              </Box>
+            );
+          })}
         </Box>
 
         {/* Links */}
