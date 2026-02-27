@@ -80,6 +80,8 @@ const comparison = [
   { feature: "Compressed Files", sp: "✅", npp: "❌", vsc: "❌" },
   { feature: "Solitaire", sp: "🐜", npp: "❌", vsc: "❌" },
   { feature: "Direct2D Renderer", sp: "✅", npp: "❌", vsc: "❌" },
+  { feature: "Multi-File Search", sp: "✅", npp: "❌", vsc: "✅" },
+  { feature: "Built-in Hex Editor", sp: "✅", npp: "Plugin", vsc: "Extension" },
   { feature: "Code-Signed Binary", sp: "✅", npp: "✅", vsc: "✅" },
   { feature: "Hex Editor View", sp: "✅", npp: "Plugin", vsc: "Plugin" },
 ];
