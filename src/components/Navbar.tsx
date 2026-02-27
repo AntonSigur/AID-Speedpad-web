@@ -12,46 +12,74 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  Menu,
-  MenuItem,
   Divider,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Image from "next/image";
 import Link from "next/link";
 
-const primaryNav = [
+const topNav = [
   { label: "Features", href: "/features" },
   { label: "Download", href: "/download" },
+  { label: "SpeedHexPad", href: "/hex-editor" },
   { label: "Quick Start", href: "/getting-started" },
   { label: "Docs", href: "/docs" },
-  { label: "How It Works", href: "/how-it-works" },
+  { label: "Use Cases", href: "/use-cases" },
+  { label: "Team", href: "/team" },
 ];
 
-const moreNav = [
-  { label: "SpeedHexPad", href: "/hex-editor" },
-  { label: "Multi-Log", href: "/multilog" },
-  { label: "Lens Plugins", href: "/lenses" },
-  { label: "Workflows", href: "/workflows" },
-  { label: "Use Cases", href: "/use-cases" },
-  { label: "Benchmarks", href: "/benchmarks" },
-  { label: "Testimonials", href: "/testimonials" },
-  { label: "Screenshots", href: "/screenshots" },
-  { label: "Command Explorer", href: "/command-explorer" },
-  { label: "Incident Playbook", href: "/incident-playbook" },
-  { label: "Release Center", href: "/release-center" },
-  { label: "Changelog", href: "/changelog" },
-  { label: "AV FAQ", href: "/av-faq" },
-  { label: "Team", href: "/team" },
-  { label: "Story", href: "/story" },
-  { label: "Shortcuts", href: "/shortcuts" },
-  { label: "Contributing", href: "/contributing" },
+const allPages = [
+  {
+    group: "Product",
+    items: [
+      { label: "Features", href: "/features" },
+      { label: "SpeedHexPad", href: "/hex-editor" },
+      { label: "Screenshots", href: "/screenshots" },
+      { label: "Benchmarks", href: "/benchmarks" },
+      { label: "Testimonials", href: "/testimonials" },
+    ],
+  },
+  {
+    group: "Get Started",
+    items: [
+      { label: "Download", href: "/download" },
+      { label: "Quick Start", href: "/getting-started" },
+      { label: "Documentation", href: "/docs" },
+      { label: "How It Works", href: "/how-it-works" },
+    ],
+  },
+  {
+    group: "Reference",
+    items: [
+      { label: "Command Explorer", href: "/command-explorer" },
+      { label: "Keyboard Shortcuts", href: "/shortcuts" },
+      { label: "Incident Playbook", href: "/incident-playbook" },
+      { label: "Workflow Packs", href: "/workflows" },
+      { label: "Lens Plugins", href: "/lenses" },
+      { label: "Multi-Log", href: "/multilog" },
+    ],
+  },
+  {
+    group: "Resources",
+    items: [
+      { label: "Use Cases", href: "/use-cases" },
+      { label: "Release Center", href: "/release-center" },
+      { label: "Changelog", href: "/changelog" },
+      { label: "AV FAQ", href: "/av-faq" },
+    ],
+  },
+  {
+    group: "About",
+    items: [
+      { label: "Team", href: "/team" },
+      { label: "Our Story", href: "/story" },
+      { label: "Contributing", href: "/contributing" },
+    ],
+  },
 ];
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [moreAnchor, setMoreAnchor] = useState<null | HTMLElement>(null);
 
   return (
     <>
@@ -70,41 +98,21 @@ export default function Navbar() {
               SpeedPad
             </Typography>
           </Link>
-          {/* Desktop nav */}
-          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1, alignItems: "center" }}>
-            {primaryNav.map((item) => (
+          {/* Desktop nav — 7 items + hamburger */}
+          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 0.5, alignItems: "center" }}>
+            {topNav.map((item) => (
               <Button key={item.label} color="inherit" size="small" href={item.href} component={Link}>
                 {item.label}
               </Button>
             ))}
-            <Button
+            <IconButton
               color="inherit"
-              size="small"
-              endIcon={<ExpandMoreIcon />}
-              onClick={(e) => setMoreAnchor(e.currentTarget)}
-              aria-haspopup="true"
-              aria-expanded={Boolean(moreAnchor)}
+              aria-label="All pages"
+              onClick={() => setDrawerOpen(true)}
+              sx={{ ml: 0.5 }}
             >
-              More
-            </Button>
-            <Menu
-              anchorEl={moreAnchor}
-              open={Boolean(moreAnchor)}
-              onClose={() => setMoreAnchor(null)}
-              PaperProps={{ sx: { bgcolor: "#162D50", minWidth: 200 } }}
-            >
-              {moreNav.map((item) => (
-                <MenuItem
-                  key={item.label}
-                  component={Link}
-                  href={item.href}
-                  onClick={() => setMoreAnchor(null)}
-                  sx={{ color: "#E2E8F0", "&:hover": { bgcolor: "#1a3a5c" } }}
-                >
-                  {item.label}
-                </MenuItem>
-              ))}
-            </Menu>
+              <MenuIcon />
+            </IconButton>
           </Box>
           {/* Mobile hamburger */}
           <IconButton
@@ -117,37 +125,42 @@ export default function Navbar() {
           </IconButton>
         </Toolbar>
       </AppBar>
-      {/* Mobile drawer */}
+      {/* All-pages drawer (desktop + mobile) */}
       <Drawer
         anchor="right"
         open={drawerOpen}
         onClose={() => setDrawerOpen(false)}
-        PaperProps={{ sx: { bgcolor: "background.default", width: 260 } }}
+        PaperProps={{ sx: { bgcolor: "background.default", width: 280 } }}
       >
         <Box sx={{ pt: 2, pb: 1, px: 2, display: "flex", alignItems: "center", gap: 1 }}>
           <Image src="/itant-logo.svg" alt="IT Ant ehf" width={32} height={32} style={{ filter: "brightness(0) invert(1)" }} />
           <Typography variant="h6" fontWeight={700} color="primary.light">SpeedPad</Typography>
         </Box>
-        <List>
-          {primaryNav.map((item) => (
-            <ListItem key={item.label} disablePadding>
-              <ListItemButton component={Link} href={item.href} onClick={() => setDrawerOpen(false)}>
-                <ListItemText primary={item.label} primaryTypographyProps={{ fontWeight: 600 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-          <Divider sx={{ my: 1, borderColor: "rgba(255,255,255,0.08)" }} />
+        <Divider sx={{ borderColor: "rgba(255,255,255,0.08)" }} />
+        <List dense>
           <ListItem disablePadding>
-            <ListItemButton disabled>
-              <ListItemText primary="More" primaryTypographyProps={{ variant: "caption", color: "text.secondary" }} />
+            <ListItemButton component={Link} href="/" onClick={() => setDrawerOpen(false)}>
+              <ListItemText primary="Home" primaryTypographyProps={{ fontWeight: 700 }} />
             </ListItemButton>
           </ListItem>
-          {moreNav.map((item) => (
-            <ListItem key={item.label} disablePadding>
-              <ListItemButton component={Link} href={item.href} onClick={() => setDrawerOpen(false)} sx={{ pl: 3 }}>
-                <ListItemText primary={item.label} />
-              </ListItemButton>
-            </ListItem>
+          {allPages.map((section) => (
+            <Box key={section.group}>
+              <ListItem disablePadding sx={{ mt: 1 }}>
+                <ListItemButton disabled sx={{ py: 0.25 }}>
+                  <ListItemText
+                    primary={section.group}
+                    primaryTypographyProps={{ variant: "caption", color: "#64B5F6", fontWeight: 700, textTransform: "uppercase", letterSpacing: 1 }}
+                  />
+                </ListItemButton>
+              </ListItem>
+              {section.items.map((item) => (
+                <ListItem key={item.href} disablePadding>
+                  <ListItemButton component={Link} href={item.href} onClick={() => setDrawerOpen(false)} sx={{ pl: 3, py: 0.5 }}>
+                    <ListItemText primary={item.label} primaryTypographyProps={{ fontSize: "0.9rem" }} />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </Box>
           ))}
         </List>
       </Drawer>
