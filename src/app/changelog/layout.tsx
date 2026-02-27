@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Changelog — SpeedPad Version History",
   description:
-    "Complete version history for SpeedPad. Every feature, bug fix, and test improvement across 87 releases — from v2.30.0 to v2.66.0.",
+    "Complete version history for SpeedPad. Every feature, bug fix, and test improvement across 92 releases — from v2.30.0 to v2.71.0.",
   openGraph: {
     title: "SpeedPad Changelog — Visual Version Timeline",
-    description: "Track every SpeedPad release: features, bug fixes, and test suite growth from 153 to 504 tests.",
+    description: "Track every SpeedPad release: features, bug fixes, and test suite growth from 153 to 673 tests.",
   },
 };
 
@@ -17,7 +17,7 @@ const jsonLd = {
   description: "Release timeline for SpeedPad text editor",
   numberOfItems: 23,
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "v2.66.0", description: "HexCompare byte-level diff & 500 test milestone — 504 tests" },
+    { "@type": "ListItem", position: 1, name: "v2.71.0", description: "673 test suites — 92 releases shipped" },
     { "@type": "ListItem", position: 2, name: "v2.65.0", description: "Multi-File Search & Code Signing — 432 tests" },
     { "@type": "ListItem", position: 2, name: "v2.61.0", description: "Binary Inspector & Column Selection — F64 data types, Alt+Drag block select, 311 tests" },
     { "@type": "ListItem", position: 3, name: "v2.60.0", description: "SpeedHexPad Scaffold & Ant Kings — hex editor Ctrl+Alt+H, Snake game, 306 tests" },

@@ -111,7 +111,7 @@ const useCases = [
     ],
     features: ["Parallel Search", "Multi-Cursor", "Code Folding", "Workspace Persistence"],
     link: "/features",
-    linkLabel: "All 168+ Features →",
+    linkLabel: "All 177+ Features →",
     color: "#4CAF50",
   },
   {
@@ -234,7 +234,7 @@ export default function UseCasesPage() {
               Download SpeedPad
             </Button>
             <Button variant="outlined" component={Link} href="/features" sx={{ borderColor: "#00BCD4", color: "#00BCD4" }}>
-              All 168+ Features
+              All 177+ Features
             </Button>
             <Button variant="outlined" component={Link} href="/benchmarks" sx={{ borderColor: "#94A3B8", color: "#94A3B8" }}>
               See Benchmarks

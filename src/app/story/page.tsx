@@ -287,7 +287,7 @@ const timeline = [
   },
   {
     phase: "What's Next",
-    period: "Sprint 83+",
+    period: "Sprint 88+",
     color: "#607D8B",
     title: "Session extraction, community contributions, and the colony expands",
     description:
@@ -297,10 +297,10 @@ const timeline = [
 ];
 
 const stats = [
-  { label: "Releases", value: "87", color: "#2196F3" },
-  { label: "Features", value: "168+", color: "#4CAF50" },
+  { label: "Releases", value: "92", color: "#2196F3" },
+  { label: "Features", value: "177+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "215+", color: "#F44336" },
-  { label: "Test Suites", value: "504", color: "#FF9800" },
+  { label: "Test Suites", value: "673", color: "#FF9800" },
   { label: "EXE Size", value: "843 KB", color: "#9C27B0" },
   { label: "Team Size", value: "8 agents", color: "#00BCD4" },
 ];
@@ -456,8 +456,8 @@ export default function StoryPage() {
           <Grid container spacing={2}>
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
-              { value: "87", label: "Releases Shipped", sub: "55 consecutive sprint deliveries", color: "#4CAF50" },
-              { value: "504", label: "Test Suites", sub: "From 153 → 504 (+229% growth)", color: "#FF9800" },
+              { value: "92", label: "Releases Shipped", sub: "60 consecutive sprint deliveries", color: "#4CAF50" },
+              { value: "673", label: "Test Suites", sub: "From 153 → 673 (+340% growth)", color: "#FF9800" },
               { value: "215+", label: "Bugs Fixed", sub: "B001 through B215, all verified", color: "#F44336" },
               { value: "147+", label: "Website Commits", sub: "28 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },
               { value: "100+", label: "Inbox Messages", sub: "File-based async communication across 7 agents", color: "#00BCD4" },
@@ -495,7 +495,7 @@ export default function StoryPage() {
           test suites, every commit is verified, every deployment is tracked.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
-          the development cadence is remarkable: the team has delivered <strong>55 consecutive sprints</strong> without
+          the development cadence is remarkable: the team has delivered <strong>60 consecutive sprints</strong> without
           a single missed delivery. Each sprint produces a new release with bug fixes, features, and test
           suites — all in a single-file 843KB executable. The website mirrors this velocity, growing from
           5 pages to 28 routes while maintaining zero lint warnings and clean builds.
@@ -533,7 +533,7 @@ export default function StoryPage() {
               { icon: "🔒", title: "Security First", desc: "Skerity-check runs before every work cycle. 603+ assertions, 458 policy checks." },
               { icon: "📊", title: "Traceable Data", desc: "Every stat on this site traces back to a source doc. PO is the content authority." },
               { icon: "🚀", title: "Auto-Deploy", desc: "Every git push triggers Azure deployment. From commit to live in ~110 seconds." },
-              { icon: "🎯", title: "Zero Missed Sprints", desc: "55 consecutive deliveries. Every sprint ships features, fixes, and tests." },
+              { icon: "🎯", title: "Zero Missed Sprints", desc: "60 consecutive deliveries. Every sprint ships features, fixes, and tests." },
             ].map((card) => (
               <Grid key={card.title} size={{ xs: 12, sm: 6, md: 4 }}>
                 <Paper sx={{ p: 2.5, bgcolor: "#162D50", height: "100%" }}>
@@ -553,7 +553,7 @@ export default function StoryPage() {
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
           <Button variant="contained" component={Link} href="/command-explorer">97 Commands →</Button>
           <Button variant="outlined" component={Link} href="/incident-playbook">Incident Playbook →</Button>
-          <Button variant="outlined" component={Link} href="/features">168+ Features →</Button>
+          <Button variant="outlined" component={Link} href="/features">177+ Features →</Button>
           <Button variant="outlined" component={Link} href="/download">Download →</Button>
         </Box>
       </Container>

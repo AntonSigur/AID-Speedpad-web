@@ -381,8 +381,8 @@ const sprintGroups = releases.reduce<Record<number, Release[]>>((acc, r) => {
 }, {});
 const sortedSprints = Object.keys(sprintGroups).map(Number).sort((a, b) => b - a);
 
-const CONSECUTIVE_SPRINTS = 55;
-const TOTAL_TESTS = 504;
+const CONSECUTIVE_SPRINTS = 60;
+const TOTAL_TESTS = 673;
 const FIRST_TESTS = 153;
 
 export default function ChangelogPage() {
@@ -420,7 +420,7 @@ export default function ChangelogPage() {
           </Typography>
         </Paper>
 
-        {/* 500 Test Milestone Banner */}
+        {/* 600 Test Milestone Banner */}
         <Paper
           elevation={0}
           sx={{
@@ -433,13 +433,13 @@ export default function ChangelogPage() {
           }}
         >
           <Typography variant="h3" sx={{ fontWeight: 800, color: "#00BCD4", lineHeight: 1 }}>
-            🎉 500
+            🎉 600
           </Typography>
           <Typography variant="h6" sx={{ fontWeight: 600, mt: 1 }}>
             Test Suites Milestone
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-            From 153 tests in v2.30.0 to {TOTAL_TESTS} in v2.66.0 — a +{Math.round(((TOTAL_TESTS - FIRST_TESTS) / FIRST_TESTS) * 100)}% increase. Every release tested. Every regression caught.
+            From 153 tests in v2.30.0 to {TOTAL_TESTS} in v2.71.0 — a +{Math.round(((TOTAL_TESTS - FIRST_TESTS) / FIRST_TESTS) * 100)}% increase. Every release tested. Every regression caught.
           </Typography>
         </Paper>
 
