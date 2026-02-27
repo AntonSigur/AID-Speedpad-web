@@ -213,9 +213,15 @@ export default function BenchmarksPage() {
           <Typography variant="h4" sx={{ fontWeight: 700, mb: 3 }}>
             🔍 Search Performance
           </Typography>
+          <Chip
+            label="NEW in v2.65.0 — F65 Multi-File Search (Ctrl+Alt+F)"
+            size="small"
+            sx={{ mb: 2, bgcolor: "rgba(255,152,0,0.15)", color: "#FF9800", fontWeight: 600 }}
+          />
           <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
             SpeedPad uses parallel multi-threaded search across all CPU cores. TinyRegex NFA engine guarantees
             O(nm) complexity — immune to ReDoS pathological patterns that freeze other editors.
+            With F65 Multi-File Search, search entire folders with parallel threading and result navigation.
           </Typography>
           <TableContainer component={Paper} elevation={0} sx={{ bgcolor: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.08)" }}>
             <Table size="small">
@@ -301,6 +307,50 @@ export default function BenchmarksPage() {
               </Grid>
             ))}
           </Grid>
+        </Container>
+      </Box>
+
+      {/* Feature Speed Comparison */}
+      <Box sx={{ bgcolor: "rgba(255,152,0,0.03)", py: { xs: 3, md: 5 } }}>
+        <Container maxWidth="md">
+          <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
+            🏆 The Speed Challenge
+          </Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
+            Can your editor do all of these? SpeedPad does them all — in under 1 MB.
+          </Typography>
+          <TableContainer component={Paper} elevation={0} sx={{ bgcolor: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.08)" }}>
+            <Table size="small">
+              <TableHead>
+                <TableRow>
+                  <TableCell sx={{ fontWeight: 700 }}>Challenge</TableCell>
+                  <TableCell sx={{ fontWeight: 700, color: "primary.light" }}>SpeedPad</TableCell>
+                  <TableCell sx={{ fontWeight: 700 }}>Notepad++</TableCell>
+                  <TableCell sx={{ fontWeight: 700 }}>VS Code</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {[
+                  { challenge: "Open 100 GB file", sp: "✅ < 2s", npp: "❌ OOM", vsc: "❌ Fails" },
+                  { challenge: "Stay under 100 MB RAM on 10 GB file", sp: "✅ 85 MB", npp: "❌ OOM", vsc: "❌ OOM" },
+                  { challenge: "Start in < 100ms cold", sp: "✅ 50ms", npp: "❌ 600ms", vsc: "❌ 3,000ms" },
+                  { challenge: "Search 1 GB regex in < 5s", sp: "✅ 2.5s", npp: "❌ 45s", vsc: "❌ 30s" },
+                  { challenge: "Multi-file search (Ctrl+Alt+F)", sp: "✅ Parallel", npp: "⚠️ Sequential", vsc: "✅ Built-in" },
+                  { challenge: "Tail mode (live log follow)", sp: "✅ Native", npp: "⚠️ Plugin", vsc: "❌ No" },
+                  { challenge: "Hex editor built-in", sp: "✅ SpeedHexPad", npp: "⚠️ Plugin", vsc: "⚠️ Extension" },
+                  { challenge: "Total install size < 1 MB", sp: `✅ ${EXE_SIZE}`, npp: "❌ 14 MB", vsc: "❌ 400 MB" },
+                  { challenge: "Zero dependencies", sp: "✅ Single EXE", npp: "❌ MSVC runtime", vsc: "❌ Electron + Node" },
+                ].map((row) => (
+                  <TableRow key={row.challenge}>
+                    <TableCell>{row.challenge}</TableCell>
+                    <TableCell sx={{ color: "#4CAF50", fontWeight: 600 }}>{row.sp}</TableCell>
+                    <TableCell sx={{ color: row.npp.startsWith("❌") ? "#F44336" : row.npp.startsWith("⚠️") ? "#FF9800" : "text.secondary" }}>{row.npp}</TableCell>
+                    <TableCell sx={{ color: row.vsc.startsWith("❌") ? "#F44336" : row.vsc.startsWith("⚠️") ? "#FF9800" : row.vsc.startsWith("✅") ? "#4CAF50" : "text.secondary" }}>{row.vsc}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
         </Container>
       </Box>
 
