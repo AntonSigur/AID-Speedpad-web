@@ -11,6 +11,7 @@ import {
   TableRow,
   Paper,
   Chip,
+  Grid,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -277,7 +278,75 @@ export default function FeaturesPage() {
         </Container>
       </Box>
 
-      {/* 30 Unique Features */}
+      {/* Phase 4 Intelligence Suite */}
+      <Box sx={{ py: { xs: 4, md: 8 } }}>
+        <Container maxWidth="md">
+          <Chip label="Phase 4 Complete" sx={{ mb: 2, bgcolor: "rgba(76,175,80,0.15)", color: "#66BB6A", borderColor: "#4CAF50", fontWeight: 600 }} variant="outlined" />
+          <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
+            Log Intelligence Suite
+          </Typography>
+          <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
+            Five features that turn SpeedPad into a log analysis platform — no plugins, no cloud, no subscriptions.
+          </Typography>
+          <Grid container spacing={3}>
+            {[
+              {
+                feature: "F65",
+                name: "Multi-File Search",
+                shortcut: "Ctrl+Alt+F",
+                desc: "Search across entire directories with parallel threading. Pick a folder, find matches, navigate results — all in the editor.",
+                color: "#2196F3",
+              },
+              {
+                feature: "F66",
+                name: "Pattern Timeline",
+                shortcut: "Ctrl+Shift+T",
+                desc: "Visualize event frequencies over time. Click any bar to jump directly to that occurrence. Instantly spot traffic spikes, error bursts, and quiet periods.",
+                color: "#FF9800",
+              },
+              {
+                feature: "F67",
+                name: "Auto-Correlator",
+                shortcut: "Ctrl+Shift+K",
+                desc: "Automatically detect event sequences in log files. Find cause-effect chains without writing regex or knowing the log format.",
+                color: "#9C27B0",
+              },
+              {
+                feature: "F68",
+                name: "Severity Coloring",
+                shortcut: "Auto",
+                desc: "ERROR lines in red, WARN in yellow, INFO in blue — applied instantly on file open. No configuration needed. Works with syslog, Apache, nginx, and IIS formats.",
+                color: "#F44336",
+              },
+              {
+                feature: "F69",
+                name: "Build Output Parser",
+                shortcut: "F4 / Shift+F4",
+                desc: "Navigate MSVC, GCC, and Clang compiler errors directly from build output. F4 jumps to the next error, Shift+F4 goes back.",
+                color: "#00BCD4",
+              },
+            ].map((item) => (
+              <Grid key={item.feature} size={{ xs: 12, sm: 6 }}>
+                <Paper sx={{ p: 3, bgcolor: "background.paper", height: "100%", borderLeft: `3px solid ${item.color}` }}>
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
+                    <Chip label={item.feature} size="small" sx={{ bgcolor: `${item.color}22`, color: item.color, fontWeight: 700 }} />
+                    <Chip label={item.shortcut} size="small" variant="outlined" sx={{ color: "text.secondary", borderColor: "rgba(255,255,255,0.15)" }} />
+                  </Box>
+                  <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>{item.name}</Typography>
+                  <Typography variant="body2" color="text.secondary">{item.desc}</Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+          <Box sx={{ textAlign: "center", mt: 3 }}>
+            <Typography variant="body2" color="text.secondary">
+              All five features work together — search across files, visualize patterns, correlate events, highlight severity, and navigate build errors. All in an 843KB editor with zero dependencies.
+            </Typography>
+          </Box>
+        </Container>
+      </Box>
+
+      {/* 50 Unique Features */}
       <Box sx={{ py: { xs: 4, md: 8 } }}>
         <Container maxWidth="md">
           <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
