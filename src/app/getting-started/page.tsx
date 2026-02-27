@@ -646,6 +646,48 @@ export default function GettingStartedPage() {
         </Grid>
       </Container>
 
+      {/* SpeedHexPad Quick Start */}
+      <Container maxWidth="lg" sx={sectionSx}>
+        <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
+          SpeedHexPad Quick Start
+        </Typography>
+        <Typography sx={{ color: "#94A3B8", mb: 4 }}>
+          Since v2.64.0, SpeedHexPad is available as a standalone binary or built into SpeedPad.
+        </Typography>
+        <Grid container spacing={3}>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Paper sx={{ ...cardSx, borderLeft: "3px solid #4CAF50" }}>
+              <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: "#66BB6A" }}>
+                Standalone: SpeedHexPad.exe
+              </Typography>
+              <Typography sx={{ color: "#94A3B8", mb: 1.5 }}>
+                Download SpeedHexPad.exe from the <a href="/download" style={{ color: "#66BB6A" }}>download page</a>.
+                Double-click to open — drag & drop any file for hex analysis.
+              </Typography>
+              <Box component="code" sx={{ ...codeSx, color: "#66BB6A" }}>
+                SpeedHexPad.exe firmware.bin
+              </Box>
+            </Paper>
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Paper sx={{ ...cardSx, borderLeft: "3px solid #2196F3" }}>
+              <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: "#64B5F6" }}>
+                Built-in: Ctrl+Alt+H
+              </Typography>
+              <Typography sx={{ color: "#94A3B8", mb: 1.5 }}>
+                Open any file in SpeedPad and press <Chip label="Ctrl+Alt+H" size="small" sx={{ bgcolor: "#0a1628", color: "#00BCD4" }} /> to
+                toggle hex view. Same features — structure templates, data bookmarks, binary inspector.
+              </Typography>
+              <Typography sx={{ color: "#94A3B8", fontSize: "0.9rem" }}>
+                See <a href="/hex-editor" style={{ color: "#64B5F6" }}>SpeedHexPad details →</a>
+              </Typography>
+            </Paper>
+          </Grid>
+        </Grid>
+      </Container>
+
+      <Divider sx={{ borderColor: "#1a3a5c" }} />
+
       {/* Next Steps CTA */}
       <Box sx={{ bgcolor: "#162D50", py: 6 }}>
         <Container maxWidth="md" sx={{ textAlign: "center" }}>
@@ -661,7 +703,7 @@ export default function GettingStartedPage() {
               href="/command-explorer"
               sx={{ bgcolor: "#2196F3" }}
             >
-              Command Explorer (88 Commands)
+              Command Explorer (96 Commands)
             </Button>
             <Button
               variant="outlined"
