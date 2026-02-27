@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { TEST_COUNT } from "@/lib/product-config";
 
 const prerequisites = [
   { label: "Visual Studio 2022+", detail: "Enterprise or Community with C++ Desktop workload" },
@@ -28,7 +29,7 @@ const projectStructure = [
   { path: "src/renderer.h/cpp", desc: "DirectWrite text rendering" },
   { path: "src/search_pool.h/cpp", desc: "Multi-threaded search" },
   { path: "src/multi_log.h/cpp", desc: "Multi-log unified view" },
-  { path: "tests/test_*.cpp", desc: "Test suites (230+ total)" },
+  { path: "tests/test_*.cpp", desc: `Test suites (${TEST_COUNT}+ total)` },
   { path: "docs/", desc: "Architecture, features, shortcuts, changelog" },
 ];
 
