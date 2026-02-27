@@ -102,6 +102,7 @@ const comparison = [
   { feature: "Endianness Toggle", sp: "✅", hxd: "❌", winhex: "✅", vsc: "❌" },
   { feature: "Structure Templates", sp: "✅", hxd: "❌", winhex: "❌", vsc: "❌" },
   { feature: "Data Bookmarks", sp: "✅", hxd: "✅", winhex: "✅", vsc: "Plugin" },
+  { feature: "Binary Diff (HexCompare)", sp: "✅", hxd: "✅", winhex: "✅", vsc: "Plugin" },
   { feature: "Text Editor Built-in", sp: "✅ (SpeedPad)", hxd: "❌", winhex: "❌", vsc: "✅" },
   { feature: "100GB+ File Support", sp: "✅", hxd: "❌", winhex: "✅", vsc: "❌" },
   { feature: "Tail Mode", sp: "✅ (SpeedPad)", hxd: "❌", winhex: "❌", vsc: "❌" },

@@ -84,6 +84,8 @@ const comparison = [
   { feature: "Built-in Hex Editor", sp: "✅", npp: "Plugin", vsc: "Extension" },
   { feature: "Code-Signed Binary", sp: "✅", npp: "✅", vsc: "✅" },
   { feature: "Hex Editor View", sp: "✅", npp: "Plugin", vsc: "Plugin" },
+  { feature: "Binary Diff (HexCompare)", sp: "✅", npp: "❌", vsc: "Plugin" },
+  { feature: "Severity Coloring", sp: "✅", npp: "❌", vsc: "Extension" },
 ];
 
 export default function Home() {
