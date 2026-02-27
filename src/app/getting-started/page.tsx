@@ -129,6 +129,12 @@ const MULTI_FILE = [
     description:
       "Save and restore sessions — open files, viewport positions, dashboard layout.",
   },
+  {
+    title: "Multi-File Search",
+    shortcut: "Ctrl+Alt+F",
+    description:
+      "New in v2.65.0 — folder-first workflow: pick a directory, search all files with parallel threading, navigate results.",
+  },
 ];
 
 const COMMAND_PALETTE_EXAMPLES = [
