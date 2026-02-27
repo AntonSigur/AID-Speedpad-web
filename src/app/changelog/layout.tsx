@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Changelog — SpeedPad Version History",
   description:
-    "Complete version history for SpeedPad. Every feature, bug fix, and test improvement across 86 releases — from v2.30.0 to v2.65.0.",
+    "Complete version history for SpeedPad. Every feature, bug fix, and test improvement across 87 releases — from v2.30.0 to v2.66.0.",
   openGraph: {
     title: "SpeedPad Changelog — Visual Version Timeline",
-    description: "Track every SpeedPad release: features, bug fixes, and test suite growth from 153 to 432 tests.",
+    description: "Track every SpeedPad release: features, bug fixes, and test suite growth from 153 to 504 tests.",
   },
 };
 

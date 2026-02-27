@@ -366,8 +366,8 @@ const sprintGroups = releases.reduce<Record<number, Release[]>>((acc, r) => {
 }, {});
 const sortedSprints = Object.keys(sprintGroups).map(Number).sort((a, b) => b - a);
 
-const CONSECUTIVE_SPRINTS = 54;
-const TOTAL_TESTS = 432;
+const CONSECUTIVE_SPRINTS = 55;
+const TOTAL_TESTS = 504;
 const FIRST_TESTS = 153;
 
 export default function ChangelogPage() {

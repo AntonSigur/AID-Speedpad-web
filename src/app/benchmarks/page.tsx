@@ -214,7 +214,7 @@ export default function BenchmarksPage() {
             🔍 Search Performance
           </Typography>
           <Chip
-            label="NEW in v2.65.0 — F65 Multi-File Search (Ctrl+Alt+F)"
+            label="Multi-File Search (Ctrl+Alt+F)"
             size="small"
             sx={{ mb: 2, bgcolor: "rgba(255,152,0,0.15)", color: "#FF9800", fontWeight: 600 }}
           />

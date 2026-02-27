@@ -127,7 +127,7 @@ cd build
 ctest -C Release --output-on-failure`}
         </Paper>
         <Typography variant="body2" color="text.secondary" sx={{ mb: 4 }}>
-          The build produces <code>build/Release/SpeedPad.exe</code> (approximately 956 KB).
+          The build produces <code>build/Release/SpeedPad.exe</code> (approximately 843 KB).
         </Typography>
 
         <Divider sx={{ my: 4 }} />

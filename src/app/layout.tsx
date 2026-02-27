@@ -5,14 +5,14 @@ import CookieConsent from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://speedpad.itant.is"),
-  title: "SpeedPad — 956KB Text Editor | IT Ant ehf",
+  title: "SpeedPad — 843KB Text Editor | IT Ant ehf",
   description:
-    "SpeedPad is a blazing-fast Windows text editor. 956KB EXE, opens 100GB+ files, multi-cursor editing, multi-log merge, parallel search, tail mode, and 39 unique features no other editor has.",
+    "SpeedPad is a blazing-fast Windows text editor. 843KB EXE, opens 100GB+ files, multi-cursor editing, multi-log merge, parallel search, tail mode, and 40 unique features no other editor has.",
   keywords: ["text editor", "Windows", "log viewer", "multi-cursor", "multi-log", "SpeedPad", "C++", "lightweight", "IT Ant"],
   authors: [{ name: "IT Ant ehf", url: "https://itant.is" }],
   openGraph: {
-    title: "SpeedPad — 956KB Text Editor",
-    description: "The fastest Windows text editor. 956KB, opens 100GB+ files, 39 unique features, zero dependencies.",
+    title: "SpeedPad — 843KB Text Editor",
+    description: "The fastest Windows text editor. 843KB, opens 100GB+ files, 40 unique features, zero dependencies.",
     type: "website",
     siteName: "SpeedPad",
     images: [
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SpeedPad — 956KB Text Editor",
-    description: "The fastest Windows text editor. Opens 100GB+ files, 432 tests, zero dependencies.",
+    title: "SpeedPad — 843KB Text Editor",
+    description: "The fastest Windows text editor. Opens 100GB+ files, 504 tests, zero dependencies.",
     images: ["/screenshots/speedpad-app-screenshot.png"],
   },
   icons: {
@@ -49,10 +49,10 @@ export default function RootLayout({
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Windows 10, Windows 11",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    description: "Blazing-fast 956KB Windows text editor. Opens 100GB+ files, multi-cursor editing, log correlation, timestamp intelligence, and 39 unique features.",
+    description: "Blazing-fast 843KB Windows text editor. Opens 100GB+ files, multi-cursor editing, log correlation, timestamp intelligence, and 40 unique features.",
     author: { "@type": "Organization", name: "IT Ant ehf", url: "https://itant.is" },
     softwareVersion: "2.62.0",
-    fileSize: "956KB",
+    fileSize: "843KB",
   };
 
   return (

@@ -16,7 +16,7 @@ export default function Footer() {
               <Typography variant="h6" fontWeight={700} color="primary.light">SpeedPad</Typography>
             </Box>
             <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 280 }}>
-              A blazing-fast 956KB Windows text editor. Opens 100GB+ files instantly. Built by IT Ant ehf.
+              A blazing-fast 843KB Windows text editor. Opens 100GB+ files instantly. Built by IT Ant ehf.
             </Typography>
           </Grid>
           <Grid size={{ xs: 6, md: 2 }}>
@@ -61,8 +61,8 @@ export default function Footer() {
           </Grid>
           <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="subtitle2" sx={{ mb: 1.5 }}>Quick Stats</Typography>
-            <Typography variant="body2" color="text.secondary">v2.65.0 · 956KB · 165+ features · 432 tests</Typography>
-            <Typography variant="body2" color="text.secondary">39 unique features no other editor has</Typography>
+            <Typography variant="body2" color="text.secondary">v2.66.0 · 843KB · 168+ features · 504 tests</Typography>
+            <Typography variant="body2" color="text.secondary">40 unique features no other editor has</Typography>
           </Grid>
         </Grid>
         <Box sx={{ mt: 4, pt: 3, borderTop: "1px solid rgba(255,255,255,0.06)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 1 }}>

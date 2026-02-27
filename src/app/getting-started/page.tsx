@@ -133,7 +133,7 @@ const MULTI_FILE = [
     title: "Multi-File Search",
     shortcut: "Ctrl+Alt+F",
     description:
-      "New in v2.65.0 — folder-first workflow: pick a directory, search all files with parallel threading, navigate results.",
+      "Folder-first workflow: pick a directory, search all files with parallel threading, navigate results.",
   },
 ];
 
