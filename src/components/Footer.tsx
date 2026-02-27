@@ -21,7 +21,7 @@ export default function Footer() {
             <Typography variant="subtitle2" sx={{ mb: 1.5 }}>Product</Typography>
             {[
               { label: "Features", href: "/features" },
-              { label: "Hex Editor", href: "/hex-editor" },
+              { label: "SpeedHexPad", href: "/hex-editor" },
               { label: "Multi-Log", href: "/multilog" },
               { label: "Lens Plugins", href: "/lenses" },
               { label: "How It Works", href: "/how-it-works" },
