@@ -1,6 +1,8 @@
 # SpeedPad Website — IT Ant ehf
 
-Marketing website for [SpeedPad](https://itant.is), the 816KB Windows text editor that opens 100GB+ files.
+Marketing website for [SpeedPad](https://speedpad.itant.is), the 956KB Windows text editor that opens 100GB+ files, and [SpeedHexPad](https://speedpad.itant.is/hex-editor), the standalone hex editor.
+
+**Live:** [icy-mushroom-0dbd70903.azurestaticapps.net](https://icy-mushroom-0dbd70903.azurestaticapps.net)
 
 ## Quick Start
 
@@ -21,58 +23,86 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 ## Build for Production
 
 ```bash
-npm run build     # Creates optimized static build in .next/
-npm run start     # Serves the production build locally
+npm run build     # Static export → out/ directory (36 pages)
 ```
 
-For static export (self-hosted deployment):
+The build produces a `out/` directory with static HTML/CSS/JS files. No Node.js server needed — serve with any static file server, nginx, Apache, or Azure Static Web Apps.
 
-```bash
-npx next build    # Generates static pages
-```
+## Deployment
 
-The build output in `.next/` can be served by any static file server or Node.js server.
+The site auto-deploys to **Azure Static Web Apps** via GitHub Actions on every push to `master`.
+
+Pipeline: `npm ci` → `npm run build` → upload `out/` to Azure.
+
+Workflow: `.github/workflows/azure-static-web-apps.yml`
 
 ## Tech Stack
 
-- **Next.js 16** (App Router)
+- **Next.js 16** (App Router, static export)
 - **React 18** with **TypeScript**
 - **MUI (Material UI)** component library
-- **Self-hosted** — no Vercel dependency
+- **Azure Static Web Apps** — CI/CD via GitHub Actions
+- Zero external dependencies at runtime
 
-## Site Pages
+## Site Structure (28 routes)
 
 | Route | Page |
 |-------|------|
-| `/` | Landing page — hero, feature grid, comparison table |
-| `/features` | 140+ features, 20 unique features, 4-editor comparison |
-| `/download` | Release downloads, system requirements, changelog |
-| `/docs` | Getting started, shortcuts, CLI reference, lens plugins |
-| `/team` | IT Ant ehf story, team members, principles |
+| `/` | Landing — hero, proof bar, feature grid, comparison, trust cards |
+| `/features` | 165+ features, 39 unique, 4-editor comparison table |
+| `/download` | Centralized downloads, system requirements |
+| `/hex-editor` | SpeedHexPad — standalone hex editor product page |
+| `/docs` | Documentation, shortcuts, CLI reference, lens plugins |
+| `/getting-started` | Quick start for SpeedPad + SpeedHexPad |
+| `/multilog` | Multi-Log Time Travel feature deep dive |
+| `/command-explorer` | 97 commands, role filtering, search |
+| `/shortcuts` | 75+ keyboard shortcuts, filterable |
+| `/incident-playbook` | 3 real-world scenarios with key sequences |
+| `/how-it-works` | Architecture: memory-mapped I/O, piece table, rendering |
+| `/screenshots` | Gallery with animated GIF |
+| `/story` | 22-phase timeline, team stats, build story |
+| `/team` | 8 team members with detail pages |
+| `/team/[slug]` | Individual team member bios (8 slugs) |
+| `/release-center` | Release history + milestones |
+| `/changelog` | Visual version timeline v2.30.0 → v2.65.0 |
+| `/use-cases` | DevOps, security, data analysis workflows |
+| `/workflows` | Workflow packs for different roles |
+| `/lenses` | 6 DLL-based lens plugins |
+| `/benchmarks` | Performance benchmarks |
+| `/testimonials` | User testimonials with JSON-LD |
+| `/contributing` | Developer onboarding guide |
+| `/av-faq` | Antivirus false positive FAQ |
 
-## Project Structure
+## Key Files
 
 ```
 src/
-├── app/
-│   ├── layout.tsx          # Root layout with MUI ThemeRegistry
-│   ├── page.tsx            # Landing page
-│   ├── features/page.tsx   # Features page
-│   ├── download/page.tsx   # Download page
-│   ├── docs/page.tsx       # Documentation page
-│   └── team/page.tsx       # Team page
+├── app/                        # 28 routes (App Router)
 ├── components/
-│   ├── Navbar.tsx          # Shared navigation bar
-│   └── Footer.tsx          # Shared footer
+│   ├── Navbar.tsx              # Sticky nav: 7 links + hamburger drawer
+│   ├── Footer.tsx              # Footer with IT Ant branding
+│   ├── StickyDownloadCTA.tsx   # Floating download button
+│   ├── CookieConsent.tsx       # AI-made cookie consent popup
+│   └── SkipToContent.tsx       # Accessibility skip link
+├── lib/
+│   └── product-config.ts       # Single source of truth: version, size, tests
 └── theme/
-    ├── theme.ts            # MUI dark theme (blue ant colors)
-    └── ThemeRegistry.tsx   # Client-side theme provider
+    ├── theme.ts                # MUI dark theme (#0F2035 bg, #2196F3 primary)
+    ├── ThemeRegistry.tsx       # Server-safe theme provider
+    └── EmotionCacheProvider.tsx # SSR hydration fix
 ```
 
 ## Branding
 
 - **Company:** IT Ant ehf
-- **Theme:** Dark mode, blue ant colors (#2196F3 primary, #00BCD4 secondary)
-- **Logo:** `public/itant-logo.svg`
+- **Products:** SpeedPad (blue #2196F3) + SpeedHexPad (green #4CAF50)
+- **Theme:** Dark navy (#0F2035 bg, #162D50 paper, #2196F3 primary, #00BCD4 secondary)
+- **Logo:** `public/itant-logo.svg` — black SVG, use CSS `filter: brightness(0) invert(1)` for white
+- **Favicon:** `public/favicon.svg` — blue ant icon (browser tab only)
 - **Tagline:** "We are ants 🐜"
+
+## Current Stats
+
+- SpeedPad v2.65.0 · 956KB · 409 tests · 39 unique features · 86 releases
+- Website: 28 routes · 130+ commits · 36 pre-rendered pages
 

@@ -2,80 +2,128 @@
 
 ## Overview
 
-The SpeedPad marketing website is a statically-generated Next.js 16 application using the App Router pattern. It uses MUI (Material UI) for the component library and Emotion for CSS-in-JS styling. The site is designed for self-hosted deployment with zero cloud platform dependencies.
+The SpeedPad marketing website is a statically-exported Next.js 16 application using the App Router. It uses MUI (Material UI) for components and Emotion for CSS-in-JS. The site deploys to Azure Static Web Apps via GitHub Actions — zero cloud platform lock-in.
 
 ## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
-| Framework | Next.js 16 (App Router, static generation) |
+| Framework | Next.js 16 (App Router, `output: "export"`) |
 | UI Library | React 18 + TypeScript |
 | Components | MUI (Material UI) v6 |
-| Styling | Emotion (CSS-in-JS, MUI's default engine) |
+| Styling | Emotion (CSS-in-JS, MUI default) |
 | Build | Turbopack (Next.js bundler) |
-| Deployment | Static output, self-hosted |
+| Deployment | Azure Static Web Apps (GitHub Actions CI/CD) |
+| Hosting | Static files in `out/` — no Node.js server needed |
 
 ## Directory Structure
 
 ```
 src/
-├── app/                    # Next.js App Router pages
-│   ├── layout.tsx          # Root layout — wraps all pages with ThemeRegistry
-│   ├── page.tsx            # / — Landing page (hero, features, comparison)
-│   ├── features/page.tsx   # /features — Full feature list, 20 unique, comparison
-│   ├── download/page.tsx   # /download — Releases, system reqs, install guide
-│   ├── docs/page.tsx       # /docs — Documentation (shortcuts, CLI, lenses)
-│   └── team/page.tsx       # /team — Company story, team members, principles
-├── components/             # Shared React components
-│   ├── Navbar.tsx          # Sticky navigation bar with logo + page links
-│   └── Footer.tsx          # Site footer with branding
-└── theme/                  # MUI theme configuration
-    ├── theme.ts            # Dark theme definition (blue ant palette)
-    └── ThemeRegistry.tsx   # Client-side ThemeProvider + CssBaseline wrapper
+├── app/                        # 28 App Router routes
+│   ├── layout.tsx              # Root — ThemeRegistry, CookieConsent, JSON-LD
+│   ├── page.tsx                # / — Landing (hero, proof bar, features, comparison)
+│   ├── features/               # /features — 165+ features, unique list, comparison
+│   ├── download/               # /download — Centralized downloads from product-config
+│   ├── hex-editor/             # /hex-editor — SpeedHexPad product page (green accent)
+│   ├── docs/                   # /docs — Documentation, CLI, lenses, architecture
+│   ├── getting-started/        # /getting-started — Quick start for both products
+│   ├── team/                   # /team — 8 team members
+│   │   └── [slug]/             # /team/:slug — Static params (generateStaticParams)
+│   ├── story/                  # /story — 22-phase timeline + build stats
+│   ├── command-explorer/       # /command-explorer — 97 commands with role filtering
+│   ├── shortcuts/              # /shortcuts — 75+ shortcuts, filterable chips
+│   ├── multilog/               # /multilog — Multi-Log Time Travel
+│   ├── incident-playbook/      # /incident-playbook — 3 real-world scenarios
+│   ├── how-it-works/           # /how-it-works — Architecture deep dive
+│   ├── release-center/         # /release-center — Milestones + timeline
+│   ├── changelog/              # /changelog — Visual version history
+│   ├── workflows/              # /workflows — Role-based workflow packs
+│   ├── lenses/                 # /lenses — 6 lens plugins
+│   ├── use-cases/              # /use-cases — DevOps, security, data workflows
+│   ├── benchmarks/             # /benchmarks — Performance data
+│   ├── testimonials/           # /testimonials — User quotes + JSON-LD
+│   ├── screenshots/            # /screenshots — Gallery + animated GIF
+│   ├── contributing/           # /contributing — Developer onboarding
+│   ├── av-faq/                 # /av-faq — Antivirus false positive FAQ
+│   ├── robots.ts               # Robots.txt (force-static)
+│   └── sitemap.ts              # Sitemap XML (force-static)
+├── components/
+│   ├── Navbar.tsx              # Sticky nav: 7 top links + chip-based drawer
+│   ├── Footer.tsx              # Footer with IT Ant branding + stats
+│   ├── CookieConsent.tsx       # AI-made site cookie consent overlay
+│   ├── StickyDownloadCTA.tsx   # Floating download button
+│   └── SkipToContent.tsx       # Accessibility skip link
+├── lib/
+│   └── product-config.ts       # Single source of truth (version, size, tests, URLs)
+└── theme/
+    ├── theme.ts                # MUI dark theme definition
+    ├── ThemeRegistry.tsx       # Server-safe ThemeProvider wrapper
+    └── EmotionCacheProvider.tsx # Emotion cache for SSR hydration fix
 ```
 
 ## Rendering Strategy
 
-All pages are **statically generated** at build time (`○ Static` in Next.js output). There is no server-side rendering, no API routes, and no backend. The entire site is a collection of static HTML/CSS/JS files suitable for any web server.
+All pages are **statically generated** at build time via `output: "export"` in `next.config.ts`. The build produces 36 HTML files in the `out/` directory.
+
+- **Static pages** (`○`): 27 content pages rendered once
+- **SSG pages** (`●`): `/team/[slug]` uses `generateStaticParams()` returning 8 slugs
+- **No SSR, no API routes, no middleware** — pure static output
+
+Special files (`robots.ts`, `sitemap.ts`) require `export const dynamic = "force-static"` because they use `new Date()` which Next.js treats as dynamic by default.
 
 ## Theme Architecture
 
-The site uses a custom MUI dark theme defined in `src/theme/theme.ts`:
+Custom MUI dark theme in `src/theme/theme.ts`:
 
-- **Primary:** #2196F3 (Blue — "blue ants" brand)
-- **Secondary:** #00BCD4 (Cyan — accent/gradient)
-- **Background:** #0A1628 (deep navy) / #112240 (paper/cards)
-- **Text:** #E2E8F0 (primary) / #94A3B8 (secondary)
+| Token | Color | Usage |
+|-------|-------|-------|
+| Background | #0F2035 | Page background |
+| Paper | #162D50 | Cards, panels |
+| Primary | #2196F3 | Links, accents, SpeedPad brand |
+| Secondary | #00BCD4 | Gradients, highlights |
+| Text primary | #E2E8F0 | Body text |
+| Text secondary | #94A3B8 | Muted text |
 
-`ThemeRegistry.tsx` is a client component (`"use client"`) that wraps the app with MUI's `ThemeProvider` and `CssBaseline`.
+SpeedHexPad uses green accent (#4CAF50/#66BB6A) to differentiate.
 
-## Component Pattern
+`EmotionCacheProvider.tsx` provides a stable Emotion CSS cache key to prevent SSR hydration mismatches.
 
-Each page is a self-contained client component (`"use client"`) that:
-1. Imports `Navbar` and `Footer` from `src/components/`
-2. Defines its own data arrays (features, comparisons, team members) as constants
-3. Renders using MUI components (Box, Container, Typography, Grid, Table, Card, etc.)
+## Deployment Pipeline
 
-No external data fetching. All content is embedded in the page components.
+```
+Push to master → GitHub Actions → npm ci → npm run build → Upload out/ → Azure Static Web Apps
+```
+
+- Workflow: `.github/workflows/azure-static-web-apps.yml`
+- Secret: `AZURE_STATIC_WEB_APPS_API_TOKEN_ICY_MUSHROOM_0DBD70903`
+- `skip_app_build: true` (we build ourselves, Azure just hosts)
+- `staticwebapp.config.json`: routing fallback, 404 override, security headers, cache headers
+
+## Centralized Config
+
+`src/lib/product-config.ts` is the single source of truth:
+
+```ts
+export const CURRENT_VERSION = "v2.65.0";
+export const EXE_SIZE = "956KB";
+export const TEST_COUNT = 409;
+export const UNIQUE_FEATURES = 39;
+export const RELEASE_NUMBER = 86;
+```
+
+All download URLs, version strings, and stat references derive from this file.
 
 ## Content Sources
 
-Website content is derived from SpeedPad product documentation at `C:\AID\team1\gh-coop\sources\docs\`:
+Content is derived from SpeedPad product docs (not invented):
 
-| Website Section | Source Document |
-|----------------|----------------|
+| Website Section | Source |
+|----------------|--------|
 | Feature list | `FEATURES.md` |
 | Keyboard shortcuts | `SHORTCUTS.md` |
 | CLI reference | `cli-reference.md` |
 | Release history | `CHANGELOG.md` |
 | Getting started | `getting-started.md` |
 | Lens plugins | `lenses.md` |
-
-## Build & Deploy
-
-```bash
-npm run build     # Static generation via Turbopack
-npm run start     # Serve production build on port 3000
-```
-
-Output goes to `.next/` directory. For pure static hosting, the generated HTML files can be served by nginx, Apache, or any static file server.
+| Antivirus FAQ | `antivirus-faq.md` |
