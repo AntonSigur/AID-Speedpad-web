@@ -273,8 +273,8 @@ const timeline = [
     color: "#1565C0",
     title: "F65 Multi-File Search arrives, both EXEs get self-signed code signing",
     description:
-      "The CEO-requested Multi-File Search (Ctrl+Alt+F) lands — a folder-first workflow that opens a directory picker then searches all files with parallel threading and result navigation. Both SpeedPad.exe and SpeedHexPad.exe receive self-signed code signing certificates. B214 SaveAs atomic replace fix. 409 tests, Release #86, 54 consecutive sprints.",
-    highlights: ["F65 Multi-File Search (Ctrl+Alt+F)", "Self-signed code signing for both EXEs", "B214 SaveAs fix", "409 tests, 54 sprints"],
+      "The CEO-requested Multi-File Search (Ctrl+Alt+F) lands — a folder-first workflow that opens a directory picker then searches all files with parallel threading and result navigation. Both SpeedPad.exe and SpeedHexPad.exe receive self-signed code signing certificates. B214 SaveAs atomic replace fix. 432 tests, Release #86, 54 consecutive sprints.",
+    highlights: ["F65 Multi-File Search (Ctrl+Alt+F)", "Self-signed code signing for both EXEs", "B214 SaveAs fix", "432 tests, 54 sprints"],
   },
   {
     phase: "What's Next",
@@ -448,7 +448,7 @@ export default function StoryPage() {
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
               { value: "86", label: "Releases Shipped", sub: "54 consecutive sprint deliveries", color: "#4CAF50" },
-              { value: "409", label: "Test Suites", sub: "From 153 → 409 (+167% growth)", color: "#FF9800" },
+              { value: "409", label: "Test Suites", sub: "From 153 → 432 (+182% growth)", color: "#FF9800" },
               { value: "181+", label: "Bugs Fixed", sub: "B001 through B181, all verified", color: "#F44336" },
               { value: "100+", label: "Website Commits", sub: "28 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },
               { value: "100+", label: "Inbox Messages", sub: "File-based async communication", color: "#00BCD4" },

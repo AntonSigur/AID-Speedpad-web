@@ -42,7 +42,7 @@ const releases = [
       "F65 Multi-File Search (Ctrl+Alt+F) — folder-first workflow with parallel search",
       "Self-signed code signing for SpeedPad.exe and SpeedHexPad.exe",
       "B214 SaveAs atomic replace fix",
-      "Test suite expanded to 409 suites",
+      "Test suite expanded to 432 suites",
       "54 consecutive sprint deliveries",
     ],
     milestone: "Multi-File Search & Code Signing",

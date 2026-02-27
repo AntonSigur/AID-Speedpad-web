@@ -90,7 +90,9 @@ export default function Navbar() {
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12 }}>
-            <Image src="/itant-logo.svg" alt="IT Ant ehf" width={56} height={56} style={{ filter: "brightness(0) invert(1)" }} />
+            <Box sx={{ width: 56, height: 40, overflow: "hidden" }}>
+              <Image src="/itant-logo.svg" alt="IT Ant ehf" width={56} height={56} style={{ filter: "brightness(0) invert(1)", marginTop: -2 }} />
+            </Box>
             <Typography variant="h6" fontWeight={700} color="primary.light">
               SpeedPad
             </Typography>
@@ -139,7 +141,9 @@ export default function Navbar() {
           {/* Header */}
           <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 3 }}>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
-              <Image src="/itant-logo.svg" alt="IT Ant ehf" width={36} height={36} style={{ filter: "brightness(0) invert(1)" }} />
+              <Box sx={{ width: 36, height: 26, overflow: "hidden" }}>
+                <Image src="/itant-logo.svg" alt="IT Ant ehf" width={36} height={36} style={{ filter: "brightness(0) invert(1)", marginTop: -1 }} />
+              </Box>
               <Typography variant="h6" fontWeight={700} color="primary.light">SpeedPad</Typography>
             </Box>
             <IconButton onClick={() => setDrawerOpen(false)} sx={{ color: "#64748B" }}>

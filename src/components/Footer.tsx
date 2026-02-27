@@ -10,7 +10,9 @@ export default function Footer() {
         <Grid container spacing={4}>
           <Grid size={{ xs: 12, md: 4 }}>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2 }}>
-              <Image src="/itant-logo.svg" alt="IT Ant ehf" width={48} height={48} style={{ filter: "brightness(0) invert(1)" }} />
+              <Box sx={{ width: 48, height: 34, overflow: "hidden" }}>
+                <Image src="/itant-logo.svg" alt="IT Ant ehf" width={48} height={48} style={{ filter: "brightness(0) invert(1)", marginTop: -2 }} />
+              </Box>
               <Typography variant="h6" fontWeight={700} color="primary.light">SpeedPad</Typography>
             </Box>
             <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 280 }}>
@@ -59,7 +61,7 @@ export default function Footer() {
           </Grid>
           <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="subtitle2" sx={{ mb: 1.5 }}>Quick Stats</Typography>
-            <Typography variant="body2" color="text.secondary">v2.65.0 · 956KB · 165+ features · 409 tests</Typography>
+            <Typography variant="body2" color="text.secondary">v2.65.0 · 956KB · 165+ features · 432 tests</Typography>
             <Typography variant="body2" color="text.secondary">39 unique features no other editor has</Typography>
           </Grid>
         </Grid>

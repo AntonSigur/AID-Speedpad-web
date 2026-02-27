@@ -92,8 +92,8 @@ export default function Home() {
 
       {/* Hero Section */}
       <Container maxWidth="lg" sx={{ pt: { xs: 8, md: 14 }, pb: { xs: 6, md: 10 }, textAlign: "center" }}>
-        <Box sx={{ mb: 3 }}>
-          <Image src="/itant-logo.svg" alt="IT Ant ehf" width={120} height={120} style={{ filter: "brightness(0) invert(1)" }} />
+        <Box sx={{ mb: 3, display: "inline-block", width: 120, height: 86, overflow: "hidden" }}>
+          <Image src="/itant-logo.svg" alt="IT Ant ehf" width={120} height={120} style={{ filter: "brightness(0) invert(1)", marginTop: -4 }} />
         </Box>
         <Chip label={`${CURRENT_VERSION} — ${TEST_COUNT} test suites passing`} color="primary" variant="outlined" sx={{ mb: 3 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.5rem", md: "4.5rem" }, mb: 2, background: "linear-gradient(135deg, #64B5F6, #00BCD4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
