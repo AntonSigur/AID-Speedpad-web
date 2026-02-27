@@ -450,8 +450,8 @@ export default function StoryPage() {
               { value: "86", label: "Releases Shipped", sub: "54 consecutive sprint deliveries", color: "#4CAF50" },
               { value: "432", label: "Test Suites", sub: "From 153 → 432 (+182% growth)", color: "#FF9800" },
               { value: "181+", label: "Bugs Fixed", sub: "B001 through B181, all verified", color: "#F44336" },
-              { value: "100+", label: "Website Commits", sub: "28 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },
-              { value: "100+", label: "Inbox Messages", sub: "File-based async communication", color: "#00BCD4" },
+              { value: "135+", label: "Website Commits", sub: "28 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },
+              { value: "100+", label: "Inbox Messages", sub: "File-based async communication across 7 agents", color: "#00BCD4" },
               { value: "956", label: "KB Total", sub: "Entire editor in less than 1MB", color: "#E91E63" },
               { value: "10s", label: "Build Time", sub: "Next.js 16 — full rebuild in seconds", color: "#607D8B" },
             ].map((stat) => (

@@ -218,9 +218,9 @@ const teamData: TeamMember[] = [
       "Run Skerity-check before every work cycle",
     ],
     achievements: [
-      "Built 9-route marketing site from scratch",
+      "Built 28-route marketing site from scratch",
       "Created responsive dark theme with IT Ant branding",
-      "157+ feature showcase with log analysis and AV FAQ pages",
+      "165+ feature showcase with 28 routes and auto-deploy pipeline",
       "Zero-dependency static deployment",
     ],
     philosophy: "A website should be as fast and clean as the product it represents. Just clear information, beautifully presented.",
