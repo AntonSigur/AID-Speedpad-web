@@ -41,6 +41,7 @@ const featureGroups = [
       { name: "Undo / Redo", shortcut: "Ctrl+Z/Y", desc: "500-level undo via piece table snapshots" },
       { name: "Find & Replace", shortcut: "Ctrl+F / Ctrl+H", desc: "Full regex support with live highlighting" },
       { name: "Cross-File Search", shortcut: "Ctrl+Shift+F", desc: "Parallel multi-threaded search across directories using all CPU cores" },
+      { name: "Multi-File Search", shortcut: "Ctrl+Alt+F", desc: "Folder-first workflow: pick a directory, search all files with result navigation" },
       { name: "Diff View", shortcut: "Alt+D", desc: "Side-by-side comparison using Myers O(ND) algorithm" },
       { name: "Sort Lines", shortcut: "—", desc: "Ascending, descending, or case-insensitive sorting" },
       { name: "Deduplicate Lines", shortcut: "—", desc: "Remove duplicate lines instantly" },
@@ -183,6 +184,7 @@ const uniqueFeatures = [
   "F64 Binary Inspector — select hex bytes to interpret as int8/16/32/64, float, double, and strings",
   "Structure Templates — JSON-based binary format overlays for PE, ELF, PNG, ZIP headers with cursor-follows-field",
   "Data Bookmarks — mark, navigate, and serialize hex positions for quick offset navigation",
+  "Multi-File Search — Ctrl+Alt+F opens folder picker then searches all files with parallel threading and result navigation",
 ];
 
 export default function FeaturesPage() {
@@ -197,7 +199,7 @@ export default function FeaturesPage() {
           Every Feature in SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
-          A comprehensive text editor in 956KB — with zero external dependencies, 6 lens plugins, and 96 commands.
+          A comprehensive text editor in 956KB — with zero external dependencies, 6 lens plugins, and 97 commands.
         </Typography>
       </Container>
 

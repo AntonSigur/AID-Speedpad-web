@@ -23,6 +23,19 @@ interface Release {
 const releases: Release[] = [
   {
     version: "v2.65.0",
+    date: "2026-02-27",
+    title: "Multi-File Search & Code Signing",
+    tests: 409,
+    features: [
+      "F65 Multi-File Search (Ctrl+Alt+F) — folder-first workflow with parallel search and result navigation",
+      "Self-signed code signing for both SpeedPad.exe and SpeedHexPad.exe",
+      "B214 SaveAs atomic replace fix",
+      "Test suite expanded to 409 suites",
+      "54 consecutive sprint deliveries",
+    ],
+  },
+  {
+    version: "v2.64.0",
     date: "2026-02-26",
     title: "SpeedHexPad.exe Standalone Split",
     tests: 404,
@@ -347,6 +360,7 @@ export default function ChangelogPage() {
           const previous = releases[1];
           const testDelta = latest.tests - previous.tests;
           const byteSizes: Record<string, number> = {
+            "v2.65.0": 978432,
             "v2.64.0": 863232,
             "v2.63.0": 863232,
             "v2.62.0": 863232,

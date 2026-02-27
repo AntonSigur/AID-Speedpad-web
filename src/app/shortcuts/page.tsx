@@ -88,6 +88,7 @@ const shortcuts: Shortcut[] = [
 
   // Search & Compare
   { keys: "Ctrl+Shift+F", action: "Cross-File Search", category: "Search" },
+  { keys: "Ctrl+Alt+F", action: "Multi-File Search", category: "Search" },
   { keys: "Alt+D", action: "Open Diff View", category: "Search" },
   { keys: "F7", action: "Next Diff", category: "Search" },
   { keys: "Shift+F7", action: "Previous Diff", category: "Search" },
@@ -370,7 +371,7 @@ export default function ShortcutsPage() {
         {/* Bottom Links */}
         <Box sx={{ mt: 6, display: "flex", gap: 2, flexWrap: "wrap" }}>
           <Button variant="outlined" href="/command-explorer" sx={{ textTransform: "none" }}>
-            Command Explorer (96 commands) →
+            Command Explorer (97 commands) →
           </Button>
           <Button variant="outlined" href="/docs" sx={{ textTransform: "none" }}>
             Full Documentation →

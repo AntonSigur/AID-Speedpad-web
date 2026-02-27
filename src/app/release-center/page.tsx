@@ -34,6 +34,21 @@ import {
 const releases = [
   {
     version: "v2.65.0",
+    release: 86,
+    date: "2026-02-27",
+    size: "956 KiB (978,432 bytes)",
+    tests: 409,
+    highlights: [
+      "F65 Multi-File Search (Ctrl+Alt+F) — folder-first workflow with parallel search",
+      "Self-signed code signing for SpeedPad.exe and SpeedHexPad.exe",
+      "B214 SaveAs atomic replace fix",
+      "Test suite expanded to 409 suites",
+      "54 consecutive sprint deliveries",
+    ],
+    milestone: "Multi-File Search & Code Signing",
+  },
+  {
+    version: "v2.64.0",
     release: 85,
     date: "2026-02-26",
     size: "843 KiB (863,232 bytes)",

@@ -112,6 +112,7 @@ const commands: Cmd[] = [
   { name: "Find & Replace", shortcut: "Ctrl+H", category: "Search", roles: ["developer", "writer"], outcome: "Search and replace with regex" },
   { name: "Find Next / Previous", shortcut: "F3 / Shift+F3", category: "Search", roles: ["all"], outcome: "Jump between search matches" },
   { name: "Cross-File Search", shortcut: "Ctrl+Shift+F", category: "Search", roles: ["devops", "developer", "sysadmin"], outcome: "Parallel multi-threaded search across directories" },
+  { name: "Multi-File Search", shortcut: "Ctrl+Alt+F", category: "Search", roles: ["devops", "developer", "sysadmin"], outcome: "Folder-first search: pick directory, search all files with result navigation" },
   { name: "Diff View", shortcut: "Alt+D", category: "Search", roles: ["devops", "developer"], outcome: "Side-by-side comparison (Myers O(ND) algorithm)" },
   { name: "Next / Previous Diff", shortcut: "F7 / Shift+F7", category: "Search", roles: ["devops", "developer"], outcome: "Jump between differences in Diff View" },
   { name: "Next / Previous Anomaly", shortcut: "Ctrl+Shift+↓/↑", category: "Search", roles: ["devops", "sysadmin"], outcome: "Jump between timestamp anomalies" },
@@ -157,7 +158,7 @@ const commands: Cmd[] = [
 
   // ── Help ──
   { name: "Keyboard Shortcuts", shortcut: "F1", category: "Help", roles: ["all"], outcome: "Display complete shortcut reference" },
-  { name: "Command Palette", shortcut: "Ctrl+Shift+P", category: "Help", roles: ["all"], outcome: "Fuzzy-search all 96 commands with role filtering" },
+  { name: "Command Palette", shortcut: "Ctrl+Shift+P", category: "Help", roles: ["all"], outcome: "Fuzzy-search all 97 commands with role filtering" },
   { name: "Speed Statistics", shortcut: "—", category: "Help", roles: ["casual"], outcome: "Typing and navigation metrics" },
   { name: "Solitaire", shortcut: "Ctrl+Shift+F12", category: "Help", roles: ["casual"], outcome: "Classic card game easter egg (154KB DLL)" },
   { name: "Arkanoid", shortcut: "—", category: "Help", roles: ["casual"], outcome: "Built-in arcade game DLL — break bricks between debugging sessions" },

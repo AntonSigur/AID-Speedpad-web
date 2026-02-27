@@ -268,18 +268,27 @@ const timeline = [
     highlights: ["SpeedHexPad.exe standalone", "speedpad_core.lib shared library", "559 artifacts removed from Git", "404 tests, 53 sprints"],
   },
   {
-    phase: "What's Next",
-    period: "Sprint 81+",
-    color: "#607D8B",
-    title: "SpeedHexPad becomes its own EXE, and the colony expands",
+    phase: "Multi-File Search & Code Signing",
+    period: "v2.65.0 — Sprint 81",
+    color: "#1565C0",
+    title: "F65 Multi-File Search arrives, both EXEs get self-signed code signing",
     description:
-      "The roadmap includes binary file diff, session extraction for tracing IDs across log files, self-signed code signing, and dual-product expansion. The ant colony never stops building.",
-    highlights: ["Binary file diff", "Session extraction", "Code signing", "Community contributions"],
+      "The CEO-requested Multi-File Search (Ctrl+Alt+F) lands — a folder-first workflow that opens a directory picker then searches all files with parallel threading and result navigation. Both SpeedPad.exe and SpeedHexPad.exe receive self-signed code signing certificates. B214 SaveAs atomic replace fix. 409 tests, Release #86, 54 consecutive sprints.",
+    highlights: ["F65 Multi-File Search (Ctrl+Alt+F)", "Self-signed code signing for both EXEs", "B214 SaveAs fix", "409 tests, 54 sprints"],
+  },
+  {
+    phase: "What's Next",
+    period: "Sprint 82+",
+    color: "#607D8B",
+    title: "Binary diff, session extraction, and the colony expands",
+    description:
+      "The roadmap includes binary file diff, session extraction for tracing IDs across log files, and dual-product expansion. The ant colony never stops building.",
+    highlights: ["Binary file diff", "Session extraction", "Community contributions"],
   },
 ];
 
 const stats = [
-  { label: "Releases", value: "85", color: "#2196F3" },
+  { label: "Releases", value: "86", color: "#2196F3" },
   { label: "Features", value: "165+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "211+", color: "#F44336" },
   { label: "Test Suites", value: "409", color: "#FF9800" },
@@ -438,7 +447,7 @@ export default function StoryPage() {
           <Grid container spacing={2}>
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
-              { value: "85", label: "Releases Shipped", sub: "53 consecutive sprint deliveries", color: "#4CAF50" },
+              { value: "86", label: "Releases Shipped", sub: "54 consecutive sprint deliveries", color: "#4CAF50" },
               { value: "409", label: "Test Suites", sub: "From 153 → 409 (+167% growth)", color: "#FF9800" },
               { value: "181+", label: "Bugs Fixed", sub: "B001 through B181, all verified", color: "#F44336" },
               { value: "100+", label: "Website Commits", sub: "28 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },

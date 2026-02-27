@@ -20,7 +20,7 @@ const jsonLd = {
     { "@type": "HowToStep", name: "Save File", text: "Ctrl+S — Save the current file" },
     { "@type": "HowToStep", name: "Find Text", text: "Ctrl+F — Open the search bar" },
     { "@type": "HowToStep", name: "Multi-Cursor", text: "Ctrl+Click — Add cursor at click position" },
-    { "@type": "HowToStep", name: "Command Palette", text: "Ctrl+Shift+P — Fuzzy-search all 96 commands" },
+    { "@type": "HowToStep", name: "Command Palette", text: "Ctrl+Shift+P — Fuzzy-search all 97 commands" },
   ],
 };
 
