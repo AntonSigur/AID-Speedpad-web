@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "Complete version history for SpeedPad. Every feature, bug fix, and test improvement across 85 releases — from v2.30.0 to v2.64.0.",
   openGraph: {
     title: "SpeedPad Changelog — Visual Version Timeline",
-    description: "Track every SpeedPad release: features, bug fixes, and test suite growth from 153 to 404 tests.",
+    description: "Track every SpeedPad release: features, bug fixes, and test suite growth from 153 to 405 tests.",
   },
 };
 

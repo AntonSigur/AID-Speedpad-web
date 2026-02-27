@@ -282,7 +282,7 @@ const stats = [
   { label: "Releases", value: "85", color: "#2196F3" },
   { label: "Features", value: "165+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "211+", color: "#F44336" },
-  { label: "Test Suites", value: "404", color: "#FF9800" },
+  { label: "Test Suites", value: "405", color: "#FF9800" },
   { label: "EXE Size", value: "844 KB", color: "#9C27B0" },
   { label: "Team Size", value: "8 agents", color: "#00BCD4" },
 ];
@@ -439,7 +439,7 @@ export default function StoryPage() {
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
               { value: "85", label: "Releases Shipped", sub: "53 consecutive sprint deliveries", color: "#4CAF50" },
-              { value: "404", label: "Test Suites", sub: "From 153 → 404 (+164% growth)", color: "#FF9800" },
+              { value: "405", label: "Test Suites", sub: "From 153 → 405 (+165% growth)", color: "#FF9800" },
               { value: "181+", label: "Bugs Fixed", sub: "B001 through B181, all verified", color: "#F44336" },
               { value: "100+", label: "Website Commits", sub: "28 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },
               { value: "100+", label: "Inbox Messages", sub: "File-based async communication", color: "#00BCD4" },
