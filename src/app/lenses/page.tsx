@@ -41,8 +41,8 @@ const lenses = [
     icon: <ArticleIcon sx={{ fontSize: 36 }} />,
     color: "#F44336",
     fileTypes: [".log", ".jsonl", "Apache", "nginx", "syslog"],
-    description: "Severity-based coloring: ERROR in red, WARN in yellow, DEBUG in gray. Instantly identify critical lines in massive log files.",
-    features: ["Severity coloring (ERROR/WARN/DEBUG/INFO)", "Apache/nginx pattern detection", "Syslog format support", "Pattern matching"],
+    description: "Severity-based coloring: ERROR in red, WARN in yellow, DEBUG in gray. F68 Severity Coloring auto-highlights log levels for instant triage.",
+    features: ["F68 Severity Coloring (auto-highlight)", "Severity coloring (ERROR/WARN/DEBUG/INFO)", "Apache/nginx pattern detection", "Syslog format support", "Pattern matching"],
   },
   {
     name: "XML/YAML Lens",

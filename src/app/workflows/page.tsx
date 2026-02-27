@@ -113,6 +113,39 @@ const workflows: Workflow[] = [
       },
     ],
   },
+  {
+    id: "binary-forensics",
+    title: "Binary Forensics Workflow",
+    subtitle: "Compare firmware or patched binaries byte-by-byte",
+    icon: "🔬",
+    time: "~3 min",
+    steps: [
+      {
+        label: "Open the reference binary",
+        description:
+          "Open the known-good firmware or binary in SpeedHexPad. Press Ctrl+Alt+H if opening from SpeedPad, or launch SpeedHexPad.exe directly.",
+        keys: ["Ctrl+Alt+H"],
+      },
+      {
+        label: "Launch HexCompare",
+        description:
+          "Press F8 to open HexCompare. Select the second binary (patched, suspected, or updated version). Side-by-side hex diff loads instantly with differences highlighted.",
+        keys: ["F8"],
+      },
+      {
+        label: "Navigate differences",
+        description:
+          "Use F7 to jump to the next byte difference, Shift+F7 to go back. Each difference is highlighted with the offset, old value, and new value shown clearly.",
+        keys: ["F7", "Shift+F7"],
+      },
+      {
+        label: "Inspect with Binary Inspector",
+        description:
+          "Select interesting byte ranges and use the Binary Inspector (F64) to interpret values as int8/16/32/64, float, double, and strings. Apply structure templates for known formats.",
+        keys: ["F64"],
+      },
+    ],
+  },
 ];
 
 export default function WorkflowsPage() {
