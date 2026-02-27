@@ -1,6 +1,6 @@
 # SpeedPad Website — IT Ant ehf
 
-Marketing website for [SpeedPad](https://speedpad.itant.is), the 956KB Windows text editor that opens 100GB+ files, and [SpeedHexPad](https://speedpad.itant.is/hex-editor), the standalone hex editor.
+Marketing website for [SpeedPad](https://speedpad.itant.is), the 843KB Windows text editor that opens 100GB+ files, and [SpeedHexPad](https://speedpad.itant.is/hex-editor), the standalone hex editor.
 
 **Live:** [icy-mushroom-0dbd70903.azurestaticapps.net](https://icy-mushroom-0dbd70903.azurestaticapps.net)
 
@@ -49,13 +49,13 @@ Workflow: `.github/workflows/azure-static-web-apps.yml`
 | Route | Page |
 |-------|------|
 | `/` | Landing — hero, proof bar, feature grid, comparison, trust cards |
-| `/features` | 165+ features, 39 unique, 4-editor comparison table |
+| `/features` | 168+ features, 40 unique, 4-editor comparison table (incl. HexCompare, Severity Coloring) |
 | `/download` | Centralized downloads, system requirements |
 | `/hex-editor` | SpeedHexPad — standalone hex editor product page |
 | `/docs` | Documentation, shortcuts, CLI reference, lens plugins |
 | `/getting-started` | Quick start for SpeedPad + SpeedHexPad |
 | `/multilog` | Multi-Log Time Travel feature deep dive |
-| `/command-explorer` | 97 commands, role filtering, search |
+| `/command-explorer` | 175 commands, role filtering, search |
 | `/shortcuts` | 75+ keyboard shortcuts, filterable |
 | `/incident-playbook` | 3 real-world scenarios with key sequences |
 | `/how-it-works` | Architecture: memory-mapped I/O, piece table, rendering |
@@ -64,7 +64,7 @@ Workflow: `.github/workflows/azure-static-web-apps.yml`
 | `/team` | 8 team members with detail pages |
 | `/team/[slug]` | Individual team member bios (8 slugs) |
 | `/release-center` | Release history + milestones |
-| `/changelog` | Visual version timeline v2.30.0 → v2.65.0 |
+| `/changelog` | Visual version timeline v2.30.0 → v2.66.0 |
 | `/use-cases` | DevOps, security, data analysis workflows |
 | `/workflows` | Workflow packs for different roles |
 | `/lenses` | 6 DLL-based lens plugins |
@@ -103,6 +103,6 @@ src/
 
 ## Current Stats
 
-- SpeedPad v2.65.0 · 956KB · 409 tests · 39 unique features · 86 releases
+- SpeedPad v2.66.0 · 843KB · 504 tests · 40 unique features · 87 releases
 - Website: 28 routes · 130+ commits · 36 pre-rendered pages
 
