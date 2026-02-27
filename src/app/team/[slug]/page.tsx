@@ -1,4 +1,3 @@
-"use client";
 import {
   Box,
   Container,
@@ -14,7 +13,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 interface TeamMember {
@@ -254,24 +253,17 @@ const teamData: TeamMember[] = [
   },
 ];
 
-export default function TeamMemberPage() {
-  const params = useParams();
-  const slug = params.slug as string;
+
+export function generateStaticParams() {
+  return teamData.map((m) => ({ slug: m.slug }));
+}
+
+export default async function TeamMemberPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const member = teamData.find((m) => m.slug === slug);
 
   if (!member) {
-    return (
-      <Box sx={{ minHeight: "100vh" }}>
-        <Navbar />
-        <Container maxWidth="lg" sx={{ pt: 12, textAlign: "center" }}>
-          <Typography variant="h3">Team member not found</Typography>
-          <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
-            <Link href="/team" style={{ color: "#2196F3" }}>{"\u2190"} Back to Team</Link>
-          </Typography>
-        </Container>
-        <Footer />
-      </Box>
-    );
+    notFound();
   }
 
   return (
