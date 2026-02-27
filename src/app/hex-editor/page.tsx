@@ -72,7 +72,7 @@ const capabilities = [
     icon: <SpeedIcon sx={{ fontSize: 36 }} />,
     title: "Standalone or Built-in",
     desc: "SpeedHexPad.exe runs independently or is accessible inside SpeedPad via Ctrl+Alt+H. Same engine, your choice of workflow.",
-    shortcut: "v2.64.0+",
+    shortcut: "v2.65.0+",
   },
   {
     icon: <TemplateIcon sx={{ fontSize: 36 }} />,

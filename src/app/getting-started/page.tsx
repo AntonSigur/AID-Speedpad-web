@@ -652,7 +652,7 @@ export default function GettingStartedPage() {
           SpeedHexPad Quick Start
         </Typography>
         <Typography sx={{ color: "#94A3B8", mb: 4 }}>
-          Since v2.64.0, SpeedHexPad is available as a standalone binary or built into SpeedPad.
+          Since v2.65.0, SpeedHexPad is available as a standalone binary or built into SpeedPad.
         </Typography>
         <Grid container spacing={3}>
           <Grid size={{ xs: 12, md: 6 }}>
@@ -674,7 +674,7 @@ export default function GettingStartedPage() {
               <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: "#64B5F6" }}>
                 Built-in: Ctrl+Alt+H
               </Typography>
-              <Typography sx={{ color: "#94A3B8", mb: 1.5 }}>
+              <Typography component="div" sx={{ color: "#94A3B8", mb: 1.5 }}>
                 Open any file in SpeedPad and press <Chip label="Ctrl+Alt+H" size="small" sx={{ bgcolor: "#0a1628", color: "#00BCD4" }} /> to
                 toggle hex view. Same features — structure templates, data bookmarks, binary inspector.
               </Typography>

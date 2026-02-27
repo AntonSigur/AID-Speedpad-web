@@ -184,7 +184,7 @@ export default function IncidentPlaybookPage() {
             { q: "Can SpeedPad really replace Splunk or Datadog for incident triage?", a: "SpeedPad is not a replacement for cloud observability platforms. It is a fast, offline companion for when you need to open a raw log file and find the root cause now — without waiting for ingestion pipelines or paying per-GB query costs." },
             { q: "What if my log files are over 10GB?", a: "SpeedPad uses memory-mapped I/O with a 64MB sliding view window. A 10GB file uses under 100MB of RAM. For 100GB+ files, sparse sampling and the File Histogram provide navigable access without loading the full file." },
             { q: "How does Log Correlation work across files?", a: "The Log Correlation Engine (Ctrl+Shift+E) links entries across up to 8 files by matching timestamps. Clickable chain (⛓) indicators let you jump between correlated events across services." },
-            { q: "Do I need to install anything or configure a server?", a: "No. SpeedPad is a single 844KB EXE with zero dependencies. Download, double-click, open files. No installer, no runtime, no configuration, no cloud account." },
+            { q: "Do I need to install anything or configure a server?", a: "No. SpeedPad is a single 956KB EXE with zero dependencies. Download, double-click, open files. No installer, no runtime, no configuration, no cloud account." },
             { q: "Can I use SpeedPad on compressed or rotated logs?", a: "Yes. Multi-Log View auto-discovers rotated log siblings (.1, .2, .gz, .bz2, .zst, date-based, IIS, log4j patterns) and merges them into one chronological document. Compressed files are decompressed transparently." },
             { q: "What timestamp formats does Timestamp Intelligence support?", a: "SpeedPad auto-detects 15+ timestamp formats including ISO 8601, syslog, Apache/nginx access logs, Windows event logs, Unix epoch, and custom patterns. No configuration needed." },
             { q: "Can I inspect binary log files or crash dumps?", a: "Yes. Use SpeedHexPad.exe (standalone) or press Ctrl+Alt+H in SpeedPad. Load structure templates for PE/ELF/PNG formats, use data bookmarks to track offsets, and decode bytes with the Binary Inspector. Full hex search and goto-offset support." },
@@ -206,7 +206,7 @@ export default function IncidentPlaybookPage() {
             Ready to try these workflows?
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-            Download SpeedPad (844KB) and run through any scenario on your own logs.
+            Download SpeedPad (956KB) and run through any scenario on your own logs.
           </Typography>
           <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
             <Button

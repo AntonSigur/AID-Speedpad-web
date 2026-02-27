@@ -20,7 +20,7 @@ import Footer from "@/components/Footer";
 
 const releases = [
   {
-    version: "v2.64.0",
+    version: "v2.65.0",
     date: "2026-02-26",
     latest: true,
     highlights: [
@@ -368,7 +368,7 @@ export default function DownloadPage() {
       <Container maxWidth="md" sx={{ pb: 4 }}>
         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr" }, gap: 2 }}>
           {[
-            { v: CURRENT_VERSION, label: "Latest", summary: "SpeedHexPad.exe standalone, 405 tests, dual-product architecture", color: "primary" as const },
+            { v: CURRENT_VERSION, label: "Latest", summary: "SpeedHexPad.exe standalone, 409 tests, dual-product architecture", color: "primary" as const },
             { v: "v2.63.0", label: "Stable", summary: "Structure templates, data bookmarks, 393 tests", color: "secondary" as const },
             { v: "v2.62.0", label: "Stable", summary: "SpeedHexPad hex editing, endianness toggle, 350 tests", color: "default" as const },
           ].map((r) => (

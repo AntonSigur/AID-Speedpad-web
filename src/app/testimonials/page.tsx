@@ -38,7 +38,7 @@ const testimonials = [
     color: "#F44336",
     rating: 5,
     quote:
-      "I use SpeedHexPad daily for binary log inspection. The hex view with endianness toggle and binary inspector saves me from switching between three different tools. And at 844KB with zero network calls, it passed our air-gapped environment audit instantly.",
+      "I use SpeedHexPad daily for binary log inspection. The hex view with endianness toggle and binary inspector saves me from switching between three different tools. And at 956KB with zero network calls, it passed our air-gapped environment audit instantly.",
     tags: ["SpeedHexPad", "Binary Inspector", "Air-Gapped"],
     highlight: "Passed air-gapped security audit",
   },

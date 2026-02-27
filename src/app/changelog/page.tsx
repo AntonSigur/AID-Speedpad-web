@@ -22,7 +22,7 @@ interface Release {
 
 const releases: Release[] = [
   {
-    version: "v2.64.0",
+    version: "v2.65.0",
     date: "2026-02-26",
     title: "SpeedHexPad.exe Standalone Split",
     tests: 404,
@@ -327,14 +327,14 @@ export default function ChangelogPage() {
           Changelog
         </Typography>
         <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-          Every feature, fix, and improvement — from v2.30.0 to v2.64.0.
+          Every feature, fix, and improvement — from v2.30.0 to v2.65.0.
         </Typography>
 
         {/* Test count progress bar */}
         <Paper elevation={0} sx={{ p: 2, mb: 4, background: "rgba(33, 150, 243, 0.06)", border: "1px solid rgba(33, 150, 243, 0.15)", borderRadius: 2 }}>
           <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
             <Typography variant="body2" color="text.secondary">Test suite growth</Typography>
-            <Typography variant="body2" color="primary.light">153 → 405 tests</Typography>
+            <Typography variant="body2" color="primary.light">153 → 409 tests</Typography>
           </Box>
           <Box sx={{ height: 8, borderRadius: 4, background: "rgba(255,255,255,0.05)", overflow: "hidden" }}>
             <Box sx={{ height: "100%", width: "100%", borderRadius: 4, background: "linear-gradient(90deg, #2196F3 0%, #00BCD4 100%)" }} />

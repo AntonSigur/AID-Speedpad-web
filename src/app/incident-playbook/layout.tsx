@@ -22,7 +22,7 @@ const jsonLd = {
     { "@type": "HowToStep", position: 3, name: "Correlate across files", text: "Press Ctrl+Shift+C to link related entries across up to 8 log files" },
     { "@type": "HowToStep", position: 4, name: "Monitor in real-time", text: "Use Ctrl+Shift+T for tail mode to watch live log output during incidents" },
   ],
-  tool: { "@type": "SoftwareApplication", name: "SpeedPad", applicationCategory: "Text Editor", fileSize: "844KB" },
+  tool: { "@type": "SoftwareApplication", name: "SpeedPad", applicationCategory: "Text Editor", fileSize: "956KB" },
 };
 
 export default function IncidentPlaybookLayout({ children }: { children: React.ReactNode }) {

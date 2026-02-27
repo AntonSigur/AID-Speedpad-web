@@ -282,8 +282,8 @@ const stats = [
   { label: "Releases", value: "85", color: "#2196F3" },
   { label: "Features", value: "165+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "211+", color: "#F44336" },
-  { label: "Test Suites", value: "405", color: "#FF9800" },
-  { label: "EXE Size", value: "844 KB", color: "#9C27B0" },
+  { label: "Test Suites", value: "409", color: "#FF9800" },
+  { label: "EXE Size", value: "956 KB", color: "#9C27B0" },
   { label: "Team Size", value: "8 agents", color: "#00BCD4" },
 ];
 
@@ -307,7 +307,7 @@ export default function StoryPage() {
           Our Story
         </Typography>
         <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 650, mx: "auto", fontWeight: 400 }}>
-          How a frustration with slow text editors became a 844KB powerhouse
+          How a frustration with slow text editors became a 956KB powerhouse
           that opens 100GB files — while staying under 1MB.
         </Typography>
       </Container>
@@ -439,11 +439,11 @@ export default function StoryPage() {
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
               { value: "85", label: "Releases Shipped", sub: "53 consecutive sprint deliveries", color: "#4CAF50" },
-              { value: "405", label: "Test Suites", sub: "From 153 → 405 (+165% growth)", color: "#FF9800" },
+              { value: "409", label: "Test Suites", sub: "From 153 → 409 (+167% growth)", color: "#FF9800" },
               { value: "181+", label: "Bugs Fixed", sub: "B001 through B181, all verified", color: "#F44336" },
               { value: "100+", label: "Website Commits", sub: "28 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },
               { value: "100+", label: "Inbox Messages", sub: "File-based async communication", color: "#00BCD4" },
-              { value: "860", label: "KB Total", sub: "Entire editor in less than 1MB", color: "#E91E63" },
+              { value: "956", label: "KB Total", sub: "Entire editor in less than 1MB", color: "#E91E63" },
               { value: "10s", label: "Build Time", sub: "Next.js 16 — full rebuild in seconds", color: "#607D8B" },
             ].map((stat) => (
               <Grid key={stat.label} size={{ xs: 6, sm: 3 }}>
@@ -479,7 +479,7 @@ export default function StoryPage() {
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
           the development cadence is remarkable: the team has delivered <strong>51 consecutive sprints</strong> without
           a single missed delivery. Each sprint produces a new release with bug fixes, features, and test
-          suites — all in a single-file 844KB executable. The website mirrors this velocity, growing from
+          suites — all in a single-file 956KB executable. The website mirrors this velocity, growing from
           5 pages to 28 routes while maintaining zero lint warnings and clean builds.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>

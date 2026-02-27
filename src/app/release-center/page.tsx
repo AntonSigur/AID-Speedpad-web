@@ -33,7 +33,7 @@ import {
 /* ───── Release data ───── */
 const releases = [
   {
-    version: "v2.64.0",
+    version: "v2.65.0",
     release: 85,
     date: "2026-02-26",
     size: "843 KiB (863,232 bytes)",

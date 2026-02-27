@@ -72,7 +72,7 @@ const competitorComparison = [
   { feature: "Tail across rotation", sp: "✅", npp: "❌", vsc: "❌", splunk: "✅" },
   { feature: "Workspace persistence", sp: "✅ .speedws", npp: "❌", vsc: "❌", splunk: "✅" },
   { feature: "Cost", sp: "Free", npp: "Free", vsc: "Free", splunk: "$$$" },
-  { feature: "Install size", sp: "860 KB", npp: "14 MB", vsc: "400 MB", splunk: "2+ GB" },
+  { feature: "Install size", sp: "956 KB", npp: "14 MB", vsc: "400 MB", splunk: "2+ GB" },
 ];
 
 const rotationPatterns = [
@@ -271,7 +271,7 @@ export default function MultiLogPage() {
               Download SpeedPad — Free
             </Button>
             <Typography variant="body1" color="text.secondary" sx={{ mt: 2, fontStyle: "italic" }}>
-              All of this in 844KB. No plugins. No extensions. Just speed.
+              All of this in 956KB. No plugins. No extensions. Just speed.
             </Typography>
             <Button variant="outlined" component={Link} href="/incident-playbook#log-rotation-failure-investigation" sx={{ mt: 2, textTransform: "none", fontWeight: 700, borderColor: "#FF9800", color: "#FF9800" }}>
               See Log Rotation Playbook →

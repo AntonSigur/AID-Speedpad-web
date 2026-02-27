@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Use Cases — Who Uses SpeedPad & Why | SpeedPad",
   description:
-    "Real-world use cases for SpeedPad: DevOps incident triage, security log forensics, data analysis on large CSVs, binary inspection, and developer workflows — all in 844KB.",
+    "Real-world use cases for SpeedPad: DevOps incident triage, security log forensics, data analysis on large CSVs, binary inspection, and developer workflows — all in 956KB.",
   openGraph: {
     title: "SpeedPad Use Cases — Real-World Scenarios",
     description:
