@@ -49,13 +49,13 @@ Workflow: `.github/workflows/azure-static-web-apps.yml`
 | Route | Page |
 |-------|------|
 | `/` | Landing — hero, proof bar, feature grid, comparison, trust cards |
-| `/features` | 168+ features, 40 unique, 4-editor comparison table (incl. HexCompare, Severity Coloring) |
+| `/features` | 177+ features, 46 unique, 4-editor comparison table (incl. HexCompare, Severity Coloring) |
 | `/download` | Centralized downloads, system requirements |
 | `/hex-editor` | SpeedHexPad — standalone hex editor product page |
 | `/docs` | Documentation, shortcuts, CLI reference, lens plugins |
 | `/getting-started` | Quick start for SpeedPad + SpeedHexPad |
 | `/multilog` | Multi-Log Time Travel feature deep dive |
-| `/command-explorer` | 175 commands, role filtering, search |
+| `/command-explorer` | 183 commands, role filtering, search |
 | `/shortcuts` | 75+ keyboard shortcuts, filterable |
 | `/incident-playbook` | 3 real-world scenarios with key sequences |
 | `/how-it-works` | Architecture: memory-mapped I/O, piece table, rendering |
@@ -64,7 +64,7 @@ Workflow: `.github/workflows/azure-static-web-apps.yml`
 | `/team` | 8 team members with detail pages |
 | `/team/[slug]` | Individual team member bios (8 slugs) |
 | `/release-center` | Release history + milestones |
-| `/changelog` | Visual version timeline v2.30.0 → v2.66.0 |
+| `/changelog` | Visual version timeline v2.30.0 → v2.71.0 |
 | `/use-cases` | DevOps, security, data analysis workflows |
 | `/workflows` | Workflow packs for different roles |
 | `/lenses` | 6 DLL-based lens plugins |
@@ -103,6 +103,6 @@ src/
 
 ## Current Stats
 
-- SpeedPad v2.66.0 · 843KB · 504 tests · 40 unique features · 87 releases
+- SpeedPad v2.71.0 · 843KB · 673 tests · 46 unique features · 92 releases
 - Website: 28 routes · 130+ commits · 36 pre-rendered pages
 

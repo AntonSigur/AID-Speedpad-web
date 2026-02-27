@@ -23,7 +23,7 @@ src/
 ├── app/                        # 28 App Router routes
 │   ├── layout.tsx              # Root — ThemeRegistry, CookieConsent, JSON-LD
 │   ├── page.tsx                # / — Landing (hero, proof bar, features, comparison)
-│   ├── features/               # /features — 168+ features, unique list, comparison
+│   ├── features/               # /features — 177+ features, unique list, comparison
 │   ├── download/               # /download — Centralized downloads from product-config
 │   ├── hex-editor/             # /hex-editor — SpeedHexPad product page (green accent)
 │   ├── docs/                   # /docs — Documentation, CLI, lenses, architecture
@@ -31,7 +31,7 @@ src/
 │   ├── team/                   # /team — 8 team members
 │   │   └── [slug]/             # /team/:slug — Static params (generateStaticParams)
 │   ├── story/                  # /story — 22-phase timeline + build stats
-│   ├── command-explorer/       # /command-explorer — 175 commands with role filtering
+│   ├── command-explorer/       # /command-explorer — 183 commands with role filtering
 │   ├── shortcuts/              # /shortcuts — 75+ shortcuts, filterable chips
 │   ├── multilog/               # /multilog — Multi-Log Time Travel
 │   ├── incident-playbook/      # /incident-playbook — 3 real-world scenarios
@@ -105,11 +105,11 @@ Push to master → GitHub Actions → npm ci → npm run build → Upload out/ �
 `src/lib/product-config.ts` is the single source of truth:
 
 ```ts
-export const CURRENT_VERSION = "v2.66.0";
+export const CURRENT_VERSION = "v2.71.0";
 export const EXE_SIZE = "843KB";
-export const TEST_COUNT = 504;
-export const UNIQUE_FEATURES = 40;
-export const RELEASE_NUMBER = 87;
+export const TEST_COUNT = 673;
+export const UNIQUE_FEATURES = 46;
+export const RELEASE_NUMBER = 92;
 ```
 
 All download URLs, version strings, and stat references derive from this file.
