@@ -48,6 +48,7 @@ const essentialShortcuts = [
   { shortcut: "Ctrl+Shift+T", action: "Tail Mode" },
   { shortcut: "Ctrl+Shift+V", action: "Reverse View" },
   { shortcut: "Ctrl+Shift+F", action: "Cross-File Search" },
+  { shortcut: "Ctrl+Alt+F", action: "Multi-File Search (folder)" },
   { shortcut: "Alt+D", action: "Diff View" },
   { shortcut: "Ctrl+Alt+T", action: "Tail Dashboard" },
   { shortcut: "Ctrl+Alt+H", action: "File Histogram" },

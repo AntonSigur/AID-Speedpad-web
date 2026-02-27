@@ -188,6 +188,7 @@ export default function IncidentPlaybookPage() {
             { q: "Can I use SpeedPad on compressed or rotated logs?", a: "Yes. Multi-Log View auto-discovers rotated log siblings (.1, .2, .gz, .bz2, .zst, date-based, IIS, log4j patterns) and merges them into one chronological document. Compressed files are decompressed transparently." },
             { q: "What timestamp formats does Timestamp Intelligence support?", a: "SpeedPad auto-detects 15+ timestamp formats including ISO 8601, syslog, Apache/nginx access logs, Windows event logs, Unix epoch, and custom patterns. No configuration needed." },
             { q: "Can I inspect binary log files or crash dumps?", a: "Yes. Use SpeedHexPad.exe (standalone) or press Ctrl+Alt+H in SpeedPad. Load structure templates for PE/ELF/PNG formats, use data bookmarks to track offsets, and decode bytes with the Binary Inspector. Full hex search and goto-offset support." },
+            { q: "How does Multi-File Search help during incidents?", a: "Press Ctrl+Alt+F to pick a directory, then search all files in parallel. Results stream in with file names and line numbers — ideal for scanning an entire /var/log/ directory for error patterns without opening files one by one. New in v2.65.0." },
           ].map((item, i) => (
             <Paper key={i} sx={{ p: 3, mb: 2, bgcolor: "#162D50" }}>
               <Typography variant="subtitle1" fontWeight={700} color="#E2E8F0" sx={{ mb: 1 }}>
