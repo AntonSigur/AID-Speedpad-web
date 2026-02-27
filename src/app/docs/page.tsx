@@ -76,6 +76,13 @@ const essentialShortcuts = [
   { shortcut: "Ctrl+Alt+Right", action: "Next histogram slice" },
   { shortcut: "Ctrl+T", action: "Go to Time (sparse mode navigation)" },
   { shortcut: "Ctrl+Shift+F12", action: "Solitaire 🐜" },
+  { shortcut: "Ctrl+Shift+T", action: "Pattern Timeline (frequency visualization)" },
+  { shortcut: "Ctrl+Shift+K", action: "Auto-Correlator (event sequences)" },
+  { shortcut: "F4", action: "Build Output — next error" },
+  { shortcut: "Shift+F4", action: "Build Output — previous error" },
+  { shortcut: "F8", action: "HexCompare (binary diff)" },
+  { shortcut: "Ctrl+Shift+F9", action: "Rogue DLL 🗡️" },
+  { shortcut: "Ctrl+Shift+F11", action: "C&C Strategy 🏰" },
 ];
 
 const cliExamples = [
