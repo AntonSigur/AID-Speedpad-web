@@ -420,6 +420,29 @@ export default function ChangelogPage() {
           </Typography>
         </Paper>
 
+        {/* 500 Test Milestone Banner */}
+        <Paper
+          elevation={0}
+          sx={{
+            p: 3,
+            mb: 4,
+            background: "linear-gradient(135deg, rgba(0,188,212,0.12) 0%, rgba(33,150,243,0.08) 100%)",
+            border: "1px solid rgba(0,188,212,0.3)",
+            borderRadius: 2,
+            textAlign: "center",
+          }}
+        >
+          <Typography variant="h3" sx={{ fontWeight: 800, color: "#00BCD4", lineHeight: 1 }}>
+            🎉 500
+          </Typography>
+          <Typography variant="h6" sx={{ fontWeight: 600, mt: 1 }}>
+            Test Suites Milestone
+          </Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+            From 153 tests in v2.30.0 to {TOTAL_TESTS} in v2.66.0 — a +{Math.round(((TOTAL_TESTS - FIRST_TESTS) / FIRST_TESTS) * 100)}% increase. Every release tested. Every regression caught.
+          </Typography>
+        </Paper>
+
         {/* Stats Row */}
         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr 1fr", md: "1fr 1fr 1fr 1fr" }, gap: 2, mb: 4 }}>
           {[
