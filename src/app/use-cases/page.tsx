@@ -32,11 +32,12 @@ const useCases = [
     workflow: [
       "Open the latest app.log (4GB) — SpeedPad opens it in under 2 seconds via memory-mapped I/O",
       "Press Ctrl+Shift+T for tail mode — watch new entries arrive in real-time",
+      "Ctrl+Alt+F → Multi-File Search the entire /var/log/ directory for the error pattern across all services",
       "Ctrl+Shift+A activates Timestamp Intelligence — spot a 47-second gap between 02:58 and 03:45",
       "Ctrl+Shift+E enables Log Correlation — link the gap to a database timeout in db-slow.log",
       "Root cause found in under 5 minutes, without leaving the editor",
     ],
-    features: ["Tail Mode", "Timestamp Intelligence", "Log Correlation", "100GB+ Files"],
+    features: ["Tail Mode", "Multi-File Search", "Timestamp Intelligence", "Log Correlation", "100GB+ Files"],
     link: "/incident-playbook",
     linkLabel: "Full Incident Playbook →",
     color: "#F44336",

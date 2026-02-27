@@ -51,6 +51,12 @@ const workflows: Workflow[] = [
           "Open related log files in tabs, then press Ctrl+Shift+E to launch the Log Correlation Engine. Link request IDs, trace IDs, or custom patterns across all open files.",
         keys: ["Ctrl+Shift+E"],
       },
+      {
+        label: "Search an entire directory",
+        description:
+          "Press Ctrl+Alt+F to launch Multi-File Search. Pick a folder and search all files in parallel — results stream in with file names, line numbers, and match context.",
+        keys: ["Ctrl+Alt+F"],
+      },
     ],
   },
   {
