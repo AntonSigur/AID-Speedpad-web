@@ -25,6 +25,7 @@ import {
   Speed as SpeedIcon,
   ViewList as TemplateIcon,
   Bookmark as BookmarkIcon,
+  CompareArrows as CompareArrowsIcon,
 } from "@mui/icons-material";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -85,6 +86,12 @@ const capabilities = [
     title: "Data Bookmarks",
     desc: "Mark hex positions, navigate between bookmarks, and serialize them for later. Essential for tracking offsets in large binary files.",
     shortcut: "Toggle bookmark",
+  },
+  {
+    icon: <CompareArrowsIcon sx={{ fontSize: 36 }} />,
+    title: "HexCompare — Binary Diff",
+    desc: "Byte-level file comparison: open two binaries side-by-side, differences highlighted in real-time. Navigate between changes with F7/Shift+F7. Essential for firmware updates, patch verification, and binary forensics.",
+    shortcut: "F8 / F7 / Shift+F7",
   },
 ];
 

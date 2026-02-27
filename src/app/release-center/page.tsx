@@ -33,6 +33,22 @@ import {
 /* ───── Release data ───── */
 const releases = [
   {
+    version: "v2.66.0",
+    release: 87,
+    date: "2026-02-28",
+    size: "843 KiB (863,232 bytes)",
+    tests: 504,
+    highlights: [
+      "HexCompare — byte-level binary file diff (F8 compare, F7/Shift+F7 navigate)",
+      "F68 Severity Coloring — automatic ERROR/WARN/INFO line highlighting",
+      "B215 SpeedHexPad auto-hex detection for binary files",
+      "Speed Challenge UI polish & Solitaire IT Ant logo branding",
+      "Test suite smashes 500 milestone — 504 suites",
+      "55 consecutive sprint deliveries",
+    ],
+    milestone: "HexCompare & 500 Test Milestone",
+  },
+  {
     version: "v2.65.0",
     release: 86,
     date: "2026-02-27",

@@ -15,9 +15,10 @@ const jsonLd = {
   "@type": "ItemList",
   name: "SpeedPad Version History",
   description: "Release timeline for SpeedPad text editor",
-  numberOfItems: 22,
+  numberOfItems: 23,
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "v2.65.0", description: "SpeedHexPad.exe standalone split — 404 tests" },
+    { "@type": "ListItem", position: 1, name: "v2.66.0", description: "HexCompare byte-level diff & 500 test milestone — 504 tests" },
+    { "@type": "ListItem", position: 2, name: "v2.65.0", description: "Multi-File Search & Code Signing — 432 tests" },
     { "@type": "ListItem", position: 2, name: "v2.61.0", description: "Binary Inspector & Column Selection — F64 data types, Alt+Drag block select, 311 tests" },
     { "@type": "ListItem", position: 3, name: "v2.60.0", description: "SpeedHexPad Scaffold & Ant Kings — hex editor Ctrl+Alt+H, Snake game, 306 tests" },
     { "@type": "ListItem", position: 4, name: "v2.59.0", description: "Critical Security — B207 command injection fix, B208 integer overflow, 297 tests" },

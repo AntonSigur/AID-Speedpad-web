@@ -277,13 +277,22 @@ const timeline = [
     highlights: ["F65 Multi-File Search (Ctrl+Alt+F)", "Self-signed code signing for both EXEs", "B214 SaveAs fix", "432 tests, 54 sprints"],
   },
   {
-    phase: "What's Next",
-    period: "Sprint 82+",
-    color: "#607D8B",
-    title: "Binary diff, session extraction, and the colony expands",
+    phase: "HexCompare & 500 Test Milestone",
+    period: "v2.66.0 — Sprint 82",
+    color: "#E65100",
+    title: "Binary file diff lands — 500 test milestone smashed",
     description:
-      "The roadmap includes binary file diff, session extraction for tracing IDs across log files, and dual-product expansion. The ant colony never stops building.",
-    highlights: ["Binary file diff", "Session extraction", "Community contributions"],
+      "HexCompare delivers byte-level binary file diff with F8 compare and F7/Shift+F7 navigation. F68 Severity Coloring auto-highlights ERROR/WARN/INFO lines. B215 adds auto-hex detection in SpeedHexPad. The test suite smashes 500 — reaching 504 suites. EXE shrinks from 956KB to 843KB. Release #87, 55 consecutive sprints.",
+    highlights: ["HexCompare (F8/F7/Shift+F7)", "F68 Severity Coloring", "504 tests — 500 milestone!", "843KB EXE (−12%)"],
+  },
+  {
+    phase: "What's Next",
+    period: "Sprint 83+",
+    color: "#607D8B",
+    title: "Session extraction, community contributions, and the colony expands",
+    description:
+      "The roadmap includes session extraction for tracing IDs across log files, community contributions, and dual-product expansion. The ant colony never stops building.",
+    highlights: ["Session extraction", "Community contributions", "Dual-product expansion"],
   },
 ];
 

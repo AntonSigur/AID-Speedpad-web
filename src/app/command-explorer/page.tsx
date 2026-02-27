@@ -169,6 +169,9 @@ const commands: Cmd[] = [
   { name: "Endianness Toggle", shortcut: "Ctrl+E", category: "View", roles: ["developer", "devops"], outcome: "Switch between little-endian and big-endian byte interpretation in hex mode" },
   { name: "Load Structure Template", shortcut: "Menu", category: "View", roles: ["developer", "devops"], outcome: "Overlay a JSON binary format template on hex data — field names, types, values inline" },
   { name: "Toggle Data Bookmark", shortcut: "Menu", category: "View", roles: ["developer", "devops"], outcome: "Mark or unmark current hex offset as a data bookmark for quick navigation" },
+  { name: "HexCompare", shortcut: "F8", category: "View", roles: ["developer", "devops"], outcome: "Open byte-level binary file diff — compare two files side-by-side with highlighted differences" },
+  { name: "HexCompare Next Diff", shortcut: "F7", category: "View", roles: ["developer", "devops"], outcome: "Jump to the next byte difference in HexCompare view" },
+  { name: "HexCompare Prev Diff", shortcut: "Shift+F7", category: "View", roles: ["developer", "devops"], outcome: "Jump to the previous byte difference in HexCompare view" },
 ];
 
 const categories = ["View", "Tools", "Edit", "File", "Search", "Navigation", "Help"] as const;

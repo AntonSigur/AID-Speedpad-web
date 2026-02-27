@@ -24,6 +24,21 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "v2.66.0",
+    date: "2026-02-28",
+    title: "HexCompare & 500 Test Milestone",
+    tests: 504,
+    sprint: 82,
+    features: [
+      "HexCompare — byte-level binary file diff (F8 compare, F7/Shift+F7 navigate differences)",
+      "F68 Severity Coloring — automatic ERROR/WARN/INFO line highlighting",
+      "B215 SpeedHexPad auto-hex detection for binary files",
+      "Speed Challenge UI polish & Solitaire IT Ant logo branding",
+      "Test suite smashes 500 milestone — 504 suites",
+      "55 consecutive sprint deliveries",
+    ],
+  },
+  {
     version: "v2.65.0",
     date: "2026-02-27",
     title: "Multi-File Search & Code Signing",

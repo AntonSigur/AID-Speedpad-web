@@ -185,6 +185,8 @@ const uniqueFeatures = [
   "Structure Templates — JSON-based binary format overlays for PE, ELF, PNG, ZIP headers with cursor-follows-field",
   "Data Bookmarks — mark, navigate, and serialize hex positions for quick offset navigation",
   "Multi-File Search — Ctrl+Alt+F opens folder picker then searches all files with parallel threading and result navigation",
+  "HexCompare — F8 byte-level binary file diff with side-by-side view and F7/Shift+F7 difference navigation",
+  "Severity Coloring — automatic ERROR/WARN/INFO line highlighting for instant log-level triage",
 ];
 
 export default function FeaturesPage() {
@@ -272,10 +274,10 @@ export default function FeaturesPage() {
       <Box sx={{ py: { xs: 4, md: 8 } }}>
         <Container maxWidth="md">
           <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
-            30 Things Only SpeedPad Can Do
+            42 Things Only SpeedPad Can Do
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
-            Features you won&apos;t find in any other text editor — now 30 and counting
+            Features you won&apos;t find in any other text editor — now 42 and counting
           </Typography>
           <Box component="ol" sx={{ pl: 3 }}>
             {uniqueFeatures.map((f, i) => (

@@ -114,6 +114,9 @@ const shortcuts: Shortcut[] = [
   { keys: "Ctrl+Shift+F12", action: "Solitaire 🐜", category: "Easter Eggs" },
   { keys: "Ctrl+Shift+F10", action: "Snake 🐍", category: "Easter Eggs" },
   { keys: "Ctrl+E", action: "Endianness toggle (hex mode)", category: "View Modes" },
+  { keys: "F8", action: "HexCompare — open binary file diff", category: "View Modes" },
+  { keys: "F7", action: "HexCompare — next difference", category: "View Modes" },
+  { keys: "Shift+F7", action: "HexCompare — previous difference", category: "View Modes" },
 ];
 
 const categories = Array.from(new Set(shortcuts.map((s) => s.category)));
