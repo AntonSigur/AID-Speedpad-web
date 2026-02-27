@@ -8,13 +8,10 @@ import {
   Button,
   IconButton,
   Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Divider,
+  Chip,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -93,7 +90,7 @@ export default function Navbar() {
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12 }}>
-            <Image src="/itant-logo.svg" alt="IT Ant ehf" width={44} height={44} style={{ filter: "brightness(0) invert(1)" }} />
+            <Image src="/itant-logo.svg" alt="IT Ant ehf" width={56} height={56} style={{ filter: "brightness(0) invert(1)" }} />
             <Typography variant="h6" fontWeight={700} color="primary.light">
               SpeedPad
             </Typography>
@@ -125,44 +122,98 @@ export default function Navbar() {
           </IconButton>
         </Toolbar>
       </AppBar>
-      {/* All-pages drawer (desktop + mobile) */}
+      {/* All-pages panel — clean grid layout */}
       <Drawer
         anchor="right"
         open={drawerOpen}
         onClose={() => setDrawerOpen(false)}
-        PaperProps={{ sx: { bgcolor: "background.default", width: 280 } }}
+        PaperProps={{
+          sx: {
+            bgcolor: "#0B1929",
+            width: { xs: "100vw", sm: 420 },
+            borderLeft: "1px solid rgba(33,150,243,0.12)",
+          },
+        }}
       >
-        <Box sx={{ pt: 2, pb: 1, px: 2, display: "flex", alignItems: "center", gap: 1 }}>
-          <Image src="/itant-logo.svg" alt="IT Ant ehf" width={32} height={32} style={{ filter: "brightness(0) invert(1)" }} />
-          <Typography variant="h6" fontWeight={700} color="primary.light">SpeedPad</Typography>
-        </Box>
-        <Divider sx={{ borderColor: "rgba(255,255,255,0.08)" }} />
-        <List dense>
-          <ListItem disablePadding>
-            <ListItemButton component={Link} href="/" onClick={() => setDrawerOpen(false)}>
-              <ListItemText primary="Home" primaryTypographyProps={{ fontWeight: 700 }} />
-            </ListItemButton>
-          </ListItem>
+        <Box sx={{ p: 3 }}>
+          {/* Header */}
+          <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 3 }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
+              <Image src="/itant-logo.svg" alt="IT Ant ehf" width={36} height={36} style={{ filter: "brightness(0) invert(1)" }} />
+              <Typography variant="h6" fontWeight={700} color="primary.light">SpeedPad</Typography>
+            </Box>
+            <IconButton onClick={() => setDrawerOpen(false)} sx={{ color: "#64748B" }}>
+              <CloseIcon />
+            </IconButton>
+          </Box>
+
+          {/* Home link */}
+          <Box
+            component={Link}
+            href="/"
+            onClick={() => setDrawerOpen(false)}
+            sx={{
+              display: "block",
+              p: 1.5,
+              mb: 2,
+              borderRadius: 2,
+              bgcolor: "rgba(33,150,243,0.08)",
+              border: "1px solid rgba(33,150,243,0.15)",
+              textDecoration: "none",
+              color: "#E2E8F0",
+              fontWeight: 700,
+              fontSize: "0.95rem",
+              "&:hover": { bgcolor: "rgba(33,150,243,0.15)" },
+            }}
+          >
+            🏠 Home
+          </Box>
+
+          {/* Section groups */}
           {allPages.map((section) => (
-            <Box key={section.group}>
-              <ListItem disablePadding sx={{ mt: 1 }}>
-                <ListItemButton disabled sx={{ py: 0.25 }}>
-                  <ListItemText
-                    primary={section.group}
-                    primaryTypographyProps={{ variant: "caption", color: "#64B5F6", fontWeight: 700, textTransform: "uppercase", letterSpacing: 1 }}
+            <Box key={section.group} sx={{ mb: 2.5 }}>
+              <Typography
+                variant="overline"
+                sx={{
+                  color: "#475569",
+                  fontWeight: 700,
+                  fontSize: "0.65rem",
+                  letterSpacing: 1.5,
+                  display: "block",
+                  mb: 0.75,
+                }}
+              >
+                {section.group}
+              </Typography>
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.75 }}>
+                {section.items.map((item) => (
+                  <Chip
+                    key={item.href}
+                    label={item.label}
+                    component={Link}
+                    href={item.href}
+                    onClick={() => setDrawerOpen(false)}
+                    clickable
+                    size="small"
+                    sx={{
+                      bgcolor: "rgba(255,255,255,0.04)",
+                      color: "#CBD5E1",
+                      border: "1px solid rgba(255,255,255,0.06)",
+                      fontWeight: 500,
+                      fontSize: "0.8rem",
+                      height: 32,
+                      "&:hover": {
+                        bgcolor: "rgba(33,150,243,0.12)",
+                        borderColor: "rgba(33,150,243,0.3)",
+                        color: "#93C5FD",
+                      },
+                    }}
                   />
-                </ListItemButton>
-              </ListItem>
-              {section.items.map((item) => (
-                <ListItem key={item.href} disablePadding>
-                  <ListItemButton component={Link} href={item.href} onClick={() => setDrawerOpen(false)} sx={{ pl: 3, py: 0.5 }}>
-                    <ListItemText primary={item.label} primaryTypographyProps={{ fontSize: "0.9rem" }} />
-                  </ListItemButton>
-                </ListItem>
-              ))}
+                ))}
+              </Box>
             </Box>
           ))}
-        </List>
+        </Box>
       </Drawer>
     </>
   );

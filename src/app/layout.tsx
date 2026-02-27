@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ThemeRegistry from "@/theme/ThemeRegistry";
 import SkipToContent from "@/components/SkipToContent";
+import CookieConsent from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://speedpad.itant.is"),
@@ -66,6 +67,7 @@ export default function RootLayout({
         <ThemeRegistry>
           <SkipToContent />
           <main id="main-content" role="main">{children}</main>
+          <CookieConsent />
         </ThemeRegistry>
       </body>
     </html>

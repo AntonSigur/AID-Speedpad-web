@@ -10,7 +10,7 @@ export default function Footer() {
         <Grid container spacing={4}>
           <Grid size={{ xs: 12, md: 4 }}>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2 }}>
-              <Image src="/itant-logo.svg" alt="IT Ant ehf" width={36} height={36} style={{ filter: "brightness(0) invert(1)" }} />
+              <Image src="/itant-logo.svg" alt="IT Ant ehf" width={48} height={48} style={{ filter: "brightness(0) invert(1)" }} />
               <Typography variant="h6" fontWeight={700} color="primary.light">SpeedPad</Typography>
             </Box>
             <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 280 }}>
