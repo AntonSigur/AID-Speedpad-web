@@ -187,6 +187,13 @@ const uniqueFeatures = [
   "Multi-File Search — Ctrl+Alt+F opens folder picker then searches all files with parallel threading and result navigation",
   "HexCompare — F8 byte-level binary file diff with side-by-side view and F7/Shift+F7 difference navigation",
   "Severity Coloring — automatic ERROR/WARN/INFO line highlighting for instant log-level triage",
+  "Pattern Timeline — Ctrl+Shift+T frequency visualization with click-to-jump for event pattern detection",
+  "Auto-Correlator — Ctrl+Shift+K automatic event sequence detection across log files",
+  "Build Output Parser — F4/Shift+F4 MSVC/GCC/Clang error navigation directly from build logs",
+  "Background Indexing — .spidx sidecar files for instant GoToLine in large files with time-budget loading",
+  "Rogue DLL — Ctrl+Shift+F9 ASCII dungeon explorer game embedded as a DLL plugin",
+  "Session Extraction — cursor save/restore, auto-save, and full session recovery on restart",
+  "C&C Strategy Game — real-time strategy mini-game DLL with unit management and base building",
 ];
 
 export default function FeaturesPage() {
@@ -274,10 +281,10 @@ export default function FeaturesPage() {
       <Box sx={{ py: { xs: 4, md: 8 } }}>
         <Container maxWidth="md">
           <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
-            42 Things Only SpeedPad Can Do
+            50 Things Only SpeedPad Can Do
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
-            Features you won&apos;t find in any other text editor — now 42 and counting
+            Features you won&apos;t find in any other text editor — now 50 and counting
           </Typography>
           <Box component="ol" sx={{ pl: 3 }}>
             {uniqueFeatures.map((f, i) => (

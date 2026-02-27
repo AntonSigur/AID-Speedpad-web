@@ -172,6 +172,13 @@ const commands: Cmd[] = [
   { name: "HexCompare", shortcut: "F8", category: "View", roles: ["developer", "devops"], outcome: "Open byte-level binary file diff — compare two files side-by-side with highlighted differences" },
   { name: "HexCompare Next Diff", shortcut: "F7", category: "View", roles: ["developer", "devops"], outcome: "Jump to the next byte difference in HexCompare view" },
   { name: "HexCompare Prev Diff", shortcut: "Shift+F7", category: "View", roles: ["developer", "devops"], outcome: "Jump to the previous byte difference in HexCompare view" },
+  { name: "Pattern Timeline", shortcut: "Ctrl+Shift+T", category: "Tools", roles: ["devops", "sysadmin"], outcome: "Visualize event frequencies over time — click to jump to any pattern occurrence" },
+  { name: "Auto-Correlator", shortcut: "Ctrl+Shift+K", category: "Tools", roles: ["devops", "sysadmin"], outcome: "Detect event sequences across log files automatically" },
+  { name: "Build Output Next Error", shortcut: "F4", category: "Tools", roles: ["developer"], outcome: "Navigate to next MSVC/GCC/Clang compiler error in build output" },
+  { name: "Build Output Prev Error", shortcut: "Shift+F4", category: "Tools", roles: ["developer"], outcome: "Navigate to previous compiler error in build output" },
+  { name: "Rogue DLL", shortcut: "Ctrl+Shift+F9", category: "Tools", roles: ["developer", "devops"], outcome: "Launch ASCII dungeon explorer game DLL" },
+  { name: "C&C Strategy", shortcut: "Ctrl+Shift+F11", category: "Tools", roles: ["developer", "devops"], outcome: "Launch C&C real-time strategy mini-game DLL" },
+  { name: "Session Save", shortcut: "Auto", category: "File", roles: ["developer", "devops", "sysadmin"], outcome: "Auto-save cursor position, viewport, and open files for session recovery" },
 ];
 
 const categories = ["View", "Tools", "Edit", "File", "Search", "Navigation", "Help"] as const;

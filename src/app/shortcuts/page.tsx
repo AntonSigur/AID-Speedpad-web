@@ -117,6 +117,12 @@ const shortcuts: Shortcut[] = [
   { keys: "F8", action: "HexCompare — open binary file diff", category: "View Modes" },
   { keys: "F7", action: "HexCompare — next difference", category: "View Modes" },
   { keys: "Shift+F7", action: "HexCompare — previous difference", category: "View Modes" },
+  { keys: "Ctrl+Shift+T", action: "Pattern Timeline — frequency visualization", category: "Tools" },
+  { keys: "Ctrl+Shift+K", action: "Auto-Correlator — event sequence detection", category: "Tools" },
+  { keys: "F4", action: "Build Output Parser — next error", category: "Tools" },
+  { keys: "Shift+F4", action: "Build Output Parser — previous error", category: "Tools" },
+  { keys: "Ctrl+Shift+F9", action: "Rogue DLL — ASCII dungeon explorer 🗡️", category: "Easter Eggs" },
+  { keys: "Ctrl+Shift+F11", action: "C&C Strategy Game 🏰", category: "Easter Eggs" },
 ];
 
 const categories = Array.from(new Set(shortcuts.map((s) => s.category)));

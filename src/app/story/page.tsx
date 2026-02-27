@@ -286,20 +286,56 @@ const timeline = [
     highlights: ["HexCompare (F8/F7/Shift+F7)", "F68 Severity Coloring", "504 tests — 500 milestone!", "843KB EXE (−12%)"],
   },
   {
+    phase: "Phase 4 Intelligence Complete",
+    period: "v2.67.0–v2.68.0 — Sprints 83–84",
+    color: "#1B5E20",
+    title: "5-feature log intelligence suite ships — F66 through F69",
+    description:
+      "Four sprints of intelligence features culminate in Phase 4 completion. F66 Pattern Timeline visualizes event frequencies. F67 Auto-Correlator detects event sequences. F69 Build Output Parser navigates MSVC/GCC/Clang errors. Arkanoid Document Mode turns words into bricks. Tests surge from 504 to 566 in two sprints. Release #89, 57 consecutive sprints.",
+    highlights: ["Phase 4 Complete (F65–F69)", "F66 Pattern Timeline", "F67 Auto-Correlator", "F69 Build Output Parser"],
+  },
+  {
+    phase: "Background Indexing & 600 Tests",
+    period: "v2.69.0 — Sprint 85",
+    color: "#0D47A1",
+    title: "F20 Background Indexing and the 600 test milestone",
+    description:
+      "F20 Background Indexing creates .spidx sidecar files for instant GoToLine, with time-budget loading and stale cleanup. The test suite smashes 600 — reaching 605 suites. 60% vision milestone achieved. Release #90, 58 consecutive sprints.",
+    highlights: ["F20 Background Indexing (.spidx)", "605 tests — 600 milestone!", "60% vision achieved"],
+  },
+  {
+    phase: "Stabilization & Rogue DLL",
+    period: "v2.70.0 — Sprint 86",
+    color: "#BF360C",
+    title: "Hardening sprint — F70 Rogue DLL and critical bug fixes",
+    description:
+      "A dedicated stabilization sprint delivers F70 Rogue DLL (ASCII dungeon explorer, Ctrl+Shift+F9), fixes thread safety (B221), atomic writes (B224), and entity bounds (B225+B226). GDI brush save/restore for games. 625 tests, Release #91, 59 consecutive sprints.",
+    highlights: ["F70 Rogue DLL (Ctrl+Shift+F9)", "B221–B226 stabilization", "625 tests"],
+  },
+  {
+    phase: "Session Extraction & C&C Strategy",
+    period: "v2.71.0 — Sprint 87",
+    color: "#4A148C",
+    title: "F15 Session Extraction and F71 C&C Strategy Game — 65% vision",
+    description:
+      "F15 Session Extraction enables cursor save/restore, auto-save, and session recovery. F71 C&C Strategy Game adds a real-time strategy mini-game. Test suite reaches 673. Release #92, 60 consecutive sprints. 26 of 40 roadmap features delivered — 65% vision milestone!",
+    highlights: ["F15 Session Extraction", "F71 C&C Strategy", "673 tests — 60 sprints!", "65% vision milestone"],
+  },
+  {
     phase: "What's Next",
     period: "Sprint 88+",
     color: "#607D8B",
-    title: "Session extraction, community contributions, and the colony expands",
+    title: "SSH Remote Edit, community contributions, and 70% vision",
     description:
-      "The roadmap includes session extraction for tracing IDs across log files, community contributions, and dual-product expansion. The ant colony never stops building.",
-    highlights: ["Session extraction", "Community contributions", "Dual-product expansion"],
+      "The roadmap targets F06 SSH Remote Edit, further test expansion toward 850+ suites, and community contributions. The ant colony marches toward 70% vision completion.",
+    highlights: ["F06 SSH Remote Edit", "850 test target", "70% vision"],
   },
 ];
 
 const stats = [
   { label: "Releases", value: "92", color: "#2196F3" },
   { label: "Features", value: "177+", color: "#4CAF50" },
-  { label: "Bugs Fixed", value: "215+", color: "#F44336" },
+  { label: "Bugs Fixed", value: "228+", color: "#F44336" },
   { label: "Test Suites", value: "673", color: "#FF9800" },
   { label: "EXE Size", value: "843 KB", color: "#9C27B0" },
   { label: "Team Size", value: "8 agents", color: "#00BCD4" },
@@ -458,8 +494,8 @@ export default function StoryPage() {
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
               { value: "92", label: "Releases Shipped", sub: "60 consecutive sprint deliveries", color: "#4CAF50" },
               { value: "673", label: "Test Suites", sub: "From 153 → 673 (+340% growth)", color: "#FF9800" },
-              { value: "215+", label: "Bugs Fixed", sub: "B001 through B215, all verified", color: "#F44336" },
-              { value: "147+", label: "Website Commits", sub: "28 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },
+              { value: "228+", label: "Bugs Fixed", sub: "B001 through B228, all verified", color: "#F44336" },
+              { value: "155+", label: "Website Commits", sub: "28 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },
               { value: "100+", label: "Inbox Messages", sub: "File-based async communication across 7 agents", color: "#00BCD4" },
               { value: "843", label: "KB Total", sub: "Entire editor in less than 1MB", color: "#E91E63" },
               { value: "10s", label: "Build Time", sub: "Next.js 16 — full rebuild in seconds", color: "#607D8B" },

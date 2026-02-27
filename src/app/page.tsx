@@ -86,6 +86,10 @@ const comparison = [
   { feature: "Hex Editor View", sp: "✅", npp: "Plugin", vsc: "Plugin" },
   { feature: "Binary Diff (HexCompare)", sp: "✅", npp: "❌", vsc: "Plugin" },
   { feature: "Severity Coloring", sp: "✅", npp: "❌", vsc: "Extension" },
+  { feature: "Pattern Timeline", sp: "✅", npp: "❌", vsc: "❌" },
+  { feature: "Build Output Parser", sp: "✅", npp: "❌", vsc: "✅" },
+  { feature: "Session Recovery", sp: "✅", npp: "✅", vsc: "✅" },
+  { feature: "Background Indexing", sp: "✅", npp: "❌", vsc: "✅" },
 ];
 
 export default function Home() {
