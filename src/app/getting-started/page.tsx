@@ -135,6 +135,12 @@ const MULTI_FILE = [
     description:
       "Folder-first workflow: pick a directory, search all files with parallel threading, navigate results.",
   },
+  {
+    title: "HexCompare Binary Diff",
+    shortcut: "F8",
+    description:
+      "Compare two binary files byte-by-byte. F7/Shift+F7 navigate between differences. Essential for firmware and patch verification.",
+  },
 ];
 
 const COMMAND_PALETTE_EXAMPLES = [

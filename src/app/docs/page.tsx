@@ -405,8 +405,8 @@ export default function DocsPage() {
             { title: "JSON Tools", items: "Pretty-print / minify, validate, path extraction" },
             { title: "CSV Tools", items: "Column alignment with auto-detection, delimiter conversion, column extraction" },
             { title: "Regex Highlights", items: "Multi-pattern highlighting with color groups, ReDoS protection built in" },
-            { title: "Log Analysis", items: "Anomaly detection (5s/30s gap thresholds), severity parsing (syslog, Apache, nginx, IIS)" },
-            { title: "SpeedHexPad", items: "Standalone hex editor (SpeedHexPad.exe) or built-in via Ctrl+Alt+H. Structure templates, data bookmarks, binary inspector, endianness toggle" },
+            { title: "Log Analysis", items: "Anomaly detection (5s/30s gap thresholds), severity parsing (syslog, Apache, nginx, IIS), F68 Severity Coloring (ERROR/WARN/INFO auto-highlight)" },
+            { title: "SpeedHexPad", items: "Standalone hex editor (SpeedHexPad.exe) or built-in via Ctrl+Alt+H. Structure templates, data bookmarks, binary inspector, endianness toggle, HexCompare binary diff (F8)" },
           ].map((tool) => (
             <Grid key={tool.title} size={{ xs: 12, sm: 6 }}>
               <Card sx={{ bgcolor: "background.paper", height: "100%" }}>
