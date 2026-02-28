@@ -105,11 +105,11 @@ Push to master → GitHub Actions → npm ci → npm run build → Upload out/ �
 `src/lib/product-config.ts` is the single source of truth:
 
 ```ts
-export const CURRENT_VERSION = "v2.71.0";
+export const CURRENT_VERSION = "v2.73.0";
 export const EXE_SIZE = "843KB";
-export const TEST_COUNT = 673;
-export const UNIQUE_FEATURES = 46;
-export const RELEASE_NUMBER = 92;
+export const TEST_COUNT = 954;
+export const UNIQUE_FEATURES = 52;
+export const RELEASE_NUMBER = 94;
 ```
 
 All download URLs, version strings, and stat references derive from this file.

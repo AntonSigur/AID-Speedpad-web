@@ -64,7 +64,7 @@ Workflow: `.github/workflows/azure-static-web-apps.yml`
 | `/team` | 8 team members with detail pages |
 | `/team/[slug]` | Individual team member bios (8 slugs) |
 | `/release-center` | Release history + milestones |
-| `/changelog` | Visual version timeline v2.30.0 → v2.71.0 |
+| `/changelog` | Visual version timeline v2.30.0 → v2.73.0 |
 | `/use-cases` | DevOps, security, data analysis workflows |
 | `/workflows` | Workflow packs for different roles |
 | `/lenses` | 6 DLL-based lens plugins |
@@ -103,6 +103,6 @@ src/
 
 ## Current Stats
 
-- SpeedPad v2.71.0 · 843KB · 673 tests · 46 unique features · 92 releases
+- SpeedPad v2.73.0 · 843KB · 954 tests · 52 unique features · 94 releases
 - Website: 28 routes · 130+ commits · 36 pre-rendered pages
 
