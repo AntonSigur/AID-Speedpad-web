@@ -107,8 +107,8 @@ Push to master → GitHub Actions → npm ci → npm run build → Upload out/ �
 ```ts
 export const CURRENT_VERSION = "v2.73.0";
 export const EXE_SIZE = "843KB";
-export const TEST_COUNT = 954;
-export const UNIQUE_FEATURES = 52;
+export const TEST_COUNT = 1009;
+export const UNIQUE_FEATURES = 55;
 export const RELEASE_NUMBER = 94;
 ```
 
