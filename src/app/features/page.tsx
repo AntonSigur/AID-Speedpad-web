@@ -348,14 +348,85 @@ export default function FeaturesPage() {
         </Container>
       </Box>
 
-      {/* 50 Unique Features */}
+      {/* SSH Remote Edit Showcase */}
+      <Box sx={{ bgcolor: "background.paper", py: { xs: 4, md: 8 } }}>
+        <Container maxWidth="md">
+          <Chip label="Phase 5 — Remote" sx={{ mb: 2, bgcolor: "rgba(33,150,243,0.15)", color: "#64B5F6", borderColor: "#2196F3", fontWeight: 600 }} variant="outlined" />
+          <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
+            SSH Remote Edit
+          </Typography>
+          <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
+            Open files on remote servers directly — no mount, no copy, no terminal window dance.
+          </Typography>
+          <Grid container spacing={3}>
+            {[
+              {
+                label: "sftp:// URIs",
+                desc: "Open any file with sftp://user@host/path — SpeedPad handles authentication, transport, and rendering seamlessly.",
+                color: "#2196F3",
+              },
+              {
+                label: "SSH Auth Dialog",
+                desc: "Built-in authentication dialog supports password and key-based auth. No external SSH client required.",
+                color: "#4CAF50",
+              },
+              {
+                label: "843KB — Everything Built In",
+                desc: "Full SFTP client embedded in the same 843KB executable. No libssh dependency. No runtime downloads.",
+                color: "#FF9800",
+              },
+              {
+                label: "Phase 2 Coming",
+                desc: "Phase 1 delivers read-only access. Phase 2 will add write support, allowing you to edit remote files and save back over SFTP.",
+                color: "#9C27B0",
+              },
+            ].map((item, i) => (
+              <Grid key={i} size={{ xs: 12, sm: 6 }}>
+                <Paper sx={{ p: 3, bgcolor: "#0F2035", height: "100%", borderLeft: `3px solid ${item.color}` }}>
+                  <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: item.color }}>{item.label}</Typography>
+                  <Typography variant="body2" color="text.secondary">{item.desc}</Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+          <Box sx={{ textAlign: "center", mt: 3 }}>
+            <Typography variant="body2" color="text.secondary">
+              Usage: <code style={{ color: "#64B5F6" }}>speedpad sftp://user@server/var/log/syslog</code> — opens the remote file instantly.
+            </Typography>
+          </Box>
+        </Container>
+      </Box>
+
+      {/* File Weather Report Highlight */}
+      <Box sx={{ py: { xs: 4, md: 6 } }}>
+        <Container maxWidth="md">
+          <Paper sx={{ p: { xs: 3, md: 4 }, bgcolor: "background.paper", borderLeft: "4px solid #00BCD4" }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2, flexWrap: "wrap" }}>
+              <Chip label="F74" size="small" sx={{ bgcolor: "rgba(0,188,212,0.15)", color: "#00BCD4", fontWeight: 700 }} />
+              <Chip label="Ctrl+Shift+W" size="small" variant="outlined" sx={{ color: "text.secondary", borderColor: "rgba(255,255,255,0.15)" }} />
+              <Chip label="NEW in v2.73.0" size="small" color="success" />
+            </Box>
+            <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
+              File Weather Report 🌤️
+            </Typography>
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+              Instant file health dashboard. Complexity score, encoding analysis, anomaly detection, line length distribution — everything you need to understand a file before diving in.
+            </Typography>
+            <Typography variant="body2" sx={{ color: "#4CAF50" }}>
+              Press Ctrl+Shift+W on any file to get a one-screen summary of file health. Especially useful for inherited codebases and unfamiliar log formats.
+            </Typography>
+          </Paper>
+        </Container>
+      </Box>
+
+      {/* 52 Unique Features */}
       <Box sx={{ py: { xs: 4, md: 8 } }}>
         <Container maxWidth="md">
           <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
             52 Things Only SpeedPad Can Do
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
-            Features you won&apos;t find in any other text editor — now 50 and counting
+            Features you won&apos;t find in any other text editor — 52 and counting
           </Typography>
           <Box component="ol" sx={{ pl: 3 }}>
             {uniqueFeatures.map((f, i) => (
