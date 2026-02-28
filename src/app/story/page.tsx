@@ -322,21 +322,39 @@ const timeline = [
     highlights: ["F15 Session Extraction", "F71 C&C Strategy", "673 tests — 60 sprints!", "65% vision milestone"],
   },
   {
-    phase: "What's Next",
-    period: "Sprint 88+",
-    color: "#607D8B",
-    title: "SSH Remote Edit, community contributions, and 70% vision",
+    phase: "SSH Remote Edit & 900 Tests",
+    period: "v2.72.0 — Sprint 88",
+    color: "#1565C0",
+    title: "F06 SSH Remote Edit Phase 1 — remote files at last",
     description:
-      "The roadmap targets F06 SSH Remote Edit, further test expansion toward 850+ suites, and community contributions. The ant colony marches toward 70% vision completion.",
-    highlights: ["F06 SSH Remote Edit", "850 test target", "70% vision"],
+      "The long-awaited F06 SSH Remote Edit ships Phase 1: sftp:// URIs, SSH authentication dialog, and read-only remote file access. F69 Gutter build markers add inline error indicators. B222 GDI handle leak — a 4-sprint P1 bug — is finally CLOSED. Test suite hits 905. Release #93, 61 consecutive sprints.",
+    highlights: ["F06 SSH Remote Edit Phase 1", "B222 GDI leak CLOSED (P1)", "905 tests — 900 milestone!", "61 sprints"],
+  },
+  {
+    phase: "File Weather & Zero Open Bugs",
+    period: "v2.73.0 — Sprint 89",
+    color: "#00695C",
+    title: "F74 File Weather Report — ZERO OPEN BUGS milestone",
+    description:
+      "F74 File Weather Report (Ctrl+Shift+W) delivers a file health dashboard with complexity scores, encoding analysis, and anomaly detection. B229 fixes Direct2D canvas flicker. B232–B234 harden SSH security. The bug tracker hits ZERO open bugs for the first time ever. 954 tests, Release #94, 62 consecutive sprints.",
+    highlights: ["F74 File Weather Report", "ZERO OPEN BUGS 🎉", "954 tests", "62 consecutive sprints"],
+  },
+  {
+    phase: "What's Next",
+    period: "Sprint 90+",
+    color: "#607D8B",
+    title: "F06 Phase 2, Clipboard Intelligence, and 75% vision",
+    description:
+      "The roadmap targets F06 SSH Remote Edit Phase 2 (write support), F76 Clipboard Intelligence, and continued test expansion toward 1000+ suites. CEO has approved F72–F76 including Smart Diff Timeline, Live Regex Dashboard, and Tail Race. The ant colony marches toward 75% vision completion.",
+    highlights: ["F06 SSH Phase 2 (write)", "F76 Clipboard Intelligence", "1000 test target", "75% vision"],
   },
 ];
 
 const stats = [
-  { label: "Releases", value: "92", color: "#2196F3" },
+  { label: "Releases", value: "94", color: "#2196F3" },
   { label: "Features", value: "177+", color: "#4CAF50" },
-  { label: "Bugs Fixed", value: "228+", color: "#F44336" },
-  { label: "Test Suites", value: "673", color: "#FF9800" },
+  { label: "Bugs Fixed", value: "234+", color: "#F44336" },
+  { label: "Test Suites", value: "954", color: "#FF9800" },
   { label: "EXE Size", value: "843 KB", color: "#9C27B0" },
   { label: "Team Size", value: "8 agents", color: "#00BCD4" },
 ];
@@ -492,10 +510,10 @@ export default function StoryPage() {
           <Grid container spacing={2}>
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
-              { value: "92", label: "Releases Shipped", sub: "60 consecutive sprint deliveries", color: "#4CAF50" },
-              { value: "673", label: "Test Suites", sub: "From 153 → 673 (+340% growth)", color: "#FF9800" },
-              { value: "228+", label: "Bugs Fixed", sub: "B001 through B228, all verified", color: "#F44336" },
-              { value: "155+", label: "Website Commits", sub: "28 routes, 8,000+ lines of TypeScript", color: "#9C27B0" },
+              { value: "94", label: "Releases Shipped", sub: "62 consecutive sprint deliveries", color: "#4CAF50" },
+              { value: "954", label: "Test Suites", sub: "From 153 → 954 (+523% growth)", color: "#FF9800" },
+              { value: "234+", label: "Bugs Fixed", sub: "B001 through B234, all verified — ZERO open", color: "#F44336" },
+              { value: "160+", label: "Website Commits", sub: "28 routes, 8,500+ lines of TypeScript", color: "#9C27B0" },
               { value: "100+", label: "Inbox Messages", sub: "File-based async communication across 7 agents", color: "#00BCD4" },
               { value: "843", label: "KB Total", sub: "Entire editor in less than 1MB", color: "#E91E63" },
               { value: "10s", label: "Build Time", sub: "Next.js 16 — full rebuild in seconds", color: "#607D8B" },
@@ -531,7 +549,7 @@ export default function StoryPage() {
           test suites, every commit is verified, every deployment is tracked.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
-          the development cadence is remarkable: the team has delivered <strong>60 consecutive sprints</strong> without
+          the development cadence is remarkable: the team has delivered <strong>62 consecutive sprints</strong> without
           a single missed delivery. Each sprint produces a new release with bug fixes, features, and test
           suites — all in a single-file 843KB executable. The website mirrors this velocity, growing from
           5 pages to 28 routes while maintaining zero lint warnings and clean builds.
@@ -569,7 +587,7 @@ export default function StoryPage() {
               { icon: "🔒", title: "Security First", desc: "Skerity-check runs before every work cycle. 603+ assertions, 458 policy checks." },
               { icon: "📊", title: "Traceable Data", desc: "Every stat on this site traces back to a source doc. PO is the content authority." },
               { icon: "🚀", title: "Auto-Deploy", desc: "Every git push triggers Azure deployment. From commit to live in ~110 seconds." },
-              { icon: "🎯", title: "Zero Missed Sprints", desc: "60 consecutive deliveries. Every sprint ships features, fixes, and tests." },
+              { icon: "🎯", title: "Zero Missed Sprints", desc: "62 consecutive deliveries. Every sprint ships features, fixes, and tests." },
             ].map((card) => (
               <Grid key={card.title} size={{ xs: 12, sm: 6, md: 4 }}>
                 <Paper sx={{ p: 2.5, bgcolor: "#162D50", height: "100%" }}>

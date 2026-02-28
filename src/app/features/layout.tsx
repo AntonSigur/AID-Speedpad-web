@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Features — 24 Things Only SpeedPad Can Do | SpeedPad",
   description:
-    "Explore 177+ features and 46 unique capabilities: memory-mapped I/O for 100GB+ files, multi-cursor editing, multi-log merge, TinyRegex NFA engine, and more. All in 843KB.",
+    "Explore 177+ features and 52 unique capabilities: memory-mapped I/O for 100GB+ files, multi-cursor editing, multi-log merge, TinyRegex NFA engine, and more. All in 843KB.",
 };
 
 export default function FeaturesLayout({ children }: { children: React.ReactNode }) {

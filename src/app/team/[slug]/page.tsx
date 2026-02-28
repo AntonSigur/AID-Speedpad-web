@@ -137,7 +137,7 @@ const teamData: TeamMember[] = [
       "Designed 5-layer architecture: Shell \u2192 UI \u2192 Engine \u2192 Storage \u2192 I/O",
       "Built memory-mapped I/O that opens 100GB+ files with constant memory",
       "Created parallel search with 8-worker thread pool",
-      "Kept binary under 843KB across 92 releases",
+      "Kept binary under 843KB across 94 releases",
     ],
     philosophy: "Every layer should be independent, every function should have one job, and every allocation should be justified.",
   },

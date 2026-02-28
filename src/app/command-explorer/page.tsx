@@ -179,6 +179,8 @@ const commands: Cmd[] = [
   { name: "Rogue DLL", shortcut: "Ctrl+Shift+F9", category: "Tools", roles: ["developer", "devops"], outcome: "Launch ASCII dungeon explorer game DLL" },
   { name: "C&C Strategy", shortcut: "Ctrl+Shift+F11", category: "Tools", roles: ["developer", "devops"], outcome: "Launch C&C real-time strategy mini-game DLL" },
   { name: "Session Save", shortcut: "Auto", category: "File", roles: ["developer", "devops", "sysadmin"], outcome: "Auto-save cursor position, viewport, and open files for session recovery" },
+  { name: "File Weather Report", shortcut: "Ctrl+Shift+W", category: "Tools", roles: ["developer", "devops", "sysadmin", "data"], outcome: "Show file health dashboard with complexity, encoding, anomaly scores" },
+  { name: "SSH Remote Edit", shortcut: "sftp://", category: "File", roles: ["devops", "sysadmin"], outcome: "Open remote file via SFTP with SSH auth dialog (read-only Phase 1)" },
 ];
 
 const categories = ["View", "Tools", "Edit", "File", "Search", "Navigation", "Help"] as const;

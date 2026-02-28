@@ -90,6 +90,8 @@ const comparison = [
   { feature: "Build Output Parser", sp: "✅", npp: "❌", vsc: "✅" },
   { feature: "Session Recovery", sp: "✅", npp: "✅", vsc: "✅" },
   { feature: "Background Indexing", sp: "✅", npp: "❌", vsc: "✅" },
+  { feature: "SSH Remote Edit", sp: "✅", npp: "❌", vsc: "✅" },
+  { feature: "File Weather Report", sp: "✅", npp: "❌", vsc: "❌" },
 ];
 
 export default function Home() {
@@ -257,7 +259,7 @@ export default function Home() {
             Built for Speed
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 6, maxWidth: 500, mx: "auto" }}>
-            46 unique features no other editor has. Opens 10GB files with the same startup time as 10KB.
+            52 unique features no other editor has. Opens 10GB files with the same startup time as 10KB.
           </Typography>
           <Grid container spacing={3}>
             {features.map((f) => (
@@ -389,7 +391,7 @@ export default function Home() {
               { label: "Build Artifact Path", detail: "Release EXE built from tagged commit via MSVC /O2 with LTCG. Artifact path: build/Release/SpeedPad.exe → signed and checksummed before distribution." },
               { label: "Startup & File Open", detail: "Measured by automated release verification runs on reference hardware. Every release is timed before shipping. 100GB opens via memory-mapped I/O (no full load)." },
               { label: "Memory Usage", detail: "Profiled with Windows Performance Toolkit on 4GB+ files. Stays under 100MB using a 64MB memory-mapped view window. No file size affects memory." },
-              { label: "Update Cadence", detail: "Validated every sprint (~2 weeks). 92 releases shipped since v1.0. Every release under 1MB. Every claim re-verified against the latest build." },
+              { label: "Update Cadence", detail: "Validated every sprint (~2 weeks). 94 releases shipped since v1.0. Every release under 1MB. Every claim re-verified against the latest build." },
               { label: "Source of Truth", detail: "All feature claims trace to FEATURES.md, SHORTCUTS.md, and CHANGELOG.md in the source repository. PO reviews every marketing statement before publish." },
             ].map((item) => (
               <Grid size={{ xs: 12, sm: 6 }} key={item.label}>

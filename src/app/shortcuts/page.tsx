@@ -123,6 +123,8 @@ const shortcuts: Shortcut[] = [
   { keys: "Shift+F4", action: "Build Output Parser — previous error", category: "Tools" },
   { keys: "Ctrl+Shift+F9", action: "Rogue DLL — ASCII dungeon explorer 🗡️", category: "Easter Eggs" },
   { keys: "Ctrl+Shift+F11", action: "C&C Strategy Game 🏰", category: "Easter Eggs" },
+  { keys: "Ctrl+Shift+W", action: "File Weather Report — file health dashboard 🌤️", category: "Analysis" },
+  { keys: "Ctrl+O (sftp://)", action: "SSH Remote Edit — open remote file via SFTP 🔐", category: "File Operations" },
 ];
 
 const categories = Array.from(new Set(shortcuts.map((s) => s.category)));

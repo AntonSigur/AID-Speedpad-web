@@ -195,6 +195,8 @@ const uniqueFeatures = [
   "Rogue DLL — Ctrl+Shift+F9 ASCII dungeon explorer game embedded as a DLL plugin",
   "Session Extraction — cursor save/restore, auto-save, and full session recovery on restart",
   "C&C Strategy Game — real-time strategy mini-game DLL with unit management and base building",
+  "SSH Remote Edit — sftp:// URI with SSH auth dialog for read-only remote file access",
+  "File Weather Report — Ctrl+Shift+W file health dashboard with complexity, encoding, and anomaly scores",
 ];
 
 export default function FeaturesPage() {
@@ -350,7 +352,7 @@ export default function FeaturesPage() {
       <Box sx={{ py: { xs: 4, md: 8 } }}>
         <Container maxWidth="md">
           <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
-            50 Things Only SpeedPad Can Do
+            52 Things Only SpeedPad Can Do
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
             Features you won&apos;t find in any other text editor — now 50 and counting

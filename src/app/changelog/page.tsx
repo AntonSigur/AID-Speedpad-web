@@ -24,6 +24,34 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "v2.73.0",
+    date: "2026-03-01",
+    title: "File Weather Report & Zero Open Bugs",
+    tests: 954,
+    sprint: 89,
+    features: [
+      "F74 File Weather Report — Ctrl+Shift+W file health dashboard with complexity, encoding, and anomaly scores",
+      "B229 Direct2D canvas flicker fix — eliminates rendering artifacts during resize",
+      "B232–B234 SSH security hardening — host key verification, session timeout, credential sanitization",
+      "Test suite reaches 954 suites — ZERO OPEN BUGS milestone! 🎉",
+      "62 consecutive sprint deliveries — Release #94",
+    ],
+  },
+  {
+    version: "v2.72.0",
+    date: "2026-03-01",
+    title: "SSH Remote Edit Phase 1 & 900 Tests",
+    tests: 905,
+    sprint: 88,
+    features: [
+      "F06 SSH Remote Edit Phase 1 — sftp:// URI, SSH auth dialog, read-only remote file access",
+      "F69 Gutter build markers — inline error/warning indicators from Build Output Parser",
+      "B222 GDI handle leak fix — 4-sprint P1 bug finally CLOSED",
+      "Test suite reaches 905 suites — 900 milestone! 🎉",
+      "61 consecutive sprint deliveries — Release #93",
+    ],
+  },
+  {
     version: "v2.71.0",
     date: "2026-02-28",
     title: "Session Extraction & C&C Strategy",
@@ -452,8 +480,8 @@ const sprintGroups = releases.reduce<Record<number, Release[]>>((acc, r) => {
 }, {});
 const sortedSprints = Object.keys(sprintGroups).map(Number).sort((a, b) => b - a);
 
-const CONSECUTIVE_SPRINTS = 60;
-const TOTAL_TESTS = 673;
+const CONSECUTIVE_SPRINTS = 62;
+const TOTAL_TESTS = 954;
 const FIRST_TESTS = 153;
 
 export default function ChangelogPage() {
@@ -491,7 +519,7 @@ export default function ChangelogPage() {
           </Typography>
         </Paper>
 
-        {/* 600 Test Milestone Banner */}
+        {/* 900 Test Milestone Banner */}
         <Paper
           elevation={0}
           sx={{
@@ -504,13 +532,13 @@ export default function ChangelogPage() {
           }}
         >
           <Typography variant="h3" sx={{ fontWeight: 800, color: "#00BCD4", lineHeight: 1 }}>
-            🎉 600
+            🎉 900
           </Typography>
           <Typography variant="h6" sx={{ fontWeight: 600, mt: 1 }}>
             Test Suites Milestone
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-            From 153 tests in v2.30.0 to {TOTAL_TESTS} in v2.71.0 — a +{Math.round(((TOTAL_TESTS - FIRST_TESTS) / FIRST_TESTS) * 100)}% increase. Every release tested. Every regression caught.
+            From 153 tests in v2.30.0 to {TOTAL_TESTS} in v2.73.0 — a +{Math.round(((TOTAL_TESTS - FIRST_TESTS) / FIRST_TESTS) * 100)}% increase. Every release tested. Every regression caught.
           </Typography>
         </Paper>
 

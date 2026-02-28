@@ -33,6 +33,32 @@ import {
 /* ───── Release data ───── */
 const releases = [
   {
+    version: "v2.73.0",
+    release: 94,
+    date: "2026-03-01",
+    size: "843 KiB (863,232 bytes)",
+    tests: 954,
+    highlights: [
+      "F74 File Weather Report — Ctrl+Shift+W file health dashboard",
+      "B229 Direct2D flicker fix + B232–B234 SSH security hardening",
+      "ZERO OPEN BUGS — 954 tests, 62 consecutive sprints",
+    ],
+    milestone: "File Weather Report & Zero Open Bugs",
+  },
+  {
+    version: "v2.72.0",
+    release: 93,
+    date: "2026-03-01",
+    size: "843 KiB (863,232 bytes)",
+    tests: 905,
+    highlights: [
+      "F06 SSH Remote Edit Phase 1 — sftp:// URI, SSH auth dialog",
+      "F69 Gutter build markers, B222 GDI leak fix (P1 CLOSED)",
+      "900 test milestone — 61 consecutive sprints",
+    ],
+    milestone: "SSH Remote Edit Phase 1",
+  },
+  {
     version: "v2.71.0",
     release: 92,
     date: "2026-02-28",

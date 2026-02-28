@@ -83,6 +83,8 @@ const essentialShortcuts = [
   { shortcut: "F8", action: "HexCompare (binary diff)" },
   { shortcut: "Ctrl+Shift+F9", action: "Rogue DLL 🗡️" },
   { shortcut: "Ctrl+Shift+F11", action: "C&C Strategy 🏰" },
+  { shortcut: "Ctrl+Shift+W", action: "File Weather Report 🌤️" },
+  { shortcut: "sftp://host/path", action: "SSH Remote Edit (open remote file)" },
 ];
 
 const cliExamples = [
