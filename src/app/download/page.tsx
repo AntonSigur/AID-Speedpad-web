@@ -20,42 +20,31 @@ import Footer from "@/components/Footer";
 
 const releases = [
   {
+    version: CURRENT_VERSION,
+    date: "2026-03-01",
+    latest: true,
+    highlights: [
+      "F74 File Weather Report, F76 Clipboard Intelligence, F06 SSH Phase 2 (read/write)",
+      "F77 SpeedStrategy standalone, 1,009 tests — ZERO OPEN BUGS",
+      `${EXE_SIZE} EXE, ${TEST_COUNT}/${TEST_COUNT} tests passing, dual-product architecture`,
+    ],
+  },
+  {
+    version: "v2.72.0",
+    date: "2026-03-01",
+    latest: false,
+    highlights: [
+      "F06 SSH Remote Edit Phase 1, F69 Gutter build markers",
+      "B222 GDI leak fix (4-sprint P1 CLOSED), 905 tests",
+    ],
+  },
+  {
     version: "v2.65.0",
     date: "2026-02-26",
-    latest: true,
+    latest: false,
     highlights: [
       "SpeedHexPad.exe standalone binary — dual-product architecture",
-      "559 binary artifacts removed from Git tracking",
-      `${EXE_SIZE} EXE, ${TEST_COUNT}/${TEST_COUNT} tests passing`,
-    ],
-  },
-  {
-    version: "v2.63.0",
-    date: "2026-02-26",
-    latest: false,
-    highlights: [
-      "SpeedHexPad hex editing with endianness toggle",
-      "F64 Binary Inspector enhancements, column selection polish",
-      "350 tests passing",
-    ],
-  },
-  {
-    version: "v2.61.0",
-    date: "2026-02-26",
-    latest: false,
-    highlights: [
-      "F64 Binary Inspector, Column/Block Selection, hex search + goto",
-      "311 tests passing",
-    ],
-  },
-  {
-    version: "v2.60.0",
-    date: "2026-02-26",
-    latest: true,
-    highlights: [
-      "SpeedHexPad hex editor scaffold (Ctrl+Alt+H)",
-      "F66 Ant Kings card branding, Snake game DLL",
-      `${EXE_SIZE} EXE, ${TEST_COUNT}/${TEST_COUNT} tests passing`,
+      "F65 Multi-File Search, code signing, 432 tests",
     ],
   },
   {
@@ -368,9 +357,9 @@ export default function DownloadPage() {
       <Container maxWidth="md" sx={{ pb: 4 }}>
         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr" }, gap: 2 }}>
           {[
-            { v: CURRENT_VERSION, label: "Latest", summary: "SpeedHexPad.exe standalone, 954 tests, dual-product architecture", color: "primary" as const },
-            { v: "v2.63.0", label: "Stable", summary: "Structure templates, data bookmarks, 393 tests", color: "secondary" as const },
-            { v: "v2.62.0", label: "Stable", summary: "SpeedHexPad hex editing, endianness toggle, 350 tests", color: "default" as const },
+            { v: CURRENT_VERSION, label: "Latest", summary: `SSH Remote Edit, File Weather Report, ${TEST_COUNT.toLocaleString()} tests, zero open bugs`, color: "primary" as const },
+            { v: "v2.72.0", label: "Stable", summary: "SSH Phase 1, Gutter markers, 905 tests", color: "secondary" as const },
+            { v: "v2.65.0", label: "Stable", summary: "Multi-File Search, code signing, dual-product", color: "default" as const },
           ].map((r) => (
             <Card key={r.v} elevation={0} sx={{ bgcolor: "rgba(255,255,255,0.03)", border: r.color === "primary" ? "1px solid rgba(33,150,243,0.3)" : "1px solid rgba(255,255,255,0.06)" }}>
               <CardContent sx={{ p: 2.5 }}>

@@ -82,9 +82,10 @@ const essentialShortcuts = [
   { shortcut: "Shift+F4", action: "Build Output — previous error" },
   { shortcut: "F8", action: "HexCompare (binary diff)" },
   { shortcut: "Ctrl+Shift+F9", action: "Rogue DLL 🗡️" },
-  { shortcut: "Ctrl+Shift+F11", action: "C&C Strategy 🏰" },
+  { shortcut: "Ctrl+Shift+F11", action: "SpeedStrategy 🏰 (formerly C&C)" },
   { shortcut: "Ctrl+Shift+W", action: "File Weather Report 🌤️" },
-  { shortcut: "sftp://host/path", action: "SSH Remote Edit (open remote file)" },
+  { shortcut: "sftp://host/path", action: "SSH Remote Edit (read & write)" },
+  { shortcut: "Ctrl+V (auto)", action: "Clipboard Intelligence 📋" },
 ];
 
 const cliExamples = [
@@ -208,7 +209,7 @@ export default function DocsPage() {
 
           <Typography variant="h5" sx={{ mb: 2, mt: 4 }}>The Command Palette</Typography>
           <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8 }}>
-            Press <strong>Ctrl+Shift+P</strong> to access all 97 commands with fuzzy search.
+            Press <strong>Ctrl+Shift+P</strong> to access all 110 commands with fuzzy search.
             Supports role-based filtering: type <code style={{ color: "#64B5F6" }}>@ops</code> for DevOps commands,{" "}
             <code style={{ color: "#64B5F6" }}>@dev</code> for developer tools,{" "}
             <code style={{ color: "#64B5F6" }}>@data</code> for data analyst features.

@@ -545,7 +545,7 @@ export default function HowItWorksPage() {
               href="/features"
               sx={{ borderColor: "#00BCD4", color: "#00BCD4" }}
             >
-              See All 177+ Features
+              See All 180+ Features
             </Button>
             <Button
               variant="outlined"

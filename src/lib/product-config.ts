@@ -3,9 +3,9 @@
 export const CURRENT_VERSION = "v2.73.0";
 export const EXE_SIZE = "843KB";
 export const EXE_SIZE_SPACED = "843 KB";
-export const TEST_COUNT = 954;
-export const FEATURE_COUNT = "177+";
-export const UNIQUE_FEATURES = 52;
+export const TEST_COUNT = 1009;
+export const FEATURE_COUNT = "180+";
+export const UNIQUE_FEATURES = 55;
 export const RELEASE_COUNT = "94";
 export const RELEASE_NUMBER = 94;
 

@@ -575,7 +575,7 @@ export default function GettingStartedPage() {
               size="small"
               sx={{ bgcolor: "#0a1628", color: "#00BCD4", fontFamily: "monospace" }}
             />{" "}
-            for fuzzy search across 97 commands.
+            for fuzzy search across 110 commands.
           </Typography>
         </Box>
         <Paper sx={{ ...cardSx, maxWidth: 500, mx: "auto" }}>
@@ -715,7 +715,7 @@ export default function GettingStartedPage() {
               href="/command-explorer"
               sx={{ bgcolor: "#2196F3" }}
             >
-              Command Explorer (96 Commands)
+              Command Explorer (110 Commands)
             </Button>
             <Button
               variant="outlined"

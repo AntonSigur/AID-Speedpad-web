@@ -158,7 +158,7 @@ const commands: Cmd[] = [
 
   // ── Help ──
   { name: "Keyboard Shortcuts", shortcut: "F1", category: "Help", roles: ["all"], outcome: "Display complete shortcut reference" },
-  { name: "Command Palette", shortcut: "Ctrl+Shift+P", category: "Help", roles: ["all"], outcome: "Fuzzy-search all 97 commands with role filtering" },
+  { name: "Command Palette", shortcut: "Ctrl+Shift+P", category: "Help", roles: ["all"], outcome: "Fuzzy-search all 110 commands with role filtering" },
   { name: "Speed Statistics", shortcut: "—", category: "Help", roles: ["casual"], outcome: "Typing and navigation metrics" },
   { name: "Solitaire", shortcut: "Ctrl+Shift+F12", category: "Help", roles: ["casual"], outcome: "Classic card game easter egg (154KB DLL)" },
   { name: "Arkanoid", shortcut: "—", category: "Help", roles: ["casual"], outcome: "Built-in arcade game DLL — break bricks between debugging sessions" },
@@ -177,10 +177,11 @@ const commands: Cmd[] = [
   { name: "Build Output Next Error", shortcut: "F4", category: "Tools", roles: ["developer"], outcome: "Navigate to next MSVC/GCC/Clang compiler error in build output" },
   { name: "Build Output Prev Error", shortcut: "Shift+F4", category: "Tools", roles: ["developer"], outcome: "Navigate to previous compiler error in build output" },
   { name: "Rogue DLL", shortcut: "Ctrl+Shift+F9", category: "Tools", roles: ["developer", "devops"], outcome: "Launch ASCII dungeon explorer game DLL" },
-  { name: "C&C Strategy", shortcut: "Ctrl+Shift+F11", category: "Tools", roles: ["developer", "devops"], outcome: "Launch C&C real-time strategy mini-game DLL" },
+  { name: "C&C Strategy (SpeedStrategy)", shortcut: "Ctrl+Shift+F11", category: "Tools", roles: ["developer", "devops"], outcome: "Launch SpeedStrategy — standalone RTS game with 5 unit types" },
   { name: "Session Save", shortcut: "Auto", category: "File", roles: ["developer", "devops", "sysadmin"], outcome: "Auto-save cursor position, viewport, and open files for session recovery" },
   { name: "File Weather Report", shortcut: "Ctrl+Shift+W", category: "Tools", roles: ["developer", "devops", "sysadmin", "data"], outcome: "Show file health dashboard with complexity, encoding, anomaly scores" },
-  { name: "SSH Remote Edit", shortcut: "sftp://", category: "File", roles: ["devops", "sysadmin"], outcome: "Open remote file via SFTP with SSH auth dialog (read-only Phase 1)" },
+  { name: "SSH Remote Edit", shortcut: "sftp://", category: "File", roles: ["devops", "sysadmin"], outcome: "Open and edit remote files via SFTP — read/write with credential caching" },
+  { name: "Clipboard Intelligence", shortcut: "Ctrl+V", category: "Edit", roles: ["developer", "devops", "data", "sysadmin"], outcome: "Auto-detect clipboard format (JSON, XML, SQL, CSV, base64, hex, URL, path, regex, timestamp)" },
 ];
 
 const categories = ["View", "Tools", "Edit", "File", "Search", "Navigation", "Help"] as const;

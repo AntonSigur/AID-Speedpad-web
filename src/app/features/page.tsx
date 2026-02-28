@@ -194,9 +194,10 @@ const uniqueFeatures = [
   "Background Indexing — .spidx sidecar files for instant GoToLine in large files with time-budget loading",
   "Rogue DLL — Ctrl+Shift+F9 ASCII dungeon explorer game embedded as a DLL plugin",
   "Session Extraction — cursor save/restore, auto-save, and full session recovery on restart",
-  "C&C Strategy Game — real-time strategy mini-game DLL with unit management and base building",
-  "SSH Remote Edit — sftp:// URI with SSH auth dialog for read-only remote file access",
+  "C&C Strategy Game — real-time strategy mini-game, now rebranded as SpeedStrategy with standalone .exe",
+  "SSH Remote Edit — sftp:// URI with SSH auth dialog, Phase 2 adds write-back and credential caching",
   "File Weather Report — Ctrl+Shift+W file health dashboard with complexity, encoding, and anomaly scores",
+  "Clipboard Intelligence — 10 format detectors auto-identify clipboard content type (JSON, XML, SQL, CSV, base64, hex, URL, path, regex, timestamp)",
 ];
 
 export default function FeaturesPage() {
@@ -206,12 +207,12 @@ export default function FeaturesPage() {
 
       {/* Hero */}
       <Container maxWidth="lg" sx={{ pt: { xs: 6, md: 10 }, pb: 4, textAlign: "center" }}>
-        <Chip label="177+ features" color="primary" variant="outlined" sx={{ mb: 2 }} />
+        <Chip label="180+ features" color="primary" variant="outlined" sx={{ mb: 2 }} />
         <Typography variant="h1" sx={{ fontSize: { xs: "2.2rem", md: "3.5rem" }, mb: 2 }}>
           Every Feature in SpeedPad
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mx: "auto" }}>
-          A comprehensive text editor in 843KB — with zero external dependencies, 6 lens plugins, and 97 commands.
+          A comprehensive text editor in 843KB — with zero external dependencies, 6 lens plugins, and 110 commands.
         </Typography>
       </Container>
 
@@ -356,7 +357,7 @@ export default function FeaturesPage() {
             SSH Remote Edit
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
-            Open files on remote servers directly — no mount, no copy, no terminal window dance.
+            Open and edit files on remote servers directly — no mount, no copy, no terminal window dance.
           </Typography>
           <Grid container spacing={3}>
             {[
@@ -366,8 +367,8 @@ export default function FeaturesPage() {
                 color: "#2196F3",
               },
               {
-                label: "SSH Auth Dialog",
-                desc: "Built-in authentication dialog supports password and key-based auth. No external SSH client required.",
+                label: "Read & Write",
+                desc: "Phase 2 complete: full read/write access with credential caching and connection pooling. Edit remote files and save back over SFTP.",
                 color: "#4CAF50",
               },
               {
@@ -376,8 +377,8 @@ export default function FeaturesPage() {
                 color: "#FF9800",
               },
               {
-                label: "Phase 2 Coming",
-                desc: "Phase 1 delivers read-only access. Phase 2 will add write support, allowing you to edit remote files and save back over SFTP.",
+                label: "Credential Cache",
+                desc: "SSH credentials cached securely in memory. Connect once, open multiple files without re-authenticating. Connection pooling for performance.",
                 color: "#9C27B0",
               },
             ].map((item, i) => (
@@ -400,33 +401,47 @@ export default function FeaturesPage() {
       {/* File Weather Report Highlight */}
       <Box sx={{ py: { xs: 4, md: 6 } }}>
         <Container maxWidth="md">
-          <Paper sx={{ p: { xs: 3, md: 4 }, bgcolor: "background.paper", borderLeft: "4px solid #00BCD4" }}>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2, flexWrap: "wrap" }}>
-              <Chip label="F74" size="small" sx={{ bgcolor: "rgba(0,188,212,0.15)", color: "#00BCD4", fontWeight: 700 }} />
-              <Chip label="Ctrl+Shift+W" size="small" variant="outlined" sx={{ color: "text.secondary", borderColor: "rgba(255,255,255,0.15)" }} />
-              <Chip label="NEW in v2.73.0" size="small" color="success" />
-            </Box>
-            <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
-              File Weather Report 🌤️
-            </Typography>
-            <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-              Instant file health dashboard. Complexity score, encoding analysis, anomaly detection, line length distribution — everything you need to understand a file before diving in.
-            </Typography>
-            <Typography variant="body2" sx={{ color: "#4CAF50" }}>
-              Press Ctrl+Shift+W on any file to get a one-screen summary of file health. Especially useful for inherited codebases and unfamiliar log formats.
-            </Typography>
-          </Paper>
+          <Grid container spacing={3}>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Paper sx={{ p: { xs: 3, md: 4 }, bgcolor: "background.paper", borderLeft: "4px solid #00BCD4", height: "100%" }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2, flexWrap: "wrap" }}>
+                  <Chip label="F74" size="small" sx={{ bgcolor: "rgba(0,188,212,0.15)", color: "#00BCD4", fontWeight: 700 }} />
+                  <Chip label="Ctrl+Shift+W" size="small" variant="outlined" sx={{ color: "text.secondary", borderColor: "rgba(255,255,255,0.15)" }} />
+                </Box>
+                <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
+                  File Weather Report 🌤️
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Instant file health dashboard. Complexity score, encoding analysis, anomaly detection, line length distribution — understand any file before diving in.
+                </Typography>
+              </Paper>
+            </Grid>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Paper sx={{ p: { xs: 3, md: 4 }, bgcolor: "background.paper", borderLeft: "4px solid #FF9800", height: "100%" }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2, flexWrap: "wrap" }}>
+                  <Chip label="F76" size="small" sx={{ bgcolor: "rgba(255,152,0,0.15)", color: "#FF9800", fontWeight: 700 }} />
+                  <Chip label="Auto on Paste" size="small" variant="outlined" sx={{ color: "text.secondary", borderColor: "rgba(255,255,255,0.15)" }} />
+                </Box>
+                <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
+                  Clipboard Intelligence 📋
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  10 format detectors auto-identify clipboard content: JSON, XML, SQL, CSV, base64, hex dump, URL, file path, regex, and timestamps. Paste smarter, not harder.
+                </Typography>
+              </Paper>
+            </Grid>
+          </Grid>
         </Container>
       </Box>
 
-      {/* 52 Unique Features */}
+      {/* 55 Unique Features */}
       <Box sx={{ py: { xs: 4, md: 8 } }}>
         <Container maxWidth="md">
           <Typography variant="h2" sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, mb: 1, textAlign: "center" }}>
-            52 Things Only SpeedPad Can Do
+            55 Things Only SpeedPad Can Do
           </Typography>
           <Typography variant="body1" color="text.secondary" textAlign="center" sx={{ mb: 4 }}>
-            Features you won&apos;t find in any other text editor — 52 and counting
+            Features you won&apos;t find in any other text editor — 55 and counting
           </Typography>
           <Box component="ol" sx={{ pl: 3 }}>
             {uniqueFeatures.map((f, i) => (

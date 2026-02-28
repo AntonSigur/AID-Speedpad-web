@@ -481,7 +481,7 @@ const sprintGroups = releases.reduce<Record<number, Release[]>>((acc, r) => {
 const sortedSprints = Object.keys(sprintGroups).map(Number).sort((a, b) => b - a);
 
 const CONSECUTIVE_SPRINTS = 62;
-const TOTAL_TESTS = 954;
+const TOTAL_TESTS = 1009;
 const FIRST_TESTS = 153;
 
 export default function ChangelogPage() {
@@ -532,7 +532,7 @@ export default function ChangelogPage() {
           }}
         >
           <Typography variant="h3" sx={{ fontWeight: 800, color: "#00BCD4", lineHeight: 1 }}>
-            🎉 900
+            🎉 1,000
           </Typography>
           <Typography variant="h6" sx={{ fontWeight: 600, mt: 1 }}>
             Test Suites Milestone

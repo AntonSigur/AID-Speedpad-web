@@ -122,9 +122,10 @@ const shortcuts: Shortcut[] = [
   { keys: "F4", action: "Build Output Parser — next error", category: "Tools" },
   { keys: "Shift+F4", action: "Build Output Parser — previous error", category: "Tools" },
   { keys: "Ctrl+Shift+F9", action: "Rogue DLL — ASCII dungeon explorer 🗡️", category: "Easter Eggs" },
-  { keys: "Ctrl+Shift+F11", action: "C&C Strategy Game 🏰", category: "Easter Eggs" },
+  { keys: "Ctrl+Shift+F11", action: "SpeedStrategy (formerly C&C) — RTS game 🏰", category: "Easter Eggs" },
   { keys: "Ctrl+Shift+W", action: "File Weather Report — file health dashboard 🌤️", category: "Analysis" },
-  { keys: "Ctrl+O (sftp://)", action: "SSH Remote Edit — open remote file via SFTP 🔐", category: "File Operations" },
+  { keys: "Ctrl+O (sftp://)", action: "SSH Remote Edit — open/edit remote file via SFTP 🔐", category: "File Operations" },
+  { keys: "Ctrl+V (auto-detect)", action: "Clipboard Intelligence — auto-identify paste format 📋", category: "Editing" },
 ];
 
 const categories = Array.from(new Set(shortcuts.map((s) => s.category)));
@@ -382,7 +383,7 @@ export default function ShortcutsPage() {
         {/* Bottom Links */}
         <Box sx={{ mt: 6, display: "flex", gap: 2, flexWrap: "wrap" }}>
           <Button variant="outlined" href="/command-explorer" sx={{ textTransform: "none" }}>
-            Command Explorer (97 commands) →
+            Command Explorer (110 commands) →
           </Button>
           <Button variant="outlined" href="/docs" sx={{ textTransform: "none" }}>
             Full Documentation →

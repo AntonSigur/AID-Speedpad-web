@@ -61,8 +61,8 @@ export default function Footer() {
           </Grid>
           <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="subtitle2" sx={{ mb: 1.5 }}>Quick Stats</Typography>
-            <Typography variant="body2" color="text.secondary">v2.73.0 · 843KB · 177+ features · 954 tests</Typography>
-            <Typography variant="body2" color="text.secondary">52 unique features no other editor has</Typography>
+            <Typography variant="body2" color="text.secondary">v2.73.0 · 843KB · 180+ features · 1,009 tests · 94 releases</Typography>
+            <Typography variant="body2" color="text.secondary">55 unique features no other editor has · 1,000+ test milestone</Typography>
           </Grid>
         </Grid>
         <Box sx={{ mt: 4, pt: 3, borderTop: "1px solid rgba(255,255,255,0.06)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 1 }}>

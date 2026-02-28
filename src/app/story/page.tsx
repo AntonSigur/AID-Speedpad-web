@@ -341,20 +341,20 @@ const timeline = [
   },
   {
     phase: "What's Next",
-    period: "Sprint 90+",
+    period: "Sprint 91+",
     color: "#607D8B",
-    title: "F06 Phase 2, Clipboard Intelligence, and 75% vision",
+    title: "1,009 tests, commercial launch, and 80% vision",
     description:
-      "The roadmap targets F06 SSH Remote Edit Phase 2 (write support), F76 Clipboard Intelligence, and continued test expansion toward 1000+ suites. CEO has approved F72–F76 including Smart Diff Timeline, Live Regex Dashboard, and Tail Race. The ant colony marches toward 75% vision completion.",
-    highlights: ["F06 SSH Phase 2 (write)", "F76 Clipboard Intelligence", "1000 test target", "75% vision"],
+      "Sprint 90 delivered F76 Clipboard Intelligence, F06 SSH Phase 2 (write support), F77 SpeedStrategy standalone, and smashed through 1,000 tests. The roadmap now targets F72 Smart Diff Timeline, F73 Live Regex Dashboard, and F75 Tail Race. Commercial launch event approaching — the ant colony prepares for the world stage.",
+    highlights: ["1,009 tests — 1000 milestone! 🎉", "F77 SpeedStrategy standalone", "Commercial launch prep", "80% vision"],
   },
 ];
 
 const stats = [
   { label: "Releases", value: "94", color: "#2196F3" },
-  { label: "Features", value: "177+", color: "#4CAF50" },
+  { label: "Features", value: "180+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "234+", color: "#F44336" },
-  { label: "Test Suites", value: "954", color: "#FF9800" },
+  { label: "Test Suites", value: "1,009", color: "#FF9800" },
   { label: "EXE Size", value: "843 KB", color: "#9C27B0" },
   { label: "Team Size", value: "8 agents", color: "#00BCD4" },
 ];
@@ -511,7 +511,7 @@ export default function StoryPage() {
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
               { value: "94", label: "Releases Shipped", sub: "62 consecutive sprint deliveries", color: "#4CAF50" },
-              { value: "954", label: "Test Suites", sub: "From 153 → 954 (+523% growth)", color: "#FF9800" },
+              { value: "1,009", label: "Test Suites", sub: "From 153 → 1,009 (+559% growth)", color: "#FF9800" },
               { value: "234+", label: "Bugs Fixed", sub: "B001 through B234, all verified — ZERO open", color: "#F44336" },
               { value: "160+", label: "Website Commits", sub: "28 routes, 8,500+ lines of TypeScript", color: "#9C27B0" },
               { value: "100+", label: "Inbox Messages", sub: "File-based async communication across 7 agents", color: "#00BCD4" },
@@ -605,9 +605,9 @@ export default function StoryPage() {
       <Container maxWidth="md" sx={{ py: { xs: 3, md: 5 }, textAlign: "center" }}>
         <Typography variant="h5" sx={{ mb: 3 }}>Explore What the Ants Built</Typography>
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
-          <Button variant="contained" component={Link} href="/command-explorer">97 Commands →</Button>
+          <Button variant="contained" component={Link} href="/command-explorer">110 Commands →</Button>
           <Button variant="outlined" component={Link} href="/incident-playbook">Incident Playbook →</Button>
-          <Button variant="outlined" component={Link} href="/features">177+ Features →</Button>
+          <Button variant="outlined" component={Link} href="/features">180+ Features →</Button>
           <Button variant="outlined" component={Link} href="/download">Download →</Button>
         </Box>
       </Container>
