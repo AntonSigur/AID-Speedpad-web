@@ -31,7 +31,6 @@ import Footer from "@/components/Footer";
 import {
   CURRENT_VERSION,
   EXE_SIZE,
-  DOWNLOAD_EXE,
   DOWNLOAD_ZIP,
 } from "@/lib/product-config";
 
@@ -206,18 +205,10 @@ export default function GettingStartedPage() {
               variant="contained"
               size="large"
               startIcon={<DownloadIcon />}
-              href={DOWNLOAD_EXE}
+              href={DOWNLOAD_ZIP}
               sx={{ bgcolor: "#2196F3" }}
             >
-              Download EXE ({EXE_SIZE})
-            </Button>
-            <Button
-              variant="outlined"
-              size="large"
-              href={DOWNLOAD_ZIP}
-              sx={{ borderColor: "#2196F3", color: "#2196F3" }}
-            >
-              Download ZIP
+              Download ZIP ({EXE_SIZE})
             </Button>
           </Box>
         </Container>

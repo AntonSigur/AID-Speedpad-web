@@ -340,21 +340,39 @@ const timeline = [
     highlights: ["F74 File Weather Report", "ZERO OPEN BUGS 🎉", "954 tests", "62 consecutive sprints"],
   },
   {
-    phase: "What's Next",
-    period: "Sprint 91+",
-    color: "#607D8B",
-    title: "1,009 tests, commercial launch, and 80% vision",
+    phase: "1,000 Tests & SSH Write Support",
+    period: "v2.74.0 — Sprint 90",
+    color: "#1B5E20",
+    title: "1,000 TEST MILESTONE — SSH Phase 2 lands write support",
     description:
-      "Sprint 90 delivered F76 Clipboard Intelligence, F06 SSH Phase 2 (write support), F77 SpeedStrategy standalone, and smashed through 1,000 tests. The roadmap now targets F72 Smart Diff Timeline, F73 Live Regex Dashboard, and F75 Tail Race. Commercial launch event approaching — the ant colony prepares for the world stage.",
-    highlights: ["1,009 tests — 1000 milestone! 🎉", "F77 SpeedStrategy standalone", "Commercial launch prep", "80% vision"],
+      "The test suite smashes through 1,000 — reaching 1,015 suites. F76 Clipboard Intelligence adds smart paste with format detection and transformation. F06 SSH Remote Edit Phase 2 delivers write-back support, credential caching, and connection pooling. F77 SpeedStrategy launches as a standalone RTS with unit AI and fog of war. B235–B237 harden SSH credential security. Release #95, 63 consecutive sprints.",
+    highlights: ["1,000 TESTS 🎯", "F06 SSH Phase 2 (write)", "F76 Clipboard Intelligence", "F77 SpeedStrategy"],
+  },
+  {
+    phase: "SpeedStrategy Sprites & 1,050 Tests",
+    period: "v2.75.0 — Sprint 91",
+    color: "#E65100",
+    title: "F77 SpeedStrategy Sprites — 1,052 tests, Streak 64",
+    description:
+      "F77 SpeedStrategy gets a full sprite overhaul: 8 unit types, 4 buildings, and 5 terrain types bring the RTS mini-game to life. F76 Clipboard Intelligence v2 adds XML auto-indent and CSV column alignment on paste. B250 fixes PaintDiffView mutex deadlock. The test suite reaches 1,052. Release #96, Streak 64 — the longest consecutive delivery streak in the project's history.",
+    highlights: ["F77 SpeedStrategy Sprites", "F76 Clip Intelligence v2", "1,052 tests", "Streak 64"],
+  },
+  {
+    phase: "What's Next",
+    period: "Sprint 92+",
+    color: "#607D8B",
+    title: "1,052 tests, commercial launch, and the road to v3.0",
+    description:
+      "With 1,052 tests, 96 releases, and 64 consecutive sprint deliveries, SpeedPad approaches commercial launch. The roadmap targets F72 Smart Diff Timeline, F73 Live Regex Dashboard, and F75 Tail Race. The ant colony prepares for the world stage — every feature verified, every bug squashed, every sprint shipped.",
+    highlights: ["Commercial launch approaching", "F72 Smart Diff Timeline", "F73 Live Regex Dashboard", "Streak 64"],
   },
 ];
 
 const stats = [
-  { label: "Releases", value: "94", color: "#2196F3" },
+  { label: "Releases", value: "96", color: "#2196F3" },
   { label: "Features", value: "180+", color: "#4CAF50" },
   { label: "Bugs Fixed", value: "234+", color: "#F44336" },
-  { label: "Test Suites", value: "1,009", color: "#FF9800" },
+  { label: "Test Suites", value: "1,052", color: "#FF9800" },
   { label: "EXE Size", value: "843 KB", color: "#9C27B0" },
   { label: "Team Size", value: "8 agents", color: "#00BCD4" },
 ];
@@ -510,8 +528,8 @@ export default function StoryPage() {
           <Grid container spacing={2}>
             {[
               { value: "7", label: "AI Agents", sub: "PM, PO, SA, Dev×2, Tester, WebDev", color: "#2196F3" },
-              { value: "94", label: "Releases Shipped", sub: "62 consecutive sprint deliveries", color: "#4CAF50" },
-              { value: "1,009", label: "Test Suites", sub: "From 153 → 1,009 (+559% growth)", color: "#FF9800" },
+              { value: "96", label: "Releases Shipped", sub: "64 consecutive sprint deliveries", color: "#4CAF50" },
+              { value: "1,052", label: "Test Suites", sub: "From 153 → 1,052 (+587% growth)", color: "#FF9800" },
               { value: "234+", label: "Bugs Fixed", sub: "B001 through B234, all verified — ZERO open", color: "#F44336" },
               { value: "160+", label: "Website Commits", sub: "28 routes, 8,500+ lines of TypeScript", color: "#9C27B0" },
               { value: "100+", label: "Inbox Messages", sub: "File-based async communication across 7 agents", color: "#00BCD4" },
@@ -549,7 +567,7 @@ export default function StoryPage() {
           test suites, every commit is verified, every deployment is tracked.
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, mb: 3 }}>
-          the development cadence is remarkable: the team has delivered <strong>62 consecutive sprints</strong> without
+          the development cadence is remarkable: the team has delivered <strong>64 consecutive sprints</strong> without
           a single missed delivery. Each sprint produces a new release with bug fixes, features, and test
           suites — all in a single-file 843KB executable. The website mirrors this velocity, growing from
           5 pages to 28 routes while maintaining zero lint warnings and clean builds.
@@ -587,7 +605,7 @@ export default function StoryPage() {
               { icon: "🔒", title: "Security First", desc: "Skerity-check runs before every work cycle. 603+ assertions, 458 policy checks." },
               { icon: "📊", title: "Traceable Data", desc: "Every stat on this site traces back to a source doc. PO is the content authority." },
               { icon: "🚀", title: "Auto-Deploy", desc: "Every git push triggers Azure deployment. From commit to live in ~110 seconds." },
-              { icon: "🎯", title: "Zero Missed Sprints", desc: "62 consecutive deliveries. Every sprint ships features, fixes, and tests." },
+              { icon: "🎯", title: "Zero Missed Sprints", desc: "64 consecutive deliveries. Every sprint ships features, fixes, and tests." },
             ].map((card) => (
               <Grid key={card.title} size={{ xs: 12, sm: 6, md: 4 }}>
                 <Paper sx={{ p: 2.5, bgcolor: "#162D50", height: "100%" }}>

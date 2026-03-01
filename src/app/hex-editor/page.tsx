@@ -30,7 +30,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { CURRENT_VERSION, EXE_SIZE, TEST_COUNT, SPEEDHEXPAD_ZIP } from "@/lib/product-config";
+import { CURRENT_VERSION, EXE_SIZE, TEST_COUNT, DOWNLOAD_ZIP } from "@/lib/product-config";
 
 /* Green accent palette for SpeedHexPad (PO-confirmed) */
 const HEX_GREEN = "#4CAF50";

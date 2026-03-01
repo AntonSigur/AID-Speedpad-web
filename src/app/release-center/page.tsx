@@ -24,7 +24,6 @@ import Footer from "@/components/Footer";
 import {
   CURRENT_VERSION,
   EXE_SIZE,
-  DOWNLOAD_EXE,
   DOWNLOAD_ZIP,
   GITHUB_RELEASES,
   RELEASE_NUMBER,
@@ -32,6 +31,32 @@ import {
 
 /* ───── Release data ───── */
 const releases = [
+  {
+    version: "v2.75.0",
+    release: 96,
+    date: "2026-03-15",
+    size: "843 KiB (863,232 bytes)",
+    tests: 1052,
+    highlights: [
+      "F77 SpeedStrategy Sprites — 8 units, 4 buildings, 5 terrain types",
+      "F76 Clipboard Intelligence v2 — XML auto-indent, CSV column alignment",
+      "1,052 tests — 64 consecutive sprints, Streak 64",
+    ],
+    milestone: "SpeedStrategy Sprites & 1,050 Tests",
+  },
+  {
+    version: "v2.74.0",
+    release: 95,
+    date: "2026-03-10",
+    size: "843 KiB (863,232 bytes)",
+    tests: 1015,
+    highlights: [
+      "F76 Clipboard Intelligence — smart paste with format detection",
+      "F06 SSH Remote Edit Phase 2 — write-back, credential cache, connection pool",
+      "1,000 TEST MILESTONE 🎯 — 63 consecutive sprints",
+    ],
+    milestone: "1,000 Tests & SSH Write Support",
+  },
   {
     version: "v2.73.0",
     release: 94,
@@ -550,11 +575,8 @@ export default function ReleaseCenterPage() {
             <Divider sx={{ mb: 3 }} />
 
             <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
-              <Button variant="contained" size="large" startIcon={<DownloadIcon />} href={DOWNLOAD_EXE} target="_blank" rel="noopener">
-                Download EXE ({EXE_SIZE})
-              </Button>
-              <Button variant="outlined" size="large" startIcon={<DownloadIcon />} href={DOWNLOAD_ZIP} target="_blank" rel="noopener">
-                Download ZIP
+              <Button variant="contained" size="large" startIcon={<DownloadIcon />} href={DOWNLOAD_ZIP} target="_blank" rel="noopener">
+                Download ZIP ({EXE_SIZE})
               </Button>
             </Box>
             <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
@@ -634,7 +656,7 @@ export default function ReleaseCenterPage() {
             Every release is a single EXE. No installer, no runtime, no cloud account.
           </Typography>
           <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
-            <Button variant="contained" size="large" startIcon={<DownloadIcon />} href={DOWNLOAD_EXE} target="_blank" rel="noopener">
+            <Button variant="contained" size="large" startIcon={<DownloadIcon />} href={DOWNLOAD_ZIP} target="_blank" rel="noopener">
               Download {CURRENT_VERSION}
             </Button>
             <Button variant="outlined" component={Link} href="/features">

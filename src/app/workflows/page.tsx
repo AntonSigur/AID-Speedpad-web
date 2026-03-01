@@ -14,7 +14,7 @@ import {
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { DOWNLOAD_EXE, EXE_SIZE, CURRENT_VERSION } from "@/lib/product-config";
+import { DOWNLOAD_ZIP, EXE_SIZE, CURRENT_VERSION } from "@/lib/product-config";
 
 interface Workflow {
   id: string;
@@ -247,7 +247,7 @@ export default function WorkflowsPage() {
             <Button
               variant="contained"
               size="large"
-              href={DOWNLOAD_EXE}
+              href={DOWNLOAD_ZIP}
               sx={{ textTransform: "none", fontWeight: 600, px: 4 }}
             >
               Download SpeedPad

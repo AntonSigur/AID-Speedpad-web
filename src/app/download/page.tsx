@@ -21,16 +21,25 @@ import Footer from "@/components/Footer";
 const releases = [
   {
     version: CURRENT_VERSION,
-    date: "2026-03-01",
+    date: "2026-03-15",
     latest: true,
     highlights: [
-      "F74 File Weather Report, F76 Clipboard Intelligence, F06 SSH Phase 2 (read/write)",
-      "F77 SpeedStrategy standalone, 1,009 tests — ZERO OPEN BUGS",
-      `${EXE_SIZE} EXE, ${TEST_COUNT}/${TEST_COUNT} tests passing, dual-product architecture`,
+      "F77 SpeedStrategy Sprites, F76 Clipboard Intelligence v2 (XML auto-indent, CSV alignment)",
+      "1,052 tests — Streak 64, Release #96",
+      `${EXE_SIZE} · zero dependencies · dual-product architecture`,
     ],
   },
   {
-    version: "v2.72.0",
+    version: "v2.74.0",
+    date: "2026-03-10",
+    latest: false,
+    highlights: [
+      "F76 Clipboard Intelligence, F06 SSH Phase 2 (write), F77 SpeedStrategy Phase 1+2",
+      "1,000 TEST MILESTONE — 1,015 suites, Streak 63",
+    ],
+  },
+  {
+    version: "v2.73.0",
     date: "2026-03-01",
     latest: false,
     highlights: [
@@ -292,7 +301,7 @@ const releases = [
 ];
 
 /* ───── centralized download config ───── */
-import { CURRENT_VERSION, GITHUB_RELEASES, EXE_SIZE, EXE_SIZE_SPACED, TEST_COUNT, DOWNLOAD_EXE, DOWNLOAD_ZIP, SPEEDHEXPAD_ZIP } from "@/lib/product-config";
+import { CURRENT_VERSION, GITHUB_RELEASES, EXE_SIZE, EXE_SIZE_SPACED, TEST_COUNT, DOWNLOAD_ZIP } from "@/lib/product-config";
 
 export default function DownloadPage() {
   return (
@@ -305,40 +314,23 @@ export default function DownloadPage() {
           Download
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 550, mx: "auto", mb: 4 }}>
-          Two products. Same engine. Both under 1MB, zero dependencies. Just extract and run.
+          SpeedPad + SpeedHexPad in one ZIP. Same engine, both under 1MB, zero dependencies. Just extract and run.
         </Typography>
 
-        {/* Dual Product Cards */}
-        <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" }, gap: 3, mb: 4, maxWidth: 700, mx: "auto" }}>
-          {/* SpeedPad */}
-          <Paper elevation={0} sx={{ p: 3, border: "1px solid rgba(33,150,243,0.3)", borderRadius: 2, bgcolor: "rgba(33,150,243,0.04)" }}>
-            <Chip label="Text Editor" size="small" color="primary" sx={{ mb: 1.5 }} />
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1, color: "#64B5F6" }}>SpeedPad.exe</Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-              The fastest Windows text editor. Opens 100GB+ logs, hex mode via Ctrl+Alt+H, {EXE_SIZE}.
+        {/* Single Download Card */}
+        <Box sx={{ maxWidth: 500, mx: "auto", mb: 4 }}>
+          <Paper elevation={0} sx={{ p: 4, border: "1px solid rgba(33,150,243,0.3)", borderRadius: 2, bgcolor: "rgba(33,150,243,0.04)", textAlign: "center" }}>
+            <Chip label={CURRENT_VERSION} size="small" color="primary" sx={{ mb: 1.5 }} />
+            <Typography variant="h4" sx={{ fontWeight: 700, mb: 1, color: "#64B5F6" }}>SpeedPad</Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>
+              Includes SpeedPad.exe + SpeedHexPad.exe + 6 lens DLLs
             </Typography>
-            <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", justifyContent: "center" }}>
-              <Button variant="contained" size="small" startIcon={<DownloadIcon />} href={DOWNLOAD_EXE} target="_blank" rel="noopener">
-                EXE
-              </Button>
-              <Button variant="outlined" size="small" startIcon={<DownloadIcon />} href={DOWNLOAD_ZIP} target="_blank" rel="noopener">
-                ZIP
-              </Button>
-            </Box>
-          </Paper>
-
-          {/* SpeedHexPad */}
-          <Paper elevation={0} sx={{ p: 3, border: "1px solid rgba(76,175,80,0.3)", borderRadius: 2, bgcolor: "rgba(76,175,80,0.04)" }}>
-            <Chip label="Hex Editor" size="small" sx={{ mb: 1.5, bgcolor: "rgba(76,175,80,0.2)", color: "#66BB6A" }} />
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1, color: "#66BB6A" }}>SpeedHexPad.exe</Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-              Standalone hex editor. Structure templates, data bookmarks, binary inspector. Under 1MB.
+              {EXE_SIZE} · {TEST_COUNT.toLocaleString()} tests passing · zero dependencies
             </Typography>
-            <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", justifyContent: "center" }}>
-              <Button variant="contained" size="small" startIcon={<DownloadIcon />} sx={{ bgcolor: "#4CAF50", "&:hover": { bgcolor: "#388E3C" } }} href={SPEEDHEXPAD_ZIP} target="_blank" rel="noopener">
-                ZIP
-              </Button>
-            </Box>
+            <Button variant="contained" size="large" startIcon={<DownloadIcon />} href={DOWNLOAD_ZIP} sx={{ textTransform: "none", fontWeight: 700, px: 4 }}>
+              Download ZIP
+            </Button>
           </Paper>
         </Box>
 
@@ -357,9 +349,9 @@ export default function DownloadPage() {
       <Container maxWidth="md" sx={{ pb: 4 }}>
         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr" }, gap: 2 }}>
           {[
-            { v: CURRENT_VERSION, label: "Latest", summary: `SSH Remote Edit, File Weather Report, ${TEST_COUNT.toLocaleString()} tests, zero open bugs`, color: "primary" as const },
-            { v: "v2.72.0", label: "Stable", summary: "SSH Phase 1, Gutter markers, 905 tests", color: "secondary" as const },
-            { v: "v2.65.0", label: "Stable", summary: "Multi-File Search, code signing, dual-product", color: "default" as const },
+            { v: CURRENT_VERSION, label: "Latest", summary: `SpeedStrategy Sprites, Clipboard Intelligence v2, ${TEST_COUNT.toLocaleString()} tests`, color: "primary" as const },
+            { v: "v2.74.0", label: "Stable", summary: "1,000 test milestone, SSH write support, 1,015 tests", color: "secondary" as const },
+            { v: "v2.73.0", label: "Stable", summary: "File Weather Report, zero open bugs, 954 tests", color: "default" as const },
           ].map((r) => (
             <Card key={r.v} elevation={0} sx={{ bgcolor: "rgba(255,255,255,0.03)", border: r.color === "primary" ? "1px solid rgba(33,150,243,0.3)" : "1px solid rgba(255,255,255,0.06)" }}>
               <CardContent sx={{ p: 2.5 }}>
@@ -410,8 +402,8 @@ export default function DownloadPage() {
         </Typography>
         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr" }, gap: 3 }}>
           {[
-            { step: "1", title: "Download", desc: "Grab the latest .exe or .zip from above." },
-            { step: "2", title: "Extract", desc: "Place SpeedPad.exe in any folder (e.g., C:\\Tools\\SpeedPad\\)." },
+            { step: "1", title: "Download", desc: "Grab the ZIP from above." },
+            { step: "2", title: "Extract", desc: "Unzip to any folder (e.g., C:\\Tools\\SpeedPad\\)." },
             { step: "3", title: "Run", desc: "Double-click SpeedPad.exe. That's it — no installer needed." },
           ].map((s) => (
             <Box key={s.step} sx={{ textAlign: "center", p: 3, borderRadius: 2, bgcolor: "background.paper", border: "1px solid rgba(255,255,255,0.06)" }}>
